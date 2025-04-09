@@ -59,27 +59,34 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextFormField(
                     decoration: const InputDecoration(labelText: 'Email'),
                     onChanged: (value) => _email = value.trim(),
-                    validator: (value) =>
-                        value!.isEmpty ? 'Email required' : null,
+                    validator:
+                        (value) => value!.isEmpty ? 'Email required' : null,
                   ),
                   TextFormField(
                     decoration: const InputDecoration(labelText: 'Password'),
                     obscureText: true,
                     onChanged: (value) => _password = value,
-                    validator: (value) =>
-                        value!.isEmpty ? 'Password required' : null,
+                    validator:
+                        (value) => value!.isEmpty ? 'Password required' : null,
                   ),
                   const SizedBox(height: 20),
                   if (_errorMessage != null)
-                    Text(_errorMessage!,
-                        style: const TextStyle(color: Colors.red)),
+                    Text(
+                      _errorMessage!,
+                      style: const TextStyle(color: Colors.red),
+                    ),
                   const SizedBox(height: 10),
                   _isLoading
                       ? const CircularProgressIndicator()
                       : ElevatedButton(
-                          onPressed: _login,
-                          child: const Text('Log In'),
-                        ),
+                        onPressed: _login,
+                        child: const Text('Log In'),
+                      ),
+                  const SizedBox(height: 10),
+                  TextButton(
+                    onPressed: () => Navigator.pushNamed(context, '/signup'),
+                    child: const Text("Don't have an account? Sign up"),
+                  ),
                 ],
               ),
             ),
