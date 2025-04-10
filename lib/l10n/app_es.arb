@@ -1,0 +1,1621 @@
+{
+    "@@locale": "es",
+    "disclaimer_title": "Aviso Legal",
+    "@disclaimer_title": {
+        "description": "Título del aviso legal"
+    },
+    "disclaimer_content": "Queremos compartir información útil, pero esta app no reemplaza el asesoramiento legal. No ofrecemos representación legal y el uso de esta app no crea una relación abogado-cliente. Si necesitas ayuda legal, lo mejor es consultar con un abogado autorizado. Esperamos que esta información te sea útil, pero recuerda que cada situación es diferente.",
+    "@disclaimer_content": {
+        "description": "Contenido del aviso legal"
+    },
+    "state_alabama": "Alabama",
+    "@state_alabama": {
+        "description": "Nombre del estado estadounidense Alabama"
+    },
+    "state_alaska": "Alaska",
+    "@state_alaska": {
+        "description": "Nombre del estado estadounidense Alaska"
+    },
+    "state_arizona": "Arizona",
+    "@state_arizona": {
+        "description": "Nombre del estado estadounidense Arizona"
+    },
+    "state_arkansas": "Arkansas",
+    "@state_arkansas": {
+        "description": "Nombre del estado estadounidense Arkansas"
+    },
+    "state_california": "California",
+    "@state_california": {
+        "description": "Nombre del estado estadounidense California"
+    },
+    "state_colorado": "Colorado",
+    "@state_colorado": {
+        "description": "Nombre del estado estadounidense Colorado"
+    },
+    "state_connecticut": "Connecticut",
+    "@state_connecticut": {
+        "description": "Nombre del estado estadounidense Connecticut"
+    },
+    "state_delaware": "Delaware",
+    "@state_delaware": {
+        "description": "Nombre del estado estadounidense Delaware"
+    },
+    "state_florida": "Florida",
+    "@state_florida": {
+        "description": "Nombre del estado estadounidense Florida"
+    },
+    "state_georgia": "Georgia",
+    "@state_georgia": {
+        "description": "Nombre del estado estadounidense Georgia"
+    },
+    "state_hawaii": "Hawái",
+    "@state_hawaii": {
+        "description": "Nombre del estado estadounidense Hawái"
+    },
+    "state_idaho": "Idaho",
+    "@state_idaho": {
+        "description": "Nombre del estado estadounidense Idaho"
+    },
+    "state_illinois": "Illinois",
+    "@state_illinois": {
+        "description": "Nombre del estado estadounidense Illinois"
+    },
+    "state_indiana": "Indiana",
+    "@state_indiana": {
+        "description": "Nombre del estado estadounidense Indiana"
+    },
+    "state_iowa": "Iowa",
+    "@state_iowa": {
+        "description": "Nombre del estado estadounidense Iowa"
+    },
+    "state_kansas": "Kansas",
+    "@state_kansas": {
+        "description": "Nombre del estado estadounidense Kansas"
+    },
+    "state_kentucky": "Kentucky",
+    "@state_kentucky": {
+        "description": "Nombre del estado estadounidense Kentucky"
+    },
+    "state_louisiana": "Luisiana",
+    "@state_louisiana": {
+        "description": "Nombre del estado estadounidense Louisiana, traducido como Luisiana"
+    },
+    "state_maine": "Maine",
+    "@state_maine": {
+        "description": "Nombre del estado estadounidense Maine"
+    },
+    "state_maryland": "Maryland",
+    "@state_maryland": {
+        "description": "Nombre del estado estadounidense Maryland"
+    },
+    "state_massachusetts": "Massachusetts",
+    "@state_massachusetts": {
+        "description": "Nombre del estado estadounidense Massachusetts"
+    },
+    "state_michigan": "Michigan",
+    "@state_michigan": {
+        "description": "Nombre del estado estadounidense Michigan"
+    },
+    "state_minnesota": "Minnesota",
+    "@state_minnesota": {
+        "description": "Nombre del estado estadounidense Minnesota"
+    },
+    "state_mississippi": "Mississippi",
+    "@state_mississippi": {
+        "description": "Nombre del estado estadounidense Mississippi"
+    },
+    "state_missouri": "Misuri",
+    "@state_missouri": {
+        "description": "Nombre del estado estadounidense Missouri, traducido como Misuri"
+    },
+    "state_montana": "Montana",
+    "@state_montana": {
+        "description": "Nombre del estado estadounidense Montana"
+    },
+    "state_nebraska": "Nebraska",
+    "@state_nebraska": {
+        "description": "Nombre del estado estadounidense Nebraska"
+    },
+    "state_nevada": "Nevada",
+    "@state_nevada": {
+        "description": "Nombre del estado estadounidense Nevada"
+    },
+    "state_new_hampshire": "Nuevo Hampshire",
+    "@state_new_hampshire": {
+        "description": "Nombre del estado estadounidense New Hampshire, traducido como Nuevo Hampshire"
+    },
+    "state_new_jersey": "Nueva Jersey",
+    "@state_new_jersey": {
+        "description": "Nombre del estado estadounidense New Jersey, traducido como Nueva Jersey"
+    },
+    "state_new_mexico": "Nuevo México",
+    "@state_new_mexico": {
+        "description": "Nombre del estado estadounidense New Mexico, traducido como Nuevo México"
+    },
+    "state_new_york": "Nueva York",
+    "@state_new_york": {
+        "description": "Nombre del estado estadounidense New York, traducido como Nueva York"
+    },
+    "state_north_carolina": "Carolina del Norte",
+    "@state_north_carolina": {
+        "description": "Nombre del estado estadounidense North Carolina, traducido como Carolina del Norte"
+    },
+    "state_north_dakota": "Dakota del Norte",
+    "@state_north_dakota": {
+        "description": "Nombre del estado estadounidense North Dakota, traducido como Dakota del Norte"
+    },
+    "state_ohio": "Ohio",
+    "@state_ohio": {
+        "description": "Nombre del estado estadounidense Ohio"
+    },
+    "state_oklahoma": "Oklahoma",
+    "@state_oklahoma": {
+        "description": "Nombre del estado estadounidense Oklahoma"
+    },
+    "state_oregon": "Oregón",
+    "@state_oregon": {
+        "description": "Nombre del estado estadounidense Oregon, traducido como Oregón"
+    },
+    "state_pennsylvania": "Pensilvania",
+    "@state_pennsylvania": {
+        "description": "Nombre del estado estadounidense Pennsylvania, traducido como Pensilvania"
+    },
+    "state_rhode_island": "Rhode Island",
+    "@state_rhode_island": {
+        "description": "Nombre del estado estadounidense Rhode Island"
+    },
+    "state_south_carolina": "Carolina del Sur",
+    "@state_south_carolina": {
+        "description": "Nombre del estado estadounidense South Carolina, traducido como Carolina del Sur"
+    },
+    "state_south_dakota": "Dakota del Sur",
+    "@state_south_dakota": {
+        "description": "Nombre del estado estadounidense South Dakota, traducido como Dakota del Sur"
+    },
+    "state_tennessee": "Tennessee",
+    "@state_tennessee": {
+        "description": "Nombre del estado estadounidense Tennessee"
+    },
+    "state_texas": "Texas",
+    "@state_texas": {
+        "description": "Nombre del estado estadounidense Texas"
+    },
+    "state_utah": "Utah",
+    "@state_utah": {
+        "description": "Nombre del estado estadounidense Utah"
+    },
+    "state_vermont": "Vermont",
+    "@state_vermont": {
+        "description": "Nombre del estado estadounidense Vermont"
+    },
+    "state_virginia": "Virginia",
+    "@state_virginia": {
+        "description": "Nombre del estado estadounidense Virginia"
+    },
+    "state_washington": "Washington",
+    "@state_washington": {
+        "description": "Nombre del estado estadounidense Washington"
+    },
+    "state_west_virginia": "Virginia Occidental",
+    "@state_west_virginia": {
+        "description": "Nombre del estado estadounidense West Virginia, traducido como Virginia Occidental"
+    },
+    "state_wisconsin": "Wisconsin",
+    "@state_wisconsin": {
+        "description": "Nombre del estado estadounidense Wisconsin"
+    },
+    "state_wyoming": "Wyoming",
+    "@state_wyoming": {
+        "description": "Nombre del estado estadounidense Wyoming"
+    },
+    "resources_title": "Recursos",
+    "@resources_title": {
+        "description": "Etiqueta para la pestaña de recursos"
+    },
+    "legal_help_title": "Ayuda Legal",
+    "@legal_help_title": {
+        "description": "Título de la barra de la pantalla de Ayuda legal"
+    },
+    "contacts_title": "Contactos",
+    "@contacts_title": {
+        "description": "Título de la barra de la pantalla de Contactos"
+    },
+    "your_rights_title": "Tus Derechos",
+    "@your_rights_title": {
+        "description": "Título de la barra de la pantalla de Tus derechos"
+    },
+    "find_jobs_title": "Buscar Empleos",
+    "@find_jobs_title": {
+        "description": "Título del menú para Buscar Empleos"
+    },
+    "local_deals_title": "Ofertas Locales",
+    "@local_deals_title": {
+        "description": "Título del menú para Ofertas locales"
+    },
+    "home_title": "Inicio",
+    "@home_title": {
+        "description": "Título del menú para Inicio"
+    },
+    "settings_title": "Configuración",
+    "@settings_title": {
+        "description": "Título del menú para Configuración"
+    },
+    "menu_title": "Menú",
+    "@menu_title": {
+        "description": "Título del menú principal de la aplicación"
+    },
+    "about_us_title": "Acerca de Nosotros",
+    "@about_us_title": {
+        "description": "Título del menú para la sección Acerca de nosotros"
+    },
+    "provider_detail_title": "Servicios",
+    "@provider_detail_title": {
+        "description": "Título para la pantalla de detalles del proveedor en la sección de Servicios"
+    },
+    "police_stops_title": "Control Policial",
+    "@police_stops_title": {
+        "description": "Título de la pantalla de Control Policial, que proporciona orientación sobre interacciones con la policía."
+    },
+    "ice_raids_title": "Operativos de ICE",
+    "@ice_raids_title": {
+        "description": "Título de la pantalla de Operativos de ICE, que ofrece información sobre qué hacer durante redadas de ICE."
+    },
+    "work_rights_title": "Derechos Laborales",
+    "@work_rights_title": {
+        "description": "Título de la pantalla de Derechos Laborales, que cubre protecciones en el trabajo y derechos laborales."
+    },
+    "immigration_help_title": "Ayuda Migratoria",
+    "@immigration_help_title": {
+        "description": "Título de la pantalla de Ayuda Migratoria, que proporciona recursos sobre trámites y asistencia legal en inmigración."
+    },
+    "healthcare_title": "Salud",
+    "@healthcare_title": {
+        "description": "Título de la pantalla de Salud, que ofrece información sobre acceso a atención médica y clínicas gratuitas o de bajo costo."
+    },
+    "education_title": "Educación",
+    "@education_title": {
+        "description": "Título de la pantalla de Educación, que brinda información sobre acceso a escuelas, becas y oportunidades de aprendizaje."
+    },
+    "housing_title": "Vivienda",
+    "@housing_title": {
+        "description": "Título de la pantalla de Vivienda, con información sobre opciones de alojamiento, alquiler y asistencia para vivienda."
+    },
+    "deportation_title": "Preparación para Deportación",
+    "@deportation_title": {
+        "description": "Título de la pantalla de Preparación para Deportación, que explica cómo prepararse en caso de detención o deportación."
+    },
+    "financial_help_title": "Ayuda Financiera",
+    "@financial_help_title": {
+        "description": "Título de la pantalla de Ayuda Financiera, con información sobre apoyo económico, envío de remesas y servicios bancarios."
+    },
+    "community_support_title": "Apoyo Comunitario",
+    "@community_support_title": {
+        "description": "Título de la pantalla de Apoyo Comunitario, que enumera organizaciones, recursos locales y redes de apoyo."
+    },
+    "service_providers_title": "Servicios",
+    "@service_providers_title": {
+        "description": "Título para la pantalla de Proveedores de servicios"
+    },
+    "filter_service_type": "Filtrar por tipo de servicio",
+    "@filter_service_type": {
+        "description": "Etiqueta para el menú desplegable de tipo de servicio"
+    },
+    "filter_state": "Filtrar por estado",
+    "@filter_state": {
+        "description": "Etiqueta para el filtro de estado"
+    },
+    "no_providers_found": "No se encontraron proveedores",
+    "@no_providers_found": {
+        "description": "Mensaje mostrado cuando no hay proveedores que coincidan con los filtros"
+    },
+    "service_type_legal": "Asistencia Legal",
+    "@service_type_legal": {
+        "description": "Etiqueta para el servicio de tipo legal"
+    },
+    "service_type_food": "Alimentario",
+    "@service_type_food": {
+        "description": "Etiqueta para el servicio de tipo alimentario"
+    },
+    "service_type_consulate": "Consulado",
+    "@service_type_consulate": {
+        "description": "Etiqueta para el servicio de tipo consulado"
+    },
+    "service_type_benefits": "Beneficios",
+    "@service_type_benefits": {
+        "description": "Título para la pantalla de Beneficios"
+    },
+    "service_type_travel": "Viajes",
+    "@service_type_travel": {
+        "description": "Etiqueta para el servicio de tipo viajes"
+    },
+    "service_type_housing": "Vivienda",
+    "@service_type_housing": {
+        "description": "Etiqueta para el servicio de tipo vivienda"
+    },
+    "service_type_jobs": "Empleos",
+    "@service_type_jobs": {
+        "description": "Etiqueta para el servicio de tipo empleos"
+    },
+    "service_type_immigration": "Inmigración",
+    "@service_type_immigration": {
+        "description": "Etiqueta para servicios de inmigración"
+    },
+    "service_type_healthcare": "Salud",
+    "@service_type_healthcare": {
+        "description": "Etiqueta para el tipo de servicio: servicios de salud"
+    },
+    "service_type_education": "Educación",
+    "@service_type_education": {
+        "description": "Etiqueta para el tipo de servicio: servicios de educación"
+    },
+    "service_type_transportation": "Transporte",
+    "@service_type_transportation": {
+        "description": "Etiqueta para el tipo de servicio: servicios de transporte"
+    },
+    "label_type_of_business": "Tipo de Negocio",
+    "@label_type_of_business": {
+        "description": "Etiqueta para el campo de tipo de negocio"
+    },
+    "label_contact_name": "Nombre de Contacto",
+    "@label_contact_name": {
+        "description": "Etiqueta para el campo de nombre de contacto"
+    },
+    "label_website": "Sitio Web",
+    "@label_website": {
+        "description": "Etiqueta para el campo de sitio web"
+    },
+    "label_address": "Dirección",
+    "@label_address": {
+        "description": "Etiqueta para el campo de dirección"
+    },
+    "label_mobile_phone": "Teléfono Móvil",
+    "@label_mobile_phone": {
+        "description": "Etiqueta para el campo de teléfono móvil"
+    },
+    "label_office_phone": "Teléfono de Oficina",
+    "@label_office_phone": {
+        "description": "Etiqueta para el campo de teléfono de oficina"
+    },
+    "label_email": "Correo Electrónico",
+    "@label_email": {
+        "description": "Etiqueta para el campo de correo electrónico"
+    },
+    "daca_title": "DACA",
+    "@daca_title": {
+        "description": "Title for DACA"
+    },
+    "daca_advisory_text": "Este aviso no es consejo legal, solo sirve para proveer información sobre actualizaciones del programa de DACA. Individuos deben buscar una consulta legal de un abogado de inmigración calificado o un representante acreditado por el DOJ para una evaluación completa de tu caso individual. Por favor revisa nuestro sitio de web o las redes sociales de NIJC para actualizaciones futuras de DACA.",
+    "@daca_advisory_text": {
+        "description": "Text for the DACA Advisory"
+    },
+    "what_to_do_detained_title": "Qué Hacer si Usted o un Ser Querido es Detenido",
+    "@what_to_do_detained_title": {
+        "description": "Need Spanish translation description"
+    },
+    "immediate_steps_title": "Medidas inmediatas",
+    "@immediate_steps_title": {
+        "description": "Need Spanish translation description"
+    },
+    "a_number_section": "Pídale a su amigo/pariente su número A (A#)",
+    "@a_number_section": {
+        "description": "Need Spanish translation description"
+    },
+    "text_for_a_number_section": "Este número normalmente contiene 9 dígitos. ICE les dará este número al momento del arresto. Si su amigo/pariente presentó una solicitud de inmigración anteriormente, es probable que ya tenga un número A en algún documento de inmigración. Si su amigo/pariente fue arrestado en la frontera y se le permitió ingresar, es probable que ya tenga un número A en sus documentos de inmigración.",
+    "@text_for_a_number_section": {
+        "description": "Need Spanish translation description"
+    },
+    "detained_ice_text": "Usted o un ser querido detenido por ICE",
+    "@detained_ice_text": {
+        "description": "Texto sobre ser detenido por ICE"
+    },
+    "detained_url_text": "https://immigrantjustice.org/es/conozca-sus-derechos/que-hacer-si-usted-o-un-ser-querido-es-detenido",
+    "@detained_url_text": {
+        "description": "Detained by ICE URL"
+    },
+    "mass_deportation_text": "Amenazas de deportación masiva",
+    "@mass_deportation_text": {
+        "description": "Texto sobre amenazas de deportación masiva"
+    },
+    "mass_deportation_url_text": "https://immigrantjustice.org/es/conozca-sus-derechos/las-amenazas-de-deportacion-masiva",
+    "@mass_deportation_url_text": {
+        "description": "Text for mass deportation URL"
+    },
+    "ice_encounter_text": "Usted o un ser querido se encuentra con ICE",
+    "@ice_encounter_text": {
+        "description": "Texto sobre encuentro con ICE"
+    },
+    "ice_encounter_url_text": "https://immigrantjustice.org/es/conozca-sus-derechos/encuentro-con-ice",
+    "@ice_encounter_url_text": {
+        "description": "Text for ICE encounter URL"
+    },
+    "immigration_scams_text": "Evite estafas de inmigración",
+    "@immigration_scams_text": {
+        "description": "Texto sobre cómo evitar estafas de inmigración"
+    },
+    "immigration_scams_url_text": "https://immigrantjustice.org/es/conozca-sus-derechos/no-sea-victima-del-fraude-migratorio",
+    "@immigration_scams_url_text": {
+        "description": "Text for avoiding immigration scams URL"
+    },
+    "plan_deportation_text": "Planifique con anticipación en caso de deportación",
+    "@plan_deportation_text": {
+        "description": "Texto sobre planificación para la deportación"
+    },
+    "plan_deportation_url_text": "https://immigrantjustice.org/es/conozca-sus-derechos/planificacion-proteccion-familiar",
+    "@plan_deportation_url_text": {
+        "description": "Text for planning for deportation URL"
+    },
+    "parole_in_place_text": "Permiso de permanencia para familiares de ciudadanos estadounidenses",
+    "@parole_in_place_text": {
+        "description": "Texto sobre el Permiso de Permanencia (Parole-In-Place)"
+    },
+    "parole_in_place_url_text": "https://immigrantjustice.org/es/conozca-sus-derechos/libertad-condicional-para-conyuges-e-hijastros",
+    "@parole_in_place_url_text": {
+        "description": "Text for Parole in Place URL"
+    },
+    "daca_faq_text": "Preguntas frecuentes sobre DACA",
+    "@daca_faq_text": {
+        "description": "Texto sobre preguntas frecuentes de DACA"
+    },
+    "daca_faq_url_text": "https://immigrantjustice.org/es/know-your-rights/accion-diferida-para-los-llegados-en-infancia-daca-preguntas-frecuentes",
+    "@daca_faq_url_text": {
+        "description": "Text for DACA FAQ URL"
+    },
+    "asylum_tps_text": "Asilo y Estatus de Protección Temporal",
+    "@asylum_tps_text": {
+        "description": "Texto sobre Asilo y Estatus de Protección Temporal"
+    },
+    "asylum_tps_url_text": "https://immigrantjustice.org/es/know-your-rights/asilo-y-estatus-de-proteccion-temporal-debo-solicitar-uno-el-otro-u-los-dos",
+    "@asylum_tps_url_text": {
+        "description": "Text for Asylum & Temporary Protected Status URL"
+    },
+    "u_visa_text": "Nuevo procedimiento de determinación de buena fe para la Visa U",
+    "@u_visa_text": {
+        "description": "Texto sobre el nuevo procedimiento de determinación de buena fe para la Visa U"
+    },
+    "u_visa_url_text": "https://immigrantjustice.org/es/know-your-rights/conozca-sus-derechos-el-nuevo-proceso-bona-fide",
+    "@u_visa_url_text": {
+        "description": "Text for New U Visa Bona Fide Determination Procedure URL"
+    },
+    "kyr_healthcare_one_menu": "Tu Derecho a la Atención Médica",
+    "@kyr_healthcare_one_menu": {
+        "description": "Menú sobre el derecho a la atención médica"
+    },
+    "kyr_healthcare_two_menu": "¿Sin Identificación? No Hay Problema",
+    "@kyr_healthcare_two_menu": {
+        "description": "Menú sobre recibir atención médica sin identificación"
+    },
+    "kyr_healthcare_three_menu": "Tu Información es Privada",
+    "@kyr_healthcare_three_menu": {
+        "description": "Menú sobre la privacidad de la información médica"
+    },
+    "kyr_healthcare_four_menu": "No Tienes que Compartir tu Estatus Migratorio",
+    "@kyr_healthcare_four_menu": {
+        "description": "Menú sobre no compartir el estatus migratorio al solicitar seguro"
+    },
+    "kyr_healthcare_five_menu": "No Necesitas un Seguro Social",
+    "@kyr_healthcare_five_menu": {
+        "description": "Menú sobre no necesitar un número del Seguro Social"
+    },
+    "kyr_healthcare_six_menu": "Servicios Médicos en tu Idioma",
+    "@kyr_healthcare_six_menu": {
+        "description": "Menú sobre recibir servicios médicos en su idioma"
+    },
+    "kyr_healthcare_seven_menu": "Opciones de Atención Médica para Todos",
+    "@kyr_healthcare_seven_menu": {
+        "description": "Menú sobre opciones de atención médica para todos"
+    },
+    "kyr_healthcare_title": "Conozca Sus Derechos: Atención Médica y Seguro Médico",
+    "@kyr_healthcare_title": {
+        "description": "Texto para Conozca Sus Derechos: Atención Médica"
+    },
+    "kyr_healthcare_intro_content": "Las familias con miembros que no están autorizados a estar en los EE. UU. pueden dudar antes de solicitar cobertura médica...",
+    "@kyr_healthcare_intro_content": {
+        "description": "Contenido introductorio sobre atención médica"
+    },
+    "kyr_healthcare_one_title": "Usted tiene derecho a obtener atención médica independientemente de su estatus de inmigración.",
+    "@kyr_healthcare_one_title": {
+        "description": "Título sobre el derecho a atención médica sin importar el estatus migratorio"
+    },
+    "kyr_healthcare_one_content": "Bajo la ley federal, no hace falta ser ciudadano de los EE. UU., ni tener un estatus de inmigración legal o un número del Seguro Social (SSN) para recibir servicios de atención médica. Los médicos, hospitales, clínicas, centros de salud u otros profesionales médicos pueden pedirle esta información para averiguar si usted es elegible para recibir un seguro médico público como Medicaid. Pero no pueden negarle tratamiento médico solo por su estatus de inmigración o suposiciones que hacen sobre su estatus de inmigración debido al idioma que habla, su acento, su aspecto o si tiene o no un SSN. De hecho, esto podría violar las leyes federales de derechos civiles. Bajo la ley federal, si usted necesita servicios médicos de emergencia, los hospitales con salas de emergencia están obligados a examinarlo y tratarlo sea cual sea su estatus de inmigración, la cantidad de dinero que tenga o si tiene o no un seguro médico. En forma similar, puede obtener atención médica primaria y preventiva en centros de salud comunitarios independientemente de su estatus de inmigración, su capacidad de pago o si tiene o no un seguro. Algunos estados requieren que los hospitales les pregunten a los pacientes sobre su estatus de inmigración. Si le preguntan por su estatus de inmigración, usted no está obligado a suministrarlo, y un profesional médico no puede negarse a tratarlo porque usted no quiso divulgar información sobre su estatus de inmigración.",
+    "@kyr_healthcare_one_content": {
+        "description": "Contenido sobre el derecho a atención médica sin importar el estatus migratorio"
+    },
+    "kyr_healthcare_two_title": "No deberían negarle atención médica porque no tiene un documento de identidad.",
+    "@kyr_healthcare_two_title": {
+        "description": "Título sobre la atención médica sin necesidad de documento de identidad"
+    },
+    "kyr_healthcare_two_content": "Los hospitales y profesionales médicos pueden pedirle un documento de identidad con foto, pero no a los fines de hacer cumplir las leyes de inmigración. Los profesionales médicos pueden pedirle un documento de identidad para verificar que la persona a quien están atendiendo es la misma que aparece en sus registros médicos o recetas. No deberían negarle atención médica porque no tiene un documento de identidad con foto.",
+    "@kyr_healthcare_two_content": {
+        "description": "Contenido sobre la atención médica sin necesidad de documento de identidad"
+    },
+    "kyr_healthcare_three_title": "Si solicita atención médica para usted o un miembro de su familia, su información solo se puede usar a los fines del seguro de salud.",
+    "@kyr_healthcare_three_title": {
+        "description": "Título sobre la privacidad de la información al solicitar atención médica"
+    },
+    "kyr_healthcare_three_content": "Las reglas de privacidad federal protegen a las familias que solicitan un seguro médico, incluyendo aquellas cuyos miembros tienen distintos estatus de inmigración. La información que usted proporciona cuando solicita Medicaid, CHIP o un plan de los Mercados de la ACA solo se puede usar para el funcionamiento de ese programa, no con fines de hacer cumplir las leyes inmigratorias. Los empleados gubernamentales, asistentes de inscripción y personas que ayudan con las solicitudes de seguro están obligados por ley a mantener su información privada y segura.",
+    "@kyr_healthcare_three_content": {
+        "description": "Contenido sobre la privacidad de la información al solicitar atención médica"
+    },
+    "kyr_healthcare_four_title": "No tiene que proporcionar su estatus de inmigración si está solicitando un seguro para otro familiar, como su hijo.",
+    "@kyr_healthcare_four_title": {
+        "description": "Título sobre no proporcionar el estatus migratorio al solicitar seguro para otra persona"
+    },
+    "kyr_healthcare_four_content": "Por ley, las solicitudes de Medicaid, CHIP y planes de los Mercados de la ACA pueden requerir su estatus de ciudadanía o inmigración solo si está solicitando cobertura para usted. Las solicitudes no pueden pedirle información sobre su estatus de ciudadanía o inmigración si las está presentado para inscribir a otra persona, como su hijo, y no para inscribirse a usted mismo. Si le preguntan sobre su estatus de inmigración, pero está solicitando cobertura para otra persona, puede decir, “No estoy solicitado un seguro médico para mí”.",
+    "@kyr_healthcare_four_content": {
+        "description": "Contenido sobre no proporcionar el estatus migratorio al solicitar seguro para otra persona"
+    },
+    "kyr_healthcare_five_title": "No tiene que proporcionar un número del Seguro Social (SSN) si no lo tiene.",
+    "@kyr_healthcare_five_title": {
+        "description": "Título sobre no proporcionar un número del Seguro Social si no se tiene"
+    },
+    "kyr_healthcare_five_content": "Ya sea que esté solicitando un seguro médico para usted o en nombre de otra persona, no pueden demorar o rechazar su solicitud de seguro médico porque no tiene un SSN. Solo las personas que tienen un SSN válido emitido por la Administración del Seguro Social están obligadas a proporcionarlo.",
+    "@kyr_healthcare_five_content": {
+        "description": "Contenido sobre no proporcionar un número del Seguro Social si no se tiene"
+    },
+    "kyr_healthcare_six_title": "Usted tiene el derecho a recibir servicios en su idioma cuando solicita un seguro médico y obtiene atención médica.",
+    "@kyr_healthcare_six_title": {
+        "description": "Título sobre el derecho a recibir servicios en su idioma"
+    },
+    "kyr_healthcare_six_content": "Tiene derecho a recibir servicios de asistencia lingüística sin costo cuando pide atención médica en un hospital o centro médico comunitario o está presentando una solicitud para Medicaid, CHIP o un plan de los Mercados de la ACA. Los hospitales, centros médicos comunitarios y oficinas gubernamentales pueden usar personal bilingüe, servicios de interpretación telefónica o intérpretes calificados presenciales para proporcionar servicios de asistencia lingüística. No se les debe pedir a los niños que hagan de intérpretes para los miembros de su familia, sobre todo en establecimientos médicos.",
+    "@kyr_healthcare_six_content": {
+        "description": "Contenido sobre el derecho a recibir servicios en su idioma"
+    },
+    "kyr_healthcare_seven_title": "Usted tiene las siguientes opciones de atención médica, independientemente de su estatus de inmigración o de que tenga o no un seguro:",
+    "@kyr_healthcare_seven_title": {
+        "description": "Título sobre opciones de atención médica sin importar el estatus migratorio o seguro"
+    },
+    "kyr_healthcare_seven_content": "tratamiento básico en la sala de emergencia para emergencias médicas serias, incluyendo trabajo de parto y parto; servicios de atención médica en centros médicos comunitarios, centros médicos para migrantes y clínicas gratuitas; servicios de los departamentos de salud pública estatales o locales (como vacunaciones y exámenes de detección y tratamiento de enfermedades contagiosas); programas que ofrecen servicios médicos necesarios para proteger la vida o seguridad, como de atención médica de emergencia, comida o albergue; servicios en caso de crisis de salud mental; ayuda para personas que sufren de violencia en el hogar; servicios de asistencia a víctimas de delitos y asistencia en casos de desastre; ayuda económica o programas de “cuidado compasivo” en centros médicos comunitarios y la mayoría de los hospitales y redes de seguridad públicas.",
+    "@kyr_healthcare_seven_content": {
+        "description": "Contenido sobre opciones de atención médica sin importar el estatus migratorio o seguro"
+    },
+    "kyr_work_nlra_menu": "Sus Derechos bajo la Ley Nacional de Relaciones Laborales",
+    "@kyr_work_nlra_menu": {
+        "description": "Menú sobre los derechos bajo la Ley Nacional de Relaciones Laborales (NLRA)"
+    },
+    "kyr_work_nlra_title": "Independientemente de su estatus migratorio, usted tiene los mismos derechos bajo la Ley Nacional de Relaciones Laborales (NLRA) que todos los empleados cubiertos, incluyendo el derecho a:",
+    "@kyr_work_nlra_title": {
+        "description": "Título que explica los derechos bajo la NLRA"
+    },
+    "kyr_work_nlra_content": "Organizarse con un sindicato para negociar con su empleador sobre salarios, horarios, beneficios y otras condiciones laborales. Hablar sobre las condiciones laborales con sus compañeros de trabajo, el público o un sindicato. Tomar medidas con sus compañeros de trabajo para mejorar sus condiciones laborales. Elegir no realizar ninguna de estas acciones.",
+    "@kyr_work_nlra_content": {
+        "description": "Contenido que explica los derechos bajo la NLRA"
+    },
+    "kyr_work_nlra_url": "https://www.nlrb.gov/es",
+    "@kyr_work_nlra_url": {
+        "description": "URL for NLRA rights"
+    },
+    "kyr_work_emp_menu": "El Empleador No Puede Usar su Estatus en su Contra",
+    "@kyr_work_emp_menu": {
+        "description": "Menú sobre las restricciones de los empleadores en el uso del estatus migratorio"
+    },
+    "kyr_work_emp_title": "Aunque los empleadores deben obedecer las leyes de inmigración, si usted elige hablar o tomar medidas con sus compañeros de trabajo para mejorar sus condiciones laborales, es ilegal que su empleador use su estatus migratorio en su contra.",
+    "@kyr_work_emp_title": {
+        "description": "Título sobre las restricciones de los empleadores en el uso del estatus migratorio"
+    },
+    "kyr_work_emp_content": "Por ejemplo: Los empleadores no pueden amenazar con llamar a ICE porque usted y sus compañeros intentaron unirse a un sindicato. Los empleadores no pueden exigirle que presente nuevos documentos de inmigración porque habló con sus compañeros de trabajo o con un sindicato sobre sus condiciones laborales.",
+    "@kyr_work_emp_content": {
+        "description": "Ejemplos de restricciones para los empleadores sobre el uso del estatus migratorio"
+    },
+    "kyr_work_invest_menu": "Derecho a una Investigación del NLRB",
+    "@kyr_work_invest_menu": {
+        "description": "Menú sobre el derecho a una investigación de la Junta Nacional de Relaciones Laborales (NLRB)"
+    },
+    "kyr_work_invest_title": "Si cree que su empleador ha tomado represalias en su contra, contra sus compañeros de trabajo o contra su sindicato, puede comunicarse con la Junta Nacional de Relaciones Laborales (NLRB) para presentar una denuncia. La NLRB investigará el caso, lo que incluye:",
+    "@kyr_work_invest_title": {
+        "description": "Título sobre el derecho a una investigación de la NLRB"
+    },
+    "kyr_work_invest_content": "Tomar su declaración y solicitar sus pruebas. Debido a que está protegido bajo la Ley Nacional de Relaciones Laborales (NLRA) de la misma manera que cualquier otro trabajador, y porque el estatus migratorio de una persona no es relevante para determinar si la NLRA ha sido violada, la Junta Nacional de Relaciones Laborales (NLRB) no preguntará sobre su estatus migratorio ni el de otras personas durante nuestra investigación o litigio para demostrar violaciones de la NLRA. La NLRB puede tomar acciones legales contra su empleador si las pruebas demuestran que su empleador está utilizando ilegalmente su estatus migratorio para amenazarlo o tomar represalias en su contra por haber ejercido sus derechos bajo la NLRA. La NLRB también puede trabajar con otras agencias para garantizar que las leyes de inmigración no se utilicen para amenazar o tomar represalias contra los trabajadores que ejercen sus derechos bajo la NLRA. Si su empleador lo despidió porque ejerció sus derechos bajo la NLRA, la NLRB trabajará para que recupere su empleo y reciba el pago de los salarios perdidos. Sin embargo, si el empleador demuestra que usted no estaba autorizado para trabajar, la NLRB no podrá ordenar que le paguen los salarios perdidos ni garantizar la restitución de su empleo. En tales casos, la NLRB buscará otras soluciones y podrá trabajar con agencias de inmigración para ayudar a empleados que hayan sido víctimas de violaciones a sus derechos laborales. Por ejemplo, la NLRB puede considerar si usted es elegible para una visa U o T o para un proceso de acción diferida, y puede colaborar con agencias de inmigración para ayudarle a obtener este tipo de alivio.",
+    "@kyr_work_invest_content": {
+        "description": "Contenido que explica el derecho a una investigación de la NLRB"
+    },
+    "kyr_work_pay_menu": "Derecho a un Pago Justo",
+    "@kyr_work_pay_menu": {
+        "description": "Menú sobre los derechos de salario justo"
+    },
+    "kyr_work_pay_title": "La Ley de Normas Laborales Justas (FLSA) prohíbe a los empleadores discriminar a los trabajadores por su estatus migratorio.",
+    "@kyr_work_pay_title": {
+        "description": "Título sobre los derechos de salario justo bajo la FLSA"
+    },
+    "kyr_work_pay_content": "La Ley de Normas Laborales Justas (FLSA) prohíbe a los empleadores discriminar a los trabajadores por su estatus migratorio, lo que significa que los inmigrantes indocumentados tienen derecho a recibir el mismo salario por el mismo trabajo que los ciudadanos estadounidenses y los residentes legales. Además, los inmigrantes indocumentados tienen derecho al pago de horas extras, al salario mínimo y a las mismas protecciones de seguridad y salud que los demás trabajadores.",
+    "@kyr_work_pay_content": {
+        "description": "Contenido que explica los derechos de salario justo bajo la FLSA"
+    },
+    "kyr_work_safe_menu": "Derecho a un Ambiente de Trabajo Seguro",
+    "@kyr_work_safe_menu": {
+        "description": "Menú sobre los derechos de seguridad en el trabajo"
+    },
+    "kyr_work_safe_title": "La Ley de Seguridad y Salud Ocupacional (OSHA) exige que los empleadores proporcionen un ambiente de trabajo seguro y saludable para todos sus empleados.",
+    "@kyr_work_safe_title": {
+        "description": "Título sobre los derechos de seguridad en el trabajo bajo OSHA"
+    },
+    "kyr_work_safe_content": "La Ley de Seguridad y Salud Ocupacional (OSHA) exige que los empleadores proporcionen un ambiente de trabajo seguro y saludable para todos sus empleados, independientemente de su estatus legal. En consecuencia, incluso los inmigrantes indocumentados tienen derecho a denunciar peligros en el lugar de trabajo y discriminación sin temor a represalias. Además, se prohíbe a los empleadores tomar represalias contra inmigrantes indocumentados que presenten quejas ante OSHA.",
+    "@kyr_work_safe_content": {
+        "description": "Contenido que explica los derechos de seguridad en el trabajo bajo OSHA"
+    },
+    "kyr_work_discrim_menu": "Derecho Contra la Discriminación",
+    "@kyr_work_discrim_menu": {
+        "description": "Menú sobre la protección contra la discriminación laboral"
+    },
+    "kyr_work_discrim_title": "El Título VII de la Ley de Derechos Civiles también protege a los inmigrantes indocumentados contra la discriminación laboral.",
+    "@kyr_work_discrim_title": {
+        "description": "Título sobre la protección contra la discriminación laboral"
+    },
+    "kyr_work_discrim_content": "El Título VII de la Ley de Derechos Civiles también protege a los inmigrantes indocumentados contra la discriminación laboral basada en raza, color, religión, sexo u origen nacional, garantizando así un entorno justo y seguro.",
+    "@kyr_work_discrim_content": {
+        "description": "Contenido que explica la protección contra la discriminación laboral"
+    },
+    "kyr_work_family_menu": "Derecho a Estar con la Familia",
+    "@kyr_work_family_menu": {
+        "description": "Menú sobre el derecho a la unidad familiar"
+    },
+    "kyr_work_family_title": "El derecho a la unidad familiar está establecido en la Declaración Universal de Derechos Humanos.",
+    "@kyr_work_family_title": {
+        "description": "Título sobre el derecho a la unidad familiar"
+    },
+    "kyr_work_family_content": "El derecho a la unidad familiar está reconocido en la Declaración Universal de los Derechos Humanos (DUDH) y es especialmente relevante en casos donde la deportación de uno de los padres resultaría en la separación de sus hijos. Sin embargo, este derecho no es absoluto y a menudo se contrapone con el interés del gobierno en hacer cumplir las leyes de inmigración. El equilibrio entre los derechos familiares y el control migratorio puede ser complejo y desafiante, lo que potencialmente conduce a separaciones familiares y dificultades emocionales para los inmigrantes indocumentados y sus seres queridos.",
+    "@kyr_work_family_content": {
+        "description": "Contenido sobre el derecho a la unidad familiar"
+    },
+    "kyr_work_education_menu": "Derecho a la Educación",
+    "@kyr_work_education_menu": {
+        "description": "Menú sobre los derechos educativos"
+    },
+    "kyr_work_education_title": "Los niños indocumentados tienen derecho a acceder a la educación pública desde el jardín de infancia hasta el grado 12.",
+    "@kyr_work_education_title": {
+        "description": "Título sobre el derecho a la educación para niños indocumentados"
+    },
+    "kyr_work_education_content": "Bajo la histórica decisión Plyler v. Doe (1982), los niños indocumentados tienen derecho a acceder a la educación pública desde el jardín de infancia hasta el grado 12, basado en la Cláusula de Igual Protección de la Decimocuarta Enmienda. Los estados no pueden negar la educación pública gratuita por el estatus migratorio, aunque los estudiantes indocumentados pueden enfrentar otras barreras, como dificultades con el idioma o temor a la deportación.",
+    "@kyr_work_education_content": {
+        "description": "Contenido sobre el derecho a la educación para niños indocumentados"
+    },
+    "kyr_work_barrier_menu": "Barreras para Acceder a los Derechos",
+    "@kyr_work_barrier_menu": {
+        "description": "Menú sobre barreras para acceder a los derechos legales"
+    },
+    "kyr_work_barrier_title": "El papel de la opinión pública y el discurso político en la influencia del sentimiento antiinmigrante no debe subestimarse.",
+    "@kyr_work_barrier_title": {
+        "description": "Título que explica las barreras para acceder a los derechos legales"
+    },
+    "kyr_work_barrier_content": "El papel de la opinión pública y el discurso político en la influencia del sentimiento antiinmigrante no debe subestimarse. Estos sentimientos impactan directa y significativamente la formulación de políticas y la aplicación de los derechos individuales. En sociedades donde prevalecen percepciones negativas sobre los inmigrantes (a menudo impulsadas por la retórica política y la representación en los medios), existe una tendencia a implementar leyes y políticas migratorias más estrictas. Entornos de este tipo pueden generar mayores dificultades para que los inmigrantes accedan a sus derechos legales, reciban un trato justo en los procedimientos judiciales y enfrenten discriminación social.",
+    "@kyr_work_barrier_content": {
+        "description": "Contenido que explica las barreras para acceder a los derechos legales"
+    },
+    "my_right_to_stay_title": " Mi Derecho\nA Quedar Me",
+    "@my_right_to_stay_title": {
+        "description": "Título sobre el derecho a quedarse"
+    },
+    "kyr_home_screen_title": "Conozca sus derechos. Explore sus opciones. Un toque, protección instantánea.",
+    "@kyr_home_screen_title": {
+        "description": "Title for the Know Your Rights screen"
+    },
+    "do_not_deport_me_title": "¡NO ME\nDEPORTEN!",
+    "@do_not_deport_me_title": {
+        "description": "Do Not Deport Me title"
+    },
+    "mrts_home_screen_safe_title": "Mantente seguro Mantente informado Reciba ayuda cuando la necesite.",
+    "@mrts_home_screen_safe_title": {
+        "description": "Title for Stay Safe"
+    },
+    "mrts_home_screen_title": "MyRightToStay es un recurso vital para inmigrantes, que proporciona acceso instantáneo a recursos legales, contactos de emergencia y apoyo local, todo 100% privado y seguro.",
+    "@mrts_home_screen_title": {
+        "description": "Title for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_1": "Ya has empezado. Sin registro, sin cuotas, sin seguimiento de información.",
+    "@mrts_home_screen_content_1": {
+        "description": "Subtitle for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_2": "No",
+    "@mrts_home_screen_content_2": {
+        "description": "Part 1 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_3": " necesitas crear una cuenta ",
+    "@mrts_home_screen_content_3": {
+        "description": "Part 2 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_4": "para empezar a usar MyRightToStay. Simplemente elige adónde quieres ir:",
+    "@mrts_home_screen_content_4": {
+        "description": "Part 3 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_5": "Cómo funciona: Manténgase seguro. Manténgase informado. Manténgase en control.",
+    "@mrts_home_screen_content_5": {
+        "description": "Part 4 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_6": "MyRightToStay te da acceso instantáneo a alertas de emergencia, recursos legales y asistencia consular, sin seguimiento, tarifas ni registros. Descubre cómo puedes usarlo para protegerte.",
+    "@mrts_home_screen_content_6": {
+        "description": "Part 5 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_consular_1": "Contacte a su Oficina Consular: Por Qué es Importante",
+    "@mrts_home_screen_consular_1": {
+        "description": "Consular Office section title"
+    },
+    "mrts_home_screen_consular_2": "Si lo detienen, tiene derecho a contactar a su oficina consular. Ellos pueden brindarle apoyo legal, notificar a su familia y abogar por un trato justo. Su consulado puede ayudarle a prevenir la deportación, garantizar los procedimientos legales adecuados y ponerlo en contacto con un abogado.",
+    "@mrts_home_screen_consular_2": {
+        "description": "Consular Office section content"
+    },
+    "mrts_home_screen_consular_3": "Encuentra Mi\nConsulado Más Cercano",
+    "@mrts_home_screen_consular_3": {
+        "description": "Find Your Consulate button"
+    },
+    "mrts_home_screen_consular_url": "https://www.gob.mx/sre/documentos/list-of-mexican-consulates-in-the-united-states?idiom=es",
+    "@mrts_home_screen_consular_url": {
+        "description": "Consular url"
+    },
+    "emergency_lifeline_content_1": " 'No Me Deporten'",
+    "@emergency_lifeline_content_1": {
+        "description": "Part 1 of content for the emergency lifeline"
+    },
+    "emergency_lifeline_content_2": "- Su Línea de Vida de Emergencia",
+    "@emergency_lifeline_content_2": {
+        "description": "Part 2 of content for the emergency lifeline"
+    },
+    "emergency_lifeline_content_3": "Con un solo toque, avisa a tus contactos de emergencia y a la oficina consular que estás en peligro o detenido. Tu ubicación se incluye para una respuesta inmediata.",
+    "@emergency_lifeline_content_3": {
+        "description": "Part 3 of content for the emergency lifeline"
+    },
+    "emergency_lifeline_content_4": "Configuración",
+    "@emergency_lifeline_content_4": {
+        "description": "Título del menú de configuración"
+    },
+    "emergency_lifeline_content_5": "Configurar Alertas de Emergencia",
+    "@emergency_lifeline_content_5": {
+        "description": "Button text for setup emergency alerts"
+    },
+    "kyr_view_your_rights_label": "Consulta tus derechos ahora",
+    "@kyr_view_your_rights_label": {
+        "description": "Etiqueta para el botón Consulta tus derechos"
+    },
+    "kyr_card_content_1": "Conozca Sus Derechos",
+    "@kyr_card_content_1": {
+        "description": "Part 1 of content for the Know Your Rights card"
+    },
+    "kyr_card_content_1a": "- Incluso Sin Internet",
+    "@kyr_card_content_1a": {
+        "description": "Part 1 of content for the Know Your Rights card"
+    },
+    "kyr_card_content_2": "Acceda a información legal clara en cualquier momento para saber exactamente qué hacer si las autoridades le interrogan.",
+    "@kyr_card_content_2": {
+        "description": "Part 2 of content for the Know Your Rights card"
+    },
+    "kyr_card_content_3": "Descargar una Tarjeta\nde Derechos Imprimible",
+    "@kyr_card_content_3": {
+        "description": "Button text for learn more"
+    },
+    "kyr_tap_to_access": "Toca para acceder a una tarjeta imprimible de Conoce tus Derechos.",
+    "@kyr_tap_to_access": {
+        "description": "Etiqueta para el botón de descarga"
+    },
+    "live_support_content_1": "Obtenga Soporte en Vivo 24/7",
+    "@live_support_content_1": {
+        "description": "Part 1 of content for the live support card"
+    },
+    "live_support_content_2": "Conéctese con expertos legales del CIAM para obtener apoyo migratorio de emergencia.",
+    "@live_support_content_2": {
+        "description": "Part 2 of content for the live support card"
+    },
+    "live_support_content_3": "Llamada Para Ayuda Inmediata",
+    "@live_support_content_3": {
+        "description": "Button text for get help now"
+    },
+    "private_secure_content_1": "Manténgase 100% Privado y Seguro",
+    "@private_secure_content_1": {
+        "description": "Part 1 of content for the private and secure card"
+    },
+    "private_secure_content_2": "\u2023 No se requiere información personal: completamente anónimo.\n\u2023 Sin seguimiento, sin recopilación de datos: su seguridad es lo primero.\n\u2023 Sin vínculos con el gobierno: MyRightToStay es completamente independiente.",
+    "@private_secure_content_2": {
+        "description": "Part 2 of content for the private and secure card"
+    },
+    "private_secure_content_3": "Cómo Protegemos su Privacidad",
+    "@private_secure_content_3": {
+        "description": "Button text for learn more"
+    },
+    "call_to_action_content_1": "Empieza Ahora",
+    "@call_to_action_content_1": {
+        "description": "Part 1 of content for the call to action card"
+    },
+    "call_to_action_content_2": "Ayuda a Alguien a Mantenerse a Salvo\n- Comparte Esta App",
+    "@call_to_action_content_2": {
+        "description": "Part 2 of content for the call to action card"
+    },
+    "add_emergency_contacts_label": "Añadir contactos de emergencia",
+    "@add_emergency_contacts_label": {
+        "description": "Etiqueta para añadir contactos de emergencia"
+    },
+    "add_emergency_contacts_tap_to_add": "Toca para añadir contactos de confianza que recibirán notificaciones en caso de emergencia.",
+    "@add_emergency_contacts_tap_to_add": {
+        "description": "Etiqueta para añadir contactos de emergencia"
+    },
+    "add_emergency_contacts_title": "Configure Sus Contactos de Emergencia",
+    "@add_emergency_contacts_title": {
+        "description": "Title for the Add Emergency Contacts screen"
+    },
+    "add_emergency_view_button_title": "Ver Tus Contactos",
+    "@add_emergency_view_button_title": {
+        "description": "Title for view your contacts button"
+    },
+    "add_emergency_contacts_subtitle_1": "Al presionar el botón \"No me deporte\", sus contactos de emergencia recibirán una alerta al instante. Aquí puede personalizar el mensaje para cada contacto y adjuntar documentos importantes que puedan necesitar para actuar en su nombre.",
+    "@add_emergency_contacts_subtitle_1": {
+        "description": "Subtitle 1 for the Add Emergency Contacts screen"
+    },
+    "add_emergency_contacts_subtitle_2": "• Agrega a las personas de tu confianza para que sean notificadas en caso de una emergencia.\n\n • Personaliza tu mensaje de emergencia para cada contacto o usa el mensaje predeterminado.\n\n• Carga documentos como un poder notarial (POA) o una identificación para que tengan lo que necesitan para ayudarte de inmediato.",
+    "@add_emergency_contacts_subtitle_2": {
+        "description": "Button text for adding emergency contacts"
+    },
+    "add_emergency_contact_section_title": "Información del Contacto",
+    "@add_emergency_contact_section_title": {
+        "description": "Add new contact section title"
+    },
+    "add_emergency_contact_first_name": "Nombre de Pila",
+    "@add_emergency_contact_first_name": {
+        "description": "Label for the contact first name field"
+    },
+    "add_emergency_contact_last_name": "Apellido",
+    "@add_emergency_contact_last_name": {
+        "description": "Label for the contact name field"
+    },
+    "add_emergency_contact_name": "Nombre",
+    "@add_emergency_contact_name": {
+        "description": "Label for the contact name field"
+    },
+    "add_emergency_contact_phone": "Número de Teléfono",
+    "@add_emergency_contact_phone": {
+        "description": "Label for the contact phone field"
+    },
+    "add_emergency_contact_email": "Dirección de correo electrónico (opcional)",
+    "@add_emergency_contact_email": {
+        "description": "Etiqueta para el campo de correo electrónico de contacto"
+    },
+    "add_emergency_contact_consulate_title": "Este es un contacto del consulado",
+    "@add_emergency_contact_consulate_title": {
+        "description": "Label for the contact consulate_title field"
+    },
+    "add_emergency_contact_consulate_country": "Código de país del teléfono",
+    "@add_emergency_contact_consulate_country": {
+        "description": "Etiqueta para el campo de código de país del teléfono"
+    },
+    "add_emergency_contact_message_title": "Mensaje de Emergencia",
+    "@add_emergency_contact_message_title": {
+        "description": "Label for the emergency message field"
+    },
+    "add_emergency_contact_message": "¡Necesito su ayuda de inmediato! Estoy detenido o en peligro. Por favor, siga nuestro plan. Mi ubicación está incluida. ¡Contacte con asistencia legal o con mi oficina consular ahora!",
+    "@add_emergency_contact_message": {
+        "description": "Label for the custom message field"
+    },
+    "add_emergency_contact_char_cnt": "Máximo 350 caracteres",
+    "@add_emergency_contact_char_cnt": {
+        "description": "Label for the char count field"
+    },
+    "add_emergency_contact_upload_title": "Documentos Importantes",
+    "@add_emergency_contact_upload_title": {
+        "description": "Label for the upload field"
+    },
+    "add_emergency_add_contact": "Agregar Contacto",
+    "@add_emergency_add_contact": {
+        "description": "Label for the upload button"
+    },
+    "add_emergency_contact_upload": "Toque para tomar una foto del documento",
+    "@add_emergency_contact_upload": {
+        "description": "Label for the upload button"
+    },
+    "add_emergency_contact_upload_desc": "✅ ¡Contacto añadido correctamente!",
+    "@add_emergency_contact_upload_desc": {
+        "description": "Etiqueta para el botón de carga"
+    },
+    "add_emergency_contact_msg": "Tu contacto de emergencia se ha guardado y recibirás una notificación inmediata al activar el botón \"No me deporten\".",
+    "@add_emergency_contact_msg": {
+        "description": "Mensaje para el botón de carga"
+    },
+    "add_emergency_contact_add_another": "Añadir otro contacto",
+    "@add_emergency_contact_add_another": {
+        "description": "Etiqueta del botón \"Añadir otro"
+    },
+    "add_emergency_contact_review_contacts": "Revisar mis contactos",
+    "@add_emergency_contact_review_contacts": {
+        "description": "Etiqueta del botón \"Revisar mis contactos"
+    },
+    "edit_emergency_contact_return_home": "Volver a la página principal",
+    "@edit_emergency_contact_return_home": {
+        "description": "Etiqueta del botón \"Volver a la página principal"
+    },
+    "edit_emergency_contact_cancel": "Cancelar",
+    "@edit_emergency_contact_cancel": {
+        "description": "Title for the Cancel"
+    },
+    "edit_emergency_contact_add": "Guardar Cambios",
+    "@edit_emergency_contact_add": {
+        "description": "Label for the add button"
+    },
+    "edit_emergency_contact_title": "Editar Contacto",
+    "@edit_emergency_contact_title": {
+        "description": "Title for the Edit Contact"
+    },
+    "edit_emergency_contact_success_title": "✅ ¡Contacto actualizado correctamente!",
+    "@edit_emergency_contact_success_title": {
+        "description": "Título del diálogo de edición exitosa"
+    },
+    "edit_emergency_contact_success_msg": "Tu contacto de emergencia se ha actualizado y se usará al activar el botón\"No me deporten\".",
+    "@edit_emergency_contact_success_msg": {
+        "description": "Mensaje del diálogo de edición exitosa"
+    },
+    "edit_emergency_contact_done": "Listo",
+    "@edit_emergency_contact_done": {
+        "description": "Etiqueta para el botón de finalizar"
+    },
+    "view_emergency_contacts_title": "Mis Contactos de Emergencia",
+    "@view_emergency_contacts_title": {
+        "description": "Title for the View Emergency Contacts screen"
+    },
+    "view_emergency_contacts_subtitle": "Administra tus contactos de confianza que serán notificados en caso de emergencias.",
+    "@view_emergency_contacts_subtitle": {
+        "description": "Subtitle for the View Emergency Contacts screen"
+    },
+    "view_emergency_contacts_add": "Agregar Nuevo Contacto",
+    "@view_emergency_contacts_add": {
+        "description": "Label for the add button"
+    },
+    "view_emergency_contacts_none_found": "No se Encontraron Contactos",
+    "@view_emergency_contacts_none_found": {
+        "description": "Label for the No Contacts Found"
+    },
+    "view_emergency_contacts_error": "Error al cargar contactos",
+    "@view_emergency_contacts_error": {
+        "description": "Label for the Error"
+    },
+    "label_additional_info": "Información adicional",
+    "@label_additional_info": {
+        "description": "Información adicional"
+    },
+    "label_could_not_launch_website": "No se pudo iniciar el sitio web",
+    "@label_could_not_launch_website": {
+        "description": "No se pudo iniciar el sitio web"
+    },
+    "label_could_not_launch_email": "No se pudo iniciar el correo electrónico",
+    "@label_could_not_launch_email": {
+        "description": "No se pudo iniciar el correo electrónico"
+    },
+    "label_could_not_launch_phone": "No se pudo iniciar el teléfono",
+    "@label_could_not_launch_phone": {
+        "description": "No se pudo iniciar el teléfono"
+    },
+    "label_could_not_launch_map": "No se pudo iniciar el mapa",
+    "@label_could_not_launch_map": {
+        "description": "No se pudo iniciar el mapa"
+    },
+    "label_could_not_launch_sms": "No se pudieron iniciar los SMS",
+    "@label_could_not_launch_sms": {
+        "description": "No se pudieron iniciar los SMS"
+    },
+    "label_could_not_launch_contact": "No se pudo iniciar el contacto",
+    "@label_could_not_launch_contact": {
+        "description": "No se pudo iniciar el contacto"
+    },
+    "label_could_not_launch_consulate": "No se pudo iniciar el consulado",
+    "@label_could_not_launch_consulate": {
+        "description": "No se pudo iniciar el consulado"
+    },
+    "label_could_not_launch_document": "No se pudo iniciar el documento",
+    "@label_could_not_launch_document": {
+        "description": "No se pudo iniciar el documento"
+    },
+    "label_could_not_launch_alert": "No se pudo iniciar la alerta",
+    "@label_could_not_launch_alert": {
+        "description": "No se pudo iniciar la alerta"
+    },
+    "label_could_not_launch_contact_info": "No se pudo acceder a la información de contacto",
+    "@label_could_not_launch_contact_info": {
+        "description": "No se pudo acceder a la información de contacto"
+    },
+    "label_could_not_launch_emergency": "No se pudo acceder a la emergencia",
+    "@label_could_not_launch_emergency": {
+        "description": "No se pudo acceder a la emergencia"
+    },
+    "label_could_not_launch_legal": "No se pudo acceder a la legal",
+    "@label_could_not_launch_legal": {
+        "description": "No se pudo acceder a la legal"
+    },
+    "label_could_not_launch_map_location": "No se pudo acceder a la ubicación del mapa",
+    "@label_could_not_launch_map_location": {
+        "description": "No se pudo acceder a la ubicación del mapa"
+    },
+    "label_could_not_launch_phone_number": "No se pudo iniciar el teléfono",
+    "@label_could_not_launch_phone_number": {
+        "description": "No se pudo iniciar el número de teléfono"
+    },
+    "label_imaged_saved": "¡Imagen guardada en la galería!",
+    "@label_imaged_saved": {
+        "description": "Imagen guardada"
+    },
+    "label_saved_gallery": "Guardado en la Galería de Fotos",
+    "@label_saved_gallery": {
+        "description": "Guardado en la galería de fotos"
+    },
+    "label_image_not_saved": "Error al guardar la imagen",
+    "@label_image_not_saved": {
+        "description": "Imagen no guardada"
+    },
+    "label_permission_denied": "Permiso denegado para acceder a la galería.",
+    "@label_permission_denied": {
+        "description": "Permiso denegado"
+    },
+    "label_kyr_card": "Tarjeta de Conoce tus Derechos",
+    "@label_kyr_card": {
+        "description": "Conoce tus Derechos"
+    },
+    "label_save_gallery": "Guardar en la Galería de Fotos",
+    "@label_save_gallery": {
+        "description": "Guardar en la Galería de Fotos"
+    },
+    "label_close_dialog": "Cerrar",
+    "@label_close_dialog": {
+        "description": "Cerrar"
+    },
+    "label_delete_contact": "Eliminar contacto",
+    "@label_delete_contact": {
+        "description": "Eliminar contacto"
+    },
+    "label_delete_contact_message": "¿Seguro que quieres eliminar este contacto? Esta acción no se puede deshacer",
+    "@label_delete_contact_message": {
+        "description": "Eliminar mensaje del contacto"
+    },
+    "label_cancel": "Cancelar",
+    "@label_cancel": {
+        "description": "Cancelar"
+    },
+    "label_delete": "Eliminar",
+    "@label_delete": {
+        "description": "Eliminar"
+    },
+    "label_find_consulate": "Encuentre el consulado más cercano",
+    "@label_find_consulate": {
+        "description": "Encuentre el consulado más cercano"
+    },
+    "label_tap_find_consulate": "Toque para localizar el consulado más cercano.",
+    "@label_tap_find_consulate": {
+        "description": "Toque para encontrar mi consulado más cercano"
+    },
+    "label_call_immediate_legal_help": "Solicita ayuda legal inmediata",
+    "@label_call_immediate_legal_help": {
+        "description": "Solicita ayuda legal inmediata"
+    },
+    "label_tap_call_immediate_legal_help": "Toca para conectarte con un servicio de asistencia legal disponible las 24 horas, los 7 días de la semana.",
+    "@label_tap_call_immediate_legal_help": {
+        "description": "Toca para solicitar ayuda inmediata"
+    },
+    "label_about_privacy": "Infórmate sobre tu privacidad",
+    "@label_about_privacy": {
+        "description": "Acerca de la privacidad"
+    },
+    "label_tap_about_privacy": "Toca para ver cómo MyRightToStay protege tus datos y anonimato.",
+    "@label_tap_about_privacy": {
+        "description": "Toca Para saber más sobre cómo protegemos su privacidad"
+    },
+    "drawer_home": "Inicio",
+    "@drawer_home": {
+        "description": "Título para la pantalla de inicio en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_add_contacts": "Agregar Contactos",
+    "@drawer_add_contacts": {
+        "description": "Título para la pantalla de agregar contactos en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_view_contacts": "Ver Contactos",
+    "@drawer_view_contacts": {
+        "description": "Título para la pantalla de ver contactos en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_know_your_rights": "Conozca sus Derechos",
+    "@drawer_know_your_rights": {
+        "description": "Título para la pantalla de conocer sus derechos en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_legal_help": "Asistencia Legal",
+    "@drawer_legal_help": {
+        "description": "Título para la pantalla de asistencia legal en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_resources": "Recursos",
+    "@drawer_resources": {
+        "description": "Título para la pantalla de recursos en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_jobs": "Trabajos",
+    "@drawer_jobs": {
+        "description": "Título para la pantalla de trabajos en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_settings": "Configuraciones",
+    "@drawer_settings": {
+        "description": "Título para la pantalla de configuraciones en el menú lateral.",
+        "type": "text"
+    },
+    "drawer_food": "Comida",
+    "@drawer_food": {
+        "description": "Etiqueta del menú lateral para servicios relacionados con alimentos.",
+        "type": "text"
+    },
+    "drawer_consulate": "Consulado",
+    "@drawer_consulate": {
+        "description": "Etiqueta del menú lateral para servicios consulares.",
+        "type": "text"
+    },
+    "drawer_benefits": "Beneficios",
+    "@drawer_benefits": {
+        "description": "Etiqueta del menú lateral para beneficios comunitarios o gubernamentales.",
+        "type": "text"
+    },
+    "drawer_travel": "Viajes",
+    "@drawer_travel": {
+        "description": "Etiqueta del menú lateral para servicios de asistencia con viajes.",
+        "type": "text"
+    },
+    "drawer_housing": "Vivienda",
+    "@drawer_housing": {
+        "description": "Etiqueta del menú lateral para refugios o servicios de vivienda.",
+        "type": "text"
+    },
+    "drawer_immigration": "Inmigración",
+    "@drawer_immigration": {
+        "description": "Etiqueta del menú lateral para servicios de inmigración.",
+        "type": "text"
+    },
+    "drawer_healthcare": "Atención médica",
+    "@drawer_healthcare": {
+        "description": "Etiqueta del menú lateral para servicios de salud y medicina.",
+        "type": "text"
+    },
+    "drawer_education": "Educación",
+    "@drawer_education": {
+        "description": "Etiqueta del menú lateral para recursos educativos.",
+        "type": "text"
+    },
+    "drawer_transportation": "Transporte",
+    "@drawer_transportation": {
+        "description": "Etiqueta del menú lateral para servicios de transporte.",
+        "type": "text"
+    },
+    "drawer_local_deals": "Ofertas locales",
+    "@drawer_local_deals": {
+        "description": "Etiqueta del artículo del cajón para ofertas locales.",
+        "type": "text"
+    },
+    "share_app_msg": "Consulta la aplicación MyRightToStay. Descárgala aquí: {url}",
+    "@share_app_msg": {
+        "description": "Mensaje para compartir con un enlace a la tienda de aplicaciones",
+        "placeholders": {
+            "url": {
+                "type": "String"
+            }
+        }
+    },
+    "share_app_title": "Mantente seguro con la app MyRightToStay",
+    "@share_app_title": {
+        "description": "Título para compartir la app"
+    },
+    "service_providers_loading_error": "Error al cargar proveedores de servicios",
+    "@service_providers_loading_error": {
+        "description": "Mensaje de error al cargar proveedores de servicios"
+    },
+    "service_providers_no_results": "No se encontraron proveedores de servicios",
+    "@service_providers_no_results": {
+        "description": "Mensaje de que no se encontraron proveedores de servicios"
+    },
+    "service_providers_company_name": "Nombre de la empresa:",
+    "@service_providers_company_name": {
+        "description": "Etiqueta para el campo del nombre de la empresa"
+    },
+    "service_providers_contact_name": "Nombre del contacto:",
+    "@service_providers_contact_name": {
+        "description": "Etiqueta para el campo del nombre de la empresa"
+    },
+    "service_providers_address": "Dirección:",
+    "@service_providers_address": {
+        "description": "Etiqueta para el campo de dirección"
+    },
+    "service_providers_city": "Ciudad:",
+    "@service_providers_city": {
+        "description": "Etiqueta para el campo de ciudad"
+    },
+    "service_providers_state": "Provincia:",
+    "@service_providers_state": {
+        "description": "Etiqueta para el campo de provincia"
+    },
+    "service_providers_zip": "Código postal:",
+    "@service_providers_zip": {
+        "description": "Etiqueta del campo zip"
+    },
+    "service_providers_mobile_phone": "Teléfono móvil:",
+    "@service_providers_mobile_phone": {
+        "description": "Etiqueta del campo teléfono móvil"
+    },
+    "service_providers_office_phone": "Teléfono de la oficina:",
+    "@service_providers_office_phone": {
+        "description": "Etiqueta del campo teléfono móvil"
+    },
+    "service_providers_email": "Correo electrónico",
+    "@service_providers_email": {
+        "description": "Etiqueta del campo correo electrónico"
+    },
+    "service_providers_website": "Sitio web",
+    "@service_providers_website": {
+        "description": "Etiqueta del campo sitio web"
+    },
+    "service_enter_zip_code": "Ingresa tu código postal para encontrar proveedores de servicios cerca de ti.",
+    "@service_enter_zip_code": {
+        "description": "Etiqueta para el campo de código postal"
+    },
+    "service_search": "Buscar",
+    "@service_search": {
+        "description": "Etiqueta para el botón de búsqueda"
+    },
+    "service_invalid_zip_code": "Código postal no válido",
+    "@service_invalid_zip_code": {
+        "description": "Etiqueta para el error de código postal no válido"
+    },
+    "service_providers": "Proveedores de Servicios",
+    "@service_providers": {
+        "description": "Etiqueta para la pantalla de proveedores de servicios"
+    },
+    "service_providers_away": "de distancia",
+    "@service_providers_away": {
+        "description": "Texto que indica qué tan lejos está el proveedor"
+    },
+    "service_providers_state_none": "Ningún estado seleccionado",
+    "@service_providers_state_none": {
+        "description": "Label for the no state"
+    },
+    "about_us_description": "Creamos aplicaciones educativas para impulsar el aprendizaje y el crecimiento. Nuestro objetivo es hacer que el conocimiento sea accesible, intuitivo y atractivo para comunidades diversas. Nos enfocamos en crear herramientas que apoyen el aprendizaje continuo y el cambio positivo.",
+    "@about_us_description": {
+        "description": "Párrafo breve que describe la misión y el propósito de la empresa, mostrado en la sección Sobre Nosotros.",
+        "type": "text"
+    },
+    "privacy_policy_prompt": "Toca para ver nuestra política de privacidad",
+    "@privacy_policy_prompt": {
+        "description": "Texto instructivo que se muestra en la pantalla de configuración. Informa al usuario que puede tocar para abrir la política de privacidad en el navegador.",
+        "type": "text"
+    },
+    "label_app_version": "Versión de la aplicación",
+    "@label_app_version": {
+        "description": "Etiqueta de la versión de la aplicación en la pantalla de configuración.",
+        "type": "text"
+    },
+    "label_app_loading": "Cargando...",
+    "@label_app_loading": {
+        "description": "Etiqueta de la pantalla de carga.",
+        "type": "text"
+    },
+    "label_app_name": "Nombre:",
+    "@label_app_name": {
+        "description": "Etiqueta del nombre de la aplicación.",
+        "type": "text"
+    },
+    "label_app_version_number": "Versión:",
+    "@label_app_version_number": {
+        "description": "Etiqueta del número de versión de la aplicación.",
+        "type": "text"
+    },
+    "lable_app_build_number": "Número de compilación:",
+    "@lable_app_build_number": {
+        "description": "Etiqueta del número de compilación de la aplicación.",
+        "type": "text"
+    },
+    "label_about_us": "Sobre nosotros",
+    "@label_about_us": {
+        "description": "Etiqueta para la sección \"Sobre nosotros",
+        "type": "text"
+    },
+    "healthcare_rights_url": "https://www.nilc.org/resources/derechos-seguro-y-cuidado-de-salud/",
+    "@healthcare_rights_url": {
+        "description": "URL de los derechos de atención médica",
+        "type": "text"
+    },
+    "healthcare_url_not_found": "La URL no está disponible.",
+    "@healthcare_url_not_found": {
+        "description": "No se encontró la URL de atención médica",
+        "type": "text"
+    },
+    "healthcare_find_nearest": "Buscar un profesional de la salud",
+    "@healthcare_find_nearest": {
+        "description": "Etiqueta del botón para encontrar el profesional de la salud más cercano",
+        "type": "text"
+    },
+    "healthcare_find_clinic": "Buscar una clínica gratuita o benéfica",
+    "@healthcare_find_clinic": {
+        "description": "Etiqueta del botón para encontrar una clínica",
+        "type": "text"
+    },
+    "country_usa": "Estados Unidos",
+    "@country_usa": {
+        "description": "Nombre del país: Estados Unidos, para la lista desplegable de contacto consular"
+    },
+    "country_argentina": "Argentina",
+    "@country_argentina": {
+        "description": "Nombre del país: Argentina, para la lista desplegable de contacto consular"
+    },
+    "country_bolivia": "Bolivia",
+    "@country_bolivia": {
+        "description": "Nombre del país: Bolivia, para la lista desplegable de contacto consular"
+    },
+    "country_chile": "Chile",
+    "@country_chile": {
+        "description": "Nombre del país: Chile, para la lista desplegable de contacto consular"
+    },
+    "country_colombia": "Colombia",
+    "@country_colombia": {
+        "description": "Nombre del país: Colombia, para la lista desplegable de contacto consular"
+    },
+    "country_costa_rica": "Costa Rica",
+    "@country_costa_rica": {
+        "description": "Nombre del país: Costa Rica, para la lista desplegable de contacto consular"
+    },
+    "country_cuba": "Cuba",
+    "@country_cuba": {
+        "description": "Nombre del país: Cuba, para la lista desplegable de contacto consular"
+    },
+    "country_dominican_republic": "República Dominicana",
+    "@country_dominican_republic": {
+        "description": "Nombre del país: República Dominicana, para la lista desplegable de contacto consular"
+    },
+    "country_ecuador": "Ecuador",
+    "@country_ecuador": {
+        "description": "Nombre del país: Ecuador, para la lista desplegable de contacto consular"
+    },
+    "country_el_salvador": "El Salvador",
+    "@country_el_salvador": {
+        "description": "Nombre del país: El Salvador, para la lista desplegable de contacto consular"
+    },
+    "country_equatorial_guinea": "Guinea Ecuatorial",
+    "@country_equatorial_guinea": {
+        "description": "Nombre del país: Guinea Ecuatorial, para la lista desplegable de contacto consular"
+    },
+    "country_guatemala": "Guatemala",
+    "@country_guatemala": {
+        "description": "Nombre del país: Guatemala, para la lista desplegable de contacto consular"
+    },
+    "country_honduras": "Honduras",
+    "@country_honduras": {
+        "description": "Nombre del país: Honduras, para la lista desplegable de contacto consular"
+    },
+    "country_mexico": "México",
+    "@country_mexico": {
+        "description": "Nombre del país: México, para la lista desplegable de contacto consular"
+    },
+    "country_nicaragua": "Nicaragua",
+    "@country_nicaragua": {
+        "description": "Nombre del país: Nicaragua, para la lista desplegable de contacto consular"
+    },
+    "country_panama": "Panamá",
+    "@country_panama": {
+        "description": "Nombre del país: Panamá, para la lista desplegable de contacto consular"
+    },
+    "country_paraguay": "Paraguay",
+    "@country_paraguay": {
+        "description": "Nombre del país: Paraguay, para la lista desplegable de contacto consular"
+    },
+    "country_peru": "Perú",
+    "@country_peru": {
+        "description": "Nombre del país: Perú, para la lista desplegable de contacto consular"
+    },
+    "country_puerto_rico": "Puerto Rico",
+    "@country_puerto_rico": {
+        "description": "Nombre del país: Puerto Rico, para la lista desplegable de contacto consular"
+    },
+    "country_spain": "España",
+    "@country_spain": {
+        "description": "Nombre del país: España, para la lista desplegable de contacto consular"
+    },
+    "country_uruguay": "Uruguay",
+    "@country_uruguay": {
+        "description": "Nombre del país: Uruguay, para la lista desplegable de contacto consular"
+    },
+    "country_venezuela": "Venezuela",
+    "@country_venezuela": {
+        "description": "Nombre del país: Venezuela, para la lista desplegable de contacto consular"
+    },
+    "community_service_url_one": "https://www.mlkch.org/es/community-resources",
+    "@community_service_url_one": {
+        "description": "Community service URL 1"
+    },
+    "community_service_url_two": "https://www-es.cahealthwellness.com/members/medicaid/calaim-resources/community-supports.html",
+    "@community_service_url_two": {
+        "description": "Community service URL 2"
+    },
+    "community_service_url_three": "https://www.chpw.org/es/member-center/health-management/community-programs/",
+    "@community_service_url_three": {
+        "description": "Community service URL 3"
+    },
+    "community_service_url_four": "https://www.ccswoh.org/mental-health-services/",
+    "@community_service_url_four": {
+        "description": "Community service URL 4"
+    },
+    "community_service_url_five": "https://spanishamerican.org/programs#",
+    "@community_service_url_five": {
+        "description": "Community service URL 5"
+    },
+    "community_service_url_six": "https://es.fsacares.org/lhp-family-support-services/",
+    "@community_service_url_six": {
+        "description": "Community service URL 6"
+    },
+    "community_social_services": "Servicios Comunitarios y Sociales",
+    "@community_social_services": {
+        "description": "Etiqueta para la pantalla de servicios comunitarios y sociales"
+    },
+    "community_social_california": "Servicios Comunitarios y Sociales - California",
+    "@community_social_california": {
+        "description": "Etiqueta para los servicios comunitarios y sociales de California"
+    },
+    "community_social_washington": "Servicios Comunitarios y Sociales - Washington",
+    "@community_social_washington": {
+        "description": "Etiqueta para los servicios comunitarios y sociales de Washington"
+    },
+    "community_social_ohio": "Servicios Comunitarios y Sociales - Ohio",
+    "@community_social_ohio": {
+        "description": "Etiqueta para los servicios comunitarios y sociales de Ohio"
+    },
+    "community_social_spanish_community": "Servicios Comunitarios y Sociales - Comunidad Hispana",
+    "@community_social_spanish_community": {
+        "description": "Etiqueta para la comunidad y los servicios sociales españoles"
+    },
+    "community_social_family_support": "Servicios Sociales y Comunitarios - Apoyo Familiar",
+    "@community_social_family_support": {
+        "description": "Etiqueta para la comunidad y los servicios sociales de Apoyo Familiar"
+    },
+    "view_service_providers_search": "Buscar abogados",
+    "@view_service_providers_search": {
+        "description": "Etiqueta del botón de búsqueda"
+    },
+    "view_service_provider_legal_title": "Obtenga ayuda legal ahora - Opciones gratuitas y de pago disponibles",
+    "@view_service_provider_legal_title": {
+        "description": "Etiqueta para la pantalla de servicios legales"
+    },
+    "view_service_provider_legal_subtitle": "Encuentre abogados de inmigración de confianza, conéctese con servicios legales gratuitos o reciba asistencia legal de emergencia ahora mismo.",
+    "@view_service_provider_legal_subtitle": {
+        "description": "Subtítulo para la pantalla de servicios legales"
+    },
+    "view_service_provider_legal_services": "Servicios Legales",
+    "@view_service_provider_legal_services": {
+        "description": "Etiqueta para la tarjeta de servicios legales"
+    },
+    "view_service_provider_ask_lawyer": "Consulte con un abogado de guardia",
+    "@view_service_provider_ask_lawyer": {
+        "description": "Etiqueta para el botón \"Consulte con un abogado"
+    },
+    "view_service_provider_ask_lawyer_subtitle": "Obtenga asesoría legal inmediata de abogados de inmigración disponibles ahora. Consultas asequibles para abordar sus preguntas e inquietudes específicas.",
+    "@view_service_provider_ask_lawyer_subtitle": {
+        "description": "Subtítulo para el botón \"Consulte con un abogado"
+    },
+    "view_service_provider_immediate_legal_help_title": "Obtenga ayuda legal inmediata",
+    "@view_service_provider_immediate_legal_help_title": {
+        "description": "Etiqueta para el título \"Obtener ayuda legal inmediata"
+    },
+    "view_service_provider_immediate_legal_help_subtitle": "Acceda a abogados de inmigración dedicados las 24 horas, los 7 días de la semana, desde $29.95 al mes. Solicite su consulta hoy mismo y proteja sus derechos.",
+    "@view_service_provider_immediate_legal_help_subtitle": {
+        "description": "Etiqueta para el subtítulo \"Obtener ayuda legal inmediata"
+    },
+    "view_service_provider_immediate_legal_help_button": "Empiece ahora",
+    "@view_service_provider_immediate_legal_help_button": {
+        "description": "Etiqueta para el botón \"Obtener ayuda legal inmediata"
+    },
+    "service_providers_sort_by": "Ordenar por",
+    "@service_providers_sort_by": {
+        "description": "Etiqueta para el menú desplegable de ordenación"
+    },
+    "service_providers_sort_distance": "Distancia",
+    "@service_providers_sort_distance": {
+        "description": "Etiqueta para la opción de ordenar por distancia"
+    },
+    "service_providers_sort_radius": "Buscar por radio",
+    "@service_providers_sort_radius": {
+        "description": "Etiqueta para la opción de ordenar por radio"
+    },
+    "service_providers_sort_city": "Ciudad",
+    "@service_providers_sort_city": {
+        "description": "Etiqueta para la opción de ordenación por ciudad"
+    },
+    "service_providers_sort_state": "Estado",
+    "@service_providers_sort_state": {
+        "description": "Etiqueta para la opción de ordenación por estado"
+    },
+    "service_providers_sort_zip": "Código postal",
+    "@service_providers_sort_zip": {
+        "description": "Etiqueta para la opción de ordenación por código postal"
+    },
+    "service_invalid_radius": "Radio inválido",
+    "@service_invalid_radius": {
+        "description": "Etiqueta del error de radio inválido"
+    },
+    "service_providers_city_optional": "Ciudad (opcional)",
+    "@service_providers_city_optional": {
+        "description": "Etiqueta para el campo opcional de ciudad"
+    },
+    "service_providers_state_optional": "Estado (opcional)",
+    "@service_providers_state_optional": {
+        "description": "Etiqueta para el campo opcional de estado"
+    },
+    "service_providers_distance": "millas de distancia",
+    "@service_providers_distance": {
+        "description": "Etiqueta para millas de distancia"
+    },
+    "service_providers_years_of_experience": "años de experiencia",
+    "@service_providers_years_of_experience": {
+        "description": "Etiqueta para años de experiencia"
+    },
+    "kyr_in_your_home_url": "https://www.inmigranteinformado.com/recursos/conozca-sus-derechos/conozca-sus-derechos/#sus-derechos-dentro-de-su-casa",
+    "@kyr_in_your_home_url": {
+        "description": "URL de En Tu Hogar"
+    },
+    "kyr_outside_your_home_url": "https://www.inmigranteinformado.com/recursos/conozca-sus-derechos/conozca-sus-derechos/#sus-derechos-fuera-de-su-casa",
+    "@kyr_outside_your_home_url": {
+        "description": "URL de Fuera de Tu Hogar"
+    },
+    "kyr_in_your_home_title": "En tu casa",
+    "@kyr_in_your_home_title": {
+        "description": "Título de En tu casa"
+    },
+    "kyr_outside_your_home_title": "Fuera de tu casa",
+    "@kyr_outside_your_home_title": {
+        "description": "Título de Fuera de tu casa"
+    },
+    "kyr_news_title": "Noticias de Inmigración",
+    "@kyr_news_title": {
+        "description": "Título de Noticias de inmigración"
+    },
+    "kyr_new_url": "https://elpais.com/us/?ed=us",
+    "@kyr_new_url": {
+        "description": "Immigartion news url"
+    },
+    "error_generic": "Ocurrió un error. Por favor, inténtalo de nuevo.",
+    "@error_generic": {
+        "description": "Mensaje de error base que se muestra antes de los detalles de la excepción en un SnackBar.",
+        "type": "text"
+    },
+    "error_website_unavailable": "Lo sentimos, este sitio web ya no está disponible.",
+    "@error_website_unavailable": {
+        "description": "Mensaje de error para sitio web no disponible"
+    },
+    "error_email_unavailable": "Lo sentimos, este enlace de correo electrónico ya no está disponible.",
+    "@error_email_unavailable": {
+        "description": "Mensaje de error para correo electrónico no disponible"
+    },
+    "error_phone_unavailable": "Lo sentimos, este número de teléfono ya no está disponible.",
+    "@error_phone_unavailable": {
+        "description": "Mensaje de error para número de teléfono no disponible"
+    },
+    "error_phone_number_invalid": "Lo sentimos, este número de teléfono no es válido.",
+    "@error_phone_number_invalid": {
+        "description": "Mensaje de error para número de teléfono no válido"
+    },
+    "error_email_invalid": "Lo sentimos, esta dirección de correo electrónico no es válida.",
+    "@error_email_invalid": {
+        "description": "Mensaje de error para dirección de correo electrónico no válida"
+    },
+    "send_emergency_message_tap": "Toca para crear tu mensaje de texto.",
+    "@send_emergency_message_tap": {
+        "description": "Etiqueta para el mensaje de emergencia"
+    },
+    "send_emergency_message_sent": "¡Tu mensaje de emergencia ha sido enviado!",
+    "@send_emergency_message_sent": {
+        "description": "Etiqueta de la confirmación de envío del mensaje de emergencia"
+    },
+    "send_emergency_message_error": "Error al enviar el mensaje de emergencia. Inténtalo de nuevo.",
+    "@send_emergency_message_error": {
+        "description": "Mensaje de error al enviar el mensaje de emergencia"
+    },
+    "send_emergency_message_title": "Enviar mensajes de emergencia",
+    "@send_emergency_message_title": {
+        "description": "Título de la pantalla del mensaje de emergencia"
+    },
+    "send_emergency_message_subtitle": "En los iPhone, Apple requiere que envíes cada mensaje de emergencia individualmente, por lo que tendrás que pulsar \"Enviar\" para cada contacto.",
+    "@send_emergency_message_subtitle": {
+        "description": "Subtítulo para la pantalla de mensajes de emergencia"
+    },
+    "privacy_statement_title": "Declaración de privacidad",
+    "@privacy_statement_title": {
+        "description": "Título del diálogo que muestra la declaración de privacidad de la aplicación.",
+        "type": "text"
+    },
+    "privacy_statement_content": "Esta aplicación no recopila, almacena ni comparte información personal. Todos los datos permanecen en su dispositivo y se utilizan únicamente para brindar la funcionalidad de la aplicación. Ningún dato del usuario se transmite a servidores externos.",
+    "@privacy_statement_content": {
+        "description": "Contenido principal de la declaración de privacidad mostrada al usuario.",
+        "type": "text"
+    }
+}

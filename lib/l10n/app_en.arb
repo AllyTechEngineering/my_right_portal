@@ -1,0 +1,1621 @@
+{
+    "@@locale": "en",
+    "disclaimer_title": "Legal Disclaimer",
+    "@disclaimer_title": {
+        "description": "Disclaimer title"
+    },
+    "disclaimer_content": "We're here to share helpful information, but this app isn't a substitute for legal advice. We don't provide legal representation, and using this app doesn't create an attorney-client relationship. If you need legal help, it's always best to talk to a licensed attorney. We hope this info is useful, but remember—every situation is different!",
+    "@disclaimer_content": {
+        "description": "Disclaimer content"
+    },
+    "state_alabama": "Alabama",
+    "@state_alabama": {
+        "description": "Name of the US state Alabama"
+    },
+    "state_alaska": "Alaska",
+    "@state_alaska": {
+        "description": "Name of the US state Alaska"
+    },
+    "state_arizona": "Arizona",
+    "@state_arizona": {
+        "description": "Name of the US state Arizona"
+    },
+    "state_arkansas": "Arkansas",
+    "@state_arkansas": {
+        "description": "Name of the US state Arkansas"
+    },
+    "state_california": "California",
+    "@state_california": {
+        "description": "Name of the US state California"
+    },
+    "state_colorado": "Colorado",
+    "@state_colorado": {
+        "description": "Name of the US state Colorado"
+    },
+    "state_connecticut": "Connecticut",
+    "@state_connecticut": {
+        "description": "Name of the US state Connecticut"
+    },
+    "state_delaware": "Delaware",
+    "@state_delaware": {
+        "description": "Name of the US state Delaware"
+    },
+    "state_florida": "Florida",
+    "@state_florida": {
+        "description": "Name of the US state Florida"
+    },
+    "state_georgia": "Georgia",
+    "@state_georgia": {
+        "description": "Name of the US state Georgia"
+    },
+    "state_hawaii": "Hawaii",
+    "@state_hawaii": {
+        "description": "Name of the US state Hawaii"
+    },
+    "state_idaho": "Idaho",
+    "@state_idaho": {
+        "description": "Name of the US state Idaho"
+    },
+    "state_illinois": "Illinois",
+    "@state_illinois": {
+        "description": "Name of the US state Illinois"
+    },
+    "state_indiana": "Indiana",
+    "@state_indiana": {
+        "description": "Name of the US state Indiana"
+    },
+    "state_iowa": "Iowa",
+    "@state_iowa": {
+        "description": "Name of the US state Iowa"
+    },
+    "state_kansas": "Kansas",
+    "@state_kansas": {
+        "description": "Name of the US state Kansas"
+    },
+    "state_kentucky": "Kentucky",
+    "@state_kentucky": {
+        "description": "Name of the US state Kentucky"
+    },
+    "state_louisiana": "Louisiana",
+    "@state_louisiana": {
+        "description": "Name of the US state Louisiana"
+    },
+    "state_maine": "Maine",
+    "@state_maine": {
+        "description": "Name of the US state Maine"
+    },
+    "state_maryland": "Maryland",
+    "@state_maryland": {
+        "description": "Name of the US state Maryland"
+    },
+    "state_massachusetts": "Massachusetts",
+    "@state_massachusetts": {
+        "description": "Name of the US state Massachusetts"
+    },
+    "state_michigan": "Michigan",
+    "@state_michigan": {
+        "description": "Name of the US state Michigan"
+    },
+    "state_minnesota": "Minnesota",
+    "@state_minnesota": {
+        "description": "Name of the US state Minnesota"
+    },
+    "state_mississippi": "Mississippi",
+    "@state_mississippi": {
+        "description": "Name of the US state Mississippi"
+    },
+    "state_missouri": "Missouri",
+    "@state_missouri": {
+        "description": "Name of the US state Missouri"
+    },
+    "state_montana": "Montana",
+    "@state_montana": {
+        "description": "Name of the US state Montana"
+    },
+    "state_nebraska": "Nebraska",
+    "@state_nebraska": {
+        "description": "Name of the US state Nebraska"
+    },
+    "state_nevada": "Nevada",
+    "@state_nevada": {
+        "description": "Name of the US state Nevada"
+    },
+    "state_new_hampshire": "New Hampshire",
+    "@state_new_hampshire": {
+        "description": "Name of the US state New Hampshire"
+    },
+    "state_new_jersey": "New Jersey",
+    "@state_new_jersey": {
+        "description": "Name of the US state New Jersey"
+    },
+    "state_new_mexico": "New Mexico",
+    "@state_new_mexico": {
+        "description": "Name of the US state New Mexico"
+    },
+    "state_new_york": "New York",
+    "@state_new_york": {
+        "description": "Name of the US state New York"
+    },
+    "state_north_carolina": "North Carolina",
+    "@state_north_carolina": {
+        "description": "Name of the US state North Carolina"
+    },
+    "state_north_dakota": "North Dakota",
+    "@state_north_dakota": {
+        "description": "Name of the US state North Dakota"
+    },
+    "state_ohio": "Ohio",
+    "@state_ohio": {
+        "description": "Name of the US state Ohio"
+    },
+    "state_oklahoma": "Oklahoma",
+    "@state_oklahoma": {
+        "description": "Name of the US state Oklahoma"
+    },
+    "state_oregon": "Oregon",
+    "@state_oregon": {
+        "description": "Name of the US state Oregon"
+    },
+    "state_pennsylvania": "Pennsylvania",
+    "@state_pennsylvania": {
+        "description": "Name of the US state Pennsylvania"
+    },
+    "state_rhode_island": "Rhode Island",
+    "@state_rhode_island": {
+        "description": "Name of the US state Rhode Island"
+    },
+    "state_south_carolina": "South Carolina",
+    "@state_south_carolina": {
+        "description": "Name of the US state South Carolina"
+    },
+    "state_south_dakota": "South Dakota",
+    "@state_south_dakota": {
+        "description": "Name of the US state South Dakota"
+    },
+    "state_tennessee": "Tennessee",
+    "@state_tennessee": {
+        "description": "Name of the US state Tennessee"
+    },
+    "state_texas": "Texas",
+    "@state_texas": {
+        "description": "Name of the US state Texas"
+    },
+    "state_utah": "Utah",
+    "@state_utah": {
+        "description": "Name of the US state Utah"
+    },
+    "state_vermont": "Vermont",
+    "@state_vermont": {
+        "description": "Name of the US state Vermont"
+    },
+    "state_virginia": "Virginia",
+    "@state_virginia": {
+        "description": "Name of the US state Virginia"
+    },
+    "state_washington": "Washington",
+    "@state_washington": {
+        "description": "Name of the US state Washington"
+    },
+    "state_west_virginia": "West Virginia",
+    "@state_west_virginia": {
+        "description": "Name of the US state West Virginia"
+    },
+    "state_wisconsin": "Wisconsin",
+    "@state_wisconsin": {
+        "description": "Name of the US state Wisconsin"
+    },
+    "state_wyoming": "Wyoming",
+    "@state_wyoming": {
+        "description": "Name of the US state Wyoming"
+    },
+    "resources_title": "Resources",
+    "@resources_title": {
+        "description": "Label for the resources tab"
+    },
+    "legal_help_title": "Legal Help",
+    "@legal_help_title": {
+        "description": "Title for the Legal Help screen"
+    },
+    "contacts_title": "Contacts",
+    "@contacts_title": {
+        "description": "Title for the Work Rights screen"
+    },
+    "your_rights_title": "Your Rights",
+    "@your_rights_title": {
+        "description": "Title for the Your Rights screen"
+    },
+    "find_jobs_title": "Find Jobs",
+    "@find_jobs_title": {
+        "description": "Menu title for Find Jobs"
+    },
+    "local_deals_title": "Local Deals",
+    "@local_deals_title": {
+        "description": "Menu title for Local Deals"
+    },
+    "home_title": "Home",
+    "@home_title": {
+        "description": "Menu title for Home"
+    },
+    "settings_title": "Settings",
+    "@settings_title": {
+        "description": "Menu title for Settings"
+    },
+    "menu_title": "Menu",
+    "@menu_title": {
+        "description": "Menu title for the main app menu"
+    },
+    "about_us_title": "About Us",
+    "@about_us_title": {
+        "description": "About Us section menu title"
+    },
+    "provider_detail_title": "Services",
+    "@provider_detail_title": {
+        "description": "Title for the provider detail screen in the Services section"
+    },
+    "police_stops_title": "Police Stops",
+    "@police_stops_title": {
+        "description": "Title for the Police Stops screen"
+    },
+    "ice_raids_title": "ICE Raids",
+    "@ice_raids_title": {
+        "description": "Title for the ICE Raids screen"
+    },
+    "work_rights_title": "Work Rights",
+    "@work_rights_title": {
+        "description": "Title for the Work Rights screen"
+    },
+    "immigration_help_title": "Immigration Help",
+    "@immigration_help_title": {
+        "description": "Title"
+    },
+    "healthcare_title": "Healthcare",
+    "@healthcare_title": {
+        "description": "Title for the Healthcare screen"
+    },
+    "education_title": "Education",
+    "@education_title": {
+        "description": "Title for the Education screen"
+    },
+    "housing_title": "Housing",
+    "@housing_title": {
+        "description": "Title for the Housing screen"
+    },
+    "deportation_title": "Deportation Prep",
+    "@deportation_title": {
+        "description": "Title for the Deportation screen"
+    },
+    "financial_help_title": "Financial Help",
+    "@financial_help_title": {
+        "description": "Title for the Financial Help screen"
+    },
+    "community_support_title": "Community Resources",
+    "@community_support_title": {
+        "description": "Title for the Community Resources"
+    },
+    "service_providers_title": "Services",
+    "@service_providers_title": {
+        "description": "Title for the Service Providers screen"
+    },
+    "filter_service_type": "Filter by Service Type",
+    "@filter_service_type": {
+        "description": "Label for the service type dropdown"
+    },
+    "filter_state": "Filter by State",
+    "@filter_state": {
+        "description": "Label for the state filter dropdown"
+    },
+    "no_providers_found": "No providers found",
+    "@no_providers_found": {
+        "description": "Message displayed when no providers match the filters"
+    },
+    "service_type_legal": "Legal",
+    "@service_type_legal": {
+        "description": "Label for service type legal services"
+    },
+    "service_type_food": "Food",
+    "@service_type_food": {
+        "description": "Label for service type food services"
+    },
+    "service_type_consulate": "Consulate",
+    "@service_type_consulate": {
+        "description": "Label for service type consulate services"
+    },
+    "service_type_benefits": "Benefits",
+    "@service_type_benefits": {
+        "description": "Label for service type benefits services"
+    },
+    "service_type_travel": "Travel",
+    "@service_type_travel": {
+        "description": "Label for service type travel services"
+    },
+    "service_type_housing": "Housing",
+    "@service_type_housing": {
+        "description": "Label for service type housing services"
+    },
+    "service_type_jobs": "Jobs",
+    "@service_type_jobs": {
+        "description": "Label for service type jobs services"
+    },
+    "service_type_immigration": "Immigration",
+    "@service_type_immigration": {
+        "description": "Label for service type immigration services"
+    },
+    "service_type_healthcare": "Healthcare",
+    "@service_type_healthcare": {
+        "description": "Label for service type healthcare services"
+    },
+    "service_type_education": "Education",
+    "@service_type_education": {
+        "description": "Label for service type education services"
+    },
+    "service_type_transportation": "Transportation",
+    "@service_type_transportation": {
+        "description": "Label for service type transportation services"
+    },
+    "label_type_of_business": "Type of Business",
+    "@label_type_of_business": {
+        "description": "Label for the type of business field"
+    },
+    "label_contact_name": "Contact Name",
+    "@label_contact_name": {
+        "description": "Label for the contact name field"
+    },
+    "label_website": "Website",
+    "@label_website": {
+        "description": "Label for the website field"
+    },
+    "label_address": "Address",
+    "@label_address": {
+        "description": "Label for the address field"
+    },
+    "label_mobile_phone": "Mobile Phone",
+    "@label_mobile_phone": {
+        "description": "Label for the mobile phone field"
+    },
+    "label_office_phone": "Office Phone",
+    "@label_office_phone": {
+        "description": "Label for the office phone field"
+    },
+    "label_email": "Email",
+    "@label_email": {
+        "description": "Label for the email field"
+    },
+    "daca_title": "DACA",
+    "@daca_title": {
+        "description": "Title for DACA"
+    },
+    "daca_advisory_text": "This advisory is not intended as legal advice but rather to provide information on the status of the DACA program. Individuals should seek a legal consultation from a qualified immigration attorney or DOJ accredited representative for a full assessment of their individual case. Please check our website or NIJC's social media channels for future updates about DACA",
+    "@daca_advisory_text": {
+        "description": "Text for the DACA Advisory"
+    },
+    "what_to_do_detained_title": "What to do if you or a loved one is detained",
+    "@what_to_do_detained_title": {
+        "description": "Title for the What to do if you are detained"
+    },
+    "immediate_steps_title": "Immediate Steps",
+    "@immediate_steps_title": {
+        "description": "Title for the Immediate Steps section"
+    },
+    "a_number_section": "Ask your friend/family member for their A-Number (A#/)",
+    "@a_number_section": {
+        "description": "First line for the A-Number section"
+    },
+    "text_for_a_number_section": "This number usually contains 9 digits. ICE will give them this number upon arrest. If your friend/family member filed a previous immigration application, it is likely they will already have an A# on any documents from immigration. If your friend/family member was arrested at the border and allowed to enter, it is likely they will already have an A# in their immigration documents.",
+    "@text_for_a_number_section": {
+        "description": "Text for the A-Number section"
+    },
+    "detained_ice_text": "You or Loved One Detained by ICE",
+    "@detained_ice_text": {
+        "description": "Detained by ICE text"
+    },
+    "detained_url_text": "https://immigrantjustice.org/know-your-rights/what-do-if-you-or-loved-one-detained",
+    "@detained_url_text": {
+        "description": "Detained by ICE URL"
+    },
+    "mass_deportation_text": "Mass Deportation Threats",
+    "@mass_deportation_text": {
+        "description": "Text for mass deportation"
+    },
+    "mass_deportation_url_text": "https://immigrantjustice.org/know-your-rights/mass-deportation-threats",
+    "@mass_deportation_url_text": {
+        "description": "Text for mass deportation URL"
+    },
+    "ice_encounter_text": "You Or Loved One Encounter ICE",
+    "@ice_encounter_text": {
+        "description": "Text for ICE encounter"
+    },
+    "ice_encounter_url_text": "https://immigrantjustice.org/know-your-rights/ice-encounter",
+    "@ice_encounter_url_text": {
+        "description": "Text for ICE encounter URL"
+    },
+    "immigration_scams_text": "Avoid Immigration Scams",
+    "@immigration_scams_text": {
+        "description": "Text for avoiding immigration scams"
+    },
+    "immigration_scams_url_text": "https://immigrantjustice.org/know-your-rights/avoid-immigration-fraud",
+    "@immigration_scams_url_text": {
+        "description": "Text for avoiding immigration scams URL"
+    },
+    "plan_deportation_text": "Plan Ahead in the Event of Deportation",
+    "@plan_deportation_text": {
+        "description": "Text for planning for deportation"
+    },
+    "plan_deportation_url_text": "https://immigrantjustice.org/kyr/family-protection-planning",
+    "@plan_deportation_url_text": {
+        "description": "Text for planning for deportation URL"
+    },
+    "parole_in_place_text": "Parole-In-Place for Family of U.S. Citizens",
+    "@parole_in_place_text": {
+        "description": "Text for Parole in Place"
+    },
+    "parole_in_place_url_text": "https://immigrantjustice.org/know-your-rights/parole-in-place-spouses-and-stepchildren",
+    "@parole_in_place_url_text": {
+        "description": "Text for Parole in Place URL"
+    },
+    "daca_faq_text": "DACA FAQ",
+    "@daca_faq_text": {
+        "description": "Text for DACA FAQ"
+    },
+    "daca_faq_url_text": "https://immigrantjustice.org/know-your-rights/deferred-action-childhood-arrivals-daca-frequently-asked-questions",
+    "@daca_faq_url_text": {
+        "description": "Text for DACA FAQ URL"
+    },
+    "asylum_tps_text": "Asylum & Temporary Protected Status",
+    "@asylum_tps_text": {
+        "description": "Text for Asylum & Temporary Protected Status"
+    },
+    "asylum_tps_url_text": "https://immigrantjustice.org/know-your-rights/asylum-temporary-protected-status-should-i-apply-one-or-other-or-both",
+    "@asylum_tps_url_text": {
+        "description": "Text for Asylum & Temporary Protected Status URL"
+    },
+    "u_visa_text": "New U Visa Bona Fide Determination Procedure",
+    "@u_visa_text": {
+        "description": "Text for New U Visa Bona Fide Determination Procedure"
+    },
+    "u_visa_url_text": "https://immigrantjustice.org/know-your-rights/know-your-rights-new-u-visa-bona-fide-determination-procedure",
+    "@u_visa_url_text": {
+        "description": "Text for New U Visa Bona Fide Determination Procedure URL"
+    },
+    "kyr_healthcare_title": "Know Your Rights: Health Care &\nHealth Insurance for Immigrants",
+    "@kyr_healthcare_title": {
+        "description": "Text for Know Your Rights: Healthcare"
+    },
+    "kyr_healthcare_intro_content": "Families that include people who are not authorized to be in the U.S. may have questions about whether they can safely apply for health coverage through the Affordable Care Act (ACA) Marketplaces, Medicaid, and CHIP (Children's Health Insurance Program). Some people may be worried about seeking health care because they fear that their or their family member's immigration status might be discovered or shared with immigration enforcement agents. This KYR resource provides information that all immigrant families should know when deciding to get health care or apply for health insurance programs.",
+    "@kyr_healthcare_intro_content": {
+        "description": "Healthcare intro content"
+    },
+    "kyr_healthcare_one_menu": "Your Right to Health Care",
+    "@kyr_healthcare_one_menu": {
+        "description": "Your Right to Health Care one menu"
+    },
+    "kyr_healthcare_two_menu": "No ID? No Problem!",
+    "@kyr_healthcare_two_menu": {
+        "description": "No ID? No Problem! menu"
+    },
+    "kyr_healthcare_three_menu": "Your Info Stays Private",
+    "@kyr_healthcare_three_menu": {
+        "description": "Your Info Stays Private menu"
+    },
+    "kyr_healthcare_four_menu": "No Need to Share Immigration Status",
+    "@kyr_healthcare_four_menu": {
+        "description": "No Need to Share Immigration Status menu"
+    },
+    "kyr_healthcare_five_menu": "SSN Not Required",
+    "@kyr_healthcare_five_menu": {
+        "description": "SSN Not Required menu"
+    },
+    "kyr_healthcare_six_menu": "Health Services in Your Language",
+    "@kyr_healthcare_six_menu": {
+        "description": "Health Services in Your Language menu"
+    },
+    "kyr_healthcare_seven_menu": "Health Care Options for All",
+    "@kyr_healthcare_seven_menu": {
+        "description": "Health Care Options for All menu"
+    },
+    "kyr_healthcare_one_title": "You have a right to health care regardless of your immigration status.",
+    "@kyr_healthcare_one_title": {
+        "description": "Healthcare one title"
+    },
+    "kyr_healthcare_one_content": "You are not required to have U.S. citizenship, lawful immigration status, or a Social Security number (SSN) to receive health care services under federal law. Doctors, hospitals, clinics, health centers, or other medical providers may ask for this information to find out if you may be eligible for public health insurance, like Medicaid. But they cannot deny medical treatment based solely on your immigration status—or based on assumptions they make about your immigration status because of the language you speak, your accent, what you look like, or whether you have an SSN. In fact, doing so may violate federal civil rights laws. Under federal law, if you need emergency medical services, hospitals with emergency rooms must screen and treat you regardless of your immigration status, how much money you have, or whether you have insurance. Similarly, you can seek primary and preventive health care at community health centers regardless of your immigration status, your ability to pay, or whether you are insured. Some states require hospitals to ask patients about their immigration status. If you are asked for your immigration status, you do not have to provide it, and a health care provider cannot refuse to treat you because you declined to share your immigration status information.",
+    "@kyr_healthcare_one_content": {
+        "description": "Healthcare one content"
+    },
+    "kyr_healthcare_two_title": "You should not be refused health care because you don't have identification.",
+    "@kyr_healthcare_two_title": {
+        "description": "Healthcare two title"
+    },
+    "kyr_healthcare_two_content": "Hospitals and health care providers may ask for photo identification, but not for purposes of immigration enforcement. Health care providers ask for identification to make sure that the person getting care is the same person whose name is on the medical record or prescription. You should not be refused health care because you do not have a photo ID.",
+    "@kyr_healthcare_two_content": {
+        "description": "Healthcare two content"
+    },
+    "kyr_healthcare_three_title": "If you apply for health insurance for yourself or a family member, your information may be used only for health insurance purposes.",
+    "@kyr_healthcare_three_title": {
+        "description": "Healthcare three title"
+    },
+    "kyr_healthcare_three_content": "Federal privacy rules protect families applying for health insurance, including families whose members have different immigration statuses. The information you provide to apply for Medicaid, CHIP, or an ACA Marketplace plan may be used only for the operation of that program—not for immigration enforcement purposes. Government workers, enrollment assisters, and people who help with insurance applications are required by law to keep your information private and secure.",
+    "@kyr_healthcare_three_content": {
+        "description": "Healthcare three content"
+    },
+    "kyr_healthcare_four_title": "You do not have to provide your immigration status if you are applying for insurance for someone else, such as your child.",
+    "@kyr_healthcare_four_title": {
+        "description": "Healthcare four title"
+    },
+    "kyr_healthcare_four_content": "By law, applications for Medicaid, CHIP, and Marketplace plans can require your citizenship or immigration status information only if you are applying for coverage for yourself. The applications may not ask for your citizenship or immigration status information if you are applying to enroll another person, like your child, and are not applying for yourself. If you are asked about your immigration status but you are applying for coverage for someone else you can say, “I am not applying for health insurance for myself.”",
+    "@kyr_healthcare_four_content": {
+        "description": "Healthcare four content"
+    },
+    "kyr_healthcare_five_title": "You don't have to provide a Social Security number (SSN) if you don't have one.",
+    "@kyr_healthcare_five_title": {
+        "description": "Healthcare five title"
+    },
+    "kyr_healthcare_five_content": "Whether you are applying for health insurance for yourself or on behalf of another person, your health insurance application may not be delayed or denied because you don't have an SSN. Only people who have a valid SSN issued by the Social Security Administration are required to provide one.",
+    "@kyr_healthcare_five_content": {
+        "description": "Healthcare five content"
+    },
+    "kyr_healthcare_six_title": "You have a right to receive services in your language when you apply for health insurance and obtain health care.",
+    "@kyr_healthcare_six_title": {
+        "description": "Healthcare six title"
+    },
+    "kyr_healthcare_six_content": "You have a right to receive language assistance services at no cost when you seek health care at a hospital or community health center or are applying for Medicaid, CHIP, or a Marketplace plan. Hospitals, community health centers and government offices may use bilingual staff, telephone interpretation services, or qualified in-person interpreters to provide language assistance services. Children should not be asked to interpret for their family members, especially in health care settings.",
+    "@kyr_healthcare_six_content": {
+        "description": "Healthcare six content"
+    },
+    "kyr_healthcare_seven_title": "You have the following health care options regardless of your immigration status or whether you have health insurance:",
+    "@kyr_healthcare_seven_title": {
+        "description": "Healthcare seven title"
+    },
+    "kyr_healthcare_seven_content": "Basic emergency room treatment for serious medical emergencies, including labor and delivery. Health care services from community health centers, migrant health centers, and free clinics. Services from state or local departments of public health (including immunization, screening and treatment for communicable diseases). Programs providing health services necessary to protect life or safety: including emergency medical, food or shelter programs; mental health crisis services; assistance for people experiencing domestic violence; crime victim assistance services and disaster relief. Financial assistance or “charity care” programs at community health centers and most public and safety-net hospitals.",
+    "@kyr_healthcare_seven_content": {
+        "description": "Healthcare seven content"
+    },
+    "kyr_work_nlra_menu": "Your Rights under the National Labor Relations Act",
+    "@kyr_work_nlra_menu": {
+        "description": "Menu item for rights under the National Labor Relations Act (NLRA)"
+    },
+    "kyr_work_nlra_title": "Regardless of immigration status, you have the same rights under the National Labor Relations Act (NLRA) as all covered employees including the right to:",
+    "@kyr_work_nlra_title": {
+        "description": "Title for explanation of NLRA rights"
+    },
+    "kyr_work_nlra_content": "Organize with a union to negotiate with your employer concerning your wages, hours, benefits, and other working conditions. Talk about working conditions with your co-workers, the public, or a union. Take action with your co-workers to try to improve your working conditions. Choose not to do any of these actions.",
+    "@kyr_work_nlra_content": {
+        "description": "Content explaining rights under the NLRA"
+    },
+    "kyr_work_nlra_url": "https://www.nlrb.gov/guidance/key-reference-materials/immigrant-worker-rights",
+    "@kyr_work_nlra_url": {
+        "description": "URL for NLRA rights"
+    },
+    "kyr_work_emp_menu": "Employer Cannot Use Your Status Against You",
+    "@kyr_work_emp_menu": {
+        "description": "Menu item for employer restrictions on using immigration status"
+    },
+    "kyr_work_emp_title": "Although employers must obey immigration laws, if you choose to talk to or take action with your co-workers to improve your working conditions, it is illegal for your employer to use your immigration status against you.",
+    "@kyr_work_emp_title": {
+        "description": "Title explaining employer restrictions on using immigration status"
+    },
+    "kyr_work_emp_content": "For example: Employers cannot threaten to call ICE because you and your co-workers tried to join a union. Employers cannot demand that you produce new immigration papers because you talked with your co-workers or a union about your working conditions.",
+    "@kyr_work_emp_content": {
+        "description": "Content with examples of employer restrictions on using immigration status"
+    },
+    "kyr_work_invest_menu": "Right to a NLRB Investigation",
+    "@kyr_work_invest_menu": {
+        "description": "Menu item for National Labor Relations Board (NLRB) investigation rights"
+    },
+    "kyr_work_invest_title": "If you believe that your employer has retaliated against you, your coworkers or your union, you can contact the National Labor Relations Board (NLRB) to file a charge. The NLRB will investigate the charge, which includes:",
+    "@kyr_work_invest_title": {
+        "description": "Title explaining the right to an NLRB investigation"
+    },
+    "kyr_work_invest_content": "\u2022Taking your affidavit and asking for your evidence.\n\u2022Because you are protected under the NLRA just the same as any other worker and because an individual's immigration status is not relevant to whether the NLRA has been violated, the NLRB will not ask about your immigration status or the immigration status of others during our investigation or litigation to prove violations of the NLRA.\n\u2022The NLRB may take legal action against your employer if the evidence shows that your employer is unlawfully using your immigration status to threaten or retaliate against you because you exercised your rights under the NLRA.\n\u2022The NLRB may also work with other agencies to ensure that immigration laws are not being used to threaten or retaliate against workers for exercising their rights under the NLRA.\n\u2022If your employer has fired you because you exercised your rights under the NLRA, the NLRB will work to get your job back and to get you paid for your lost wages.\n\u2022But if the employer proves that you were not authorized to work, the NLRB cannot order the employer to pay you lost wages and may not be able to get you your job back.\n\u2022In those situations, the NLRB will seek other remedies and may work with immigration agencies to assist with employees who have been victims of labor rights violations.\n\u2022For example, the NLRB may consider whether you could be eligible for a U or T visa or deferred action and may work with immigration agencies to try and obtain this kind of relief.",
+    "@kyr_work_invest_content": {
+        "description": "Content explaining NLRB investigation rights and procedures"
+    },
+    "kyr_work_pay_menu": "Right to Be Paid Fairly",
+    "@kyr_work_pay_menu": {
+        "description": "Menu item for fair wage rights"
+    },
+    "kyr_work_pay_title": "The Fair Labor Standards Act (FLSA) prohibits employers from discriminating against workers on the basis of their immigration status.",
+    "@kyr_work_pay_title": {
+        "description": "Title explaining fair wage rights under FLSA"
+    },
+    "kyr_work_pay_content": "The Fair Labor Standards Act (FLSA) prohibits employers from discriminating against workers on the basis of their immigration status, meaning undocumented immigrants have the right to be paid the same wages for the same work as U.S. citizens and legal residents. Additionally, undocumented immigrants are entitled to overtime pay, minimum wage, and the same safety and health protections as other workers.",
+    "@kyr_work_pay_content": {
+        "description": "Content explaining fair wage rights under FLSA"
+    },
+    "kyr_work_safe_menu": "Right to a Safe Work Environment",
+    "@kyr_work_safe_menu": {
+        "description": "Menu item for workplace safety rights"
+    },
+    "kyr_work_safe_title": "The Occupational Safety and Health Act (OSHA) requires employers to provide a safe and healthy work environment for all of their employees.",
+    "@kyr_work_safe_title": {
+        "description": "Title explaining workplace safety rights under OSHA"
+    },
+    "kyr_work_safe_content": "The Occupational Safety and Health Act (OSHA) requires employers to provide a safe and healthy work environment for all of their employees, regardless of their legal status. Consequently, even undocumented immigrants have the right to report workplace hazards and discrimination without fear of retaliation. Furthermore, employers are prohibited from retaliating against undocumented immigrants who file OSHA complaints.",
+    "@kyr_work_safe_content": {
+        "description": "Content explaining workplace safety rights under OSHA"
+    },
+    "kyr_work_discrim_menu": "Right Against Discrimination",
+    "@kyr_work_discrim_menu": {
+        "description": "Menu item for workplace discrimination protections"
+    },
+    "kyr_work_discrim_title": "Title VII of the Civil Rights Act also protects undocumented immigrants against employment discrimination.",
+    "@kyr_work_discrim_title": {
+        "description": "Title explaining employment discrimination protections"
+    },
+    "kyr_work_discrim_content": "Title VII of the Civil Rights Act also protects undocumented immigrants against employment discrimination based on race, color, religion, sex, or national origin, further ensuring a fair and secure workplace.",
+    "@kyr_work_discrim_content": {
+        "description": "Content explaining employment discrimination protections"
+    },
+    "kyr_work_family_menu": "Right to Be with Family",
+    "@kyr_work_family_menu": {
+        "description": "Menu item for family unity rights"
+    },
+    "kyr_work_family_title": "The right to family unity is articulated in the Universal Declaration of Human Rights.",
+    "@kyr_work_family_title": {
+        "description": "Title explaining family unity rights"
+    },
+    "kyr_work_family_content": "The right to family unity is articulated in the Universal Declaration of Human Rights (UDHR) and is particularly relevant in cases where the deportation of one parent would result in the separation of their children. However, this right isn’t absolute and is often weighed against the government's interest in enforcing immigration laws. The tradeoff between family rights and immigration control can be complex and challenging, potentially leading to family separations and emotional hardship for undocumented immigrants and their loved ones.",
+    "@kyr_work_family_content": {
+        "description": "Content explaining family unity rights"
+    },
+    "kyr_work_education_menu": "Right to Education",
+    "@kyr_work_education_menu": {
+        "description": "Menu item for education rights"
+    },
+    "kyr_work_education_title": "Undocumented children have the right to access public education from kindergarten through 12th grade.",
+    "@kyr_work_education_title": {
+        "description": "Title explaining education rights for undocumented children"
+    },
+    "kyr_work_education_content": "Under the landmark decision Plyler v. Doe (1982), undocumented children have the right to access public education from kindergarten through 12th grade, based on the Fourteenth Amendment’s Equal Protection Clause. States cannot deny free public education based on immigration status, although undocumented students may face other barriers, such as language challenges or fear of deportation.",
+    "@kyr_work_education_content": {
+        "description": "Content explaining education rights for undocumented children"
+    },
+    "kyr_work_barrier_menu": "Barriers to Accessing Rights",
+    "@kyr_work_barrier_menu": {
+        "description": "Menu item for barriers to legal rights"
+    },
+    "kyr_work_barrier_title": "The role of public opinion and political discourse in influencing anti-immigrant sentiment cannot be overstated.",
+    "@kyr_work_barrier_title": {
+        "description": "Title explaining barriers to accessing legal rights"
+    },
+    "kyr_work_barrier_content": "The role of public opinion and political discourse in influencing anti-immigrant sentiment cannot be overstated. Such feelings directly and significantly impact policy formulation and the enforcement of individual rights. In societies where negative perceptions of immigrants prevail (often driven by political rhetoric and media portrayal), there’s a tendency for stricter immigration laws and policies. Environments of this sort can lead to increased difficulties for immigrants in accessing their legal rights, receiving fair treatment in judicial proceedings, and facing societal discrimination.",
+    "@kyr_work_barrier_content": {
+        "description": "Content explaining barriers to accessing legal rights"
+    },
+    "my_right_to_stay_title": "My Right\nTo Stay",
+    "@my_right_to_stay_title": {
+        "description": "My Right to Stay title"
+    },
+    "kyr_home_screen_title": "Know your rights. Explore your options. One touch, instant protection.",
+    "@kyr_home_screen_title": {
+        "description": "Title for the Know Your Rights screen"
+    },
+    "do_not_deport_me_title": "DON'T\nDEPORT\nME",
+    "@do_not_deport_me_title": {
+        "description": "Do Not Deport Me title"
+    },
+    "mrts_home_screen_safe_title": "Stay Safe. Stay Informed. Get Help When You Need It.",
+    "@mrts_home_screen_safe_title": {
+        "description": "Title for Stay Safe"
+    },
+    "mrts_home_screen_title": "MyRightToStay is a vital resource for immigrants, providing instant access to legal resources, emergency contacts, and local support—all 100% private and secure.",
+    "@mrts_home_screen_title": {
+        "description": "Title for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_1": "You Are Already Started. No Signup, No Fees, No Information Tracking.",
+    "@mrts_home_screen_content_1": {
+        "description": "Subtitle for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_2": "You ",
+    "@mrts_home_screen_content_2": {
+        "description": "Part 1 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_3": "don't need to create an account ",
+    "@mrts_home_screen_content_3": {
+        "description": "Part 2 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_4": "to start using MyRightToStay. Just choose where you want to go next:",
+    "@mrts_home_screen_content_4": {
+        "description": "Part 3 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_5": "How It Works - Stay Safe. Stay Informed. Stay in Control.",
+    "@mrts_home_screen_content_5": {
+        "description": "Part 4 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_content_6": "MyRightToStay gives you instant access to emergency alerts, legal resources, and consular support—without tracking, fees, or sign-ups. Here's how you can use it to protect yourself.",
+    "@mrts_home_screen_content_6": {
+        "description": "Part 5 of content for the My Right to Stay screen"
+    },
+    "mrts_home_screen_consular_1": "Contact Your Consular Office - Why It's Important",
+    "@mrts_home_screen_consular_1": {
+        "description": "Consular Office section title"
+    },
+    "mrts_home_screen_consular_2": "If detained, you have the right to contact your consular office. They can provide legal support, notify your family, and advocate for fair treatment. Your consulate may help prevent deportation, ensure proper legal procedures, and connect you with an attorney.",
+    "@mrts_home_screen_consular_2": {
+        "description": "Consular Office section content"
+    },
+    "mrts_home_screen_consular_3": "Find My Nearest Consulate",
+    "@mrts_home_screen_consular_3": {
+        "description": "Find Your Consulate button"
+    },
+    "mrts_home_screen_consular_url": "https://www.gob.mx/sre/documentos/list-of-mexican-consulates-in-the-united-states?idiom=en",
+    "@mrts_home_screen_consular_url": {
+        "description": "Consular url"
+    },
+    "emergency_lifeline_content_1": "'Don't Deport Me'",
+    "@emergency_lifeline_content_1": {
+        "description": "Part 1 of content for the emergency lifeline"
+    },
+    "emergency_lifeline_content_2": "- Your Emergency Lifeline",
+    "@emergency_lifeline_content_2": {
+        "description": "Part 2 of content for the emergency lifeline"
+    },
+    "emergency_lifeline_content_3": "One tap alerts your emergency contacts and consular office that you are in danger or being detained. Your location is included for immediate response.",
+    "@emergency_lifeline_content_3": {
+        "description": "Part 3 of content for the emergency lifeline"
+    },
+    "emergency_lifeline_content_4": "Set Up",
+    "@emergency_lifeline_content_4": {
+        "description": "Menu title for setup"
+    },
+    "emergency_lifeline_content_5": "Set Up Emergency Alerts",
+    "@emergency_lifeline_content_5": {
+        "description": "Button text for setup emergency alerts"
+    },
+    "kyr_view_your_rights_label": "View Your Rights Now",
+    "@kyr_view_your_rights_label": {
+        "description": "Label for the View Your Rights button"
+    },
+    "kyr_card_content_1": "Know Your Rights",
+    "@kyr_card_content_1": {
+        "description": "Part 1 of content for the Know Your Rights card"
+    },
+    "kyr_card_content_1a": "- Even Without Internet",
+    "@kyr_card_content_1a": {
+        "description": "Part 1 of content for the Know Your Rights card"
+    },
+    "kyr_card_content_2": "Access clear legal information anytime so you know exactly what to do if questioned by authorities.",
+    "@kyr_card_content_2": {
+        "description": "Part 2 of content for the Know Your Rights card"
+    },
+    "kyr_card_content_3": "Download a Printable Rights Card",
+    "@kyr_card_content_3": {
+        "description": "Button text for learn more"
+    },
+    "kyr_tap_to_access": "Tap to access a printable Know Your Rights card.",
+    "@kyr_tap_to_access": {
+        "description": "Label for the download button"
+    },
+    "live_support_content_1": "Get 24/7 Live Support",
+    "@live_support_content_1": {
+        "description": "Part 1 of content for the live support card"
+    },
+    "live_support_content_2": "Connect with legal experts at CIAM for emergency immigration support.",
+    "@live_support_content_2": {
+        "description": "Part 2 of content for the live support card"
+    },
+    "live_support_content_3": "Call For Immediate Help",
+    "@live_support_content_3": {
+        "description": "Button text for get help now"
+    },
+    "private_secure_content_1": "Stay 100% Private & Secure",
+    "@private_secure_content_1": {
+        "description": "Part 1 of content for the private and secure card"
+    },
+    "private_secure_content_2": "\u2023 No personal info required—completely anonymous.\n\u2023 No tracking, no data collection—your safety comes first.\n\u2023 No government ties—MyRightToStay is completely independent.",
+    "@private_secure_content_2": {
+        "description": "Part 2 of content for the private and secure card"
+    },
+    "private_secure_content_3": "How We Protect Your Privacy",
+    "@private_secure_content_3": {
+        "description": "Button text for learn more"
+    },
+    "call_to_action_content_1": "Get Started Now",
+    "@call_to_action_content_1": {
+        "description": "Part 1 of content for the call to action card"
+    },
+    "call_to_action_content_2": "Help Someone Stay Safe - Share this App",
+    "@call_to_action_content_2": {
+        "description": "Part 2 of content for the call to action card"
+    },
+    "add_emergency_contacts_label": "Add Emergency Contacts",
+    "@add_emergency_contacts_label": {
+        "description": "Label for the Add Emergency Contacts"
+    },
+    "add_emergency_contacts_tap_to_add": "Tap to add trusted contacts who will be notified in case of an emergency.",
+    "@add_emergency_contacts_tap_to_add": {
+        "description": "Label for the Add Emergency Contacts"
+    },
+    "add_emergency_contacts_title": "Set Up Your Emergency Contacts",
+    "@add_emergency_contacts_title": {
+        "description": "Title for the Add Emergency Contacts screen"
+    },
+    "add_emergency_view_button_title": "View Your Contacts",
+    "@add_emergency_view_button_title": {
+        "description": "Title for view your contacts button"
+    },
+    "add_emergency_contacts_subtitle_1": "When you press the Don't 'Deport Me button', your emergency contacts will instantly receive an alert. Here, you can customize your message for each contact and attach important documents they may need to act on your behalf.",
+    "@add_emergency_contacts_subtitle_1": {
+        "description": "Subtitle 1 for the Add Emergency Contacts screen"
+    },
+    "add_emergency_contacts_subtitle_2": "• Add the people you trust to be notified in case of an emergency.\n\n • Customize your emergency message for each contact or use the default message.\n\n• Upload documents like a Power of Attorney (POA) or identification so they have what they need to help you immediately.",
+    "@add_emergency_contacts_subtitle_2": {
+        "description": "Button text for adding emergency contacts"
+    },
+    "add_emergency_contact_section_title": "Contact Information",
+    "@add_emergency_contact_section_title": {
+        "description": "Add new contact section title"
+    },
+    "add_emergency_contact_first_name": "First Name",
+    "@add_emergency_contact_first_name": {
+        "description": "Label for the contact name field"
+    },
+    "add_emergency_contact_last_name": "Last Name",
+    "@add_emergency_contact_last_name": {
+        "description": "Label for the contact name field"
+    },
+    "add_emergency_contact_name": "Name",
+    "@add_emergency_contact_name": {
+        "description": "Label for the contact name field"
+    },
+    "add_emergency_contact_phone": "Phone Number",
+    "@add_emergency_contact_phone": {
+        "description": "Label for the contact phone field"
+    },
+    "add_emergency_contact_email": "Email Address (Optional)",
+    "@add_emergency_contact_email": {
+        "description": "Label for the contact email field"
+    },
+    "add_emergency_contact_consulate_title": "This is a consulate contact.",
+    "@add_emergency_contact_consulate_title": {
+        "description": "Label for the contact consulate_title field"
+    },
+    "add_emergency_contact_consulate_country": "Phone Country Code",
+    "@add_emergency_contact_consulate_country": {
+        "description": "Label for the phone country code field"
+    },
+    "add_emergency_contact_message_title": "Emergency Message",
+    "@add_emergency_contact_message_title": {
+        "description": "Label for the emergency message field"
+    },
+    "add_emergency_contact_message": "I need your help immediately! I am being detained or in danger. Please follow our plan. My location is included. Contact legal help or my consular office now!",
+    "@add_emergency_contact_message": {
+        "description": "Label for the custom message field"
+    },
+    "add_emergency_contact_char_cnt": "Max 350 characters",
+    "@add_emergency_contact_char_cnt": {
+        "description": "Label for the char count field"
+    },
+    "add_emergency_contact_upload_title": "Important Documents",
+    "@add_emergency_contact_upload_title": {
+        "description": "Label for the upload field"
+    },
+    "add_emergency_add_contact": "Add Contact",
+    "@add_emergency_add_contact": {
+        "description": "Label for the upload button"
+    },
+    "add_emergency_contact_upload": "Tap to take a document photo",
+    "@add_emergency_contact_upload": {
+        "description": "Label for the upload button"
+    },
+    "add_emergency_contact_upload_desc": "✅ Contact Added Successfully!",
+    "@add_emergency_contact_upload_desc": {
+        "description": "Label for the upload button"
+    },
+    "add_emergency_contact_msg": "Your emergency contact has been saved and will be notified immediately when you activate the \"Don't Deport Me\" button.",
+    "@add_emergency_contact_msg": {
+        "description": "Msg for the upload button"
+    },
+    "add_emergency_contact_add_another": "Add Another Contact",
+    "@add_emergency_contact_add_another": {
+        "description": "Label for the add another button"
+    },
+    "add_emergency_contact_review_contacts": "Review My Contacts",
+    "@add_emergency_contact_review_contacts": {
+        "description": "Label for the review my contacts button"
+    },
+    "edit_emergency_contact_return_home": "Return to Home",
+    "@edit_emergency_contact_return_home": {
+        "description": "Label for the return home button"
+    },
+    "edit_emergency_contact_cancel": "Cancel",
+    "@edit_emergency_contact_cancel": {
+        "description": "Title for the Cancel"
+    },
+    "edit_emergency_contact_add": "Save Changes",
+    "@edit_emergency_contact_add": {
+        "description": "Label for the add button"
+    },
+    "edit_emergency_contact_title": "Edit Contact",
+    "@edit_emergency_contact_title": {
+        "description": "Title for the Edit Contact"
+    },
+    "edit_emergency_contact_success_title": "✅ Contact Updated Successfully!",
+    "@edit_emergency_contact_success_title": {
+        "description": "Title for the edit success dialog"
+    },
+    "edit_emergency_contact_success_msg": "Your emergency contact has been updated and will be used when you activate the \"Don't Deport Me\" button.",
+    "@edit_emergency_contact_success_msg": {
+        "description": "Msg for the edit success dialog"
+    },
+    "edit_emergency_contact_done": "Done",
+    "@edit_emergency_contact_done": {
+        "description": "Label for the done button"
+    },
+    "view_emergency_contacts_title": "My Emergency Contacts",
+    "@view_emergency_contacts_title": {
+        "description": "Title for the View Emergency Contacts screen"
+    },
+    "view_emergency_contacts_subtitle": "Manage your trusted contacts who will be notified in emergencies.",
+    "@view_emergency_contacts_subtitle": {
+        "description": "Subtitle for the View Emergency Contacts screen"
+    },
+    "view_emergency_contacts_add": "Add New Contact",
+    "@view_emergency_contacts_add": {
+        "description": "Label for the add button"
+    },
+    "view_emergency_contacts_none_found": "No Contacts Found",
+    "@view_emergency_contacts_none_found": {
+        "description": "Label for the No Contacts Found"
+    },
+    "view_emergency_contacts_error": "Error loading contacts",
+    "@view_emergency_contacts_error": {
+        "description": "Label for the Error"
+    },
+    "label_additional_info": "Additional Information",
+    "@label_additional_info": {
+        "description": "Additional Information"
+    },
+    "label_could_not_launch_website": "Could not launch website",
+    "@label_could_not_launch_website": {
+        "description": "Could not launch website"
+    },
+    "label_could_not_launch_email": "Could not launch email",
+    "@label_could_not_launch_email": {
+        "description": "Could not launch email"
+    },
+    "label_could_not_launch_phone": "Could not launch phone",
+    "@label_could_not_launch_phone": {
+        "description": "Could not launch phone"
+    },
+    "label_could_not_launch_map": "Could not launch map",
+    "@label_could_not_launch_map": {
+        "description": "Could not launch map"
+    },
+    "label_could_not_launch_sms": "Could not launch SMS",
+    "@label_could_not_launch_sms": {
+        "description": "Could not launch SMS"
+    },
+    "label_could_not_launch_contact": "Could not launch contact",
+    "@label_could_not_launch_contact": {
+        "description": "Could not launch contact"
+    },
+    "label_could_not_launch_consulate": "Could not launch consulate",
+    "@label_could_not_launch_consulate": {
+        "description": "Could not launch consulate"
+    },
+    "label_could_not_launch_document": "Could not launch document",
+    "@label_could_not_launch_document": {
+        "description": "Could not launch document"
+    },
+    "label_could_not_launch_alert": "Could not launch alert",
+    "@label_could_not_launch_alert": {
+        "description": "Could not launch alert"
+    },
+    "label_could_not_launch_contact_info": "Could not launch contact info",
+    "@label_could_not_launch_contact_info": {
+        "description": "Could not launch contact info"
+    },
+    "label_could_not_launch_emergency": "Could not launch emergency",
+    "@label_could_not_launch_emergency": {
+        "description": "Could not launch emergency"
+    },
+    "label_could_not_launch_legal": "Could not launch legal",
+    "@label_could_not_launch_legal": {
+        "description": "Could not launch legal"
+    },
+    "label_could_not_launch_map_location": "Could not launch map location",
+    "@label_could_not_launch_map_location": {
+        "description": "Could not launch map location"
+    },
+    "label_could_not_launch_phone_number": "Could not launch phone",
+    "@label_could_not_launch_phone_number": {
+        "description": "Could not launch phone number"
+    },
+    "label_imaged_saved": "Image saved to gallery!",
+    "@label_imaged_saved": {
+        "description": "Image saved"
+    },
+    "label_image_not_saved": "Failed to save image",
+    "@label_image_not_saved": {
+        "description": "Image not saved"
+    },
+    "label_permission_denied": "Permission denied to access gallery.",
+    "@label_permission_denied": {
+        "description": "Permission denied"
+    },
+    "label_kyr_card": "Know Your Rights Card",
+    "@label_kyr_card": {
+        "description": "Know Your Rights"
+    },
+    "label_save_gallery": "Save to Photo Gallery",
+    "@label_save_gallery": {
+        "description": "Save to Photo Gallery"
+    },
+    "label_saved_gallery": "Saved to Photo Gallery",
+    "@label_saved_gallery": {
+        "description": "Saved to Photo Gallery"
+    },
+    "label_close_dialog": "Close",
+    "@label_close_dialog": {
+        "description": "Close"
+    },
+    "label_delete_contact": "Delete Contact",
+    "@label_delete_contact": {
+        "description": "Delete Contact"
+    },
+    "label_delete_contact_message": "Are you sure you want to delete this contact? This action cannot be undone",
+    "@label_delete_contact_message": {
+        "description": "Delete Contact Message"
+    },
+    "label_cancel": "Cancel",
+    "@label_cancel": {
+        "description": "Cancel"
+    },
+    "label_delete": "Delete",
+    "@label_delete": {
+        "description": "Delete"
+    },
+    "label_find_consulate": "Find The Nearest Consulate",
+    "@label_find_consulate": {
+        "description": "Find The Nearest Consulate"
+    },
+    "label_tap_find_consulate": "Tap to locate your nearest consulate.",
+    "@label_tap_find_consulate": {
+        "description": "Tap to Find My Nearest Consulate"
+    },
+    "label_call_immediate_legal_help": "Call for Immediate Legal Help",
+    "@label_call_immediate_legal_help": {
+        "description": "Call for Immediate Legal Help"
+    },
+    "label_tap_call_immediate_legal_help": "Tap to connect with a 24/7 legal support service.",
+    "@label_tap_call_immediate_legal_help": {
+        "description": "Tap to Call For Immediate Help"
+    },
+    "label_about_privacy": "Learn About Your Privacy",
+    "@label_about_privacy": {
+        "description": "About Privacy"
+    },
+    "label_tap_about_privacy": "Tap to see how MyRightToStay protects your data & anonymity.",
+    "@label_tap_about_privacy": {
+        "description": "Tap to learn more about how we protect your privacy"
+    },
+    "drawer_home": "Home",
+    "@drawer_home": {
+        "description": "Title for the home screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_add_contacts": "Add Contacts",
+    "@drawer_add_contacts": {
+        "description": "Title for the add contacts screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_view_contacts": "View Contacts",
+    "@drawer_view_contacts": {
+        "description": "Title for the view contacts screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_know_your_rights": "Know Your Rights",
+    "@drawer_know_your_rights": {
+        "description": "Title for the know your rights screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_legal_help": "Legal Help",
+    "@drawer_legal_help": {
+        "description": "Title for the legal help screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_resources": "Resources",
+    "@drawer_resources": {
+        "description": "Title for the resources screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_jobs": "Jobs",
+    "@drawer_jobs": {
+        "description": "Title for the jobs screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_settings": "Settings",
+    "@drawer_settings": {
+        "description": "Title for the settings screen in the drawer menu.",
+        "type": "text"
+    },
+    "drawer_food": "Food",
+    "@drawer_food": {
+        "description": "Drawer item label for food-related service providers.",
+        "type": "text"
+    },
+    "drawer_consulate": "Consulate",
+    "@drawer_consulate": {
+        "description": "Drawer item label for consulate-related service providers.",
+        "type": "text"
+    },
+    "drawer_benefits": "Benefits",
+    "@drawer_benefits": {
+        "description": "Drawer item label for government or community benefits.",
+        "type": "text"
+    },
+    "drawer_travel": "Travel",
+    "@drawer_travel": {
+        "description": "Drawer item label for travel assistance providers.",
+        "type": "text"
+    },
+    "drawer_housing": "Housing",
+    "@drawer_housing": {
+        "description": "Drawer item label for housing services and shelters.",
+        "type": "text"
+    },
+    "drawer_immigration": "Immigration",
+    "@drawer_immigration": {
+        "description": "Drawer item label for immigration support services.",
+        "type": "text"
+    },
+    "drawer_healthcare": "Healthcare",
+    "@drawer_healthcare": {
+        "description": "Drawer item label for medical and healthcare service providers.",
+        "type": "text"
+    },
+    "drawer_education": "Education",
+    "@drawer_education": {
+        "description": "Drawer item label for schools, tutoring, or other education-related resources.",
+        "type": "text"
+    },
+    "drawer_transportation": "Transportation",
+    "@drawer_transportation": {
+        "description": "Drawer item label for transportation help and services.",
+        "type": "text"
+    },
+    "drawer_local_deals": "Local Deals",
+    "@drawer_local_deals": {
+        "description": "Drawer item label for local deals.",
+        "type": "text"
+    },
+    "share_app_msg": "Check out the MyRightToStay app. Download it here: {url}",
+    "@share_app_msg": {
+        "description": "Share message with a link to the app store",
+        "placeholders": {
+            "url": {
+                "type": "String"
+            }
+        }
+    },
+    "share_app_title": "Stay safe with the MyRightToStay app",
+    "@share_app_title": {
+        "description": "Title for sharing the app"
+    },
+    "service_providers_loading_error": "Error Loading Service Providers",
+    "@service_providers_loading_error": {
+        "description": "Error message for loading service providers"
+    },
+    "service_providers_no_results": "No Service Providers Found",
+    "@service_providers_no_results": {
+        "description": "No service providers found message"
+    },
+    "service_providers_company_name": "Company Name:",
+    "@service_providers_company_name": {
+        "description": "Label for the company name field"
+    },
+    "service_providers_contact_name": "Contact Name:",
+    "@service_providers_contact_name": {
+        "description": "Label for the company name field"
+    },
+    "service_providers_address": "Street Address:",
+    "@service_providers_address": {
+        "description": "Label for the address field"
+    },
+    "service_providers_city": "City:",
+    "@service_providers_city": {
+        "description": "Label for the city field"
+    },
+    "service_providers_state": "State:",
+    "@service_providers_state": {
+        "description": "Label for the state field"
+    },
+    "service_providers_zip": "Zip:",
+    "@service_providers_zip": {
+        "description": "Label for the zip field"
+    },
+    "service_providers_mobile_phone": "Mobile Phone:",
+    "@service_providers_mobile_phone": {
+        "description": "Label for the mobile phone field"
+    },
+    "service_providers_office_phone": "Office Phone:",
+    "@service_providers_office_phone": {
+        "description": "Label for the mobile phone field"
+    },
+    "service_providers_email": "Email",
+    "@service_providers_email": {
+        "description": "Label for the email field"
+    },
+    "service_providers_website": "Website",
+    "@service_providers_website": {
+        "description": "Label for the website field"
+    },
+    "service_enter_zip_code": "Enter your zip code to find service providers near you.",
+    "@service_enter_zip_code": {
+        "description": "Label for the enter zip code field"
+    },
+    "service_search": "Search",
+    "@service_search": {
+        "description": "Label for the search button"
+    },
+    "service_invalid_zip_code": "Invalid Zip Code",
+    "@service_invalid_zip_code": {
+        "description": "Label for the invalid zip code error"
+    },
+    "service_providers": "Service Providers",
+    "@service_providers": {
+        "description": "Label for the service providers screen"
+    },
+    "service_providers_away": "away",
+    "@service_providers_away": {
+        "description": "Text to show distance from user to provider"
+    },
+    "service_providers_state_none": "No state selected",
+    "@service_providers_state_none": {
+        "description": "Label for the no state"
+    },
+    "about_us_description": "We create educational apps to empower learning and growth. Our goal is to make knowledge accessible, intuitive, and engaging for diverse communities. With a focus on real-world impact, we build tools that support lifelong learning and positive change.",
+    "@about_us_description": {
+        "description": "A short paragraph describing the mission and purpose of the company, shown in the About Us section.",
+        "type": "text"
+    },
+    "privacy_policy_prompt": "Tap to view our privacy policy",
+    "@privacy_policy_prompt": {
+        "description": "Instructional text shown in settings screen. Tells the user they can tap to open the privacy policy in a web browser.",
+        "type": "text"
+    },
+    "label_app_version": "App Version",
+    "@label_app_version": {
+        "description": "Label for the app version in the settings screen.",
+        "type": "text"
+    },
+    "label_app_loading": "Loading...",
+    "@label_app_loading": {
+        "description": "Label for the loading screen.",
+        "type": "text"
+    },
+    "label_app_name": "Name:",
+    "@label_app_name": {
+        "description": "Label for the app name.",
+        "type": "text"
+    },
+    "label_app_version_number": "Version:",
+    "@label_app_version_number": {
+        "description": "Label for the app version number.",
+        "type": "text"
+    },
+    "lable_app_build_number": "Build Number:",
+    "@lable_app_build_number": {
+        "description": "Label for the app build number.",
+        "type": "text"
+    },
+    "label_about_us": "About Us",
+    "@label_about_us": {
+        "description": "Label for the about us section.",
+        "type": "text"
+    },
+    "healthcare_rights_url": "https://www.nilc.org/resources/health-insurance-and-care-rights/",
+    "@healthcare_rights_url": {
+        "description": "Healthcare rights URL",
+        "type": "text"
+    },
+    "healthcare_url_not_found": "URL is not available.",
+    "@healthcare_url_not_found": {
+        "description": "Healthcare URL not found",
+        "type": "text"
+    },
+    "healthcare_find_nearest": "Find a Healthcare Provider",
+    "@healthcare_find_nearest": {
+        "description": "Label for the find nearest healthcare provider button",
+        "type": "text"
+    },
+    "healthcare_find_clinic": "Find a Free or Charitable Clinic",
+    "@healthcare_find_clinic": {
+        "description": "Label for the find clinic button",
+        "type": "text"
+    },
+    "country_usa": "United States",
+    "@country_usa": {
+        "description": "Country name: United States, for consulate contact info dropdown"
+    },
+    "country_argentina": "Argentina",
+    "@country_argentina": {
+        "description": "Country name: Argentina, for consulate contact info dropdown"
+    },
+    "country_bolivia": "Bolivia",
+    "@country_bolivia": {
+        "description": "Country name: Bolivia, for consulate contact info dropdown"
+    },
+    "country_chile": "Chile",
+    "@country_chile": {
+        "description": "Country name: Chile, for consulate contact info dropdown"
+    },
+    "country_colombia": "Colombia",
+    "@country_colombia": {
+        "description": "Country name: Colombia, for consulate contact info dropdown"
+    },
+    "country_costa_rica": "Costa Rica",
+    "@country_costa_rica": {
+        "description": "Country name: Costa Rica, for consulate contact info dropdown"
+    },
+    "country_cuba": "Cuba",
+    "@country_cuba": {
+        "description": "Country name: Cuba, for consulate contact info dropdown"
+    },
+    "country_dominican_republic": "Dominican Republic",
+    "@country_dominican_republic": {
+        "description": "Country name: Dominican Republic, for consulate contact info dropdown"
+    },
+    "country_ecuador": "Ecuador",
+    "@country_ecuador": {
+        "description": "Country name: Ecuador, for consulate contact info dropdown"
+    },
+    "country_el_salvador": "El Salvador",
+    "@country_el_salvador": {
+        "description": "Country name: El Salvador, for consulate contact info dropdown"
+    },
+    "country_equatorial_guinea": "Equatorial Guinea",
+    "@country_equatorial_guinea": {
+        "description": "Country name: Equatorial Guinea, for consulate contact info dropdown"
+    },
+    "country_guatemala": "Guatemala",
+    "@country_guatemala": {
+        "description": "Country name: Guatemala, for consulate contact info dropdown"
+    },
+    "country_honduras": "Honduras",
+    "@country_honduras": {
+        "description": "Country name: Honduras, for consulate contact info dropdown"
+    },
+    "country_mexico": "Mexico",
+    "@country_mexico": {
+        "description": "Country name: Mexico, for consulate contact info dropdown"
+    },
+    "country_nicaragua": "Nicaragua",
+    "@country_nicaragua": {
+        "description": "Country name: Nicaragua, for consulate contact info dropdown"
+    },
+    "country_panama": "Panama",
+    "@country_panama": {
+        "description": "Country name: Panama, for consulate contact info dropdown"
+    },
+    "country_paraguay": "Paraguay",
+    "@country_paraguay": {
+        "description": "Country name: Paraguay, for consulate contact info dropdown"
+    },
+    "country_peru": "Peru",
+    "@country_peru": {
+        "description": "Country name: Peru, for consulate contact info dropdown"
+    },
+    "country_puerto_rico": "Puerto Rico",
+    "@country_puerto_rico": {
+        "description": "Country name: Puerto Rico, for consulate contact info dropdown"
+    },
+    "country_spain": "Spain",
+    "@country_spain": {
+        "description": "Country name: Spain, for consulate contact info dropdown"
+    },
+    "country_uruguay": "Uruguay",
+    "@country_uruguay": {
+        "description": "Country name: Uruguay, for consulate contact info dropdown"
+    },
+    "country_venezuela": "Venezuela",
+    "@country_venezuela": {
+        "description": "Country name: Venezuela, for consulate contact info dropdown"
+    },
+    "community_service_url_one": "https://www.mlkch.org/community-resources",
+    "@community_service_url_one": {
+        "description": "Community service URL 1"
+    },
+    "community_service_url_two": "https://www.cahealthwellness.com/members/medicaid/calaim-resources/community-supports.html",
+    "@community_service_url_two": {
+        "description": "Community service URL 2"
+    },
+    "community_service_url_three": "https://www.chpw.org/member-center/health-management/community-programs/",
+    "@community_service_url_three": {
+        "description": "Community service URL 3"
+    },
+    "community_service_url_four": "https://www.ccswoh.org/mental-health-services/",
+    "@community_service_url_four": {
+        "description": "Community service URL 4"
+    },
+    "community_service_url_five": "https://spanishamerican.org/programs#",
+    "@community_service_url_five": {
+        "description": "Community service URL 5"
+    },
+    "community_service_url_six": "https://fsacares.org/lhp-family-support-services/",
+    "@community_service_url_six": {
+        "description": "Community service URL 6"
+    },
+    "community_social_services": "Community and Social Services",
+    "@community_social_services": {
+        "description": "Label for the community and social services screen"
+    },
+    "community_social_california": "Community and Social Services - California",
+    "@community_social_california": {
+        "description": "Label for the California community and social services"
+    },
+    "community_social_washington": "Community and Social Services - Washington",
+    "@community_social_washington": {
+        "description": "Label for the Washington community and social services"
+    },
+    "community_social_ohio": "Community and Social Services - Ohio",
+    "@community_social_ohio": {
+        "description": "Label for the Ohio community and social services"
+    },
+    "community_social_spanish_community": "Community and Social Services - Spanish Community",
+    "@community_social_spanish_community": {
+        "description": "Label for the Spanish community and social services"
+    },
+    "community_social_family_support": "Community and Social Services - Family Support",
+    "@community_social_family_support": {
+        "description": "Label for the Family Support community and social services"
+    },
+    "view_service_providers_search": "Search for Attorneys",
+    "@view_service_providers_search": {
+        "description": "Label for the search button"
+    },
+    "view_service_provider_legal_title": "Get Legal Help Now - Free & Paid Options Available",
+    "@view_service_provider_legal_title": {
+        "description": "Label for the legal services screen"
+    },
+    "view_service_provider_legal_subtitle": "Find trusted immigration attorneys, connect with free legal services, or get emergency legal support right now.",
+    "@view_service_provider_legal_subtitle": {
+        "description": "Subtitle for the legal services screen"
+    },
+    "view_service_provider_legal_services": "Legal Services",
+    "@view_service_provider_legal_services": {
+        "description": "Label for the legal services card"
+    },
+    "view_service_provider_ask_lawyer": "Ask a Lawyer On Call",
+    "@view_service_provider_ask_lawyer": {
+        "description": "Label for the Ask a Lawyer button"
+    },
+    "view_service_provider_ask_lawyer_subtitle": "Get immediate legal advice from immigration attorneys available now. Affordable consultations to address your specific questions and concerns.",
+    "@view_service_provider_ask_lawyer_subtitle": {
+        "description": "Subtitle for the Ask a Lawyer button"
+    },
+    "view_service_provider_immediate_legal_help_title": "Get Immediate Legal Help",
+    "@view_service_provider_immediate_legal_help_title": {
+        "description": "Label for the Get Immediate Legal Help title"
+    },
+    "view_service_provider_immediate_legal_help_subtitle": "Access dedicated immigration attorneys 24/7, starting at $29.95 a month. Get your consultation today and protect your rights.",
+    "@view_service_provider_immediate_legal_help_subtitle": {
+        "description": "Label for the Get Immediate Legal Help subtitle"
+    },
+    "view_service_provider_immediate_legal_help_button": "Get Started Now",
+    "@view_service_provider_immediate_legal_help_button": {
+        "description": "Label for the Get Immediate Legal Help button"
+    },
+    "service_providers_sort_by": "Sort By",
+    "@service_providers_sort_by": {
+        "description": "Label for the sort by dropdown"
+    },
+    "service_providers_sort_distance": "Distance",
+    "@service_providers_sort_distance": {
+        "description": "Label for the sort by distance option"
+    },
+    "service_providers_sort_radius": "Search by Radius",
+    "@service_providers_sort_radius": {
+        "description": "Label for the sort by radius option"
+    },
+    "service_providers_sort_city": "City",
+    "@service_providers_sort_city": {
+        "description": "Label for the sort by city option"
+    },
+    "service_providers_sort_state": "State",
+    "@service_providers_sort_state": {
+        "description": "Label for the sort by state option"
+    },
+    "service_providers_sort_zip": "Zip Code",
+    "@service_providers_sort_zip": {
+        "description": "Label for the sort by zip code option"
+    },
+    "service_invalid_radius": "Invalid Radius",
+    "@service_invalid_radius": {
+        "description": "Label for the invalid radius error"
+    },
+    "service_providers_city_optional": "City (optional)",
+    "@service_providers_city_optional": {
+        "description": "Label for the optional city field"
+    },
+    "service_providers_state_optional": "State (optional)",
+    "@service_providers_state_optional": {
+        "description": "Label for the optional state field"
+    },
+    "service_providers_distance": "miles away",
+    "@service_providers_distance": {
+        "description": "Label for miles away"
+    },
+    "service_providers_years_of_experience": "years of experience",
+    "@service_providers_years_of_experience": {
+        "description": "Label for years of experience"
+    },
+    "kyr_in_your_home_url": "https://www.informedimmigrant.com/resources/detention-deportation/know-your-rights/#rights-inside-your-home",
+    "@kyr_in_your_home_url": {
+        "description": "In Your Home url"
+    },
+    "kyr_outside_your_home_url": "https://www.informedimmigrant.com/resources/detention-deportation/know-your-rights/#your-rights-outside-your-home",
+    "@kyr_outside_your_home_url": {
+        "description": "Outside Your Home url"
+    },
+    "kyr_in_your_home_title": "In Your Home",
+    "@kyr_in_your_home_title": {
+        "description": "In Your Home title"
+    },
+    "kyr_outside_your_home_title": "Outside Your Home",
+    "@kyr_outside_your_home_title": {
+        "description": "Outside Your Home title"
+    },
+    "kyr_news_title": "Immigartion News",
+    "@kyr_news_title": {
+        "description": "Immigartion news title"
+    },
+    "kyr_new_url": "https://english.elpais.com/",
+    "@kyr_new_url": {
+        "description": "Immigartion news url"
+    },
+    "error_generic": "Something went wrong. Please try again.",
+    "@error_generic": {
+        "description": "Base error message shown before displaying exception details in a SnackBar.",
+        "type": "text"
+    },
+    "error_website_unavailable": "We apologize, this website is no longer available.",
+    "@error_website_unavailable": {
+        "description": "Error message for unavailable website"
+    },
+    "error_email_unavailable": "We apologize, this email link is no longer available.",
+    "@error_email_unavailable": {
+        "description": "Error message for unavailable email"
+    },
+    "error_phone_unavailable": "We apologize, this phone number is no longer available.",
+    "@error_phone_unavailable": {
+        "description": "Error message for unavailable phone number"
+    },
+    "error_phone_number_invalid": "We apologize, this phone number is invalid.",
+    "@error_phone_number_invalid": {
+        "description": "Error message for invalid phone number"
+    },
+    "error_email_invalid": "We apologize, this email address is invalid.",
+    "@error_email_invalid": {
+        "description": "Error message for invalid email address"
+    },
+    "send_emergency_message_tap": "Tap to create your text message.",
+    "@send_emergency_message_tap": {
+        "description": "Label for the send emergency message button"
+    },
+    "send_emergency_message_sent": "Your emergency message has been sent!",
+    "@send_emergency_message_sent": {
+        "description": "Label for the emergency message sent confirmation"
+    },
+    "send_emergency_message_error": "Error sending emergency message. Please try again.",
+    "@send_emergency_message_error": {
+        "description": "Error message for sending emergency message"
+    },
+    "send_emergency_message_title": "Send Emergency Messages",
+    "@send_emergency_message_title": {
+        "description": "Title for the emergency message screen"
+    },
+    "send_emergency_message_subtitle": "On iPhones, Apple requires you to send each emergency message individually—so you'll need to tap send for each contact.",
+    "@send_emergency_message_subtitle": {
+        "description": "Subtitle for the emergency message screen"
+    },
+    "privacy_statement_title": "Privacy Statement",
+    "@privacy_statement_title": {
+        "description": "Title of the dialog that displays the app's privacy statement.",
+        "type": "text"
+    },
+    "privacy_statement_content": "This app does not collect, store, or share any personal information. All data remains on your device and is used solely for the purpose of providing app functionality. No user data is transmitted to external servers.",
+    "@privacy_statement_content": {
+        "description": "Main content of the privacy statement shown to the user.",
+        "type": "text"
+    }
+}
