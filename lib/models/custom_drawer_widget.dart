@@ -3,7 +3,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_right_portal/models/drawer_item_model.dart';
 import 'package:my_right_portal/utils/custom_decorations.dart';
 
-
 class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({super.key});
 
@@ -20,23 +19,22 @@ class CustomDrawerWidget extends StatelessWidget {
       DrawerItemModel(
         icon: Icons.home,
         title: localizations.drawer_home,
-        route: '/home',
+        route: '/signup',
       ),
       DrawerItemModel(
         icon: Icons.balance,
         title: localizations.drawer_legal_help,
-        route: '/viewResources',
-        argument: 'legal',
+        route: '/signup',
       ),
       DrawerItemModel(
         icon: Icons.contacts,
         title: localizations.drawer_add_contacts,
-        route: '/addContacts',
+        route: '/signup',
       ),
       DrawerItemModel(
         icon: Icons.visibility,
         title: localizations.drawer_view_contacts,
-        route: '/viewContacts',
+        route: '/signup',
       ),
       DrawerItemModel(
         icon: Icons.favorite_outline,
@@ -46,26 +44,26 @@ class CustomDrawerWidget extends StatelessWidget {
       DrawerItemModel(
         icon: Icons.language,
         title: localizations.drawer_consulate,
-        route: '/consulate',
+        route: '/signup',
       ),
       DrawerItemModel(
         icon: Icons.people,
         title: localizations.community_support_title,
-        route: '/community',
+        route: '/signup',
       ),
       DrawerItemModel(
         icon: Icons.group_outlined,
         title: localizations.label_about_us,
-        route: '/settings',
+        route: '/signup',
       ),
     ];
     return Drawer(
       child: Container(
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/nature_background.png'),
-            fit: BoxFit.cover,
-          ),
+          // image: DecorationImage(
+          //   image: AssetImage('assets/images/nature_background.png'),
+          //   fit: BoxFit.cover,
+          // ),
         ),
         child: SafeArea(
           child: ListView.builder(
