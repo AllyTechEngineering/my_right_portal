@@ -67,18 +67,17 @@ class UrlLauncherHelper {
       try {
         await launchUrl(uri);
       } catch (e) {
-        CustomError.show(
-          context,
-          e,
-          userMessage: localizations.error_website_unavailable,
-        );
+        debugPrint('Error launching URL: $e');
+        SchedulerBinding.instance.addPostFrameCallback((_) {
+          if (context.mounted) {
+            CustomError.show(
+              context,
+              e,
+              userMessage: localizations.error_website_unavailable,
+            );
+          }
+        });
       }
-    } else {
-      CustomError.show(
-        context,
-        '${localizations.error_website_unavailable} $url',
-        userMessage: localizations.error_website_unavailable,
-      );
     }
   }
 
@@ -101,18 +100,16 @@ class UrlLauncherHelper {
       try {
         await launchUrl(emailUri);
       } catch (e) {
-        CustomError.show(
-          context,
-          e,
-          userMessage: localizations.error_email_unavailable,
-        );
+        SchedulerBinding.instance.addPostFrameCallback((_) {
+          if (context.mounted) {
+            CustomError.show(
+              context,
+              e,
+              userMessage: localizations.error_website_unavailable,
+            );
+          }
+        });
       }
-    } else {
-      CustomError.show(
-        context,
-        '${localizations.error_email_invalid} $email',
-        userMessage: localizations.error_email_unavailable,
-      );
     }
   }
 
@@ -150,18 +147,16 @@ class UrlLauncherHelper {
       try {
         await launchUrl(telUri);
       } catch (e) {
-        CustomError.show(
-          context,
-          e,
-          userMessage: localizations.error_phone_unavailable,
-        );
+        SchedulerBinding.instance.addPostFrameCallback((_) {
+          if (context.mounted) {
+            CustomError.show(
+              context,
+              e,
+              userMessage: localizations.error_website_unavailable,
+            );
+          }
+        });
       }
-    } else {
-      CustomError.show(
-        context,
-        '${localizations.error_phone_number_invalid} $normalized',
-        userMessage: localizations.error_phone_unavailable,
-      );
     }
   }
 

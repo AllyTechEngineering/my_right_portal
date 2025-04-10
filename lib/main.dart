@@ -7,6 +7,7 @@ import 'package:my_right_portal/features/auth/auth_gate.dart';
 import 'package:my_right_portal/features/auth/login_screen.dart';
 import 'package:my_right_portal/features/auth/signup_screen.dart';
 import 'package:my_right_portal/features/auth/verify_email_screen.dart';
+import 'package:my_right_portal/features/profile/lawyer_dashboard_screen.dart';
 import 'package:my_right_portal/firebase_options.dart';
 import 'package:my_right_portal/utils/custom_app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
               '/login': (context) => const LoginScreen(),
               '/verify-email': (context) => const VerifyEmailScreen(),
               '/signup': (context) => const SignupScreen(),
+              '/lawyer-dashboard': (context) => const LawyerDashboardScreen(),
             },
           );
         },

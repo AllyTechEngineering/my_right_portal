@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/scheduler.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -28,7 +29,16 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _email,
         password: _password,
       );
-      // TODO: Navigate to dashboard or home screen
+
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        if (context.mounted) {
+          debugPrint('Login successful');
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(const SnackBar(content: Text('Login successful')));
+          Navigator.pushReplacementNamed(context, '/lawyer-dashboard');
+        }
+      });
     } on FirebaseAuthException catch (e) {
       setState(() {
         _errorMessage = e.message;
@@ -84,7 +94,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                   const SizedBox(height: 10),
                   TextButton(
-                    onPressed: () => Navigator.pushNamed(context, '/signup'),
+                    onPressed:
+                        () => Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          '/signup',
+                          (route) => false,
+                        ),
                     child: const Text("Don't have an account? Sign up"),
                   ),
                 ],

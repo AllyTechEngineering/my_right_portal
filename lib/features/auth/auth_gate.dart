@@ -30,6 +30,7 @@ class _AuthGateState extends State<AuthGate> {
       Navigator.pushReplacementNamed(context, '/verify-email');
     } else {
       Navigator.pushReplacementNamed(context, '/dashboard'); // or home screen
+      //       Navigator.pushNamed(context, '/lawyer-dashboard');
     }
   }
 
