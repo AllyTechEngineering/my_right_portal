@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http show head;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'custom_error.dart';
+import 'package:flutter/scheduler.dart';
 
 class UrlLauncherHelper {
   /// Executes an asynchronous launch action with error handling.
@@ -36,20 +37,28 @@ class UrlLauncherHelper {
       // }
       if (response != null && response.statusCode != 200) {
         // debugPrint('HEAD request failed: ${response.statusCode}');
-        CustomError.show(
-          context,
-          'HTTP ${response.statusCode}: $url',
-          userMessage: localizations.error_website_unavailable,
-        );
+        SchedulerBinding.instance.addPostFrameCallback((_) {
+          if (context.mounted) {
+            CustomError.show(
+              context,
+              'HTTP ${response.statusCode}: $url',
+              userMessage: localizations.error_website_unavailable,
+            );
+          }
+        });
         return;
       }
     } catch (e) {
       debugPrint('HEAD request failed: $e');
-      CustomError.show(
-        context,
-        e,
-        userMessage: localizations.error_website_unavailable,
-      );
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        if (context.mounted) {
+          CustomError.show(
+            context,
+            e,
+            userMessage: localizations.error_website_unavailable,
+          );
+        }
+      });
       return;
     }
 

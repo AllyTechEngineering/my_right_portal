@@ -9,7 +9,7 @@ class AuthGate extends StatefulWidget {
 }
 
 class _AuthGateState extends State<AuthGate> {
-  bool _checkingAuth = true;
+  final bool _checkingAuth = true;
 
   @override
   void initState() {
