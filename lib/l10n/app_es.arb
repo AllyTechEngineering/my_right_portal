@@ -1617,5 +1617,30 @@
     "@privacy_statement_content": {
         "description": "Contenido principal de la declaración de privacidad mostrada al usuario.",
         "type": "text"
+    },
+    "app_store_badge_image": "assets/images/app_store_badge_es.png",
+    "@app_store_badge_image": {
+        "description": "Ruta a la imagen de la insignia de la App Store utilizada para la promoción de la app.",
+        "type": "text"
+    },
+    "app_store_url": "https://apps.apple.com/us/app/my-right-to-stay/id6743101244",
+    "@app_store_url": {
+        "description": "URL a la página de la App Store para la app.",
+        "type": "text"
+    },
+    "play_store_badge_image": "assets/images/google_play_store_badge_es.png",
+    "@play_store_badge_image": {
+        "description": "Ruta a la imagen de la insignia de Play Store utilizada para la promoción de la app.",
+        "type": "text"
+    },
+    "play_store_url": "https://play.google.com/store/apps/details?id=com.example.myrighttostay",
+    "@play_store_url": {
+        "description": "URL de la página de Play Store para la aplicación.",
+        "type": "text"
+    },
+    "download_app_message": "Descarga la app \"Mi Derecho a Quedarse\" gratis en la App Store o Google Play.",
+    "@download_app_message": {
+        "description": "Mensaje que invita a los usuarios a descargar la app desde la App Store o Google Play.",
+        "type": "text"
     }
 }

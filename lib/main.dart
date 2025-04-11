@@ -7,6 +7,7 @@ import 'package:my_right_portal/features/auth/auth_gate.dart';
 import 'package:my_right_portal/features/auth/login_screen.dart';
 import 'package:my_right_portal/features/auth/signup_screen.dart';
 import 'package:my_right_portal/features/auth/verify_email_screen.dart';
+import 'package:my_right_portal/features/home/home_screen.dart';
 import 'package:my_right_portal/features/profile/lawyer_dashboard_screen.dart';
 import 'package:my_right_portal/firebase_options.dart';
 import 'package:my_right_portal/utils/custom_app_theme.dart';
@@ -40,7 +41,9 @@ class MyApp extends StatelessWidget {
               GlobalCupertinoLocalizations.delegate,
             ],
             routes: {
-              '/': (context) => const AuthGate(),
+              '/': (context) => const HomeScreen(),
+              '/home': (context) => const HomeScreen(),
+              '/auth-gate': (context) => const AuthGate(),
               '/login': (context) => const LoginScreen(),
               '/verify-email': (context) => const VerifyEmailScreen(),
               '/signup': (context) => const SignupScreen(),
