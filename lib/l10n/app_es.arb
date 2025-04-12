@@ -680,7 +680,7 @@
     "@kyr_work_barrier_content": {
         "description": "Contenido que explica las barreras para acceder a los derechos legales"
     },
-    "my_right_to_stay_title": " Mi Derecho\nA Quedar Me",
+    "my_right_to_stay_title": " Mi Derecho A Quedar Me",
     "@my_right_to_stay_title": {
         "description": "Título sobre el derecho a quedarse"
     },
@@ -1638,9 +1638,29 @@
         "description": "URL de la página de Play Store para la aplicación.",
         "type": "text"
     },
-    "download_app_message": "Descarga la app \"Mi Derecho a Quedarse\" gratis en la App Store o Google Play.",
+    "download_app_message": "Descarga la app \"Mi Derecho a Quedarse\" gratis en la App Store o Google Play",
     "@download_app_message": {
         "description": "Mensaje que invita a los usuarios a descargar la app desde la App Store o Google Play.",
         "type": "text"
+    },
+    "app_coming_soon": "¡La app para Android estará disponible próximamente!",
+    "@app_coming_soon": {
+        "description": "Mensaje que indica que la app estará disponible próximamente"
+    },
+    "app_coming_soon_subtitle": "La versión para Android de la app estará disponible en unas semanas. ¡Estén atentos a las actualizaciones!",
+    "@app_coming_soon_subtitle": {
+        "description": "Subtítulo para el mensaje de próximamente"
+    },
+    "attorney_only": "Solo Abogados",
+    "@attorney_only": {
+        "description": "Etiqueta solo para abogados"
+    },
+    "attorney_login_register": "Abogados: Iniciar Sesión o Registrarse",
+    "@attorney_login_register": {
+        "description": "Etiqueta del botón solo para abogados"
+    },
+    "website": "Este sitio web está en construcción",
+    "@website": {
+        "description": "Etiqueta del sitio web"
     }
 }

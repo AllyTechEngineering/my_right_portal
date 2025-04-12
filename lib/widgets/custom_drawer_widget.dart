@@ -12,29 +12,29 @@ class CustomDrawerWidget extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     // final double screenHeight = MediaQuery.of(context).size.height;
     double iconSize = screenWidth * 0.055;
-    iconSize = iconSize.clamp(18.0, 26.0);
+    iconSize = iconSize.clamp(18.0, 20.0);
 
     // Manually defined items that do NOT use arguments
     final List<DrawerItemModel> staticDrawerItems = [
       DrawerItemModel(
         icon: Icons.home,
         title: localizations.drawer_home,
-        route: '/signup',
+        route: '/home',
       ),
       DrawerItemModel(
         icon: Icons.balance,
         title: localizations.drawer_legal_help,
-        route: '/signup',
+        route: '/home',
       ),
       DrawerItemModel(
         icon: Icons.contacts,
         title: localizations.drawer_add_contacts,
-        route: '/signup',
+        route: '/home',
       ),
       DrawerItemModel(
         icon: Icons.visibility,
         title: localizations.drawer_view_contacts,
-        route: '/signup',
+        route: '/home',
       ),
       DrawerItemModel(
         icon: Icons.favorite_outline,
@@ -44,17 +44,17 @@ class CustomDrawerWidget extends StatelessWidget {
       DrawerItemModel(
         icon: Icons.language,
         title: localizations.drawer_consulate,
-        route: '/signup',
+        route: '/home',
       ),
       DrawerItemModel(
         icon: Icons.people,
         title: localizations.community_support_title,
-        route: '/signup',
+        route: '/home',
       ),
       DrawerItemModel(
         icon: Icons.group_outlined,
         title: localizations.label_about_us,
-        route: '/signup',
+        route: '/home',
       ),
     ];
     return Drawer(

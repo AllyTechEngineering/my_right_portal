@@ -37,6 +37,11 @@
         body { border-top: 16px solid #ffa100; }
       }
     </style>
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <meta name="theme-color" content="#2196f3">
   </head>
   <body>
     <div id="message">
@@ -83,6 +88,11 @@
           console.error(e);
           loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
         }
+      });
+    </script>
+    <script>
+      window.addEventListener("error", function (e) {
+        console.error("Caught by window.onerror:", e.message);
       });
     </script>
   </body>

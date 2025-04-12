@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_right_portal/widgets/custom_text_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:js' as js;
 
 class AppStoreButtons extends StatelessWidget {
   final double screenHeight;
@@ -19,11 +22,12 @@ class AppStoreButtons extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(
+        CustomTextWidget(
           localizations.download_app_message,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.titleLarge,
+          textAlign: TextAlign.center,
         ),
-        SizedBox(height: screenHeight * 0.01),
+        SizedBox(height: screenHeight * 0.02),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -58,6 +62,7 @@ class _StoreButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
     return InkWell(
       onTap: () {
         if (url.contains('play.google.com')) {
@@ -65,23 +70,56 @@ class _StoreButton extends StatelessWidget {
             context: context,
             builder:
                 (context) => AlertDialog(
-                  title: const Text('Coming Soon!'),
-                  content: const Text(
-                    'The Android version will be coming soon!',
+                  backgroundColor: Theme.of(context).colorScheme.surface,
+                  elevation: 3.0,
+                  shadowColor: Theme.of(context).colorScheme.onSurface,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  alignment: Alignment.center,
+                  title: CustomTextWidget(
+                    localizations.app_coming_soon,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  content: CustomTextWidget(
+                    localizations.app_coming_soon_subtitle,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.of(context).pop(),
-                      child: const Text('Close'),
+                      child: CustomTextWidget(
+                        localizations.label_close_dialog,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                     ),
                   ],
                 ),
           );
         } else {
-          launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+          final uri = Uri.parse(url);
+          if (kIsWeb) {
+            debugPrint('Launching URL: $url');
+            // launchUrl(uri); // Web: opens in new tab
+            // launch(url, isNewTab: true); // Web: opens in new tab
+            js.context.callMethod('open', [url, '_blank']);
+          } else {
+            debugPrint('Launching URL: $url');
+            launchUrl(
+              uri,
+              mode: LaunchMode.externalApplication,
+            ); // Mobile: opens store app
+          }
         }
       },
       child: Image.asset(imageAsset, height: height),
+    );
+  }
+
+  Future<void> launch(String url, {bool isNewTab = true}) async {
+    await launchUrl(
+      Uri.parse(url),
+      webOnlyWindowName: isNewTab ? '_blank' : '_self',
     );
   }
 }

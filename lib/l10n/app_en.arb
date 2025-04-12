@@ -680,7 +680,7 @@
     "@kyr_work_barrier_content": {
         "description": "Content explaining barriers to accessing legal rights"
     },
-    "my_right_to_stay_title": "My Right\nTo Stay",
+    "my_right_to_stay_title": "My Right To Stay",
     "@my_right_to_stay_title": {
         "description": "My Right to Stay title"
     },
@@ -1638,9 +1638,29 @@
         "description": "URL to the Play Store page for the app.",
         "type": "text"
     },
-    "download_app_message": "Download the My Right To Stay app for free on the App Store or Google Play.",
+    "download_app_message": "Download the My Right To Stay app for free on the App Store or Google Play",
     "@download_app_message": {
         "description": "Message prompting users to download the app from the App Store or Google Play.",
         "type": "text"
+    },
+    "app_coming_soon": "The Android App is Coming Soon!",
+    "@app_coming_soon": {
+        "description": "Message indicating that the app is coming soon"
+    },
+    "app_coming_soon_subtitle": "The Android version of the app is coming in a few weeks. Stay tuned for updates!",
+    "@app_coming_soon_subtitle": {
+        "description": "Subtitle for the coming soon message"
+    },
+    "attorney_only": "Attorneys Only",
+    "@attorney_only": {
+        "description": "Label for attorneys only"
+    },
+    "attorney_login_register": "Attorneys: Login or Register",
+    "@attorney_login_register": {
+        "description": "Button labe for attorneys only"
+    },
+    "website": "This Website is Under Construction",
+    "@website": {
+        "description": "Label for the website"
     }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_right_portal/widgets/language_toggle_button_widget.dart';
 
-
 class CustomAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
   final String title;
@@ -16,8 +15,10 @@ class CustomAppBarWidget extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     // final screenHeight = MediaQuery.of(context).size.height;
+    debugPrint('toolbar height: $getToolBarHeight');
     final screenWidth = MediaQuery.of(context).size.width;
-
+    double iconSize = (screenWidth * 0.06).clamp(50.0, 60.0);
+    debugPrint('icon size: $iconSize');
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
@@ -32,7 +33,7 @@ class CustomAppBarWidget extends StatelessWidget
           elevation: 0, // Add this line to prevent drop shadow
           toolbarHeight: getToolBarHeight,
           scrolledUnderElevation: 0,
-          iconTheme: IconThemeData(size: screenWidth * 0.08),
+          iconTheme: IconThemeData(size: iconSize),
           title: Text(
             title,
             style: Theme.of(context).textTheme.displaySmall,

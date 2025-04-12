@@ -3,10 +3,10 @@ import 'package:my_right_portal/enums/app_screen.dart';
 import 'package:my_right_portal/features/home/app_store_buttons.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
-import 'package:my_right_portal/widgets/custom_bottom_nav_bar.dart';
+// import 'package:my_right_portal/widgets/custom_bottom_nav_bar.dart';
 import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_right_portal/widgets/custom_text_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,33 +47,36 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    'Placeholder for Home Screen Content',
-                    style: Theme.of(context).textTheme.titleLarge,
+                  CustomTextWidget(
+                    localizations.website,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                      color: Theme.of(context).colorScheme.onError,
+                    ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
-                  Text(
-                    'Placeholder for more Home Screen Content',
-                    style: Theme.of(context).textTheme.titleMedium,
+                  //mrts_home_screen_title
+                  CustomTextWidget(
+                    localizations.kyr_home_screen_title,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.displayLarge,
                   ),
                   SizedBox(height: screenHeight * 0.02),
-                  Text(
-                    'Placeholder for text explaining the features of the apps',
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                  SizedBox(height: screenHeight * 0.02),
-                  Text(
-                    'Placeholder for location of the iOS and Android custom banner widgets',
-                    style: Theme.of(context).textTheme.bodySmall,
+                  CustomTextWidget(
+                    localizations.mrts_home_screen_title,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   AppStoreButtons(
                     screenHeight: screenHeight,
                     screenWidth: screenWidth,
                   ),
-                  Text(
-                    'Attorney Login or Register',
-                    style: Theme.of(context).textTheme.titleMedium,
+                  SizedBox(height: screenHeight * 0.02),
+                  CustomTextWidget(
+                    localizations.attorney_only,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                   SizedBox(height: screenHeight * 0.005),
                   ElevatedButton(
@@ -92,10 +95,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         side: BorderSide.none,
                       ),
                     ),
-                    child: Text(
-                      'Attorney login or register',
-                      style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    child: CustomTextWidget(
+                      localizations.attorney_login_register,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.labelLarge!.copyWith(
                         color: Theme.of(context).colorScheme.surface,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -105,9 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(
-        currentScreen: AppScreen.home,
-      ),
+      // bottomNavigationBar: const CustomBottomNavBar(
+      //   currentScreen: AppScreen.home,
+      // ),
     );
   }
 }

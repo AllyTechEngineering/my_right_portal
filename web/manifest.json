@@ -1,6 +1,6 @@
 {
-    "name": "my_right_portal",
-    "short_name": "my_right_portal",
+    "name": "Right2StayNow",
+    "short_name": "Right2StayNow",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
