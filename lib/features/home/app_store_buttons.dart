@@ -5,6 +5,10 @@ import 'package:my_right_portal/widgets/custom_text_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:js' as js;
 
+/*
+'dart:js' is deprecated and shouldn't be used. Use dart:js_interop instead.
+Try replacing the use of the deprecated member with the replacement.
+*/
 class AppStoreButtons extends StatelessWidget {
   final double screenHeight;
   final double screenWidth;

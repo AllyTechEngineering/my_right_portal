@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ScaffoldMessenger.of(
             context,
           ).showSnackBar(const SnackBar(content: Text('Login successful')));
-          Navigator.pushReplacementNamed(context, '/lawyer-dashboard');
+          Navigator.pushReplacementNamed(context, '/auth-gate');
         }
       });
     } on FirebaseAuthException catch (e) {

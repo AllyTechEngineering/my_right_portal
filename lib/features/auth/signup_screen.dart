@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -14,6 +15,7 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final _formKey = GlobalKey<FormState>();
+
   String _email = '';
   String _password = '';
   String _confirmPassword = '';
@@ -38,11 +40,32 @@ class _SignupScreenState extends State<SignupScreen> {
         email: _email,
         password: _password,
       );
+      final user = FirebaseAuth.instance.currentUser;
 
-      // Optional: Send email verification
-      await FirebaseAuth.instance.currentUser?.sendEmailVerification();
-      if (!mounted) return;
-      Navigator.pushReplacementNamed(context, '/verify-email');
+      if (user != null) {
+        await FirebaseFirestore.instance
+            .collection('lawyers')
+            .doc(user.uid)
+            .set({
+              'id': user.uid,
+              'email': user.email,
+              'subscriptionActive': false,
+              'profileApproved': false,
+              'createdAt': FieldValue.serverTimestamp(),
+            });
+
+        final doc = await FirebaseFirestore.instance
+            .collection('lawyers')
+            .doc(user.uid)
+            .get();
+
+        final isSubscribed = doc.data()?['subscriptionActive'];
+        debugPrint('🔍 Verified after write: subscriptionActive = $isSubscribed');
+        
+        await FirebaseAuth.instance.currentUser?.sendEmailVerification();
+        if (!mounted) return;
+        Navigator.pushReplacementNamed(context, '/verify-email');
+      }
     } on FirebaseAuthException catch (e) {
       setState(() => _errorMessage = e.message);
     } finally {
@@ -71,7 +94,7 @@ class _SignupScreenState extends State<SignupScreen> {
     final localizations = AppLocalizations.of(context)!;
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
-    // final double buttonSize = screenWidth * 0.30;
+
     double iconSize = screenWidth * 0.055;
     iconSize = iconSize.clamp(18.0, 26.0);
     final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;

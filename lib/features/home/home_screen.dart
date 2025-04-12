@@ -47,25 +47,34 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  CustomTextWidget(
-                    localizations.website,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                      color: Theme.of(context).colorScheme.onError,
+                  SizedBox(
+                    width: screenWidth * 0.8,
+                    child: CustomTextWidget(
+                      localizations.website,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onError,
+                      ),
                     ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   //mrts_home_screen_title
-                  CustomTextWidget(
-                    localizations.kyr_home_screen_title,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.displayLarge,
+                  SizedBox(
+                    width: screenWidth * 0.8,
+                    child: CustomTextWidget(
+                      localizations.kyr_home_screen_title,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.displayLarge,
+                    ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
-                  CustomTextWidget(
-                    localizations.mrts_home_screen_title,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleSmall,
+                  SizedBox(
+                    width: screenWidth * 0.8,
+                    child: CustomTextWidget(
+                      localizations.mrts_home_screen_title,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   AppStoreButtons(
@@ -73,10 +82,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     screenWidth: screenWidth,
                   ),
                   SizedBox(height: screenHeight * 0.02),
-                  CustomTextWidget(
-                    localizations.attorney_only,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge,
+                  SizedBox(
+                    width: screenWidth * 0.8,
+                    child: CustomTextWidget(
+                      localizations.attorney_only,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
                   ),
                   SizedBox(height: screenHeight * 0.005),
                   ElevatedButton(

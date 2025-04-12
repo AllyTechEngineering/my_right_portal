@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -20,17 +21,31 @@ class _AuthGateState extends State<AuthGate> {
   Future<void> _checkAuthStatus() async {
     final user = FirebaseAuth.instance.currentUser;
 
-    await user?.reload(); // Make sure user info is fresh
-
+    await user?.reload();
     if (!mounted) return;
 
     if (user == null) {
       Navigator.pushReplacementNamed(context, '/login');
     } else if (!user.emailVerified) {
+      debugPrint('User is not verified');
       Navigator.pushReplacementNamed(context, '/verify-email');
     } else {
-      Navigator.pushReplacementNamed(context, '/dashboard'); // or home screen
-      //       Navigator.pushNamed(context, '/lawyer-dashboard');
+      final doc =
+          await FirebaseFirestore.instance
+              .collection('lawyers')
+              .doc(user.uid)
+              .get();
+
+      final isSubscribed = doc.data()?['subscriptionActive'] == true;
+      debugPrint('User ${user.uid}  subscription status: $isSubscribed');
+      if (!mounted) return;
+      if (isSubscribed) {
+        debugPrint('User is subscribed');
+        Navigator.pushReplacementNamed(context, '/lawyer-dashboard');
+      } else {
+        debugPrint('User is not subscribed');
+        Navigator.pushReplacementNamed(context, '/subscription-prompt');
+      }
     }
   }
 

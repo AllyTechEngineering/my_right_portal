@@ -20,9 +20,10 @@ class LawyerDashboardScreen extends StatelessWidget {
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1200),
-            child: isDesktop
-                ? _buildDesktopLayout(context)
-                : _buildMobileOrTabletLayout(context, isTablet),
+            child:
+                isDesktop
+                    ? _buildDesktopLayout(context)
+                    : _buildMobileOrTabletLayout(context, isTablet),
           ),
         ),
       ),
@@ -62,7 +63,10 @@ class _ProfileSummaryCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('👤 Profile Summary', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              '👤 Profile Summary',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 12),
             const Text('Name: Jane Doe, Esq.'),
             const Text('Law Firm: Justice Partners LLC'),
@@ -76,6 +80,15 @@ class _ProfileSummaryCard extends StatelessWidget {
                 onPressed: () {
                   // TODO: Navigate to edit profile screen
                 },
+              ),
+            ),
+            const SizedBox(height: 8),
+            Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton(
+                onPressed:
+                    () => Navigator.pushNamed(context, '/lawyer-profile-form'),
+                child: const Text('Manage Your Profile'),
               ),
             ),
           ],
@@ -95,7 +108,10 @@ class _BillingSummaryCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('💳 Billing Summary', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              '💳 Billing Summary',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 12),
             const Text('Status: Active'),
             const Text('Next Payment: May 10, 2025'),
