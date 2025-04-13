@@ -87,8 +87,8 @@ class _ProfileSummaryCard extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: ElevatedButton(
                 onPressed:
-                    () => Navigator.pushNamed(context, '/lawyer-profile-form'),
-                child: const Text('Manage Your Profile'),
+                    () => Navigator.pushNamed(context, '/data-form'),
+                child: const Text('Manage Your Data'),
               ),
             ),
           ],
