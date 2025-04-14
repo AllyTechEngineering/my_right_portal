@@ -6,6 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 import 'package:my_right_portal/widgets/custom_text_widget.dart';
+import 'package:my_right_portal/widgets/phone_number_input_with_country.dart';
 
 class DataScreen extends StatefulWidget {
   const DataScreen({super.key});
@@ -18,6 +19,11 @@ class _DataScreenState extends State<DataScreen> {
   final _formKey = GlobalKey<FormState>();
   final Map<String, String> _formData = {};
 
+  final TextEditingController _mobilePhoneController = TextEditingController();
+  final TextEditingController _officePhoneController = TextEditingController();
+  String _selectedMobileCountry = 'USA';
+  String _selectedOfficeCountry= 'USA';
+
   final List<DataField> _fields = const [
     DataField(key: 'companyNameEn', label: 'Company Name (English)'),
     DataField(key: 'companyNameEs', label: 'Company Name (Spanish)'),
@@ -27,8 +33,6 @@ class _DataScreenState extends State<DataScreen> {
     DataField(key: 'city', label: 'City'),
     DataField(key: 'state', label: 'State'),
     DataField(key: 'zipCode', label: 'ZIP Code'),
-    DataField(key: 'mobilePhoneNumber', label: 'Mobile Phone Number'),
-    DataField(key: 'officePhoneNumber', label: 'Office Phone Number'),
     DataField(key: 'emailAddress', label: 'Email Address'),
     DataField(key: 'websiteUrl', label: 'Website URL'),
     DataField(key: 'image', label: 'Image URL'),
@@ -49,6 +53,7 @@ class _DataScreenState extends State<DataScreen> {
   @override
   void initState() {
     super.initState();
+    debugPrint('⚙️ DataScreen.initState called');
     _loadProfile();
   }
 
@@ -65,6 +70,15 @@ class _DataScreenState extends State<DataScreen> {
         for (final field in _fields) {
           _formData[field.key] = data[field.key]?.toString() ?? '';
         }
+        _mobilePhoneController.text =
+            data['mobilePhoneNumber']?.toString() ?? '';
+        _officePhoneController.text =
+            data['officePhoneNumber']?.toString() ?? '';
+        _selectedMobileCountry = data['mobilePhoneCountry']?.toString() ?? 'USA';
+        _selectedOfficeCountry = data['officePhoneCountry']?.toString() ?? 'USA';
+        debugPrint('📦 Loaded profile data:');
+        debugPrint('mobilePhoneCountry: ${data['mobilePhoneCountry']}');
+        debugPrint('officePhoneCountry: ${data['officePhoneCountry']}');
       });
     }
   }
@@ -73,6 +87,10 @@ class _DataScreenState extends State<DataScreen> {
     if (!_formKey.currentState!.validate()) return;
     _formKey.currentState!.save();
 
+    _formData['mobilePhoneNumber'] = _mobilePhoneController.text.trim();
+    _formData['officePhoneNumber'] = _officePhoneController.text.trim();
+    _formData['mobilePhoneCountry'] = _selectedMobileCountry;
+    _formData['officePhoneCountry'] = _selectedOfficeCountry;
     final uid = FirebaseAuth.instance.currentUser?.uid;
     if (uid == null) return;
 
@@ -102,11 +120,9 @@ class _DataScreenState extends State<DataScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
-    final double screenWidth = MediaQuery.of(context).size.width;
+    // final localizations = AppLocalizations.of(context)!;
+    // final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
-    double iconSize = screenWidth * 0.055;
-    iconSize = iconSize.clamp(18.0, 26.0);
     final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;
 
     return Scaffold(
@@ -132,83 +148,112 @@ class _DataScreenState extends State<DataScreen> {
                     Wrap(
                       spacing: spacing,
                       runSpacing: 16,
-                      children:
-                          _fields.map((field) {
-                            if (field.key == 'videoConsultation' ||
-                                field.key == 'featured') {
-                              return SizedBox(
-                                width: maxFieldWidth,
-                                //Text(field.label),
-                                child: SwitchListTile(
-                                  title: CustomTextWidget(
-                                    field.label,
-                                    textAlign: TextAlign.center,
-                                    style:
-                                        Theme.of(context).textTheme.labelSmall,
-                                  ),
-
-                                  value: _formData[field.key] == 'true',
-                                  onChanged: (value) {
-                                    setState(() {
-                                      _formData[field.key] = value.toString();
-                                    });
-                                  },
+                      children: [
+                        SizedBox(
+                          width: maxFieldWidth,
+                          child: PhoneNumberInputWithCountry(
+                            phoneController: _mobilePhoneController,
+                            selectedCountry: _selectedMobileCountry,
+                            debugLabel: 'Mobile Phone',
+                            onCountryChanged:
+                                (value) => setState(
+                                  () => _selectedMobileCountry = value!,
                                 ),
-                              );
-                            } else {
-                              return SizedBox(
-                                width: maxFieldWidth,
-                                child: TextFormField(
+                          ),
+                        ),
+                        // SizedBox(
+                        //   width: maxFieldWidth,
+                        //   child: PhoneNumberInputWithCountry(
+                        //     phoneController: _officePhoneController,
+                        //     selectedCountry: _selectedOfficeCountry,
+                        //     debugLabel: 'Office Phone',
+                        //     onCountryChanged:
+                        //         (value) => setState(
+                        //           () => _selectedOfficeCountry = value!,
+                        //         ),
+                        //   ),
+                        // ),
+                        ..._fields.map((field) {
+                          if (field.key == 'videoConsultation') {
+                            return SizedBox(
+                              width: maxFieldWidth,
+                              child: SwitchListTile(
+                                title: CustomTextWidget(
+                                  field.label,
                                   textAlign: TextAlign.center,
-                                  maxLines: null,
-                                  style: Theme.of(
+                                  style: Theme.of(context).textTheme.labelSmall,
+                                ),
+                                value: _formData[field.key] == 'true',
+                                onChanged: (value) {
+                                  setState(() {
+                                    _formData[field.key] = value.toString();
+                                  });
+                                },
+                              ),
+                            );
+                          } else {
+                            return SizedBox(
+                              width: maxFieldWidth,
+                              child: TextFormField(
+                                textAlign: TextAlign.left,
+                                maxLines: null,
+                                maxLength:
+                                    (field.key == 'bioEn' ||
+                                            field.key == 'bioEs')
+                                        ? 350
+                                        : null,
+                                keyboardType:
+                                    (field.key == 'bioEn' ||
+                                            field.key == 'bioEs')
+                                        ? TextInputType.multiline
+                                        : field.key == 'rating'
+                                        ? TextInputType.number
+                                        : TextInputType.text,
+                                textInputAction:
+                                    (field.key == 'bioEn' ||
+                                            field.key == 'bioEs')
+                                        ? TextInputAction.newline
+                                        : TextInputAction.done,
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.labelLarge?.copyWith(
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
+                                ),
+                                initialValue: _formData[field.key] ?? '',
+                                decoration: InputDecoration(
+                                  labelText: field.label,
+                                  labelStyle: Theme.of(
                                     context,
-                                  ).textTheme.labelLarge?.copyWith(
+                                  ).textTheme.labelSmall?.copyWith(
                                     color:
                                         Theme.of(context).colorScheme.onSurface,
                                   ),
-                                  initialValue: _formData[field.key] ?? '',
-                                  decoration: InputDecoration(
-                                    labelText: field.label,
-                                    labelStyle: Theme.of(context)
-                                        .textTheme
-                                        .labelSmall
-                                        ?.copyWith(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onSurface,
-                                        ),
-                                  ),
-                                  keyboardType:
-                                      field.key == 'rating'
-                                          ? TextInputType.number
-                                          : TextInputType.text,
-                                  validator:
-                                      field.required
-                                          ? (value) =>
-                                              (value == null ||
-                                                      value.trim().isEmpty)
-                                                  ? 'Required'
-                                                  : null
-                                          : null,
-                                  onSaved: (value) {
-                                    if (field.key == 'rating') {
-                                      final parsed = double.tryParse(
-                                        value ?? '',
-                                      );
-                                      _formData[field.key] =
-                                          parsed != null
-                                              ? parsed.toStringAsFixed(1)
-                                              : '';
-                                    } else {
-                                      _formData[field.key] =
-                                          value?.trim() ?? '';
-                                    }
-                                  },
                                 ),
-                              );
-                            }
-                          }).toList(),
+                                validator:
+                                    field.required
+                                        ? (value) =>
+                                            (value == null ||
+                                                    value.trim().isEmpty)
+                                                ? 'Required'
+                                                : null
+                                        : null,
+                                onSaved: (value) {
+                                  if (field.key == 'rating') {
+                                    final parsed = double.tryParse(value ?? '');
+                                    _formData[field.key] =
+                                        parsed != null
+                                            ? parsed.toStringAsFixed(1)
+                                            : '';
+                                  } else {
+                                    _formData[field.key] = value?.trim() ?? '';
+                                  }
+                                },
+                              ),
+                            );
+                          }
+                        }),
+                      ],
                     ),
                     const SizedBox(height: 32),
                     ElevatedButton(

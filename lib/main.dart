@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -13,10 +14,12 @@ import 'package:my_right_portal/features/home/home_screen.dart';
 import 'package:my_right_portal/features/profile/lawyer_dash_board_screen.dart';
 import 'package:my_right_portal/features/subscription/subscription_prompt_screen.dart';
 import 'package:my_right_portal/firebase_options.dart';
+// import 'package:my_right_portal/phone_country_updater.dart';
 // import 'package:my_right_portal/upload_csv_to_firestore.dart';
 import 'package:my_right_portal/utils/custom_app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +29,7 @@ void main() async {
     SharedPreferences.setMockInitialValues({});
   }
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 }
 
@@ -40,7 +44,7 @@ class MyApp extends StatelessWidget {
         builder: (context, languageState) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'My Right Portal',
+            title: 'Right2StayNow - Connect with Immigration Attorneys You Can Trust',
             theme: CustomAppTheme.appTheme,
             locale: languageState.locale,
             supportedLocales: const [Locale('en', 'US'), Locale('es', 'ES')],

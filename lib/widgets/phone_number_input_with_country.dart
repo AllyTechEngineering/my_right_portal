@@ -9,12 +9,14 @@ class PhoneNumberInputWithCountry extends StatefulWidget {
   final TextEditingController phoneController;
   final String? selectedCountry;
   final void Function(String?) onCountryChanged;
+  final String debugLabel;
 
   const PhoneNumberInputWithCountry({
     super.key,
     required this.phoneController,
     required this.selectedCountry,
     required this.onCountryChanged,
+    required this.debugLabel,
   });
 
   @override
@@ -54,8 +56,9 @@ class _PhoneNumberInputWithCountryState
 
     // Trigger default country selection if none is set
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (widget.selectedCountry == null) {
-        widget.onCountryChanged('USA');
+      debugPrint('In initState Selected country: ${widget.selectedCountry}');
+      if (widget.selectedCountry == null || widget.selectedCountry!.isEmpty) {
+        widget.onCountryChanged.call('USA');
       }
     });
   }
@@ -91,6 +94,21 @@ class _PhoneNumberInputWithCountryState
     };
     final String selectedCountry = widget.selectedCountry ?? 'USA';
     final String isoCode = countryIsoCodes[selectedCountry] ?? 'US';
+    final String debugLabel = widget.debugLabel;
+    debugPrint('In Phone: [$debugLabel] Selected country: $selectedCountry');
+    debugPrint('In Phone: [$debugLabel] ISO code: $isoCode');
+    debugPrint(
+      'In Phone: Phone prefix: [$debugLabel] ${getPhonePrefixForCountry(selectedCountry)}',
+    );
+    final selectedCountryData = CountryManager().countries.firstWhere(
+      (c) => c.countryCode == isoCode,
+      orElse: () => CountryWithPhoneCode.us(),
+    );
+
+    debugPrint('🛰️ SENDING to LibPhonenumberTextFormatter:');
+    debugPrint('   Country Code: ${selectedCountryData.countryCode}');
+    debugPrint('   Phone Code:   ${selectedCountryData.phoneCode}');
+    debugPrint('   Country Name: ${selectedCountryData.countryName}');
     return Column(
       children: [
         // Country Dropdown
@@ -124,6 +142,7 @@ class _PhoneNumberInputWithCountryState
         SizedBox(height: 8.0),
         // Phone Input
         TextField(
+          key: ValueKey(widget.selectedCountry),
           controller: widget.phoneController,
           keyboardType: TextInputType.phone,
           inputFormatters: [

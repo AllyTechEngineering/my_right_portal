@@ -15,10 +15,10 @@ class CustomAppBarWidget extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     // final screenHeight = MediaQuery.of(context).size.height;
-    debugPrint('toolbar height: $getToolBarHeight');
+    //debugPrint('toolbar height: $getToolBarHeight');
     final screenWidth = MediaQuery.of(context).size.width;
     double iconSize = (screenWidth * 0.06).clamp(50.0, 60.0);
-    debugPrint('icon size: $iconSize');
+    //debugPrint('icon size: $iconSize');
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(

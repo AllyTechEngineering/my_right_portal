@@ -1,51 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Only needed if using JS interop for Firebase (e.g., Stripe, custom auth) -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-<script>
-  const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-project-id.firebaseapp.com",
-    projectId: "your-project-id",
-    storageBucket: "your-project-id.appspot.com",
-    messagingSenderId: "your-sender-id",
-    appId: "your-app-id"
-  };
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "your-api-key",
+      authDomain: "your-project-id.firebaseapp.com",
+      projectId: "your-project-id",
+      storageBucket: "your-project-id.appspot.com",
+      messagingSenderId: "your-sender-id",
+      appId: "your-app-id"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
 
-  firebase.initializeApp(firebaseConfig);
-</script>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
+  <!-- Base path config -->
   <base href="$FLUTTER_BASE_HREF">
 
+  <!-- General metadata -->
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Right2StayNow - Connect with Immigration Attorneys You Can Trust</title>
+  <meta name="description" content="Right2StayNow helps people in the U.S. who are not citizens find trusted immigration attorneys. We connect you with lawyers who understand deportation, detention, and your legal rights.">
+  <meta name="description" lang="es" content="Right2StayNow ayuda a las personas que viven en los EE.UU. y no son ciudadanos a encontrar abogados de inmigración confiables que comprendan la deportación, detención y sus derechos legales.">
+  <meta name="keywords" content="immigration lawyer, deportation defense, immigration help, undocumented immigrants, ICE detention help, legal aid for immigrants, asylum attorney, immigration attorney directory, immigrant rights USA, legal services non-citizens">
+  <meta name="keywords" lang="es" content="abogado de inmigración, defensa contra deportación, ayuda inmigratoria, inmigrantes indocumentados, detención por ICE, servicios legales para inmigrantes, abogado de asilo, directorio de abogados de inmigración, derechos de inmigrantes en EE.UU., servicios legales para no ciudadanos">
 
-  <!-- iOS meta tags & icons -->
+  <!-- iOS Support -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="my_right_portal">
+  <meta name="apple-mobile-web-app-title" content="Right2StayNow">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>my_right_portal</title>
+  <!-- Manifest -->
   <link rel="manifest" href="manifest.json">
 </head>
 <body>

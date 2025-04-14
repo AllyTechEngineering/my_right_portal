@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_right_portal/utils/constants.dart';
+import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
+// import 'package:my_right_portal/widgets/custom_bottom_nav_bar.dart';
+import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_right_portal/widgets/custom_text_widget.dart';
 
 class LawyerDashboardScreen extends StatelessWidget {
   const LawyerDashboardScreen({super.key});
@@ -9,11 +15,18 @@ class LawyerDashboardScreen extends StatelessWidget {
 
     final isDesktop = width >= 1024;
     final isTablet = width >= 600 && width < 1024;
-
+    final localizations = AppLocalizations.of(context)!;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    //final double buttonSize = screenWidth * 0.30;
+    double iconSize = screenWidth * 0.055;
+    iconSize = iconSize.clamp(18.0, 26.0);
+    final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Right Portal Dashboard'),
-        centerTitle: true,
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: CustomAppBarWidget(
+        title: localizations.legal_help_title,
+        getToolBarHeight: getToolBarHeight,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -86,8 +99,7 @@ class _ProfileSummaryCard extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: ElevatedButton(
-                onPressed:
-                    () => Navigator.pushNamed(context, '/data-form'),
+                onPressed: () => Navigator.pushNamed(context, '/data-form'),
                 child: const Text('Manage Your Data'),
               ),
             ),
