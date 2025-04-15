@@ -3,6 +3,14 @@
 This guide covers the most common Firebase CLI commands for managing Cloud Functions, including configuration, deployment, testing, and logs.
 
 ---
+# Deploy to a specific domain
+'''
+firebase deploy --only hosting --project my-right-portal
+'''
+# Deploy to your domain is there are no other domains
+'''
+firebase deploy --only hosting
+'''
 
 ## 🔧 1. Set Environment Config Values
 

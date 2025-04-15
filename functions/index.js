@@ -1,3 +1,4 @@
+/* eslint-env node */
 const functions = require("firebase-functions");
 
 const isEmulated = process.env.FUNCTIONS_EMULATOR === "true";
