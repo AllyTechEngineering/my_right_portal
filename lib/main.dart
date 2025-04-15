@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -12,7 +12,9 @@ import 'package:my_right_portal/features/auth/verify_email_screen.dart';
 import 'package:my_right_portal/features/data/data_screen.dart';
 import 'package:my_right_portal/features/home/home_screen.dart';
 import 'package:my_right_portal/features/profile/lawyer_dash_board_screen.dart';
+import 'package:my_right_portal/features/subscription/cancel_screen.dart';
 import 'package:my_right_portal/features/subscription/subscription_prompt_screen.dart';
+import 'package:my_right_portal/features/subscription/success_screen.dart';
 import 'package:my_right_portal/firebase_options.dart';
 // import 'package:my_right_portal/phone_country_updater.dart';
 // import 'package:my_right_portal/upload_csv_to_firestore.dart';
@@ -64,6 +66,8 @@ class MyApp extends StatelessWidget {
               '/lawyer-dashboard': (context) => const LawyerDashboardScreen(),
               '/subscription-prompt': (context) => const SubscriptionPromptScreen(),
               '/data-form': (context) => const DataScreen(),
+              '/cancel-subscription': (context) => const CancelScreen(),
+              '/success-subscription': (context) => const SuccessScreen(),
             },
           );
         },
