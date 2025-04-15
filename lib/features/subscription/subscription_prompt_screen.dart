@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import '../../../utils/url_launcher_helpers.dart';
 
 class SubscriptionPromptScreen extends StatelessWidget {
   const SubscriptionPromptScreen({super.key});
@@ -62,9 +62,7 @@ class SubscriptionPromptScreen extends StatelessWidget {
                     final currentContext = context;
                     try {
                       final response = await http.post(
-                        Uri.parse(
-                          'https://us-central1-my-right-portal.cloudfunctions.net/createCheckoutSession',
-                        ),
+                        Uri.parse('https://createcheckoutsession-nzgeau3iuq-uc.a.run.app'),
                       );
 
                       if (!currentContext.mounted) return;
@@ -72,22 +70,11 @@ class SubscriptionPromptScreen extends StatelessWidget {
                       if (response.statusCode == 200) {
                         final data = jsonDecode(response.body);
                         final checkoutUrl = data['url'];
-                        if (await canLaunchUrlString(checkoutUrl)) {
-                          await launchUrlString(checkoutUrl);
-                        } else {
-                          if (!currentContext.mounted) return;
-                          ScaffoldMessenger.of(currentContext).showSnackBar(
-                            const SnackBar(
-                              content: Text('Could not launch Stripe checkout'),
-                            ),
-                          );
-                        }
+                         UrlLauncherHelper.launchWebAppWebsite(checkoutUrl, currentContext);
                       } else {
                         ScaffoldMessenger.of(currentContext).showSnackBar(
                           SnackBar(
-                            content: Text(
-                              'Failed to create Stripe session: ${response.body}',
-                            ),
+                            content: Text('Failed to create Stripe session: ${response.body}'),
                           ),
                         );
                       }

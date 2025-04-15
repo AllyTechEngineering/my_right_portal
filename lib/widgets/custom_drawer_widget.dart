@@ -13,6 +13,8 @@ class CustomDrawerWidget extends StatelessWidget {
     // final double screenHeight = MediaQuery.of(context).size.height;
     double iconSize = screenWidth * 0.055;
     iconSize = iconSize.clamp(18.0, 20.0);
+//'/cancel-subscription': 
+//'/success-subscription':
 
     // Manually defined items that do NOT use arguments
     final List<DrawerItemModel> staticDrawerItems = [
@@ -22,14 +24,16 @@ class CustomDrawerWidget extends StatelessWidget {
         route: '/home',
       ),
       DrawerItemModel(
-        icon: Icons.balance,
-        title: localizations.drawer_legal_help,
-        route: '/home',
+        icon: Icons.check,
+        title: 'Test Subscription',
+       // title: localizations.drawer_legal_help,
+        route: '/success-subscription',
       ),
       DrawerItemModel(
-        icon: Icons.contacts,
-        title: localizations.drawer_add_contacts,
-        route: '/home',
+        icon: Icons.cancel,
+        title: 'Cancel Subscription',
+       // title: localizations.drawer_add_contacts,
+        route: '/cancel-subscription',
       ),
       DrawerItemModel(
         icon: Icons.visibility,

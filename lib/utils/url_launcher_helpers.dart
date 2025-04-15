@@ -8,7 +8,7 @@ import 'package:flutter/scheduler.dart';
 
 class UrlLauncherHelper {
 
-  Future<void> launchWebAppWebsite(String url, BuildContext context) async {
+  static Future<void> launchWebAppWebsite(String url, BuildContext context) async {
     final localizations = AppLocalizations.of(context)!;
     final Uri uri = Uri.parse(url);
 
