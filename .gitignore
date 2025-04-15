@@ -1,48 +1,50 @@
-# Miscellaneous
-*.class
+# === General OS/Editor Files ===
+.DS_Store
+.svn/
+.history
+.atom/
+*.swp
 *.log
 *.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+*.class
 
-# IntelliJ related
+# === IntelliJ/JetBrains IDEs ===
+.idea/
 *.iml
 *.ipr
 *.iws
-.idea/
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
+# === VS Code (Uncomment if you do NOT want to commit VS Code settings) ===
 #.vscode/
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# === Flutter / Dart / Pub Caches ===
 .dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
 .pub-cache/
 .pub/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Flutter build artifacts
 /build/
+**/ios/Flutter/.last_build_id
+**/doc/api/
 
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
+# Android build artifacts
 /android/app/debug
 /android/app/profile
 /android/app/release
-# Firebase functions config backups
+
+# === Firebase Functions ===
+functions/.env
 functions/.runtimeconfig.json
-functions/index.js
+
+# Uncomment the line below only if `index.js` is auto-generated (e.g., from TypeScript).
+# Otherwise, keep it tracked for source control.
+// functions/index.js
+
+# === Symbolication and Obfuscation ===
+app.*.symbols
+app.*.map.json
+
+# === Migration Work ===
+migrate_working_dir/

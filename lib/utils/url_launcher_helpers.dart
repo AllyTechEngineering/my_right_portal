@@ -1,25 +1,70 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http show head;
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'custom_error.dart';
 import 'package:flutter/scheduler.dart';
 
 class UrlLauncherHelper {
-  /// Executes an asynchronous launch action with error handling.
-  // static Future<void> tryLaunchAction(
-  //   Future<void> Function() action,
-  //   BuildContext context,
-  //   String errorMessage,
-  // ) async {
-  //   final messenger = ScaffoldMessenger.of(context);
-  //   try {
-  //     await action();
-  //   } catch (e) {
-  //     debugPrint(e.toString());
-  //     messenger.showSnackBar(SnackBar(content: Text(errorMessage)));
-  //   }
-  // }
+
+  Future<void> launchWebAppWebsite(String url, BuildContext context) async {
+    final localizations = AppLocalizations.of(context)!;
+    final Uri uri = Uri.parse(url);
+
+    if (!kIsWeb) {
+      try {
+        final response =
+            Uri.base.scheme == 'https' || uri.scheme == 'https'
+                ? await http.head(uri).timeout(const Duration(seconds: 2))
+                : null;
+        if (response != null && response.statusCode != 200) {
+          SchedulerBinding.instance.addPostFrameCallback((_) {
+            if (context.mounted) {
+              CustomError.show(
+                context,
+                'HTTP ${response.statusCode}: $url',
+                userMessage: localizations.error_website_unavailable,
+              );
+            }
+          });
+          return;
+        }
+      } catch (e) {
+        SchedulerBinding.instance.addPostFrameCallback((_) {
+          if (context.mounted) {
+            CustomError.show(
+              context,
+              e,
+              userMessage: localizations.error_website_unavailable,
+            );
+          }
+        });
+        return;
+      }
+    }
+
+    try {
+      final launched = await launchUrl(
+        uri,
+        webOnlyWindowName: kIsWeb ? '_blank' : null,
+      );
+
+      if (!launched) {
+        throw Exception('Launch failed');
+      }
+    } catch (e) {
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        if (context.mounted) {
+          CustomError.show(
+            context,
+            e,
+            userMessage: localizations.error_website_unavailable,
+          );
+        }
+      });
+    }
+  }
 
   /// Launches a website URL with graceful error handling.
   static Future<void> launchWebsite(String url, BuildContext context) async {
