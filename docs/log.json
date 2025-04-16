@@ -1,0 +1,37 @@
+{
+  "insertId": "67fffd18000cba57aaea40ad",
+  "httpRequest": {
+    "requestMethod": "POST",
+    "requestUrl": "https://createcheckoutsession-nzgeau3iuq-uc.a.run.app/",
+    "requestSize": "750",
+    "status": 200,
+    "responseSize": "573",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36",
+    "remoteIp": "184.58.36.228",
+    "referer": "https://right2staynow.com/",
+    "serverIp": "216.239.38.53",
+    "latency": "1.716756745s",
+    "protocol": "HTTP/1.1"
+  },
+  "resource": {
+    "type": "cloud_run_revision",
+    "labels": {
+      "service_name": "createcheckoutsession",
+      "configuration_name": "createcheckoutsession",
+      "location": "us-central1",
+      "revision_name": "createcheckoutsession-00003-pub",
+      "project_id": "my-right-portal"
+    }
+  },
+  "timestamp": "2025-04-16T18:55:18.915682Z",
+  "severity": "INFO",
+  "labels": {
+    "instanceId": "00afae8043f256a1250fda21dfefe3342610dcc7c8574b4a063a481b13b922d3a55f0c55a3b5e7e4f3c4c2c88562de250b1037bf223b0dcf2f93c0bd451341737c274668f834",
+    "goog-managed-by": "cloudfunctions"
+  },
+  "logName": "projects/my-right-portal/logs/run.googleapis.com%2Frequests",
+  "trace": "projects/my-right-portal/traces/bd3e18c290de12748748de398474b931",
+  "receiveTimestamp": "2025-04-16T18:55:20.864940351Z",
+  "spanId": "fadfb105f8ce90c8",
+  "traceSampled": true
+}

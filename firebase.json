@@ -25,9 +25,10 @@
       }
     ]
   },
-  "functions": [
-    {
-      "source": "functions"
-    }
-  ]
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22",
+    "timeoutSeconds": 500,
+    "memory": "512MB"
+  }
 }
