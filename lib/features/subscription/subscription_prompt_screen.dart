@@ -60,11 +60,14 @@ class SubscriptionPromptScreen extends StatelessWidget {
                 ElevatedButton(
                   onPressed: () async {
                     final currentContext = context;
+                    final email = user?.email;
                     try {
                       final response = await http.post(
                         Uri.parse(
                           'https://createcheckoutsession-nzgeau3iuq-uc.a.run.app',
                         ),
+                        headers: {"Content-Type": "application/json"},
+                        body: json.encode({"email": email}),
                       );
 
                       if (!currentContext.mounted) return;
