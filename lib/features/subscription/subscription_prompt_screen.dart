@@ -62,7 +62,9 @@ class SubscriptionPromptScreen extends StatelessWidget {
                     final currentContext = context;
                     try {
                       final response = await http.post(
-                        Uri.parse('https://createcheckoutsession-nzgeau3iuq-uc.a.run.app'),
+                        Uri.parse(
+                          'https://createcheckoutsession-nzgeau3iuq-uc.a.run.app',
+                        ),
                       );
 
                       if (!currentContext.mounted) return;
@@ -70,11 +72,16 @@ class SubscriptionPromptScreen extends StatelessWidget {
                       if (response.statusCode == 200) {
                         final data = jsonDecode(response.body);
                         final checkoutUrl = data['url'];
-                         UrlLauncherHelper.launchWebAppWebsite(checkoutUrl, currentContext);
+                        UrlLauncherHelper.launchWebAppWebsite(
+                          checkoutUrl,
+                          currentContext,
+                        );
                       } else {
                         ScaffoldMessenger.of(currentContext).showSnackBar(
                           SnackBar(
-                            content: Text('Failed to create Stripe session: ${response.body}'),
+                            content: Text(
+                              'Failed to create Stripe session: ${response.body}, status code: ${response.statusCode}',
+                            ),
                           ),
                         );
                       }
