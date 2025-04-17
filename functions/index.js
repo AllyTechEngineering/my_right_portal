@@ -1,9 +1,3 @@
-// ✅ Leave top imports as-is
-// added a comment so that the code would change
-/*
-  "cancel_url": "https://right2staynow.com/#/cancel-subscription",
-  "success_url": "https://right2staynow.com/#/success-subscription",
-*/
 const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 const cors = require("cors")({ origin: true });
