@@ -25,8 +25,8 @@ exports.createCheckoutSession = onRequest((req, res) => {
         payment_method_types: ["card"],
         mode: "subscription",
         line_items: [{ price: process.env.STRIPE_PRICE_ID, quantity: 1 }],
-        success_url: process.env.SUCCESS_URL,
-        cancel_url: process.env.CANCEL_URL,
+        success_url: "https://right2staynow.com/#/success-subscription",
+        cancel_url: "https://right2staynow.com/#/cancel-subscription",
       });
 
       logger.info("✅ Stripe session created", { sessionId: session.id });
