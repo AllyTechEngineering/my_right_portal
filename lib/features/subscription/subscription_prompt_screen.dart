@@ -61,6 +61,7 @@ class SubscriptionPromptScreen extends StatelessWidget {
                   onPressed: () async {
                     final currentContext = context;
                     final email = user?.email;
+                    debugPrint('Email: $email');
                     try {
                       final response = await http.post(
                         Uri.parse(

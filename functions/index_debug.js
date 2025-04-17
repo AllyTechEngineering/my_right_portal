@@ -2,8 +2,19 @@ const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const logger = require("firebase-functions/logger");
 const cors = require("cors")({ origin: true });
+
 // .env must be commented out for this to deploy
 console.log("🟢 Firebase V2 function loaded");
+
+// Only load dotenv in local development
+try {
+  if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+    console.log("✅ .env loaded for local dev");
+  }
+} catch (e) {
+  console.log("⚠️ Skipped .env load:", e.message);
+}
 
 // Define Firebase secrets
 const STRIPE_SECRET_KEY = defineSecret("STRIPE_SECRET_KEY");
@@ -44,10 +55,12 @@ exports.createCheckoutSession = onRequest(
         }
 
         const stripe = require("stripe")(STRIPE_SECRET_KEY.value());
+
         logger.info("📨 Received email for Stripe session", {
           email: req.body?.email,
           body: req.body,
         });
+
         const session = await stripe.checkout.sessions.create({
           payment_method_types: ["card"],
           mode: "subscription",
@@ -55,7 +68,6 @@ exports.createCheckoutSession = onRequest(
           line_items: [{ price: PRICE_ID.value(), quantity: 1 }],
           success_url: SUCCESS_URL.value(),
           cancel_url: CANCEL_URL.value(),
-          allow_promotion_codes: true, // ✅ Enables coupon/promo code field
         });
 
         logger.info("✅ Stripe session created", { sessionId: session.id });

@@ -7,6 +7,7 @@ import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_right_portal/widgets/custom_text_widget.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -16,17 +17,36 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Hold the current screen in state.
   AppScreen currentScreen = AppScreen.home;
+  String? getVersion;
+  String? getBuildNumber;
+
+  void _getVersion() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    setState(() {
+      getVersion = packageInfo.version;
+      getBuildNumber = packageInfo.buildNumber;
+    });
+    debugPrint('Version: $getVersion, Build: $getBuildNumber');
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getVersion();
+  }
+
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
+
     //final double buttonSize = screenWidth * 0.30;
     double iconSize = screenWidth * 0.055;
     iconSize = iconSize.clamp(18.0, 26.0);
     final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: CustomAppBarWidget(
@@ -114,6 +134,15 @@ class _HomeScreenState extends State<HomeScreen> {
                         color: Theme.of(context).colorScheme.surface,
                         fontWeight: FontWeight.bold,
                       ),
+                    ),
+                  ),
+                  SizedBox(height: screenHeight * 0.02),
+                  CustomTextWidget(
+                    'Version: $getVersion, Build: $getBuildNumber',
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],

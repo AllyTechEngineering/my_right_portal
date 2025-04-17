@@ -73,7 +73,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         (value) => value!.isEmpty ? 'Email required' : null,
                   ),
                   TextFormField(
-                    decoration: const InputDecoration(labelText: 'Password'),
+                    decoration: const InputDecoration(
+                      helperStyle: TextStyle(fontSize: 12, color: Colors.grey),
+                      labelText: 'Password',
+                      hintText:
+                          'Min 6 chars, 1 upper, 1 lower, 1 number, 1 special char',
+                    ),
                     obscureText: true,
                     onChanged: (value) => _password = value,
                     validator:
