@@ -1,5 +1,10 @@
+// ✅ Leave top imports as-is
+// added a comment so that the code would change
+/*
+  "cancel_url": "https://right2staynow.com/#/cancel-subscription",
+  "success_url": "https://right2staynow.com/#/success-subscription",
+*/
 const { onRequest } = require("firebase-functions/v2/https");
-const functions = require("firebase-functions");
 const logger = require("firebase-functions/logger");
 const cors = require("cors")({ origin: true });
 
@@ -12,16 +17,16 @@ exports.createCheckoutSession = onRequest((req, res) => {
     try {
       const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); // ✅ Moved here
 
-      if (!process.env.STRIPE_SECRET_KEY) {
+      if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_PRICE_ID) {
         throw new Error("Missing Stripe configuration.");
       }
 
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"],
         mode: "subscription",
-        line_items: [{ price: functions.config().stripe.price_id, quantity: 1 }],
-        success_url: functions.config().stripe.success_url,
-        cancel_url: functions.config().stripe.cancel_url,
+        line_items: [{ price: process.env.STRIPE_PRICE_ID, quantity: 1 }],
+        success_url: process.env.SUCCESS_URL,
+        cancel_url: process.env.CANCEL_URL,
       });
 
       logger.info("✅ Stripe session created", { sessionId: session.id });
