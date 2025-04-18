@@ -1295,6 +1295,14 @@
     "@service_providers_bio": {
         "description": "Etiqueta para el campo de biografía"
     },
+    "service_providers_en": "Introducción de datos en inglés",
+    "@service_providers_en": {
+        "description": "Etiqueta para la opción de idioma de entrada de datos"
+    },
+    "service_providers_es": "Introducción de datos en español",
+    "@service_providers_es": {
+        "description": "Etiqueta para la opción de idioma de entrada de datos"
+    },
     "about_us_description": "Creamos aplicaciones educativas para impulsar el aprendizaje y el crecimiento. Nuestro objetivo es hacer que el conocimiento sea accesible, intuitivo y atractivo para comunidades diversas. Nos enfocamos en crear herramientas que apoyen el aprendizaje continuo y el cambio positivo.",
     "@about_us_description": {
         "description": "Párrafo breve que describe la misión y el propósito de la empresa, mostrado en la sección Sobre Nosotros.",

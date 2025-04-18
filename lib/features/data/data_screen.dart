@@ -11,6 +11,17 @@ import 'package:my_right_portal/widgets/custom_text_widget.dart';
 import 'package:my_right_portal/widgets/phone_number_input_with_country.dart';
 import 'package:my_right_portal/models/form_fields.dart';
 
+/*
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /lawyers/{lawyerId} {
+      allow read: if true; // allow public read
+      allow write: if request.auth != null && request.auth.uid == lawyerId;
+    }
+  }
+}
+*/
 class DataScreen extends StatefulWidget {
   const DataScreen({super.key});
 
@@ -31,8 +42,13 @@ class _DataScreenState extends State<DataScreen> {
 
   Future<void> _loadData() async {
     final user = FirebaseAuth.instance.currentUser;
+    debugPrint("Trying to write to Firestore as UID: ${user?.uid}");
     if (user != null) {
-      final doc = await FirebaseFirestore.instance.collection('listings').doc(user.uid).get();
+      final doc =
+          await FirebaseFirestore.instance
+              .collection('lawyers')
+              .doc(user.uid)
+              .get();
       if (doc.exists) {
         setState(() {
           _formData.addAll(doc.data()!);
@@ -71,142 +87,196 @@ class _DataScreenState extends State<DataScreen> {
         title: localizations.my_right_to_stay_title,
         getToolBarHeight: getToolBarHeight,
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Form(
-                key: _formKey,
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    double screenWidth = constraints.maxWidth;
-                    bool isLarge = screenWidth >= 1000;
-                    bool isTablet = screenWidth >= 600 && screenWidth < 1000;
+      body:
+          _isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Form(
+                  key: _formKey,
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      double screenWidth = constraints.maxWidth;
+                      bool isLarge = screenWidth >= 1000;
+                      bool isTablet = screenWidth >= 600 && screenWidth < 1000;
 
-                    return SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 12.0),
-                            child: Text(
-                              'English',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Wrap(
-                            spacing: 16,
-                            runSpacing: 16,
-                            children: getLocalizedDataFields(context)
-                                .where((f) => f.key.endsWith('En') || f.key == 'streetAddress' || f.key == 'city' || f.key == 'state' || f.key == 'zipCode' || f.key == 'websiteUrl' || f.key == 'emailAddress' || f.key == 'mobilePhoneNumber' || f.key == 'officePhoneNumber' || f.key == 'experience' || f.key == 'image')
-                                .map(
-                                  (field) => SizedBox(
-                                    width: isLarge
-                                        ? 300
-                                        : isTablet
-                                            ? 250
-                                            : double.infinity,
-                                    child: _buildTextField(field.key, field.label,
-                                        maxLines: field.key.contains('bio') ? 3 : 1),
-                                  ),
-                                )
-                                .toList()
-                              ..add(
-                                SizedBox(
-                                  width: isLarge ? 300 : isTablet ? 250 : double.infinity,
-                                  child: SwitchListTile(
-                                    title: Text(localizations.data_entry_video_con),
-                                    value: _formData['videoConsultation'] ?? false,
-                                    onChanged: (bool value) {
-                                      setState(() {
-                                        _formData['videoConsultation'] = value;
-                                      });
-                                    },
-                                  ),
+                      return SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 12.0),
+                              child: Text(
+                                localizations.service_providers_en,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 12.0),
-                            child: Text(
-                              'Spanish',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                            ),
+                            Wrap(
+                              spacing: 16,
+                              runSpacing: 16,
+                              children:
+                                  getLocalizedDataFields(context)
+                                      .where(
+                                        (f) =>
+                                            f.key.endsWith('En') ||
+                                            f.key == 'streetAddress' ||
+                                            f.key == 'city' ||
+                                            f.key == 'state' ||
+                                            f.key == 'zipCode' ||
+                                            f.key == 'websiteUrl' ||
+                                            f.key == 'emailAddress' ||
+                                            f.key == 'mobilePhoneNumber' ||
+                                            f.key == 'officePhoneNumber' ||
+                                            f.key == 'experience' ||
+                                            f.key == 'image',
+                                      )
+                                      .map(
+                                        (field) => SizedBox(
+                                          width:
+                                              isLarge
+                                                  ? 300
+                                                  : isTablet
+                                                  ? 250
+                                                  : double.infinity,
+                                          child: _buildTextField(
+                                            field.key,
+                                            field.label,
+                                            maxLines:
+                                                field.key.contains('bio')
+                                                    ? 3
+                                                    : 1,
+                                          ),
+                                        ),
+                                      )
+                                      .toList()
+                                    ..add(
+                                      SizedBox(
+                                        width:
+                                            isLarge
+                                                ? 300
+                                                : isTablet
+                                                ? 250
+                                                : double.infinity,
+                                        child: SwitchListTile(
+                                          title: Text(
+                                            localizations.data_entry_video_con,
+                                          ),
+                                          value:
+                                              _formData['videoConsultation'] ??
+                                              false,
+                                          onChanged: (bool value) {
+                                            setState(() {
+                                              _formData['videoConsultation'] =
+                                                  value;
+                                            });
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 12.0),
+                              child: Text(
+                                localizations.service_providers_es,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
-                          ),
-                          Wrap(
-                            spacing: 16,
-                            runSpacing: 16,
-                            children: getLocalizedDataFields(context)
-                                .where((f) => f.key.endsWith('Es'))
-                                .map(
-                                  (field) => SizedBox(
-                                    width: isLarge
-                                        ? 300
-                                        : isTablet
-                                            ? 250
-                                            : double.infinity,
-                                    child: _buildTextField(field.key, field.label,
-                                        maxLines: field.key.contains('bio') ? 3 : 1),
-                                  ),
-                                )
-                                .toList(),
-                          ),
-                          const SizedBox(height: 24),
-                          Center(
-                            child: ElevatedButton(
-                              onPressed: () async {
-                                if (_formKey.currentState!.validate()) {
-                                  _formKey.currentState!.save();
-                                  debugPrint('Form Data: $_formData');
-                                  final user = FirebaseAuth.instance.currentUser;
-                                  if (user != null) {
-                                    final uid = user.uid;
-                                    try {
-                                      await FirebaseFirestore.instance
-                                          .collection('listings')
-                                          .doc(uid)
-                                          .set(_formData, SetOptions(merge: true));
-                                      debugPrint('✅ Form data saved successfully for UID: $uid');
+                            Wrap(
+                              spacing: 16,
+                              runSpacing: 16,
+                              children:
+                                  getLocalizedDataFields(context)
+                                      .where((f) => f.key.endsWith('Es'))
+                                      .map(
+                                        (field) => SizedBox(
+                                          width:
+                                              isLarge
+                                                  ? 300
+                                                  : isTablet
+                                                  ? 250
+                                                  : double.infinity,
+                                          child: _buildTextField(
+                                            field.key,
+                                            field.label,
+                                            maxLines:
+                                                field.key.contains('bio')
+                                                    ? 3
+                                                    : 1,
+                                          ),
+                                        ),
+                                      )
+                                      .toList(),
+                            ),
+                            const SizedBox(height: 24),
+                            Center(
+                              child: ElevatedButton(
+                                onPressed: () async {
+                                  if (_formKey.currentState!.validate()) {
+                                    _formKey.currentState!.save();
+                                    debugPrint('Form Data: $_formData');
+                                    final user =
+                                        FirebaseAuth.instance.currentUser;
+                                    if (user != null) {
+                                      final uid = user.uid;
+                                      try {
+                                        await FirebaseFirestore.instance
+                                            .collection('lawyers')
+                                            .doc(uid)
+                                            .set(
+                                              _formData,
+                                              SetOptions(merge: true),
+                                            );
+                                        debugPrint(
+                                          '✅ Form data saved successfully for UID: $uid',
+                                        );
+                                        if (!mounted) return;
+                                        ScaffoldMessenger.of(
+                                          context,
+                                        ).showSnackBar(
+                                          const SnackBar(
+                                            content: Text(
+                                              'Data saved successfully.',
+                                            ),
+                                          ),
+                                        );
+                                      } catch (e) {
+                                        debugPrint('❌ Failed to save data: $e');
+                                        if (!mounted) return;
+                                        ScaffoldMessenger.of(
+                                          context,
+                                        ).showSnackBar(
+                                          SnackBar(content: Text('Error: $e')),
+                                        );
+                                      }
+                                    } else {
+                                      debugPrint('❌ No authenticated user.');
                                       if (!mounted) return;
-                                      ScaffoldMessenger.of(context).showSnackBar(
+                                      ScaffoldMessenger.of(
+                                        context,
+                                      ).showSnackBar(
                                         const SnackBar(
-                                          content: Text('Data saved successfully.'),
+                                          content: Text('User not logged in.'),
                                         ),
                                       );
-                                    } catch (e) {
-                                      debugPrint('❌ Failed to save data: $e');
-                                      if (!mounted) return;
-                                      ScaffoldMessenger.of(context).showSnackBar(
-                                        SnackBar(content: Text('Error: $e')),
-                                      );
                                     }
-                                  } else {
-                                    debugPrint('❌ No authenticated user.');
-                                    if (!mounted) return;
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                        content: Text('User not logged in.'),
-                                      ),
-                                    );
                                   }
-                                }
-                              },
-                              child: const Text('Submit'),
+                                },
+                                child: const Text('Submit'),
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
+                          ],
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
     );
   }
 }

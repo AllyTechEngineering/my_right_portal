@@ -1295,6 +1295,14 @@
     "@service_providers_bio": {
         "description": "Label for the bio field"
     },
+    "service_providers_en": "English Data Entry",
+    "@service_providers_en": {
+        "description": "Label for the data entry language option"
+    },
+    "service_providers_es": "Spanish Data Entry",
+    "@service_providers_es": {
+        "description": "Label for the data entry language option"
+    },
     "about_us_description": "We create educational apps to empower learning and growth. Our goal is to make knowledge accessible, intuitive, and engaging for diverse communities. With a focus on real-world impact, we build tools that support lifelong learning and positive change.",
     "@about_us_description": {
         "description": "A short paragraph describing the mission and purpose of the company, shown in the About Us section.",

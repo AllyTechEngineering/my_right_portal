@@ -21,7 +21,7 @@ class _DataScreenState extends State<DataScreen> {
   final TextEditingController _mobilePhoneController = TextEditingController();
   final TextEditingController _officePhoneController = TextEditingController();
   String _selectedMobileCountry = 'USA';
-  String _selectedOfficeCountry= 'USA';
+  String _selectedOfficeCountry = 'USA';
 
   final List<DataField> _fields = const [
     DataField(key: 'companyNameEn', label: 'Company Name (English)'),
@@ -73,8 +73,10 @@ class _DataScreenState extends State<DataScreen> {
             data['mobilePhoneNumber']?.toString() ?? '';
         _officePhoneController.text =
             data['officePhoneNumber']?.toString() ?? '';
-        _selectedMobileCountry = data['mobilePhoneCountry']?.toString() ?? 'USA';
-        _selectedOfficeCountry = data['officePhoneCountry']?.toString() ?? 'USA';
+        _selectedMobileCountry =
+            data['mobilePhoneCountry']?.toString() ?? 'USA';
+        _selectedOfficeCountry =
+            data['officePhoneCountry']?.toString() ?? 'USA';
         debugPrint('📦 Loaded profile data:');
         debugPrint('mobilePhoneCountry: ${data['mobilePhoneCountry']}');
         debugPrint('officePhoneCountry: ${data['officePhoneCountry']}');
