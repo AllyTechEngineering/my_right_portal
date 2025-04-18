@@ -48,7 +48,7 @@ class _SignupScreenState extends State<SignupScreen> {
             .doc(user.uid)
             .set({
               'id': user.uid,
-              'email': user.email,
+              'emailAddress': user.email,
               'subscriptionActive': false,
               'profileApproved': false,
               'createdAt': FieldValue.serverTimestamp(),

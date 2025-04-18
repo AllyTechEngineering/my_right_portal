@@ -2,7 +2,8 @@ const { onRequest } = require("firebase-functions/v2/https");
 const { defineSecret } = require("firebase-functions/params");
 const logger = require("firebase-functions/logger");
 const cors = require("cors")({ origin: true });
-// .env must be commented out for this to deploy
+const { handleStripeWebhook } = require("./handle_stripe_webhook");
+
 console.log("🟢 Firebase V2 function loaded");
 
 // Define Firebase secrets
@@ -16,11 +17,10 @@ exports.createCheckoutSession = onRequest(
     secrets: [STRIPE_SECRET_KEY, PRICE_ID, SUCCESS_URL, CANCEL_URL],
   },
   async (req, res) => {
-    logger.info("🔥 Firebase V2 function called version 0.0.0 build 1");
+    logger.info("index.js version 1.0.0 build 3");
 
     cors(req, res, async () => {
       try {
-        // Log the presence of config values
         logger.info("Stripe configuration", {
           stripeSecret: !!STRIPE_SECRET_KEY.value(),
           stripePriceId: !!PRICE_ID.value(),
@@ -48,14 +48,16 @@ exports.createCheckoutSession = onRequest(
           email: req.body?.email,
           body: req.body,
         });
+
         const session = await stripe.checkout.sessions.create({
           payment_method_types: ["card"],
           mode: "subscription",
           customer_email: req.body.email,
+          client_reference_id: req.body.client_reference_id,
           line_items: [{ price: PRICE_ID.value(), quantity: 1 }],
           success_url: SUCCESS_URL.value(),
           cancel_url: CANCEL_URL.value(),
-          allow_promotion_codes: true, // ✅ Enables coupon/promo code field
+          allow_promotion_codes: true,
         });
 
         logger.info("✅ Stripe session created", { sessionId: session.id });
@@ -67,3 +69,5 @@ exports.createCheckoutSession = onRequest(
     });
   }
 );
+
+exports.handleStripeWebhook = handleStripeWebhook;

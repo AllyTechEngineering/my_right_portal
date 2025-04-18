@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,255 +18,226 @@ class DataScreen extends StatefulWidget {
 }
 
 class _DataScreenState extends State<DataScreen> {
-  final _formKey = GlobalKey<FormState>();
-  final Map<String, String> _formData = {};
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final Map<String, dynamic> _formData = {};
 
-  final TextEditingController _mobilePhoneController = TextEditingController();
-  final TextEditingController _officePhoneController = TextEditingController();
-  String _selectedMobileCountry = 'USA';
-  String _selectedOfficeCountry= 'USA';
-
-  final List<DataField> _fields = const [
-    DataField(key: 'companyNameEn', label: 'Company Name (English)'),
-    DataField(key: 'companyNameEs', label: 'Company Name (Spanish)'),
-    DataField(key: 'contactNameEn', label: 'Contact Name (English)'),
-    DataField(key: 'contactNameEs', label: 'Contact Name (Spanish)'),
-    DataField(key: 'streetAddress', label: 'Street Address'),
-    DataField(key: 'city', label: 'City'),
-    DataField(key: 'state', label: 'State'),
-    DataField(key: 'zipCode', label: 'ZIP Code'),
-    DataField(key: 'emailAddress', label: 'Email Address'),
-    DataField(key: 'websiteUrl', label: 'Website URL'),
-    DataField(key: 'image', label: 'Image URL'),
-    DataField(key: 'experience', label: 'Experience'),
-    DataField(key: 'languagesEn', label: 'Languages (English)'),
-    DataField(key: 'languagesEs', label: 'Languages (Spanish)'),
-    DataField(key: 'educationEn', label: 'Education (English)'),
-    DataField(key: 'educationEs', label: 'Education (Spanish)'),
-    DataField(key: 'specialtiesEn', label: 'Specialties (English)'),
-    DataField(key: 'specialtiesEs', label: 'Specialties (Spanish)'),
-    DataField(key: 'consultationFeeEn', label: 'Consultation Fee (English)'),
-    DataField(key: 'consultationFeeEs', label: 'Consultation Fee (Spanish)'),
-    DataField(key: 'bioEn', label: 'Bio (English)'),
-    DataField(key: 'bioEs', label: 'Bio (Spanish)'),
-    DataField(key: 'videoConsultation', label: 'Video Consultation'),
-  ];
-
-  @override
-  void initState() {
-    super.initState();
-    debugPrint('⚙️ DataScreen.initState called');
-    _loadProfile();
-  }
-
-  Future<void> _loadProfile() async {
-    final uid = FirebaseAuth.instance.currentUser?.uid;
-    if (uid == null) return;
-
-    final doc =
-        await FirebaseFirestore.instance.collection('lawyers').doc(uid).get();
-    final data = doc.data();
-
-    if (data != null) {
-      setState(() {
-        for (final field in _fields) {
-          _formData[field.key] = data[field.key]?.toString() ?? '';
-        }
-        _mobilePhoneController.text =
-            data['mobilePhoneNumber']?.toString() ?? '';
-        _officePhoneController.text =
-            data['officePhoneNumber']?.toString() ?? '';
-        _selectedMobileCountry = data['mobilePhoneCountry']?.toString() ?? 'USA';
-        _selectedOfficeCountry = data['officePhoneCountry']?.toString() ?? 'USA';
-        debugPrint('📦 Loaded profile data:');
-        debugPrint('mobilePhoneCountry: ${data['mobilePhoneCountry']}');
-        debugPrint('officePhoneCountry: ${data['officePhoneCountry']}');
-      });
-    }
-  }
-
-  Future<void> _saveProfile() async {
-    if (!_formKey.currentState!.validate()) return;
-    _formKey.currentState!.save();
-
-    _formData['mobilePhoneNumber'] = _mobilePhoneController.text.trim();
-    _formData['officePhoneNumber'] = _officePhoneController.text.trim();
-    _formData['mobilePhoneCountry'] = _selectedMobileCountry;
-    _formData['officePhoneCountry'] = _selectedOfficeCountry;
-    final uid = FirebaseAuth.instance.currentUser?.uid;
-    if (uid == null) return;
-
-    try {
-      await FirebaseFirestore.instance
-          .collection('lawyers')
-          .doc(uid)
-          .update(_formData);
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('✅ Profile updated successfully')),
-      );
-    } catch (e) {
-      debugPrint('❌ Error updating profile: $e');
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('⚠️ Failed to update profile')),
-      );
-    }
-  }
-
-  int _getColumnCount(double width) {
-    if (width >= 1200) return 6;
-    if (width >= 800) return 4;
-    return 2;
+  Widget _buildTextField(String key, String label, {int maxLines = 1}) {
+    return TextFormField(
+      decoration: InputDecoration(labelText: label),
+      maxLines: maxLines,
+      onSaved: (value) {
+        _formData[key] = value;
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    // final localizations = AppLocalizations.of(context)!;
-    // final double screenWidth = MediaQuery.of(context).size.width;
+    final localizations = AppLocalizations.of(context)!;
     final double screenHeight = MediaQuery.of(context).size.height;
     final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;
 
     return Scaffold(
       appBar: CustomAppBarWidget(
-        title: 'Manage Your Data',
+        title: localizations.my_right_to_stay_title,
         getToolBarHeight: getToolBarHeight,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final columns = _getColumnCount(constraints.maxWidth);
-            final spacing = 16.0;
-            final maxFieldWidth =
-                (constraints.maxWidth - spacing * (columns - 1)) / columns;
+        child: Form(
+          key: _formKey,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              double screenWidth = constraints.maxWidth;
+              bool isLarge = screenWidth >= 1000;
+              bool isTablet = screenWidth >= 600 && screenWidth < 1000;
 
-            return SingleChildScrollView(
-              child: Form(
-                key: _formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Wrap(
-                      spacing: spacing,
-                      runSpacing: 16,
-                      children: [
-                        SizedBox(
-                          width: maxFieldWidth,
-                          child: PhoneNumberInputWithCountry(
-                            phoneController: _mobilePhoneController,
-                            selectedCountry: _selectedMobileCountry,
-                            debugLabel: 'Mobile Phone',
-                            onCountryChanged:
-                                (value) => setState(
-                                  () => _selectedMobileCountry = value!,
-                                ),
-                          ),
-                        ),
-                        // SizedBox(
-                        //   width: maxFieldWidth,
-                        //   child: PhoneNumberInputWithCountry(
-                        //     phoneController: _officePhoneController,
-                        //     selectedCountry: _selectedOfficeCountry,
-                        //     debugLabel: 'Office Phone',
-                        //     onCountryChanged:
-                        //         (value) => setState(
-                        //           () => _selectedOfficeCountry = value!,
-                        //         ),
-                        //   ),
-                        // ),
-                        ..._fields.map((field) {
-                          if (field.key == 'videoConsultation') {
-                            return SizedBox(
-                              width: maxFieldWidth,
-                              child: SwitchListTile(
-                                title: CustomTextWidget(
-                                  field.label,
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context).textTheme.labelSmall,
-                                ),
-                                value: _formData[field.key] == 'true',
-                                onChanged: (value) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12.0),
+                    child: Text(
+                      'English',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Wrap(
+                    spacing: 16,
+                    runSpacing: 16,
+                    children:
+                        [
+                              _buildTextField('companyNameEn', 'Company Name'),
+                              _buildTextField('specialtiesEn', 'Specialties'),
+                              _buildTextField('languagesEn', 'Languages'),
+                              _buildTextField('contactNameEn', 'Contact Name'),
+                              _buildTextField(
+                                'streetAddress',
+                                'Street Address',
+                              ),
+                              _buildTextField('city', 'City'),
+                              _buildTextField('state', 'State'),
+                              _buildTextField('zipCode', 'Postal Code'),
+                              _buildTextField('websiteUrl', 'Website URL'),
+                              _buildTextField('emailAddress', 'Email Address'),
+                              _buildTextField(
+                                'mobilePhoneNumber',
+                                'Mobile Phone',
+                              ),
+                              _buildTextField(
+                                'officePhoneNumber',
+                                'Office Phone',
+                              ),
+                              _buildTextField('bioEn', 'Bio', maxLines: 3),
+                              _buildTextField('educationEn', 'Education'),
+                              _buildTextField('experience', 'Experience'),
+                              SwitchListTile(
+                                title: const Text('Video Consult'),
+                                value: _formData['videoConsultation'] ?? false,
+                                onChanged: (bool value) {
                                   setState(() {
-                                    _formData[field.key] = value.toString();
+                                    _formData['videoConsultation'] = value;
                                   });
                                 },
                               ),
-                            );
-                          } else {
-                            return SizedBox(
-                              width: maxFieldWidth,
-                              child: TextFormField(
-                                textAlign: TextAlign.left,
-                                maxLines: null,
-                                maxLength:
-                                    (field.key == 'bioEn' ||
-                                            field.key == 'bioEs')
-                                        ? 350
-                                        : null,
-                                keyboardType:
-                                    (field.key == 'bioEn' ||
-                                            field.key == 'bioEs')
-                                        ? TextInputType.multiline
-                                        : field.key == 'rating'
-                                        ? TextInputType.number
-                                        : TextInputType.text,
-                                textInputAction:
-                                    (field.key == 'bioEn' ||
-                                            field.key == 'bioEs')
-                                        ? TextInputAction.newline
-                                        : TextInputAction.done,
-                                style: Theme.of(
-                                  context,
-                                ).textTheme.labelLarge?.copyWith(
-                                  color:
-                                      Theme.of(context).colorScheme.onSurface,
-                                ),
-                                initialValue: _formData[field.key] ?? '',
-                                decoration: InputDecoration(
-                                  labelText: field.label,
-                                  labelStyle: Theme.of(
-                                    context,
-                                  ).textTheme.labelSmall?.copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.onSurface,
-                                  ),
-                                ),
-                                validator:
-                                    field.required
-                                        ? (value) =>
-                                            (value == null ||
-                                                    value.trim().isEmpty)
-                                                ? 'Required'
-                                                : null
-                                        : null,
-                                onSaved: (value) {
-                                  if (field.key == 'rating') {
-                                    final parsed = double.tryParse(value ?? '');
-                                    _formData[field.key] =
-                                        parsed != null
-                                            ? parsed.toStringAsFixed(1)
-                                            : '';
-                                  } else {
-                                    _formData[field.key] = value?.trim() ?? '';
-                                  }
+                              _buildTextField(
+                                'consultationFeeEn',
+                                'Consult Fee',
+                              ),
+                              _buildTextField('image', 'Image'),
+                            ]
+                            .map(
+                              (e) => SizedBox(
+                                width:
+                                    isLarge
+                                        ? 300
+                                        : isTablet
+                                        ? 250
+                                        : double.infinity,
+                                child: e,
+                              ),
+                            )
+                            .toList(),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12.0),
+                    child: Text(
+                      'Spanish',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Wrap(
+                    spacing: 16,
+                    runSpacing: 16,
+                    children:
+                        [
+                              _buildTextField('companyNameEs', 'Company Name'),
+                              _buildTextField('specialtiesEs', 'Specialties'),
+                              _buildTextField('languagesEs', 'Languages'),
+                              _buildTextField('contactNameEs', 'Contact Name'),
+                              _buildTextField(
+                                'streetAddress',
+                                'Street Address',
+                              ),
+                              _buildTextField('city', 'City'),
+                              _buildTextField('state', 'State'),
+                              _buildTextField('zipCode', 'Postal Code'),
+                              _buildTextField('websiteUrl', 'Website URL'),
+                              _buildTextField('emailAddress', 'Email Address'),
+                              _buildTextField(
+                                'mobilePhoneNumber',
+                                'Mobile Phone',
+                              ),
+                              _buildTextField(
+                                'officePhoneNumber',
+                                'Office Phone',
+                              ),
+                              _buildTextField('bioEs', 'Bio', maxLines: 3),
+                              _buildTextField('educationEs', 'Education'),
+                              _buildTextField('experience', 'Experience'),
+                              SwitchListTile(
+                                title: const Text('Video Consult'),
+                                value: _formData['videoConsultation'] ?? false,
+                                onChanged: (bool value) {
+                                  setState(() {
+                                    _formData['videoConsultation'] = value;
+                                  });
                                 },
+                              ),
+                              _buildTextField(
+                                'consultationFeeEs',
+                                'Consult Fee',
+                              ),
+                              _buildTextField('image', 'Image'),
+                            ]
+                            .map(
+                              (e) => SizedBox(
+                                width:
+                                    isLarge
+                                        ? 300
+                                        : isTablet
+                                        ? 250
+                                        : double.infinity,
+                                child: e,
+                              ),
+                            )
+                            .toList(),
+                  ),
+                  const SizedBox(height: 24),
+                  Center(
+                    child: ElevatedButton(
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          _formKey.currentState!.save();
+                          debugPrint('Form Data: $_formData');
+                          final user = FirebaseAuth.instance.currentUser;
+                          if (user != null) {
+                            final uid = user.uid;
+                            try {
+                              await FirebaseFirestore.instance
+                                  .collection('listings')
+                                  .doc(uid)
+                                  .set(_formData, SetOptions(merge: true));
+                              debugPrint(
+                                '✅ Form data saved successfully for UID: $uid',
+                              );
+                              if (!mounted) return;
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text('Data saved successfully.'),
+                                ),
+                              );
+                            } catch (e) {
+                              debugPrint('❌ Failed to save data: $e');
+                              if (!mounted) return;
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('Error: $e')),
+                              );
+                            }
+                          } else {
+                            debugPrint('❌ No authenticated user.');
+                            if (!mounted) return;
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('User not logged in.'),
                               ),
                             );
                           }
-                        }),
-                      ],
+                        }
+                      },
+                      child: const Text('Submit'),
                     ),
-                    const SizedBox(height: 32),
-                    ElevatedButton(
-                      onPressed: _saveProfile,
-                      child: const Text('Save Changes'),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
+                  ),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );

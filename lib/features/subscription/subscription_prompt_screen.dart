@@ -61,14 +61,19 @@ class SubscriptionPromptScreen extends StatelessWidget {
                   onPressed: () async {
                     final currentContext = context;
                     final email = user?.email;
+                    final uid = user?.uid;
                     debugPrint('Email: $email');
+                    debugPrint('UID: $uid');
                     try {
                       final response = await http.post(
                         Uri.parse(
                           'https://createcheckoutsession-nzgeau3iuq-uc.a.run.app',
                         ),
                         headers: {"Content-Type": "application/json"},
-                        body: json.encode({"email": email}),
+                        body: json.encode({
+                          "email": email,
+                          "client_reference_id": uid,
+                        }),
                       );
 
                       if (!currentContext.mounted) return;
