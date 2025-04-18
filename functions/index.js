@@ -16,16 +16,16 @@ exports.createCheckoutSession = onRequest(
     secrets: [STRIPE_SECRET_KEY, PRICE_ID, SUCCESS_URL, CANCEL_URL],
   },
   async (req, res) => {
-    logger.info("🔥 Firebase V2 function called");
+    logger.info("🔥 Firebase V2 function called version 0.0.0 build 1");
 
     cors(req, res, async () => {
       try {
         // Log the presence of config values
         logger.info("Stripe configuration", {
-          stripeSecret: STRIPE_SECRET_KEY.value(),
-          stripePriceId: PRICE_ID.value(),
-          successUrl: SUCCESS_URL.value(),
-          cancelUrl: CANCEL_URL.value(),
+          stripeSecret: !!STRIPE_SECRET_KEY.value(),
+          stripePriceId: !!PRICE_ID.value(),
+          successUrl: !!SUCCESS_URL.value(),
+          cancelUrl: !!CANCEL_URL.value(),
         });
 
         if (

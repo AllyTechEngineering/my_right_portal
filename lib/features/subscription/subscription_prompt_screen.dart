@@ -77,9 +77,30 @@ class SubscriptionPromptScreen extends StatelessWidget {
                         final data = jsonDecode(response.body);
                         final checkoutUrl = data['url'];
                         UrlLauncherHelper.launchWebAppWebsite(
-                          checkoutUrl,
-                          currentContext,
-                        );
+                              checkoutUrl,
+                              currentContext,
+                            )
+                            .then((_) {
+                              if (currentContext.mounted) {
+                                Navigator.pop(currentContext);
+                              }
+                            })
+                            .catchError((error) {
+                              debugPrint(
+                                "❌ Failed to launch checkout URL: $error",
+                              );
+                              if (currentContext.mounted) {
+                                ScaffoldMessenger.of(
+                                  currentContext,
+                                ).showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      "Failed to open Stripe checkout page. Try again later.",
+                                    ),
+                                  ),
+                                );
+                              }
+                            });
                       } else {
                         ScaffoldMessenger.of(currentContext).showSnackBar(
                           SnackBar(
