@@ -62,16 +62,39 @@ class _DataScreenState extends State<DataScreen> {
     }
   }
 
-  Widget _buildTextField(String key, String label, {int maxLines = 1}) {
-    return TextFormField(
-      initialValue: _formData[key]?.toString() ?? '',
-      decoration: InputDecoration(labelText: label),
-      maxLines: maxLines,
-      onSaved: (value) {
-        _formData[key] = value;
-      },
-    );
-  }
+Widget _buildTextField(String key, String label, {int maxLines = 1}) {
+  return TextFormField(
+    initialValue: _formData[key]?.toString() ?? '',
+    decoration: InputDecoration(
+      focusColor: Colors.blue,
+      labelText: label,
+      floatingLabelStyle: const TextStyle(
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold,
+        height: 1.25,
+        color: Colors.black,
+      ),
+      floatingLabelAlignment: FloatingLabelAlignment.center,
+    ),
+    maxLines: maxLines,
+    keyboardType: key == 'zipCode' ? TextInputType.number : TextInputType.text,
+    validator: (value) {
+      if (key == 'zipCode') {
+        final zipCode = value?.trim() ?? '';
+        debugPrint('ZIP Code: $zipCode');
+        if (zipCode.isEmpty) {
+          return 'ZIP Code is required';
+        } else if (!RegExp(r'^\d{5}$').hasMatch(zipCode)) {
+          return 'ZIP Code must be 5 digits';
+        }
+      }
+      return null;
+    },
+    onSaved: (value) {
+      _formData[key] = value;
+    },
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -192,7 +215,20 @@ class _DataScreenState extends State<DataScreen> {
                               runSpacing: 16,
                               children:
                                   getLocalizedDataFields(context)
-                                      .where((f) => f.key.endsWith('Es'))
+                                      .where(
+                                        (f) =>
+                                            f.key.endsWith('Es') ||
+                                            f.key == 'streetAddress' ||
+                                            f.key == 'city' ||
+                                            f.key == 'state' ||
+                                            f.key == 'zipCode' ||
+                                            f.key == 'websiteUrl' ||
+                                            f.key == 'emailAddress' ||
+                                            f.key == 'mobilePhoneNumber' ||
+                                            f.key == 'officePhoneNumber' ||
+                                            f.key == 'experience' ||
+                                            f.key == 'image',
+                                      )
                                       .map(
                                         (field) => SizedBox(
                                           width:
