@@ -89,9 +89,9 @@ class _ProfileSummaryCard extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.edit),
-                label: const Text('Edit Profile'),
+                label: const Text('Edit Data'),
                 onPressed: () {
-                  // TODO: Navigate to edit profile screen
+                Navigator.of(context).pushReplacementNamed('/data-form');
                 },
               ),
             ),

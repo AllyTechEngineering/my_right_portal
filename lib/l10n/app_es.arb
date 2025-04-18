@@ -1263,6 +1263,38 @@
     "@service_providers_state_none": {
         "description": "Label for the no state"
     },
+    "service_providers_imageUrl": "Ingresa la URL de tu imagen",
+    "@service_providers_imageUrl": {
+        "description": "URL de la imagen de contacto"
+    },
+    "service_providers_experience": "Experiencia:",
+    "@service_providers_experience": {
+        "description": "Etiqueta del campo de experiencia"
+    },
+    "service_providers_languages": "Idiomas:",
+    "@service_providers_languages": {
+        "description": "Etiqueta del campo de idiomas"
+    },
+    "service_providers_eduction": "Educación:",
+    "@service_providers_eduction": {
+        "description": "Etiqueta del campo de educación"
+    },
+    "service_providers_specialties": "Especialidades",
+    "@service_providers_specialties": {
+        "description": "Etiqueta del campo de Especialidades"
+    },
+    "service_providers_education": "Educación",
+    "@service_providers_education": {
+        "description": "Etiqueta para el campo de educación"
+    },
+    "service_providers_consultation_fee": "Tarifa de consulta",
+    "@service_providers_consultation_fee": {
+        "description": "Etiqueta para el campo de tarifa de consulta"
+    },
+    "service_providers_bio": "Biografía",
+    "@service_providers_bio": {
+        "description": "Etiqueta para el campo de biografía"
+    },
     "about_us_description": "Creamos aplicaciones educativas para impulsar el aprendizaje y el crecimiento. Nuestro objetivo es hacer que el conocimiento sea accesible, intuitivo y atractivo para comunidades diversas. Nos enfocamos en crear herramientas que apoyen el aprendizaje continuo y el cambio positivo.",
     "@about_us_description": {
         "description": "Párrafo breve que describe la misión y el propósito de la empresa, mostrado en la sección Sobre Nosotros.",
@@ -1662,5 +1694,9 @@
     "website": "Este sitio web está en construcción",
     "@website": {
         "description": "Etiqueta del sitio web"
+    },
+    "data_entry_video_con": "Videoconsulta",
+    "@data_entry_video_con": {
+        "description": "Etiqueta para la entrada de datos de la videoconsulta"
     }
 }

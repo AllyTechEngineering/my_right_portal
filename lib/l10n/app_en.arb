@@ -1263,6 +1263,38 @@
     "@service_providers_state_none": {
         "description": "Label for the no state"
     },
+    "service_providers_imageUrl": "Enter your Image URL",
+    "@service_providers_imageUrl": {
+        "description": "URL for the contact image"
+    },
+    "service_providers_experience": "Experience:",
+    "@service_providers_experience": {
+        "description": "Label for the experience field"
+    },
+    "service_providers_languages": "Languages:",
+    "@service_providers_languages": {
+        "description": "Label for the languages field"
+    },
+    "service_providers_eduction": "Education:",
+    "@service_providers_eduction": {
+        "description": "Label for the education field"
+    },
+    "service_providers_specialties": "Specialties",
+    "@service_providers_specialties": {
+        "description": "Label for the Specialties field"
+    },
+    "service_providers_education": "Education",
+    "@service_providers_education": {
+        "description": "Label for the education field"
+    },
+    "service_providers_consultation_fee": "Consultation Fee",
+    "@service_providers_consultation_fee": {
+        "description": "Label for the consultation fee field"
+    },
+    "service_providers_bio": "Bio",
+    "@service_providers_bio": {
+        "description": "Label for the bio field"
+    },
     "about_us_description": "We create educational apps to empower learning and growth. Our goal is to make knowledge accessible, intuitive, and engaging for diverse communities. With a focus on real-world impact, we build tools that support lifelong learning and positive change.",
     "@about_us_description": {
         "description": "A short paragraph describing the mission and purpose of the company, shown in the About Us section.",
@@ -1662,5 +1694,9 @@
     "website": "This Website is Under Construction",
     "@website": {
         "description": "Label for the website"
+    },
+    "data_entry_video_con": "Video Consultation",
+    "@data_entry_video_con": {
+        "description": "Lavel for video consult data entry"
     }
 }
