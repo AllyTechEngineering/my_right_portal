@@ -91,7 +91,7 @@ class _ProfileSummaryCard extends StatelessWidget {
                 icon: const Icon(Icons.edit),
                 label: const Text('Edit Data'),
                 onPressed: () {
-                Navigator.of(context).pushReplacementNamed('/data-form');
+                  Navigator.of(context).pushReplacementNamed('/data-form');
                 },
               ),
             ),
@@ -99,7 +99,13 @@ class _ProfileSummaryCard extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: ElevatedButton(
-                onPressed: () => Navigator.pushNamed(context, '/data-form'),
+                onPressed:
+                    () => Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/data-form',
+                      (Route<dynamic> route) =>
+                          false, // removes everything before
+                    ),
                 child: const Text('Manage Your Data'),
               ),
             ),

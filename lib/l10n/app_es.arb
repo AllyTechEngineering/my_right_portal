@@ -1706,5 +1706,89 @@
     "data_entry_video_con": "Videoconsulta",
     "@data_entry_video_con": {
         "description": "Etiqueta para la entrada de datos de la videoconsulta"
+    },
+    "validation_phone_required": "Se requiere el número de teléfono.",
+    "@validation_phone_required": {
+        "description": "Mensaje de error cuando el número de teléfono está vacío."
+    },
+    "validation_phone_format": "Ingrese el número como 1234567891.",
+    "@validation_phone_format": {
+        "description": "Mensaje de error cuando el formato del teléfono es incorrecto."
+    },
+    "validation_invalid_phone": "Formato de número de teléfono inválido.",
+    "@validation_invalid_phone": {
+        "description": "Mensaje de error de respaldo para el formato del teléfono."
+    },
+    "validation_email_required": "Se requiere la dirección de correo electrónico.",
+    "@validation_email_required": {
+        "description": "Mensaje de error cuando el correo electrónico está vacío."
+    },
+    "validation_email_invalid": "Ingrese una dirección de correo válida.",
+    "@validation_email_invalid": {
+        "description": "Mensaje de error cuando el formato del correo es inválido."
+    },
+    "validation_invalid_email": "Formato de correo electrónico inválido.",
+    "@validation_invalid_email": {
+        "description": "Mensaje de error de respaldo para el correo electrónico."
+    },
+    "validation_url_invalid": "Ingrese una URL de sitio web válida.",
+    "@validation_url_invalid": {
+        "description": "Mensaje de error cuando la URL no tiene formato válido."
+    },
+    "validation_invalid_url": "Formato de URL inválido.",
+    "@validation_invalid_url": {
+        "description": "Mensaje de error de respaldo para URL inválida."
+    },
+    "validation_experience_number": "La experiencia debe ser un número.",
+    "@validation_experience_number": {
+        "description": "Mensaje de error cuando el campo experiencia no es numérico."
+    },
+    "validation_invalid_experience": "Formato de número inválido.",
+    "@validation_invalid_experience": {
+        "description": "Mensaje de error de respaldo para el formato de experiencia."
+    },
+    "validation_bio_limit": "La biografía debe tener 250 caracteres o menos.",
+    "@validation_bio_limit": {
+        "description": "Mensaje de error cuando el texto de la biografía excede el límite."
+    },
+    "validation_zip_format": "El código postal debe tener exactamente 5 dígitos.",
+    "@validation_zip_format": {
+        "description": "Se muestra cuando el código postal no tiene exactamente 5 caracteres numéricos.",
+        "type": "text"
+    },
+    "validation_invalid_zip": "Formato de código postal no válido.",
+    "@validation_invalid_zip": {
+        "description": "Mensaje alternativo cuando falla inesperadamente la validación del código postal.",
+        "type": "text"
+    },
+    "unsaved_changes_title": "Cambios no guardados",
+    "@unsaved_changes_title": {
+        "description": "Título del cuadro de diálogo que se muestra cuando el usuario intenta salir de una página con cambios no guardados."
+    },
+    "unsaved_changes_message": "Tienes cambios no guardados. ¿Estás seguro de que quieres salir de esta página?",
+    "@unsaved_changes_message": {
+        "description": "Mensaje de advertencia que se muestra cuando el usuario intenta salir de una página con cambios no guardados."
+    },
+    "unsaved_changes_stay": "Permanecer",
+    "@unsaved_changes_stay": {
+        "description": "Etiqueta para permanecer en la pantalla cuando se detectan cambios no guardados",
+        "type": "text"
+    },
+    "unsaved_changes_leave": "Salir",
+    "@unsaved_changes_leave": {
+        "description": "Etiqueta para salir de la pantalla aunque haya cambios no guardados",
+        "type": "text"
+    },
+    "cancel": "Cancelar",
+    "@cancel": {
+        "description": "Etiqueta del botón de cancelar en el cuadro de diálogo de cambios no guardados."
+    },
+    "discard": "Descartar",
+    "@discard": {
+        "description": "Etiqueta del botón de descartar en el cuadro de diálogo de cambios no guardados."
+    },
+    "data_screen_save_warning_title": "No abandone esta pantalla sin guardar los cambios.",
+    "@data_screen_save_warning_title": {
+        "description": "Subtítulo para el cuadro de advertencia de cambios no guardados."
     }
 }

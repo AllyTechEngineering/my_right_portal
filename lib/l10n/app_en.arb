@@ -1706,5 +1706,89 @@
     "data_entry_video_con": "Video Consultation",
     "@data_entry_video_con": {
         "description": "Lavel for video consult data entry"
+    },
+    "validation_phone_required": "Phone number is required.",
+    "@validation_phone_required": {
+        "description": "Error message shown when phone number is empty."
+    },
+    "validation_phone_format": "Enter phone number as 1234567891.",
+    "@validation_phone_format": {
+        "description": "Error message shown when phone format is incorrect."
+    },
+    "validation_invalid_phone": "Invalid phone number format.",
+    "@validation_invalid_phone": {
+        "description": "Fallback error for invalid phone regex."
+    },
+    "validation_email_required": "Email address is required.",
+    "@validation_email_required": {
+        "description": "Error message shown when email is empty."
+    },
+    "validation_email_invalid": "Enter a valid email address.",
+    "@validation_email_invalid": {
+        "description": "Error message shown when email format is invalid."
+    },
+    "validation_invalid_email": "Invalid email format.",
+    "@validation_invalid_email": {
+        "description": "Fallback error for invalid email regex."
+    },
+    "validation_url_invalid": "Enter a valid website URL.",
+    "@validation_url_invalid": {
+        "description": "Error shown when website URL is incorrectly formatted."
+    },
+    "validation_invalid_url": "Invalid URL format.",
+    "@validation_invalid_url": {
+        "description": "Fallback error for invalid URL regex."
+    },
+    "validation_experience_number": "Experience must be a number.",
+    "@validation_experience_number": {
+        "description": "Error shown when experience field is not numeric."
+    },
+    "validation_invalid_experience": "Invalid number format.",
+    "@validation_invalid_experience": {
+        "description": "Fallback error for experience field format issues."
+    },
+    "validation_bio_limit": "Bio must be 250 characters or fewer.",
+    "@validation_bio_limit": {
+        "description": "Error shown when bio text exceeds character limit."
+    },
+    "validation_zip_format": "ZIP Code must be exactly 5 digits.",
+    "@validation_zip_format": {
+        "description": "Shown when the ZIP code is not exactly 5 numeric characters.",
+        "type": "text"
+    },
+    "validation_invalid_zip": "Invalid ZIP Code format.",
+    "@validation_invalid_zip": {
+        "description": "Fallback message when ZIP validation fails unexpectedly.",
+        "type": "text"
+    },
+    "unsaved_changes_title": "Unsaved Changes",
+    "@unsaved_changes_title": {
+        "description": "Title for the unsaved changes dialog."
+    },
+    "unsaved_changes_message": "You have unsaved changes. Are you sure you want to leave this page?",
+    "@unsaved_changes_message": {
+        "description": "Warning message for unsaved changes."
+    },
+    "unsaved_changes_stay": "Stay",
+    "@unsaved_changes_stay": {
+        "description": "Label for staying on the screen when unsaved changes are detected",
+        "type": "text"
+    },
+    "unsaved_changes_leave": "Leave",
+    "@unsaved_changes_leave": {
+        "description": "Label for leaving the screen even if there are unsaved changes",
+        "type": "text"
+    },
+    "cancel": "Cancel",
+    "@cancel": {
+        "description": "Cancel button label."
+    },
+    "discard": "Discard",
+    "@discard": {
+        "description": "Discard button label."
+    },
+    "data_screen_save_warning_title": "Do not navigate away from this screen without saving your changes.",
+    "@data_screen_save_warning_title": {
+        "description": "Subtitle for the unsaved changes warning dialog."
     }
 }

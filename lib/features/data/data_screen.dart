@@ -33,7 +33,6 @@ class _DataScreenState extends State<DataScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final Map<String, dynamic> _formData = {};
   bool _isLoading = true;
-
   @override
   void initState() {
     super.initState();
@@ -62,39 +61,128 @@ class _DataScreenState extends State<DataScreen> {
     }
   }
 
-Widget _buildTextField(String key, String label, {int maxLines = 1}) {
-  return TextFormField(
-    initialValue: _formData[key]?.toString() ?? '',
-    decoration: InputDecoration(
-      focusColor: Colors.blue,
-      labelText: label,
-      floatingLabelStyle: const TextStyle(
-        fontSize: 20.0,
-        fontWeight: FontWeight.bold,
-        height: 1.25,
-        color: Colors.black,
-      ),
-      floatingLabelAlignment: FloatingLabelAlignment.center,
-    ),
-    maxLines: maxLines,
-    keyboardType: key == 'zipCode' ? TextInputType.number : TextInputType.text,
-    validator: (value) {
-      if (key == 'zipCode') {
-        final zipCode = value?.trim() ?? '';
-        debugPrint('ZIP Code: $zipCode');
-        if (zipCode.isEmpty) {
-          return 'ZIP Code is required';
-        } else if (!RegExp(r'^\d{5}$').hasMatch(zipCode)) {
-          return 'ZIP Code must be 5 digits';
+  Widget _buildTextField(
+    BuildContext context,
+    String key,
+    String label, {
+    int maxLines = 1,
+  }) {
+    final localizations = AppLocalizations.of(context)!;
+
+    String? validateField(String? value) {
+      final trimmedValue = value?.trim() ?? '';
+
+      if ((key == 'mobilePhoneNumber' || key == 'officePhoneNumber')) {
+        final regex = RegExp(r'^\d{3}\d{3}\d{4}$');
+        if (trimmedValue.isEmpty) {
+          return localizations.validation_phone_required;
+        }
+        try {
+          if (!regex.hasMatch(trimmedValue)) {
+            return localizations.validation_phone_format;
+          }
+        } catch (e) {
+          return localizations.validation_invalid_phone;
         }
       }
+
+      if (key == 'emailAddress') {
+        final regex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
+        if (trimmedValue.isEmpty) {
+          return localizations.validation_email_required;
+        }
+        try {
+          if (!regex.hasMatch(trimmedValue)) {
+            return localizations.validation_email_invalid;
+          }
+        } catch (e) {
+          return localizations.validation_invalid_email;
+        }
+      }
+
+      if (key == 'websiteUrl') {
+        final regex = RegExp(
+          r'^(https?:\/\/)?([\w\-]+\.)+[\w\-]+(\/[\w\-]*)*\/?$',
+        );
+        if (trimmedValue.isNotEmpty) {
+          try {
+            if (!regex.hasMatch(trimmedValue)) {
+              return localizations.validation_url_invalid;
+            }
+          } catch (e) {
+            return localizations.validation_invalid_url;
+          }
+        }
+      }
+
+      if (key == 'experience') {
+        if (trimmedValue.isNotEmpty) {
+          try {
+            final parsed = int.tryParse(trimmedValue);
+            if (parsed == null) {
+              return localizations.validation_experience_number;
+            }
+          } catch (e) {
+            return localizations.validation_invalid_experience;
+          }
+        }
+      }
+
+      if (key == 'zipCode') {
+        final regex = RegExp(r'^\d{5}$');
+        if (trimmedValue.isNotEmpty) {
+          try {
+            if (!regex.hasMatch(trimmedValue)) {
+              return localizations.validation_zip_format;
+            }
+          } catch (e) {
+            return localizations.validation_invalid_zip;
+          }
+        }
+      }
+      if (key == 'bioEn' || key == 'bioEs') {
+        if (trimmedValue.length > 250) {
+          return localizations.validation_bio_limit;
+        }
+      }
+
       return null;
-    },
-    onSaved: (value) {
-      _formData[key] = value;
-    },
-  );
-}
+    }
+
+    return TextFormField(
+      initialValue: _formData[key]?.toString() ?? '',
+      decoration: InputDecoration(
+        labelText: label,
+        floatingLabelStyle: const TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+          height: 1.25,
+          color: Colors.black,
+        ),
+        floatingLabelAlignment: FloatingLabelAlignment.center,
+        counterText: (key == 'bioEn' || key == 'bioEs') ? null : '',
+      ),
+      maxLength: (key == 'bioEn' || key == 'bioEs') ? 250 : null,
+      maxLines: maxLines,
+      keyboardType: () {
+        if (key == 'mobilePhoneNumber' || key == 'officePhoneNumber') {
+          return TextInputType.phone;
+        } else if (key == 'emailAddress') {
+          return TextInputType.emailAddress;
+        } else if (key == 'websiteUrl') {
+          return TextInputType.url;
+        } else if (key == 'experience') {
+          return TextInputType.number;
+        } else {
+          return TextInputType.text;
+        }
+      }(),
+      validator: validateField,
+      onSaved: (value) {
+        _formData[key] = value;
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +218,7 @@ Widget _buildTextField(String key, String label, {int maxLines = 1}) {
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 12.0),
                               child: Text(
-                                localizations.service_providers_en,
+                                ('${localizations.service_providers_en}\n${localizations.data_screen_save_warning_title}'),
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -165,6 +253,7 @@ Widget _buildTextField(String key, String label, {int maxLines = 1}) {
                                                   ? 250
                                                   : double.infinity,
                                           child: _buildTextField(
+                                            context,
                                             field.key,
                                             field.label,
                                             maxLines:
@@ -203,7 +292,7 @@ Widget _buildTextField(String key, String label, {int maxLines = 1}) {
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: 12.0),
                               child: Text(
-                                localizations.service_providers_es,
+                                ('${localizations.service_providers_es}\n${localizations.data_screen_save_warning_title}'),
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -238,6 +327,7 @@ Widget _buildTextField(String key, String label, {int maxLines = 1}) {
                                                   ? 250
                                                   : double.infinity,
                                           child: _buildTextField(
+                                            context,
                                             field.key,
                                             field.label,
                                             maxLines:
@@ -304,6 +394,18 @@ Widget _buildTextField(String key, String label, {int maxLines = 1}) {
                                   }
                                 },
                                 child: const Text('Submit'),
+                              ),
+                            ),
+                            SizedBox(height: screenHeight * 0.02),
+                            Center(
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(
+                                    context,
+                                    '/lawyer-dashboard',
+                                  );
+                                },
+                                child: const Text('Back to Dashboard'),
                               ),
                             ),
                           ],

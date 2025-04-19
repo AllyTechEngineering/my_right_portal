@@ -38,10 +38,14 @@ class _AuthGateState extends State<AuthGate> {
 
       final isSubscribed = doc.data()?['subscriptionActive'] == true;
       debugPrint('User ${user.uid}  subscription status: $isSubscribed');
-      if (!mounted) return;
+      if (!mounted) return; //
       if (isSubscribed) {
         debugPrint('User is subscribed');
-        Navigator.pushReplacementNamed(context, '/lawyer-dashboard');
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          '/lawyer-dashboard',
+          (Route<dynamic> route) => false, // removes everything before
+        );
       } else {
         debugPrint('User is not subscribed');
         Navigator.pushReplacementNamed(context, '/subscription-prompt');
