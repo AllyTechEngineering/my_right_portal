@@ -5,14 +5,14 @@ import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_right_portal/widgets/custom_text_widget.dart';
 
-class TosScreen extends StatefulWidget {
-  const TosScreen({super.key});
+class AboutScreen extends StatefulWidget {
+  const AboutScreen({super.key});
 
   @override
-  State<TosScreen> createState() => _TosScreenState();
+  State<AboutScreen> createState() => _AboutScreenState();
 }
 
-class _TosScreenState extends State<TosScreen> {
+class _AboutScreenState extends State<AboutScreen> {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
@@ -34,7 +34,7 @@ class _TosScreenState extends State<TosScreen> {
           child: Column(
             children: [
               CustomTextWidget(
-                localizations.tos_title,
+                localizations.about_title,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
@@ -42,7 +42,7 @@ class _TosScreenState extends State<TosScreen> {
               ),
               SizedBox(height: screenHeight * 0.02),
               CustomTextWidget(
-                localizations.tos_intro,
+                localizations.about_intro,
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
@@ -58,7 +58,7 @@ class _TosScreenState extends State<TosScreen> {
               ),
               SizedBox(height: screenHeight * 0.02),
               CustomTextWidget(
-                localizations.tos_termination,
+                localizations.about_mission,
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
@@ -66,7 +66,59 @@ class _TosScreenState extends State<TosScreen> {
               ),
               SizedBox(height: screenHeight * 0.02),
               CustomTextWidget(
-                localizations.tos_contact,
+                localizations.about_audiences_title,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.about_mission,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.about_lawyers,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.about_clients,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              CustomTextWidget(
+                localizations.about_business_model,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              CustomTextWidget(
+                localizations.about_technology,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              CustomTextWidget(
+                localizations.about_closing,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              CustomTextWidget(
+                localizations.about_signature,
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,

@@ -14,7 +14,7 @@ exports.handleStripeWebhook = onRequest(
     region: "us-central1",
   },
   async (req, res) => {
-    logger.info("handle_stripe_webhook.js version 1.0.0 build 3");
+    logger.info("handle_stripe_webhook.js version 1.0.0 build 4");
 
     if (!req.rawBody) {
       console.error("❌ Missing rawBody in request.");

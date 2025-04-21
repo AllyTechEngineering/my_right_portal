@@ -141,5 +141,8 @@ firebase functions:config:unset stripe
 - For local development, use `.env` + `dotenv` and check `process.env.FUNCTIONS_EMULATOR === "true"` in your code.
 
 ---
+# How to check secrets!
+## change the STRIPE_PORTAL_SECRET to the secret you are looking for
+- firebase functions:secrets:access STRIPE_PORTAL_SECRET
 
 Created for: RightToStayNow.com – Firebase Function Operations

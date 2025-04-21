@@ -1,10 +1,15 @@
+import 'dart:convert';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 // import 'package:my_right_portal/widgets/custom_bottom_nav_bar.dart';
-import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
+// import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_right_portal/widgets/custom_text_widget.dart';
+// import 'package:my_right_portal/widgets/custom_text_widget.dart';
 
 class LawyerDashboardScreen extends StatelessWidget {
   const LawyerDashboardScreen({super.key});
@@ -166,7 +171,45 @@ class _ProfileSummaryCard extends StatelessWidget {
   }
 }
 
-class _BillingSummaryCard extends StatelessWidget {
+class _BillingSummaryCard extends StatefulWidget {
+  @override
+  State<_BillingSummaryCard> createState() => _BillingSummaryCardState();
+}
+
+class _BillingSummaryCardState extends State<_BillingSummaryCard> {
+  void _launchBillingPortal(String userId) async {
+    debugPrint("Launching billing portal for user: $userId");
+    try {
+      final response = await http.post(
+        Uri.parse(
+          'https://us-central1-my-right-portal.cloudfunctions.net/createBillingPortalSession',
+        ),
+        headers: {'Content-Type': 'application/json'},
+        body: '{"userId": "$userId"}',
+      );
+
+      if (!mounted) return; // ✅ Important safety check
+
+      if (response.statusCode == 200) {
+        final url = Uri.parse(jsonDecode(response.body)['url']);
+        if (await canLaunchUrl(url)) {
+          await launchUrl(url, mode: LaunchMode.externalApplication);
+        } else {
+          if (!mounted) return; // ✅ Important safety check
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Could not open Stripe portal")),
+          );
+        }
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Error creating billing portal session")),
+        );
+      }
+    } catch (e) {
+      debugPrint("Error launching billing portal: $e");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
@@ -209,11 +252,52 @@ class _BillingSummaryCard extends StatelessWidget {
                   ),
                 ),
                 icon: Icon(Icons.credit_card),
-                label: Text('Manage Billing',                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                label: Text(
+                  'Manage Billing',
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
                     color: Theme.of(context).colorScheme.surface,
-                  ),),
-                onPressed: () {
-                  // TODO: Navigate to billing screen or Stripe Checkout
+                  ),
+                ),
+                onPressed: () async {
+                  final currentUser = FirebaseAuth.instance.currentUser;
+                  debugPrint("Current User: $currentUser");
+                  if (currentUser == null) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text("You must be signed in.")),
+                    );
+                    return;
+                  }
+
+                  final userId = currentUser.uid;
+                  debugPrint("User ID: $userId");
+                  try {
+                    final userDoc =
+                        await FirebaseFirestore.instance
+                            .collection('lawyers')
+                            .doc(userId)
+                            .get();
+                    debugPrint("User Document: ${userDoc.data()}");
+                    if (!userDoc.exists ||
+                        !userDoc.data()!.containsKey('stripeCustomerId')) {
+                      if (!context.mounted) return;
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Stripe customer ID not found."),
+                        ),
+                      );
+                      return;
+                    }
+
+                    // Launch the portal
+                    _launchBillingPortal(
+                      userId,
+                    ); // userId is still used in your backend function
+                  } catch (e) {
+                    if (!context.mounted) return;
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text("Error: ${e.toString()}")),
+                    );
+                  }
                 },
               ),
             ),

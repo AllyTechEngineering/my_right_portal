@@ -1811,5 +1811,97 @@
     "@data_entry_upload_image": {
         "description": "Button label for uploading an image to represent the lawyer's company or profile.",
         "type": "text"
+    },
+    "privacy_title": "Privacy Policy",
+    "@privacy_title": {
+        "description": "Title of the Privacy Policy screen"
+    },
+    "privacy_intro": "This Privacy Policy describes how we collect, use, and protect your personal information when you use the Right To Stay Now platform.",
+    "@privacy_intro": {
+        "description": "Introductory text for Privacy Policy"
+    },
+    "privacy_whatWeCollect": "When you register or update your profile, we may collect: Name, Email address, Phone number, Office address, Languages spoken, Bio and professional details, Billing details (handled securely by Stripe).",
+    "@privacy_whatWeCollect": {
+        "description": "Section explaining what data is collected"
+    },
+    "privacy_howWeUse": "We use your data solely to: Create and manage your profile listing, Display your information in the consumer-facing MyRightToKnow app, Communicate important account or billing updates, Improve the performance and reliability of the service.",
+    "@privacy_howWeUse": {
+        "description": "Section explaining how the data is used"
+    },
+    "privacy_security": "Your data is stored securely using Google Cloud and Firebase, which comply with industry-leading standards for encryption, authentication, and backup.",
+    "@privacy_security": {
+        "description": "Section explaining how the data is stored and secured"
+    },
+    "privacy_contact": "If you have questions or concerns about privacy, email us at: privacy@righttostaynow.com",
+    "@privacy_contact": {
+        "description": "Contact information for privacy-related questions"
+    },
+    "tos_title": "Terms of Service",
+    "@tos_title": {
+        "description": "Title of the Terms of Service screen"
+    },
+    "tos_intro": "These Terms of Service govern your use of the Right To Stay Now platform. By accessing or using the platform, you agree to be bound by these terms.",
+    "@tos_intro": {
+        "description": "Introductory text for Terms of Service"
+    },
+    "tos_ownership": "You retain ownership of your content. However, by submitting data, you grant us a limited license to use and publish your listing in the app.",
+    "@tos_ownership": {
+        "description": "Section explaining content ownership and usage"
+    },
+    "tos_termination": "We reserve the right to suspend or terminate access for violations of these Terms.",
+    "@tos_termination": {
+        "description": "Section explaining the termination clause"
+    },
+    "tos_contact": "For questions, contact: support@righttostaynow.com",
+    "@tos_contact": {
+        "description": "Contact information for ToS-related questions"
+    },
+    "privacy_policy": "Privacy Policy",
+    "@privacy_policy": {
+        "description": "Label for the privacy policy link"
+    },
+    "terms_of_service": "Terms of Service",
+    "@terms_of_service": {
+        "description": "Label for the terms of service link"
+    },
+    "about_title": "About Us",
+    "@about_title": {
+        "description": "Title of the About Us screen"
+    },
+    "about_intro": "Right To Stay Now is a secure, web-based platform developed by our team to help immigration lawyers grow their practice by making their services visible in a mobile app used by immigrant communities across the United States.",
+    "@about_intro": {
+        "description": "Introductory paragraph describing the product and purpose"
+    },
+    "about_mission": "We believe everyone deserves access to trustworthy legal information—especially those navigating complex immigration challenges. Our mission is to connect undocumented individuals and immigrant families with licensed legal professionals who speak their language and understand their circumstances.",
+    "@about_mission": {
+        "description": "Mission statement highlighting purpose and social good"
+    },
+    "about_audiences_title": "Our Platform Serves Two Audiences",
+    "@about_audiences_title": {
+        "description": "Subheading introducing the two audiences of the platform"
+    },
+    "about_lawyers": "1. Legal Professionals\nAttorneys can create, manage, and update their public profile—including multilingual bios, contact info, and areas of focus—through our easy-to-use web portal. We offer monthly subscription plans that help lawyers promote their services to a targeted audience.",
+    "@about_lawyers": {
+        "description": "Description of how lawyers use the platform and benefit"
+    },
+    "about_clients": "2. Immigrant Community Members\nThrough the companion mobile app, individuals seeking legal help can browse verified lawyer listings by location, language, and practice area—all without needing to create an account.",
+    "@about_clients": {
+        "description": "Description of how community members benefit from the platform"
+    },
+    "about_business_model": "We are a for-profit company with a deep social mission: to make trustworthy legal help more accessible for those who need it most. We do not sell or share user data, and we never show ads.",
+    "@about_business_model": {
+        "description": "Explanation of business model and ethical commitments"
+    },
+    "about_technology": "All information entered into the platform is stored securely using Firebase and Google Cloud, following industry best practices for cybersecurity and encryption.",
+    "@about_technology": {
+        "description": "Statement about security and cloud infrastructure"
+    },
+    "about_closing": "Whether you're a lawyer looking to expand your outreach or an organization supporting vulnerable communities, Right To Stay Now is built to bridge that gap—safely, respectfully, and ethically.",
+    "@about_closing": {
+        "description": "Closing summary of platform goals and values"
+    },
+    "about_signature": "📍 Headquartered in the U.S.\n🛡️ Built with Flutter, Firebase, and Stripe\n💡 Designed for lawyers, trusted by communities",
+    "@about_signature": {
+        "description": "Footer bullet points describing location and technology stack"
     }
 }

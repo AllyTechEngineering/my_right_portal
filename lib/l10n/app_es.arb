@@ -1809,7 +1809,99 @@
     },
     "data_entry_upload_image": "Subir imagen",
     "@data_entry_upload_image": {
-      "description": "Etiqueta del botón para subir una imagen que representa la empresa o el perfil del abogado.",
-      "type": "text"
+        "description": "Etiqueta del botón para subir una imagen que representa la empresa o el perfil del abogado.",
+        "type": "text"
+    },
+    "privacy_title": "Política de Privacidad",
+    "@privacy_title": {
+        "description": "Título de la pantalla de Política de Privacidad"
+    },
+    "privacy_intro": "Esta política de privacidad describe cómo recopilamos, usamos y protegemos su información personal cuando utiliza la plataforma Right To Stay Now.",
+    "@privacy_intro": {
+        "description": "Texto introductorio para la Política de Privacidad"
+    },
+    "privacy_whatWeCollect": "Cuando se registra o actualiza su perfil, podemos recopilar: Nombre, Dirección de correo electrónico, Número de teléfono, Dirección de oficina, Idiomas hablados, Biografía y detalles profesionales, Datos de facturación (gestionados de forma segura por Stripe).",
+    "@privacy_whatWeCollect": {
+        "description": "Sección que explica qué datos se recopilan"
+    },
+    "privacy_howWeUse": "Utilizamos sus datos únicamente para: Crear y administrar su perfil, Mostrar su información en la aplicación de consumo MyRightToKnow, Comunicar actualizaciones importantes de cuenta o facturación, Mejorar el rendimiento y la fiabilidad del servicio.",
+    "@privacy_howWeUse": {
+        "description": "Sección que explica cómo se usan los datos"
+    },
+    "privacy_security": "Sus datos se almacenan de forma segura utilizando Google Cloud y Firebase, que cumplen con los estándares líderes de la industria en cifrado, autenticación y respaldo.",
+    "@privacy_security": {
+        "description": "Sección que explica cómo se almacenan y protegen los datos"
+    },
+    "privacy_contact": "Si tiene preguntas o inquietudes sobre la privacidad, envíenos un correo electrónico a: privacy@righttostaynow.com",
+    "@privacy_contact": {
+        "description": "Información de contacto para preguntas sobre privacidad"
+    },
+    "tos_title": "Términos de Servicio",
+    "@tos_title": {
+        "description": "Título de la pantalla de Términos de Servicio"
+    },
+    "tos_intro": "Estos Términos de Servicio rigen su uso de la plataforma Right To Stay Now. Al acceder o usar la plataforma, usted acepta estar sujeto a estos términos.",
+    "@tos_intro": {
+        "description": "Texto introductorio para los Términos de Servicio"
+    },
+    "tos_ownership": "Usted conserva la propiedad de su contenido. Sin embargo, al enviar datos, nos otorga una licencia limitada para usar y publicar su información en la aplicación.",
+    "@tos_ownership": {
+        "description": "Sección que explica la propiedad del contenido y su uso"
+    },
+    "tos_termination": "Nos reservamos el derecho de suspender o cancelar el acceso por violaciones de estos Términos.",
+    "@tos_termination": {
+        "description": "Sección que explica la cláusula de terminación"
+    },
+    "tos_contact": "Para preguntas, contáctenos: support@righttostaynow.com",
+    "@tos_contact": {
+        "description": "Información de contacto para preguntas sobre los Términos de Servicio"
+    },
+    "privacy_policy": "Política de Privacidad",
+    "@privacy_policy": {
+        "description": "Etiqueta para el enlace a la política de privacidad"
+    },
+    "terms_of_service": "Condiciones del Servicio",
+    "@terms_of_service": {
+        "description": "Etiqueta para el enlace a las condiciones del servicio"
+    },
+    "about_title": "Acerca de Nosotros",
+    "@about_title": {
+        "description": "Título de la pantalla Acerca de Nosotros"
+    },
+    "about_intro": "Right To Stay Now es una plataforma web segura, desarrollada por nuestro equipo para ayudar a los abogados de inmigración a hacer crecer su práctica mostrando sus servicios en una aplicación móvil utilizada por comunidades inmigrantes en los Estados Unidos.",
+    "@about_intro": {
+        "description": "Párrafo introductorio que describe el producto y su propósito"
+    },
+    "about_mission": "Creemos que todos merecen acceso a información legal confiable, especialmente quienes enfrentan desafíos migratorios complejos. Nuestra misión es conectar a personas indocumentadas y familias inmigrantes con profesionales legales con licencia que hablen su idioma y comprendan sus circunstancias.",
+    "@about_mission": {
+        "description": "Declaración de misión destacando el propósito y compromiso social"
+    },
+    "about_audiences_title": "Nuestra Plataforma Atiende a Dos Públicos",
+    "@about_audiences_title": {
+        "description": "Subtítulo que presenta los dos públicos objetivo de la plataforma"
+    },
+    "about_lawyers": "1. Profesionales Legales\nLos abogados pueden crear, administrar y actualizar su perfil público—including biografías multilingües, información de contacto y áreas de práctica—a través de nuestro portal web fácil de usar. Ofrecemos planes de suscripción mensual para ayudar a los abogados a promocionar sus servicios a un público específico.",
+    "@about_lawyers": {
+        "description": "Descripción de cómo los abogados usan la plataforma y sus beneficios"
+    },
+    "about_clients": "2. Miembros de la Comunidad Inmigrante\nA través de la aplicación móvil complementaria, las personas que buscan ayuda legal pueden explorar perfiles verificados de abogados por ubicación, idioma y especialidad—todo sin necesidad de crear una cuenta.",
+    "@about_clients": {
+        "description": "Descripción de cómo los miembros de la comunidad se benefician de la plataforma"
+    },
+    "about_business_model": "Somos una empresa con fines de lucro con una misión social profunda: hacer que la ayuda legal confiable sea más accesible para quienes más la necesitan. No vendemos ni compartimos datos de usuarios, y nunca mostramos anuncios.",
+    "@about_business_model": {
+        "description": "Explicación del modelo de negocio y compromisos éticos"
+    },
+    "about_technology": "Toda la información ingresada en la plataforma se almacena de forma segura utilizando Firebase y Google Cloud, cumpliendo con los mejores estándares de la industria en ciberseguridad y cifrado.",
+    "@about_technology": {
+        "description": "Declaración sobre la seguridad y la infraestructura tecnológica"
+    },
+    "about_closing": "Ya sea que sea un abogado que busca ampliar su alcance o una organización que apoya a comunidades vulnerables, Right To Stay Now está diseñado para cerrar esa brecha—de forma segura, respetuosa y ética.",
+    "@about_closing": {
+        "description": "Resumen final sobre los objetivos y valores de la plataforma"
+    },
+    "about_signature": "📍 Con sede en los EE. UU.\n🛡️ Desarrollado con Flutter, Firebase y Stripe\n💡 Diseñado para abogados, confiable para las comunidades",
+    "@about_signature": {
+        "description": "Puntos de pie de página que describen la ubicación y la tecnología utilizada"
     }
 }

@@ -18,6 +18,9 @@ import 'package:my_right_portal/features/profile/lawyer_dash_board_screen.dart';
 import 'package:my_right_portal/features/subscription/cancel_screen.dart';
 import 'package:my_right_portal/features/subscription/subscription_prompt_screen.dart';
 import 'package:my_right_portal/features/subscription/success_screen.dart';
+import 'package:my_right_portal/features/tos/about_screen.dart';
+import 'package:my_right_portal/features/tos/privacy_screen.dart';
+import 'package:my_right_portal/features/tos/tos_screen.dart';
 import 'package:my_right_portal/firebase_options.dart';
 import 'package:my_right_portal/utils/custom_app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -73,6 +76,9 @@ class MyApp extends StatelessWidget {
               '/data-form': (context) => const DataScreen(),
               '/cancel-subscription': (context) => const CancelScreen(),
               '/success-subscription': (context) => const SuccessScreen(),
+              '/privacy-policy': (context) => const PrivacyScreen(),
+              '/terms-of-service': (context) => const TosScreen(),
+              '/about-us': (context) => const AboutScreen(),
             },
           );
         },
