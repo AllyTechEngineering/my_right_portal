@@ -1790,5 +1790,26 @@
     "data_screen_save_warning_title": "Do not navigate away from this screen without saving your changes.",
     "@data_screen_save_warning_title": {
         "description": "Subtitle for the unsaved changes warning dialog."
+    },
+    "dashboard_title": "My Right To Stay Dashboard",
+    "@dashboard_title": {
+        "description": "Title for the dashboard screen."
+    },
+    "dashboard_subtitle": "Your personalized dashboard for managing your account.",
+    "@dashboard_subtitle": {
+        "description": "Subtitle for the dashboard screen."
+    },
+    "dashboard_log_out": "Log Out",
+    "@dashboard_log_out": {
+        "description": "Label for the log out button."
+    },
+    "dashboard_manage_data": "Manage Your Data",
+    "@dashboard_manage_data": {
+        "description": "Label for the manage data button."
+    },
+    "data_entry_upload_image": "Upload Image",
+    "@data_entry_upload_image": {
+        "description": "Button label for uploading an image to represent the lawyer's company or profile.",
+        "type": "text"
     }
 }

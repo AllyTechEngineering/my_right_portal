@@ -69,6 +69,13 @@ class LawyerDashboardScreen extends StatelessWidget {
 class _ProfileSummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
+    //final double buttonSize = screenWidth * 0.30;
+    double iconSize = screenWidth * 0.055;
+    iconSize = iconSize.clamp(18.0, 26.0);
     return Card(
       elevation: 4,
       child: Padding(
@@ -87,17 +94,6 @@ class _ProfileSummaryCard extends StatelessWidget {
             const SizedBox(height: 20),
             Align(
               alignment: Alignment.centerRight,
-              child: ElevatedButton.icon(
-                icon: const Icon(Icons.edit),
-                label: const Text('Edit Data'),
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed('/data-form');
-                },
-              ),
-            ),
-            const SizedBox(height: 8),
-            Align(
-              alignment: Alignment.centerRight,
               child: ElevatedButton(
                 onPressed:
                     () => Navigator.pushNamedAndRemoveUntil(
@@ -106,7 +102,61 @@ class _ProfileSummaryCard extends StatelessWidget {
                       (Route<dynamic> route) =>
                           false, // removes everything before
                     ),
-                child: const Text('Manage Your Data'),
+                style: ElevatedButton.styleFrom(
+                  elevation: 3.0,
+                  shadowColor: Theme.of(context).colorScheme.onPrimary,
+                  backgroundColor:
+                      Theme.of(context).colorScheme.onPrimaryFixedVariant,
+                  padding: EdgeInsets.symmetric(
+                    vertical: screenHeight * 0.02,
+                    horizontal: screenWidth * 0.1,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                    side: BorderSide.none,
+                  ),
+                ),
+                child: Text(
+                  localizations.dashboard_manage_data,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Align(
+              alignment: Alignment.centerRight,
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  elevation: 3.0,
+                  shadowColor: Theme.of(context).colorScheme.onPrimary,
+                  backgroundColor:
+                      Theme.of(context).colorScheme.onPrimaryFixedVariant,
+                  padding: EdgeInsets.symmetric(
+                    vertical: screenHeight * 0.02,
+                    horizontal: screenWidth * 0.1,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                    side: BorderSide.none,
+                  ),
+                ),
+                icon: const Icon(Icons.edit),
+                label: Text(
+                  localizations.dashboard_log_out,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/home',
+                    (Route<dynamic> route) =>
+                        false, // removes everything before
+                  );
+                },
               ),
             ),
           ],
@@ -119,6 +169,12 @@ class _ProfileSummaryCard extends StatelessWidget {
 class _BillingSummaryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    //final double buttonSize = screenWidth * 0.30;
+    double iconSize = screenWidth * 0.055;
+    iconSize = iconSize.clamp(18.0, 26.0);
     return Card(
       elevation: 4,
       child: Padding(
@@ -138,8 +194,24 @@ class _BillingSummaryCard extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: ElevatedButton.icon(
-                icon: const Icon(Icons.credit_card),
-                label: const Text('Manage Billing'),
+                style: ElevatedButton.styleFrom(
+                  elevation: 3.0,
+                  shadowColor: Theme.of(context).colorScheme.onPrimary,
+                  backgroundColor:
+                      Theme.of(context).colorScheme.onPrimaryFixedVariant,
+                  padding: EdgeInsets.symmetric(
+                    vertical: screenHeight * 0.02,
+                    horizontal: screenWidth * 0.1,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                    side: BorderSide.none,
+                  ),
+                ),
+                icon: Icon(Icons.credit_card),
+                label: Text('Manage Billing',                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),),
                 onPressed: () {
                   // TODO: Navigate to billing screen or Stripe Checkout
                 },

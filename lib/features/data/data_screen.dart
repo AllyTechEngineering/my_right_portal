@@ -1,27 +1,16 @@
 // ignore_for_file: use_build_context_synchronously
-
+import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:my_right_portal/models/data_field.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 import 'package:my_right_portal/widgets/custom_text_widget.dart';
-import 'package:my_right_portal/widgets/phone_number_input_with_country.dart';
 import 'package:my_right_portal/models/form_fields.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
-/*
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /lawyers/{lawyerId} {
-      allow read: if true; // allow public read
-      allow write: if request.auth != null && request.auth.uid == lawyerId;
-    }
-  }
-}
-*/
 class DataScreen extends StatefulWidget {
   const DataScreen({super.key});
 
@@ -33,6 +22,7 @@ class _DataScreenState extends State<DataScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final Map<String, dynamic> _formData = {};
   bool _isLoading = true;
+  final FirebaseStorage _storage = FirebaseStorage.instance;
   @override
   void initState() {
     super.initState();
@@ -184,6 +174,83 @@ class _DataScreenState extends State<DataScreen> {
     );
   }
 
+  Future<void> _pickAndUploadImage() async {
+    debugPrint("🧪 Upload button clicked");
+    final user = FirebaseAuth.instance.currentUser;
+
+    debugPrint("Trying to upload image as UID: ${user?.uid}");
+    if (user == null) return;
+    debugPrint("User is authenticated: ${user.uid}");
+
+    try {
+      final result = await FilePicker.platform.pickFiles(
+        type: FileType.image,
+        allowMultiple: false,
+      );
+
+      debugPrint("File picker result: $result");
+      if (result != null) {
+        debugPrint("File picker result is not null");
+        final file = result.files.single;
+        debugPrint("File path: ${file.path}");
+        debugPrint("File size: ${file.size}");
+        debugPrint("File extension: ${file.extension}");
+        final fileBytes = file.bytes;
+        debugPrint("File bytes: ${file.bytes}");
+        final fileName = file.name;
+        debugPrint("File name: ${file.name}");
+        final extension = file.extension?.toLowerCase();
+        debugPrint("File extension: $extension");
+
+        if (fileBytes == null) {
+          debugPrint("❌ File bytes are null");
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('❌ Failed to read selected image.')),
+          );
+          return;
+        }
+
+        if (extension == null ||
+            !['jpg', 'jpeg', 'png', 'webp'].contains(extension)) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('❌ Unsupported image format')),
+          );
+          return;
+        }
+
+        try {
+          final ref = _storage.ref('lawyer_images/${user.uid}/$fileName');
+          debugPrint("Uploading image to: ${ref.fullPath}");
+          final uploadTask = await ref.putData(fileBytes);
+          debugPrint("Upload task completed: ${uploadTask.state}");
+          final url = await uploadTask.ref.getDownloadURL();
+          debugPrint("Download URL: $url");
+          debugPrint('✅ Image uploaded to: $url');
+
+          setState(() {
+            _formData['image'] = url;
+          });
+
+          await FirebaseFirestore.instance
+              .collection('lawyers')
+              .doc(user.uid)
+              .set({'image': url}, SetOptions(merge: true));
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('✅ Image uploaded successfully.')),
+          );
+        } catch (e) {
+          debugPrint('❌ Error uploading image: $e');
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('❌ Failed to upload image.')),
+          );
+        }
+      }
+    } catch (e) {
+      debugPrint('❌ Error picking image: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
@@ -202,7 +269,7 @@ class _DataScreenState extends State<DataScreen> {
           _isLoading
               ? const Center(child: CircularProgressIndicator())
               : Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(screenWidth * 0.05),
                 child: Form(
                   key: _formKey,
                   child: LayoutBuilder(
@@ -272,6 +339,41 @@ class _DataScreenState extends State<DataScreen> {
                                                 : isTablet
                                                 ? 250
                                                 : double.infinity,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            ElevatedButton.icon(
+                                              onPressed: _pickAndUploadImage,
+                                              icon: const Icon(Icons.image),
+                                              label: Text(
+                                                localizations
+                                                    .data_entry_upload_image,
+                                              ),
+                                            ),
+                                            if (_formData['image'] != null)
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                  top: 8.0,
+                                                ),
+                                                child: Image.network(
+                                                  _formData['image'],
+                                                  height: 120,
+                                                  fit: BoxFit.contain,
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                    ..add(
+                                      SizedBox(
+                                        width:
+                                            isLarge
+                                                ? 300
+                                                : isTablet
+                                                ? 250
+                                                : double.infinity,
                                         child: SwitchListTile(
                                           title: Text(
                                             localizations.data_entry_video_con,
@@ -304,20 +406,7 @@ class _DataScreenState extends State<DataScreen> {
                               runSpacing: 16,
                               children:
                                   getLocalizedDataFields(context)
-                                      .where(
-                                        (f) =>
-                                            f.key.endsWith('Es') ||
-                                            f.key == 'streetAddress' ||
-                                            f.key == 'city' ||
-                                            f.key == 'state' ||
-                                            f.key == 'zipCode' ||
-                                            f.key == 'websiteUrl' ||
-                                            f.key == 'emailAddress' ||
-                                            f.key == 'mobilePhoneNumber' ||
-                                            f.key == 'officePhoneNumber' ||
-                                            f.key == 'experience' ||
-                                            f.key == 'image',
-                                      )
+                                      .where((f) => f.key.endsWith('Es'))
                                       .map(
                                         (field) => SizedBox(
                                           width:
@@ -393,19 +482,71 @@ class _DataScreenState extends State<DataScreen> {
                                     }
                                   }
                                 },
-                                child: const Text('Submit'),
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 3.0,
+                                  shadowColor:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                  backgroundColor:
+                                      Theme.of(
+                                        context,
+                                      ).colorScheme.onPrimaryFixedVariant,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: screenHeight * 0.02,
+                                    horizontal: screenWidth * 0.1,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    side: BorderSide.none,
+                                  ),
+                                ),
+                                child: Text(
+                                  localizations.edit_emergency_contact_add,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.titleMedium!.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.surface,
+                                  ),
+                                ),
                               ),
                             ),
                             SizedBox(height: screenHeight * 0.02),
                             Center(
                               child: ElevatedButton(
                                 onPressed: () {
-                                  Navigator.pushReplacementNamed(
+                                  Navigator.pushNamedAndRemoveUntil(
                                     context,
                                     '/lawyer-dashboard',
+                                    (Route<dynamic> route) =>
+                                        false, // removes everything before
                                   );
                                 },
-                                child: const Text('Back to Dashboard'),
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 3.0,
+                                  shadowColor:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                  backgroundColor:
+                                      Theme.of(
+                                        context,
+                                      ).colorScheme.onPrimaryFixedVariant,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: screenHeight * 0.02,
+                                    horizontal: screenWidth * 0.1,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    side: BorderSide.none,
+                                  ),
+                                ),
+                                child: Text(
+                                  'Back to Dashboard',
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.titleMedium!.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.surface,
+                                  ),
+                                ),
                               ),
                             ),
                           ],

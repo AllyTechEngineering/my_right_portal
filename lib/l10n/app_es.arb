@@ -1790,5 +1790,26 @@
     "data_screen_save_warning_title": "No abandone esta pantalla sin guardar los cambios.",
     "@data_screen_save_warning_title": {
         "description": "Subtítulo para el cuadro de advertencia de cambios no guardados."
+    },
+    "dashboard_title": "Mi panel de control de derecho a permanecer",
+    "@dashboard_title": {
+        "description": "Título de la pantalla del panel de control."
+    },
+    "dashboard_subtitle": "Tu panel de control personalizado para administrar tu cuenta.",
+    "@dashboard_subtitle": {
+        "description": "Subtítulo de la pantalla del panel de control."
+    },
+    "dashboard_log_out": "Cerrar sesión",
+    "@dashboard_log_out": {
+        "description": "Etiqueta del botón de cerrar sesión."
+    },
+    "dashboard_manage_data": "Administra tus datos",
+    "@dashboard_manage_data": {
+        "description": "Etiqueta del botón de administración de datos."
+    },
+    "data_entry_upload_image": "Subir imagen",
+    "@data_entry_upload_image": {
+      "description": "Etiqueta del botón para subir una imagen que representa la empresa o el perfil del abogado.",
+      "type": "text"
     }
 }

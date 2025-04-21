@@ -78,10 +78,10 @@ List<DataField> getLocalizedDataFields(BuildContext context) {
       key: 'consultationFeeEn',
       label: localizations.service_providers_consultation_fee,
     ),
-    DataField(
-      key: 'consultationFeeEs',
-      label: localizations.service_providers_consultation_fee,
-    ),
+    // DataField(
+    //   key: 'consultationFeeEs',
+    //   label: localizations.service_providers_consultation_fee,
+    // ),
     DataField(key: 'bioEn', label: localizations.service_providers_bio),
     DataField(key: 'bioEs', label: localizations.service_providers_bio),
     DataField(

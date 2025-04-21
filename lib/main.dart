@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/_internal/file_picker_web.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart' show kDebugMode, kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -17,15 +21,20 @@ import 'package:my_right_portal/features/subscription/success_screen.dart';
 import 'package:my_right_portal/firebase_options.dart';
 import 'package:my_right_portal/utils/custom_app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
-    // Optional: helpful during local dev
-    // ignore: invalid_use_of_visible_for_testing_member
-    SharedPreferences.setMockInitialValues({});
+    FilePickerWeb.registerWith(Registrar()); // 👈 FIXES `_instance` error
   }
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  if (kDebugMode) {
+    FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8082);
+    // Optional: Add similar lines for Auth and Storage
+    FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+    FirebaseStorage.instance.useStorageEmulator('localhost', 9199);
+  }
   runApp(const MyApp());
 }
 
@@ -40,7 +49,8 @@ class MyApp extends StatelessWidget {
         builder: (context, languageState) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Right2StayNow - Connect with Immigration Attorneys You Can Trust',
+            title:
+                'Right2StayNow - Connect with Immigration Attorneys You Can Trust',
             theme: CustomAppTheme.appTheme,
             locale: languageState.locale,
             supportedLocales: const [Locale('en', 'US'), Locale('es', 'ES')],
@@ -58,7 +68,8 @@ class MyApp extends StatelessWidget {
               '/verify-email': (context) => const VerifyEmailScreen(),
               '/signup': (context) => const SignupScreen(),
               '/lawyer-dashboard': (context) => const LawyerDashboardScreen(),
-              '/subscription-prompt': (context) => const SubscriptionPromptScreen(),
+              '/subscription-prompt':
+                  (context) => const SubscriptionPromptScreen(),
               '/data-form': (context) => const DataScreen(),
               '/cancel-subscription': (context) => const CancelScreen(),
               '/success-subscription': (context) => const SuccessScreen(),

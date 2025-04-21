@@ -110,9 +110,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: Theme.of(context).textTheme.titleLarge,
                     ),
                   ),
-                  SizedBox(height: screenHeight * 0.005),
+                  SizedBox(height: screenHeight * 0.005), //'/login'
                   ElevatedButton(
-                    onPressed: () => Navigator.pushNamed(context, '/login'),
+                    onPressed:
+                        () => Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          '/login',
+                          (Route<dynamic> route) =>
+                              false, // removes everything before
+                        ),
                     style: ElevatedButton.styleFrom(
                       elevation: 3.0,
                       shadowColor: Theme.of(context).colorScheme.onPrimary,

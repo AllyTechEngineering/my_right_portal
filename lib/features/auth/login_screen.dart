@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_right_portal/utils/constants.dart';
+import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -52,7 +55,19 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    //final double buttonSize = screenWidth * 0.30;
+    double iconSize = screenWidth * 0.055;
+    iconSize = iconSize.clamp(18.0, 26.0);
+    final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: CustomAppBarWidget(
+        title: localizations.my_right_to_stay_title,
+        getToolBarHeight: getToolBarHeight,
+      ),
       body: Center(
         child: Card(
           elevation: 6,
