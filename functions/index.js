@@ -17,7 +17,7 @@ exports.createCheckoutSession = onRequest(
     secrets: [STRIPE_SECRET_KEY, PRICE_ID, SUCCESS_URL, CANCEL_URL],
   },
   async (req, res) => {
-    logger.info("index.js version 1.0.0 build 3");
+    logger.info("index.js version 1.0.0 build 5");
 
     cors(req, res, async () => {
       try {
@@ -55,6 +55,9 @@ exports.createCheckoutSession = onRequest(
           customer_email: req.body.email,
           client_reference_id: req.body.client_reference_id,
           line_items: [{ price: PRICE_ID.value(), quantity: 1 }],
+          metadata: {
+            userId: req.body.client_reference_id  // matches Firestore doc ID
+          },
           success_url: SUCCESS_URL.value(),
           cancel_url: CANCEL_URL.value(),
           allow_promotion_codes: true,
