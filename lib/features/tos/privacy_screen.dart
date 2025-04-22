@@ -30,56 +30,60 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
       ),
       drawer: const CustomDrawerWidget(),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            CustomTextWidget(
-              localizations.privacy_title,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+        child: Padding(
+          padding: EdgeInsets.all(screenWidth * 0.02),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomTextWidget(
+                localizations.privacy_title,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight * 0.02),
-            CustomTextWidget(
-              localizations.privacy_intro,
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.privacy_intro,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight * 0.02),
-            CustomTextWidget(
-              localizations.privacy_whatWeCollect,
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.privacy_whatWeCollect,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight * 0.02),
-            CustomTextWidget(
-              localizations.privacy_howWeUse,
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.privacy_howWeUse,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight * 0.02),
-            CustomTextWidget(
-              localizations.privacy_security,
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.privacy_security,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-            SizedBox(height: screenHeight * 0.02),
-            CustomTextWidget(
-              localizations.privacy_contact,
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                color: Theme.of(context).colorScheme.onSurface,
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.privacy_contact,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

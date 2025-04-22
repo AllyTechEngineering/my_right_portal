@@ -31,48 +31,51 @@ class _TosScreenState extends State<TosScreen> {
       drawer: const CustomDrawerWidget(),
       body: Scaffold(
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              CustomTextWidget(
-                localizations.tos_title,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
+          child: Padding(
+            padding: EdgeInsets.all(screenWidth * 0.02),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomTextWidget(
+                  localizations.tos_title,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
-              ),
-              SizedBox(height: screenHeight * 0.02),
-              CustomTextWidget(
-                localizations.tos_intro,
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
+                SizedBox(height: screenHeight * 0.02),
+                CustomTextWidget(
+                  localizations.tos_intro,
+                  textAlign: TextAlign.left,
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
-              ),
-              SizedBox(height: screenHeight * 0.02),
-              CustomTextWidget(
-                localizations.tos_ownership,
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
+                SizedBox(height: screenHeight * 0.02),
+                CustomTextWidget(
+                  localizations.tos_ownership,
+                  textAlign: TextAlign.left,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
-              ),
-              SizedBox(height: screenHeight * 0.02),
-              CustomTextWidget(
-                localizations.tos_termination,
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
+                SizedBox(height: screenHeight * 0.02),
+                CustomTextWidget(
+                  localizations.tos_termination,
+                  textAlign: TextAlign.left,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
-              ),
-              SizedBox(height: screenHeight * 0.02),
-              CustomTextWidget(
-                localizations.tos_contact,
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.onSurface,
+                SizedBox(height: screenHeight * 0.02),
+                CustomTextWidget(
+                  localizations.tos_contact,
+                  textAlign: TextAlign.left,
+                  style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
