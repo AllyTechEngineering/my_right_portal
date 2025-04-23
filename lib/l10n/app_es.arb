@@ -1968,5 +1968,40 @@
     "subscription_data_entry": "Complete su anuncio",
     "@subscription_data_entry": {
         "description": "Etiqueta para la suscripción de entrada de datos"
+    },
+    "login_invalid_email": "La dirección de correo no es válida.",
+    "@login_invalid_email": {
+        "description": "Se muestra cuando el usuario ingresa un correo con formato incorrecto",
+        "type": "text"
+    },
+    "login_user_disabled": "Esta cuenta ha sido desactivada.",
+    "@login_user_disabled": {
+        "description": "Se muestra cuando la cuenta del usuario ha sido deshabilitada",
+        "type": "text"
+    },
+    "login_user_not_found": "No se encontró un usuario con ese correo.",
+    "@login_user_not_found": {
+        "description": "Se muestra cuando el correo no coincide con ninguna cuenta en Firebase",
+        "type": "text"
+    },
+    "login_invalid_password": "Contraseña incorrecta o la cuenta no tiene contraseña.",
+    "@login_invalid_password": {
+        "description": "Se muestra cuando la contraseña es incorrecta o falta",
+        "type": "text"
+    },
+    "login_too_many_attempts": "Demasiados intentos. Inténtelo de nuevo más tarde.",
+    "@login_too_many_attempts": {
+        "description": "Se muestra después de múltiples intentos fallidos de inicio de sesión",
+        "type": "text"
+    },
+    "login_network_error": "Error de red. Verifique su conexión.",
+    "@login_network_error": {
+        "description": "Se muestra cuando hay un problema de conexión al intentar iniciar sesión",
+        "type": "text"
+    },
+    "login_generic_error": "No se pudo iniciar sesión. Inténtelo de nuevo.",
+    "@login_generic_error": {
+        "description": "Mensaje genérico de error cuando no se identifica el motivo",
+        "type": "text"
     }
 }

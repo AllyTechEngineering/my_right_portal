@@ -1968,5 +1968,40 @@
     "subscription_data_entry": "Complete Your Listing",
     "@subscription_data_entry": {
         "description": "Label for the data entry subscription"
+    },
+    "login_invalid_email": "The email address is not valid.",
+    "@login_invalid_email": {
+        "description": "Shown when the user inputs an incorrectly formatted email",
+        "type": "text"
+    },
+    "login_user_disabled": "This account has been disabled.",
+    "@login_user_disabled": {
+        "description": "Shown when the user's account has been disabled in Firebase",
+        "type": "text"
+    },
+    "login_user_not_found": "No user found with that email.",
+    "@login_user_not_found": {
+        "description": "Shown when the email doesn't match any Firebase account",
+        "type": "text"
+    },
+    "login_invalid_password": "Incorrect password or the account has no password.",
+    "@login_invalid_password": {
+        "description": "Shown when the password is incorrect or missing",
+        "type": "text"
+    },
+    "login_too_many_attempts": "Too many login attempts. Try again later.",
+    "@login_too_many_attempts": {
+        "description": "Shown after multiple failed login attempts",
+        "type": "text"
+    },
+    "login_network_error": "Network error. Please check your connection.",
+    "@login_network_error": {
+        "description": "Shown when the login attempt fails due to network issues",
+        "type": "text"
+    },
+    "login_generic_error": "Login failed. Please try again.",
+    "@login_generic_error": {
+        "description": "Fallback error message for any unspecified error",
+        "type": "text"
     }
 }

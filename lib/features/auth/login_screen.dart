@@ -18,6 +18,28 @@ class _LoginScreenState extends State<LoginScreen> {
   String _password = '';
   String? _errorMessage;
   bool _isLoading = false;
+  String _getLocalizedErrorMessage(
+    FirebaseAuthException e,
+    AppLocalizations localizations,
+  ) {
+    switch (e.code) {
+      case 'invalid-email':
+        return localizations.login_invalid_email;
+      case 'user-disabled':
+        return localizations.login_user_disabled;
+      case 'user-not-found':
+        return localizations.login_user_not_found;
+      case 'wrong-password':
+      case 'invalid-password':
+        return localizations.login_invalid_password;
+      case 'too-many-requests':
+        return localizations.login_too_many_attempts;
+      case 'network-request-failed':
+        return localizations.login_network_error;
+      default:
+        return localizations.login_generic_error;
+    }
+  }
 
   Future<void> _login() async {
     if (!_formKey.currentState!.validate()) return;
@@ -44,7 +66,8 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     } on FirebaseAuthException catch (e) {
       setState(() {
-        _errorMessage = e.message;
+        final localizations = AppLocalizations.of(context)!;
+        _errorMessage = _getLocalizedErrorMessage(e, localizations);
       });
     } finally {
       setState(() {
