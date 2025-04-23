@@ -39,7 +39,9 @@
       "port": 8080
     },
     "functions": {
-      "port": 8081
+      "port": 8081,
+      "nodeMajorVersion": "22",
+      "experimental_force_long_polling": true
     },
     "firestore": {
       "port": 8082
