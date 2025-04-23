@@ -110,137 +110,253 @@ class _LoginScreenState extends State<LoginScreen> {
             title: localizations.my_right_to_stay_title,
             getToolBarHeight: getToolBarHeight,
           ),
-          body: Center(
-            child: Card(
-              elevation: 6,
-              margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: cardMaxWidth),
-                child: Padding(
-                  padding: EdgeInsets.all(horizontalPadding),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          localizations.login_title,
-                          style: Theme.of(
-                            context,
-                          ).textTheme.titleLarge?.copyWith(
-                            fontSize:
-                                deviceType == DeviceType.mobile
-                                    ? 20
-                                    : deviceType == DeviceType.tablet
-                                    ? 24
-                                    : 28,
-                          ),
+          body: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: horizontalPadding,
+                    vertical: screenHeight * 0.04,
+                  ),
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.primaryContainer.withAlpha(100),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CustomTextWidget(
+                        localizations.mission_statement_title,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                          fontWeight: FontWeight.bold,
                         ),
-                        SizedBox(height: screenHeight * 0.02),
-                        TextFormField(
-                          style: Theme.of(context).textTheme.titleLarge,
-                          decoration: InputDecoration(
-                            labelText: localizations.login_email,
-                          ),
-                          onChanged: (value) => _email = value.trim(),
-                          validator:
-                              (value) =>
-                                  value!.isEmpty
-                                      ? localizations.login_email_required
-                                      : null,
+                      ),
+                      SizedBox(height: screenHeight * 0.01),
+                      Container(
+                        padding: EdgeInsets.only(
+                          left: screenWidth * 0.08,
+                          right: screenWidth * 0.05,
                         ),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            helperStyle: Theme.of(context).textTheme.titleLarge,
-                            labelStyle: Theme.of(context).textTheme.titleLarge,
-                            labelText: localizations.login_title,
-                            hintStyle: Theme.of(context).textTheme.titleLarge,
-                            hintText: localizations.login_password_hint,
-                          ),
-                          obscureText: true,
-                          onChanged: (value) => _password = value,
-                          validator:
-                              (value) =>
-                                  value!.isEmpty
-                                      ? localizations.login_password_required
-                                      : null,
-                        ),
-                        const SizedBox(height: 20),
-                        if (_errorMessage != null)
-                          Text(
-                            _errorMessage!,
-                            style: Theme.of(
-                              context,
-                            ).textTheme.titleLarge?.copyWith(
-                              color: Theme.of(context).colorScheme.onError,
-                            ),
-                          ),
-                        const SizedBox(height: 10),
-                        _isLoading
-                            ? const CircularProgressIndicator()
-                            : ElevatedButton(
-                              style: TextButton.styleFrom(
-                                elevation: 3.0,
-                                shadowColor:
-                                    Theme.of(context).colorScheme.onPrimary,
-                                backgroundColor:
-                                    Theme.of(
-                                      context,
-                                    ).colorScheme.onPrimaryFixedVariant,
-                                padding: EdgeInsets.symmetric(
-                                  vertical: screenHeight * 0.02,
-                                  horizontal: screenWidth * 0.1,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16.0),
-                                  side: BorderSide.none,
-                                ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            CustomTextWidget(
+                              localizations.mission_statement_msg,
+                              textAlign: TextAlign.start,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.labelLarge!.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                                fontWeight: FontWeight.bold,
                               ),
-                              onPressed: _login,
-                              child: Text(
-                                localizations.login_title,
+                            ),
+                            CustomTextWidget(
+                              localizations.mission_statement_submsg,
+                              textAlign: TextAlign.start,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.labelLarge!.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                            CustomTextWidget(
+                              localizations.mission_statement_submsg_two,
+                              textAlign: TextAlign.start,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.labelLarge!.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.04),
+                Card(
+                  elevation: 6,
+                  margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: cardMaxWidth),
+                    child: Padding(
+                      padding: EdgeInsets.all(horizontalPadding),
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              localizations.login_title,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleLarge?.copyWith(
+                                fontSize:
+                                    deviceType == DeviceType.mobile
+                                        ? 20
+                                        : deviceType == DeviceType.tablet
+                                        ? 24
+                                        : 28,
+                              ),
+                            ),
+                            SizedBox(height: screenHeight * 0.02),
+                            TextFormField(
+                              style: Theme.of(context).textTheme.titleLarge,
+                              decoration: InputDecoration(
+                                isDense: true,
+                                hintMaxLines: 3,
+                                labelStyle:
+                                    Theme.of(context).textTheme.titleLarge,
+                                labelText: localizations.login_email,
+                              ),
+                              onChanged: (value) => _email = value.trim(),
+                              validator:
+                                  (value) =>
+                                      value!.isEmpty
+                                          ? localizations.login_email_required
+                                          : null,
+                            ),
+                            SizedBox(height: screenHeight * 0.02),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                isDense: true,
+                                hintMaxLines: 3,
+                                helperStyle:
+                                    Theme.of(context).textTheme.titleLarge,
+                                labelStyle:
+                                    Theme.of(context).textTheme.titleLarge,
+                                labelText: localizations.login_password,
+                                hintStyle: Theme.of(context)
+                                    .textTheme
+                                    .labelLarge
+                                    ?.copyWith(overflow: TextOverflow.visible),
+                                hintText: localizations.login_password_hint,
+                              ),
+                              obscureText: true,
+                              onChanged: (value) => _password = value,
+                              validator:
+                                  (value) =>
+                                      value!.isEmpty
+                                          ? localizations
+                                              .login_password_required
+                                          : null,
+                            ),
+                            const SizedBox(height: 20),
+                            if (_errorMessage != null)
+                              Text(
+                                _errorMessage!,
                                 style: Theme.of(
                                   context,
                                 ).textTheme.titleLarge?.copyWith(
-                                  color: Theme.of(context).colorScheme.surface,
+                                  color: Theme.of(context).colorScheme.onError,
+                                ),
+                              ),
+                            const SizedBox(height: 10),
+                            _isLoading
+                                ? const CircularProgressIndicator()
+                                : FractionallySizedBox(
+                                  widthFactor:
+                                      deviceType == DeviceType.mobile
+                                          ? 0.9
+                                          : deviceType == DeviceType.tablet
+                                          ? 0.6
+                                          : 0.4,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      elevation: 3.0,
+                                      shadowColor:
+                                          Theme.of(
+                                            context,
+                                          ).colorScheme.onPrimary,
+                                      backgroundColor:
+                                          Theme.of(
+                                            context,
+                                          ).colorScheme.onPrimaryFixedVariant,
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: screenHeight * 0.02,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(
+                                          16.0,
+                                        ),
+                                        side: BorderSide.none,
+                                      ),
+                                    ),
+                                    onPressed: _login,
+                                    child: Text(
+                                      localizations.login_title,
+                                      style: Theme.of(
+                                        context,
+                                      ).textTheme.titleLarge?.copyWith(
+                                        color:
+                                            Theme.of(
+                                              context,
+                                            ).colorScheme.surface,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            const SizedBox(height: 10),
+                            FractionallySizedBox(
+                              widthFactor:
+                                  deviceType == DeviceType.mobile
+                                      ? 0.9
+                                      : deviceType == DeviceType.tablet
+                                      ? 0.6
+                                      : 0.4,
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                  backgroundColor:
+                                      Theme.of(
+                                        context,
+                                      ).colorScheme.onPrimaryFixedVariant,
+                                  elevation: 3.0,
+                                  shadowColor:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: screenHeight * 0.02,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    side: BorderSide.none,
+                                  ),
+                                ),
+                                onPressed:
+                                    () => Navigator.pushNamedAndRemoveUntil(
+                                      context,
+                                      '/signup',
+                                      (route) => false,
+                                    ),
+                                child: CustomTextWidget(
+                                  localizations.login_dont_have_account,
+                                  textAlign: TextAlign.center,
+                                  style: Theme.of(
+                                    context,
+                                  ).textTheme.titleSmall!.copyWith(
+                                    color:
+                                        Theme.of(context).colorScheme.surface,
+                                    fontWeight: FontWeight.bold,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor:
+                                        Theme.of(context).colorScheme.surface,
+                                    decorationThickness: 2.0,
+                                  ),
                                 ),
                               ),
                             ),
-                        const SizedBox(height: 10),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.symmetric(
-                              vertical: screenHeight * 0.02,
-                              horizontal: screenWidth * 0.1,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.0),
-                              side: BorderSide.none,
-                            ),
-                          ),
-                          onPressed:
-                              () => Navigator.pushNamedAndRemoveUntil(
-                                context,
-                                '/signup',
-                                (route) =>
-                                    false, //localizations.login_dont_have_account,
-                              ),
-                          child: CustomTextWidget(
-                            localizations.login_dont_have_account,
-                            textAlign: TextAlign.center,
-                            style: Theme.of(
-                              context,
-                            ).textTheme.titleLarge!.copyWith(
-                              color: Theme.of(context).colorScheme.onSurface,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ],
             ),
           ),
         );

@@ -53,6 +53,7 @@ Run the Stripe CLI in a separate terminal:
 
 ```bash
 stripe listen --forward-to localhost:8081/my-right-portal/us-central1/handleStripeWebhook
+stripe listen --forward-to http://127.0.0.1:8081/my-right-portal/us-central1/handleStripeWebhook
 ```
 
 You’ll get a webhook signing secret like:

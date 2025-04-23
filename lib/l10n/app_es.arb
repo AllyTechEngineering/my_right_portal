@@ -2008,5 +2008,70 @@
     "@login_success": {
         "description": "Mensaje que se muestra al iniciar sesión correctamente.",
         "type": "text"
+    },
+    "mission_statement_title": "Nuestra Declaración de Misión",
+    "@mission_statement_title": {
+        "description": "Declaración de misión de la aplicación"
+    },
+    "mission_statement_msg": "Brindamos a los no ciudadanos en EE. UU. el conocimiento y las herramientas que necesitan para responder a los encuentros con ICE y las amenazas de deportación.",
+    "@mission_statement_msg": {
+        "description": "Mensaje para la declaración de misión"
+    },
+    "mission_statement_submsg": "Nuestra plataforma les informa sobre sus derechos legales y los conecta con recursos legales confiables.",
+    "@mission_statement_submsg": {
+        "description": "Subtítulo para la declaración de misión"
+    },
+    "mission_statement_submsg_two": "Nuestra aplicación ofrece un botón de pánico de un solo toque para alertar instantáneamente a amigos y familiares en caso de emergencia.",
+    "@mission_statement_submsg_two": {
+        "description": "Subtítulo para la declaración de misión"
+    },
+    "cta_title_subscription": "Haga crecer su práctica migratoria — Aparezca donde los clientes están buscando",
+    "@cta_title_subscription": {
+        "description": "Título de llamado a la acción que anima a los abogados de inmigración a suscribirse. Destaca el beneficio y la posibilidad de ser descubierto por clientes potenciales.",
+        "context": "Se muestra sobre los beneficios de la suscripción y el precio en la pantalla de suscripción"
+    },
+    "cta_roi_high_value": "\u2022 Convierta una suscripción mensual de $200 en miles en honorarios legales: aparezca donde los clientes con urgencias migratorias lo están buscando.",
+    "@cta_roi_high_value": {
+        "description": "Llamado a la acción que enfatiza el ROI para abogados suscriptores"
+    },
+    "cta_emotional_help_families": "\u2022 Por cada nombre en la lista, hay una familia en crisis buscando esperanza. Sea el abogado que encuentren cuando más lo necesiten.",
+    "@cta_emotional_help_families": {
+        "description": "Llamado a la acción emocional enfocado en ayudar a familias inmigrantes"
+    },
+    "cta_daily_clients_ready": "\u2022 Nuevos clientes llaman desde nuestra app todos los días. Su próximo caso valioso podría estar buscándolo ahora mismo.",
+    "@cta_daily_clients_ready": {
+        "description": "Llamado a la acción que combina urgencia y retorno de inversión"
+    },
+    "cta_visible_when_needed": "\u2022 Aparezca donde más importa: en los teléfonos de inmigrantes que necesitan apoyo legal inmediato.",
+    "@cta_visible_when_needed": {
+        "description": "Llamado a la acción que enfatiza visibilidad oportuna y relevancia para abogados"
+    },
+    "cta_welcome": "Bienvenido",
+    "@cta_welcome": {
+        "description": "Título de bienvenida"
+    },
+    "cta_client": "Cliente",
+    "@cta_client": {
+        "description": "Título del cliente"
+    },
+    "cta_message": "Suscríbete para aparecer en la app móvil My Right To Stay y que te encuentren clientes que buscan ayuda legal en inmigración.",
+    "@cta_message": {
+        "description": "Texto del mensaje"
+    },
+    "cta_stripe_error_msg": "No se pudo abrir la página de pago de Stripe. Inténtalo de nuevo más tarde.",
+    "@cta_stripe_error_msg": {
+        "description": "Mensaje de error mostrado cuando falla la URL de Stripe"
+    },
+    "cta_stripe_session_error_msg_one": "Error al crear la sesión de Stripe:",
+    "@cta_stripe_session_error_msg_one": {
+        "description": "Mensaje de error mostrado cuando falla la creación de la sesión de Stripe"
+    },
+    "cta_stripe_session_error_msg_two": "Código de estado:",
+    "@cta_stripe_session_error_msg_two": {
+        "description": "Mensaje de éxito mostrado cuando la sesión de Stripe se crea correctamente"
+    },
+    "cta_subscribe_now": "Suscríbete ahora",
+    "@cta_subscribe_now": {
+        "description": "Etiqueta para el botón de suscripción"
     }
 }

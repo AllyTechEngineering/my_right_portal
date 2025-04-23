@@ -2008,5 +2008,70 @@
     "@login_success": {
         "description": "Message shown when login is successful",
         "type": "text"
+    },
+    "mission_statement_title": "Our Mission Statement",
+    "@mission_statement_title": {
+        "description": "Mission statement of the app"
+    },
+    "mission_statement_msg": "We empower non-citizens in the U.S. with the knowledge and tools they need to respond to ICE encounters and deportation threats.",
+    "@mission_statement_msg": {
+        "description": "Msg for mission statement"
+    },
+    "mission_statement_submsg": "Our platform educates them on their legal rights, connects them with trusted legal resources.",
+    "@mission_statement_submsg": {
+        "description": "Subtitle for the mission statement"
+    },
+    "mission_statement_submsg_two": "Our app provides a one-tap panic button to instantly alert friends and family in an emergency.",
+    "@mission_statement_submsg_two": {
+        "description": "Subtitle for the mission statement"
+    },
+    "cta_title_subscription": "Grow Your Immigration Practice — Get Listed Where Clients Are Searching",
+    "@cta_title_subscription": {
+        "description": "Call-to-action title encouraging immigration lawyers to subscribe. Highlights benefit and discoverability by potential clients.",
+        "context": "Shown above the subscription benefits and price on the subscription prompt screen"
+    },
+    "cta_roi_high_value": "\u2022 Turn a $200 monthly subscription into thousands in retained client fees—get listed where high-intent immigration clients are actively searching.",
+    "@cta_roi_high_value": {
+        "description": "CTA emphasizing ROI for lawyer subscriptions"
+    },
+    "cta_emotional_help_families": "\u2022 For every name listed, there's a family in crisis searching for hope. Be the lawyer they find when it matters most.",
+    "@cta_emotional_help_families": {
+        "description": "CTA with emotional appeal focused on lawyers helping immigrant families"
+    },
+    "cta_daily_clients_ready": "\u2022 New clients are tapping to call from our app every day. Your next high-value case might be searching for help right now.",
+    "@cta_daily_clients_ready": {
+        "description": "CTA combining urgency and ROI to encourage subscription"
+    },
+    "cta_visible_when_needed": "\u2022 Get listed where it matters most: on the phones of immigrants seeking immediate legal support.",
+    "@cta_visible_when_needed": {
+        "description": "CTA emphasizing timely visibility and relevance for lawyers"
+    },
+    "cta_welcome": "Welcome",   
+    "@cta_welcome": {
+        "description": "Welcome title"
+    },
+    "cta_client": "Client",
+    "@cta_client": {
+        "description": "Client title"
+    },
+    "cta_message": "Subscribe to be listed in the My Right To Stay mobile app and get discovered by clients seeking immigration legal help.",
+    "@cta_message": {
+        "description": "Message text"
+    },
+    "cta_stripe_error_msg": "Failed to open Stripe checkout page. Try again later.",
+    "@cta_stripe_error_msg": {
+        "description": "Error message shown when Stripe url launch fails"
+    },
+    "cta_stripe_session_error_msg_one": "Failed to create Stripe session:",    
+    "@cta_stripe_session_error_msg_one": {
+        "description": "Error message shown when Stripe session creation fails"
+    },
+    "cta_stripe_session_error_msg_two": "status code:",   
+    "@cta_stripe_session_error_msg_two": {
+        "description": "Success message shown when Stripe session is created successfully"
+    },
+    "cta_subscribe_now": "Subscribe Now",
+    "@cta_subscribe_now": {
+        "description": "Label for the subscribe now button"
     }
 }
