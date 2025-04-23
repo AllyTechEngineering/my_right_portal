@@ -2003,5 +2003,10 @@
     "@login_generic_error": {
         "description": "Mensaje genérico de error cuando no se identifica el motivo",
         "type": "text"
+    },
+    "login_success": "Inicio de sesión exitoso.",
+    "@login_success": {
+        "description": "Mensaje que se muestra al iniciar sesión correctamente.",
+        "type": "text"
     }
 }

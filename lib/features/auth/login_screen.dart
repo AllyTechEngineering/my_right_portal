@@ -57,10 +57,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
       SchedulerBinding.instance.addPostFrameCallback((_) {
         if (context.mounted) {
-          debugPrint('Login successful');
-          ScaffoldMessenger.of(
+          ScaffoldMessenger.of(//'Login successful'
             context,
-          ).showSnackBar(const SnackBar(content: Text('Login successful')));
+          ).showSnackBar( SnackBar(content: Text(
+            AppLocalizations.of(context)!.login_success,
+          )));
           Navigator.pushReplacementNamed(context, '/auth-gate');
         }
       });

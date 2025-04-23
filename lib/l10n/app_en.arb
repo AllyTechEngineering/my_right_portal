@@ -2003,5 +2003,10 @@
     "@login_generic_error": {
         "description": "Fallback error message for any unspecified error",
         "type": "text"
+    },
+    "login_success": "Login successful.",
+    "@login_success": {
+        "description": "Message shown when login is successful",
+        "type": "text"
     }
 }
