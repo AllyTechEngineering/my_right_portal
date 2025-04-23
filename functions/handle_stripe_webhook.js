@@ -7,7 +7,7 @@ const STRIPE_SECRET_KEY = defineSecret("STRIPE_SECRET_KEY");
 const STRIPE_WEBHOOK_SECRET = defineSecret("STRIPE_WEBHOOK_SECRET");
 
 admin.initializeApp();
-
+//  whsec_dc1e360e525e9261edcc2a5c91796f0fbfdea7b656422485bb87a93807409d8c 
 exports.handleStripeWebhook = onRequest(
   {
     secrets: [STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET],

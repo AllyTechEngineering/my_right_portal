@@ -15,7 +15,7 @@ class SuccessScreen extends StatelessWidget {
     double iconSize = screenWidth * 0.055;
     iconSize = iconSize.clamp(18.0, 26.0);
     final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;
-
+    debugPrint('In SuccessScreen');
     return Scaffold(
       appBar: CustomAppBarWidget(
         title: localizations.my_right_to_stay_title,
@@ -26,24 +26,48 @@ class SuccessScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.check_circle_outline, color: Colors.green, size: 80),
-            const SizedBox(height: 20),
-            const Text(
-              'Thank you for subscribing!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Text('This is the Success Screen'),
+            SizedBox(height: screenHeight * 0.02),
+            const Icon(
+              Icons.check_circle_outline,
+              color: Colors.green,
+              size: 80,
             ),
-            const SizedBox(height: 10),
-            const Text('Your subscription is now active.'),
-            const SizedBox(height: 20),
+            SizedBox(height: screenHeight * 0.02),
+            Text(
+              localizations.subscription_thank,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            SizedBox(height: screenHeight * 0.02),
+            Text(
+              localizations.subscription_thank_message,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            SizedBox(height: screenHeight * 0.02),
             ElevatedButton.icon(
-              icon: const Icon(Icons.assignment),
-              label: const Text('Complete Your Listing'),
+              icon: Icon(Icons.assignment, size: iconSize),
+              label: Text(
+                localizations.subscription_data_entry,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed('/data-form');
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  Navigator.of(context).pushReplacementNamed('/data-form');
+                });
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                textStyle: const TextStyle(fontSize: 18),
+                elevation: 3.0,
+                shadowColor: Theme.of(context).colorScheme.onPrimary,
+                backgroundColor:
+                    Theme.of(context).colorScheme.onPrimaryFixedVariant,
+                padding: EdgeInsets.symmetric(
+                  vertical: screenHeight * 0.02,
+                  horizontal: screenWidth * 0.1,
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                  side: BorderSide.none,
+                ),
               ),
             ),
           ],

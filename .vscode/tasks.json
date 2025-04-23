@@ -1,0 +1,12 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Generate Localization",
+        "type": "shell",
+        "command": "flutter gen-l10n && echo ✅ Localization generation successful!",
+        "group": "build",
+        "problemMatcher": []
+      }
+    ]
+  }

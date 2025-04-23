@@ -82,6 +82,14 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
               ),
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.privacy_cookie_notice,
+                textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ],
           ),
         ),

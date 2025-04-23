@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -6,6 +7,13 @@ import '../../../utils/url_launcher_helpers.dart';
 
 class SubscriptionPromptScreen extends StatelessWidget {
   const SubscriptionPromptScreen({super.key});
+  String getStripeCheckoutUrl() {
+    if (kDebugMode) {
+      return 'http://localhost:8081/my-right-portal/us-central1/createCheckoutSession';
+    } else {
+      return 'https://createcheckoutsession-nzgeau3iuq-uc.a.run.app';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +74,7 @@ class SubscriptionPromptScreen extends StatelessWidget {
                     debugPrint('UID: $uid');
                     try {
                       final response = await http.post(
-                        Uri.parse(
-                          'https://createcheckoutsession-nzgeau3iuq-uc.a.run.app',
-                        ),
+                        Uri.parse(getStripeCheckoutUrl()),
                         headers: {"Content-Type": "application/json"},
                         body: json.encode({
                           "email": email,

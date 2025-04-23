@@ -13,6 +13,7 @@ class CustomAppTheme {
   static final ThemeData appTheme = ThemeData(
     useMaterial3: true,
     fontFamily: GoogleFonts.openSans().fontFamily,
+    fontFamilyFallback: ['NotoSansSymbols'],
     colorScheme: appColorScheme,
     textTheme: customTextTheme,
     scaffoldBackgroundColor: appColorScheme.tertiaryFixed,

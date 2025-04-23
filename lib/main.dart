@@ -37,6 +37,16 @@ void main() async {
     // Optional: Add similar lines for Auth and Storage
     FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
     FirebaseStorage.instance.useStorageEmulator('localhost', 9199);
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: 'test@example.com',
+        password: 'Test123!',
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code != 'email-already-in-use') {
+        print('Error creating test user: ${e.code}');
+      }
+    }
   }
   runApp(const MyApp());
 }

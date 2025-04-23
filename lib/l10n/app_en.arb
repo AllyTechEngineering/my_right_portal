@@ -896,7 +896,7 @@
     "@add_emergency_contact_upload": {
         "description": "Label for the upload button"
     },
-    "add_emergency_contact_upload_desc": "✅ Contact Added Successfully!",
+    "add_emergency_contact_upload_desc": "✅ Contact Added subscription_thankfully!",
     "@add_emergency_contact_upload_desc": {
         "description": "Label for the upload button"
     },
@@ -928,13 +928,13 @@
     "@edit_emergency_contact_title": {
         "description": "Title for the Edit Contact"
     },
-    "edit_emergency_contact_success_title": "✅ Contact Updated Successfully!",
+    "edit_emergency_contact_success_title": "✅ Contact Updated subscription_thankfully!",
     "@edit_emergency_contact_success_title": {
-        "description": "Title for the edit success dialog"
+        "description": "Title for the edit subscription_thank dialog"
     },
     "edit_emergency_contact_success_msg": "Your emergency contact has been updated and will be used when you activate the \"Don't Deport Me\" button.",
     "@edit_emergency_contact_success_msg": {
-        "description": "Msg for the edit success dialog"
+        "description": "Msg for the edit subscription_thank dialog"
     },
     "edit_emergency_contact_done": "Done",
     "@edit_emergency_contact_done": {
@@ -1836,6 +1836,11 @@
     "@privacy_contact": {
         "description": "Contact information for privacy-related questions"
     },
+    "privacy_cookie_notice": "We use cookies only for essential functions:\n• To keep you securely logged in using Firebase Authentication.\n• To process payments through Stripe Checkout.\n\nWe do not use cookies for advertising, analytics, or tracking.\nBy using this site, you agree to this essential use of cookies.",
+    "@privacy_cookie_notice": {
+        "description": "Notice shown to users to explain cookie usage for legal compliance.",
+        "type": "text"
+    },
     "tos_title": "Terms of Service",
     "@tos_title": {
         "description": "Title of the Terms of Service screen"
@@ -1903,5 +1908,65 @@
     "about_signature": "📍 Headquartered in the U.S.\n🛡️ Built with Flutter, Firebase, and Stripe\n💡 Designed for lawyers, trusted by communities",
     "@about_signature": {
         "description": "Footer bullet points describing location and technology stack"
+    },
+    "cookies_message": "We ONLY use cookies to keep you securely logged in and to process payments.",
+    "@cookies_message": {
+        "description": "Message about cookies"
+    },
+    "cookies_subtitle": "By using this site, you agree to our use of cookies as described in our Privacy Policy.",
+    "@cookies_subtitle": {
+        "description": "Subtitle for the cookies message"
+    },
+    "cookies_accept": "Accept",
+    "@cookies_accept": {
+        "description": "Label for the accept button"
+    },
+    "cookies_decline": "Decline",
+    "@cookies_decline": {
+        "description": "Label for the decline button"
+    },
+    "login_title": "Login",
+    "@login_title": {
+        "description": "Title for the login screen"
+    },
+    "login_email": "Email",
+    "@login_email": {
+        "description": "Label for the email field"
+    },
+    "login_email_required": "Email is required.",
+    "@login_email_required": {
+        "description": "Error message shown when email is empty."
+    },
+    "login_password": "Password",
+    "@login_password": {
+        "description": "Label for the password field"
+    },
+    "login_password_required": "Password is required.",
+    "@login_password_required": {
+        "description": "Error message shown when password is empty."
+    },
+    "login_forgot_password": "Forgot Password?",
+    "@login_forgot_password": {
+        "description": "Label for the forgot password link"
+    },
+    "login_password_hint": "At least 6 characters with 1 uppercase, 1 lowercase, 1 number, and 1 symbol.",
+    "@login_password_hint": {
+        "description": "Hint text for the password field"
+    },
+    "login_dont_have_account": "Don't have an account? Sign Up Today!",
+    "@login_dont_have_account": {
+        "description": "Label for the don't have an account link"
+    },
+    "subscription_thank": "Thank you for subscribing!",
+    "@subscription_thank": {
+        "description": "Label for subscription thank messages"
+    },
+    "subscription_thank_message": "Your subscription is now active.",
+    "@subscription_thank_message": {
+        "description": "Message shown after successful subscription"
+    },
+    "subscription_data_entry": "Complete Your Listing",
+    "@subscription_data_entry": {
+        "description": "Label for the data entry subscription"
     }
 }

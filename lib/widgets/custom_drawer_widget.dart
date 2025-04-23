@@ -34,7 +34,7 @@ class CustomDrawerWidget extends StatelessWidget {
         route: '/terms-of-service',
       ),
       DrawerItemModel(
-        icon: Icons.visibility,
+        icon: Icons.info_outline,
         title: localizations.about_title,
         route: '/about-us',
       ),

@@ -71,56 +71,109 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Center(
         child: Card(
           elevation: 6,
-          margin: const EdgeInsets.symmetric(horizontal: 32),
+          margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: EdgeInsets.all(screenWidth * 0.05),
             child: Form(
               key: _formKey,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text('Login', style: TextStyle(fontSize: 24)),
-                  const SizedBox(height: 20),
+                  Text(
+                    localizations.login_title,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  SizedBox(height: screenHeight * 0.02),
                   TextFormField(
-                    decoration: const InputDecoration(labelText: 'Email'),
+                    style: Theme.of(context).textTheme.titleLarge,
+                    decoration: InputDecoration(
+                      labelText: localizations.login_email,
+                    ),
                     onChanged: (value) => _email = value.trim(),
                     validator:
-                        (value) => value!.isEmpty ? 'Email required' : null,
+                        (value) =>
+                            value!.isEmpty
+                                ? localizations.login_email_required
+                                : null,
                   ),
                   TextFormField(
-                    decoration: const InputDecoration(
-                      helperStyle: TextStyle(fontSize: 12, color: Colors.grey),
-                      labelText: 'Password',
-                      hintText:
-                          'Min 6 chars, 1 upper, 1 lower, 1 number, 1 special char',
+                    decoration: InputDecoration(
+                      helperStyle: Theme.of(context).textTheme.titleLarge,
+                      labelStyle: Theme.of(context).textTheme.titleLarge,
+                      labelText: localizations.login_title,
+                      hintStyle: Theme.of(context).textTheme.titleLarge,
+                      hintText: localizations.login_password_hint,
                     ),
                     obscureText: true,
                     onChanged: (value) => _password = value,
                     validator:
-                        (value) => value!.isEmpty ? 'Password required' : null,
+                        (value) =>
+                            value!.isEmpty
+                                ? localizations.login_password_required
+                                : null,
                   ),
                   const SizedBox(height: 20),
                   if (_errorMessage != null)
                     Text(
                       _errorMessage!,
-                      style: const TextStyle(color: Colors.red),
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        color: Theme.of(context).colorScheme.onError,
+                      ),
                     ),
                   const SizedBox(height: 10),
                   _isLoading
                       ? const CircularProgressIndicator()
                       : ElevatedButton(
+                        style: TextButton.styleFrom(
+                          elevation: 3.0,
+                          shadowColor: Theme.of(context).colorScheme.onPrimary,
+                          backgroundColor:
+                              Theme.of(
+                                context,
+                              ).colorScheme.onPrimaryFixedVariant,
+                          padding: EdgeInsets.symmetric(
+                            vertical: screenHeight * 0.02,
+                            horizontal: screenWidth * 0.1,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                            side: BorderSide.none,
+                          ),
+                        ),
                         onPressed: _login,
-                        child: const Text('Log In'),
+                        child: Text(
+                          localizations.login_title,
+                          style: Theme.of(
+                            context,
+                          ).textTheme.titleLarge?.copyWith(
+                            color: Theme.of(context).colorScheme.surface,
+                          ),
+                        ),
                       ),
                   const SizedBox(height: 10),
                   TextButton(
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical: screenHeight * 0.02,
+                        horizontal: screenWidth * 0.1,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.0),
+                        side: BorderSide.none,
+                      ),
+                    ),
                     onPressed:
                         () => Navigator.pushNamedAndRemoveUntil(
                           context,
                           '/signup',
                           (route) => false,
                         ),
-                    child: const Text("Don't have an account? Sign up"),
+                    child: Text(
+                      localizations.login_dont_have_account,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
+                    ),
                   ),
                 ],
               ),

@@ -1836,6 +1836,11 @@
     "@privacy_contact": {
         "description": "Información de contacto para preguntas sobre privacidad"
     },
+    "privacy_cookie_notice": "Usamos cookies solo para funciones esenciales:\n• Para mantener tu sesión segura con Firebase Authentication.\n• Para procesar pagos mediante Stripe Checkout.\n\nNo usamos cookies para publicidad, análisis ni seguimiento.\nAl usar este sitio, aceptas este uso esencial de cookies.",
+    "@privacy_cookie_notice": {
+        "description": "Aviso que se muestra a los usuarios para explicar el uso de cookies, en cumplimiento legal.",
+        "type": "text"
+    },
     "tos_title": "Términos de Servicio",
     "@tos_title": {
         "description": "Título de la pantalla de Términos de Servicio"
@@ -1903,5 +1908,65 @@
     "about_signature": "📍 Con sede en los EE. UU.\n🛡️ Desarrollado con Flutter, Firebase y Stripe\n💡 Diseñado para abogados, confiable para las comunidades",
     "@about_signature": {
         "description": "Puntos de pie de página que describen la ubicación y la tecnología utilizada"
+    },
+    "cookies_message": "SOLO usamos cookies para mantener tu sesión iniciada de forma segura y procesar pagos.",
+    "@cookies_message": {
+        "description": "Mensaje sobre cookies"
+    },
+    "cookies_subtitle": "Al usar este sitio, aceptas nuestro uso de cookies según lo descrito en nuestra Política de Privacidad.",
+    "@cookies_subtitle": {
+        "description": "Subtítulo del mensaje sobre cookies"
+    },
+    "cookies_accept": "Aceptar",
+    "@cookies_accept": {
+        "description": "Etiqueta del botón Aceptar"
+    },
+    "cookies_decline": "Rechazar",
+    "@cookies_decline": {
+        "description": "Etiqueta del botón Rechazar"
+    },
+    "login_title": "Iniciar sesión",
+    "@login_title": {
+        "description": "Título de la pantalla de inicio de sesión"
+    },
+    "login_email": "Correo electrónico",
+    "@login_email": {
+        "description": "Etiqueta para el campo de correo electrónico"
+    },
+    "login_email_required": "El correo electrónico es obligatorio.",
+    "@login_email_required": {
+        "description": "Mensaje de error cuando el correo electrónico está vacío."
+    },
+    "login_password": "Contraseña",
+    "@login_password": {
+        "description": "Etiqueta para el campo de contraseña"
+    },
+    "login_password_required": "La contraseña es obligatoria.",
+    "@login_password_required": {
+        "description": "Mensaje de error cuando la contraseña está vacía."
+    },
+    "login_forgot_password": "¿Olvidó su contraseña?",
+    "@login_forgot_password": {
+        "description": "Etiqueta para el enlace de contraseña olvidada"
+    },
+    "login_password_hint": "Al menos 6 caracteres: 1 mayúscula, 1 minúscula, 1 número y 1 símbolo.",
+    "@login_password_hint": {
+        "description": "Texto de sugerencia para el campo de contraseña"
+    },
+    "login_dont_have_account": "¿No tienes cuenta? ¡Regístrate hoy!",
+    "@login_dont_have_account": {
+        "description": "Etiqueta para el enlace \"No tengo cuenta"
+    },
+    "subscription_thank": "¡Gracias por suscribirse!",
+    "@subscription_thank": {
+        "description": "Etiqueta para los mensajes de agradecimiento por la suscripción"
+    },
+    "subscription_thank_message": "Su suscripción ya está activa.",
+    "@subscription_thank_message": {
+        "description": "Mensaje mostrado tras la suscripción exitosa"
+    },
+    "subscription_data_entry": "Complete su anuncio",
+    "@subscription_data_entry": {
+        "description": "Etiqueta para la suscripción de entrada de datos"
     }
 }
