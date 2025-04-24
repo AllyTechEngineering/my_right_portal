@@ -1,12 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
-import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
-import 'package:my_right_portal/widgets/custom_text_widget.dart';
 import 'package:my_right_portal/models/form_fields.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';

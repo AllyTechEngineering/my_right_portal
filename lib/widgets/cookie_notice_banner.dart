@@ -47,7 +47,7 @@ class _CookieNoticeBannerState extends State<CookieNoticeBanner> {
       alignment: Alignment.bottomCenter,
       child: Container(
         width: double.infinity,
-        color: Theme.of(context).colorScheme.surface,
+        color: Colors.transparent,
         padding: EdgeInsets.all(screenWidth * 0.02),
         child: Column(
           mainAxisSize: MainAxisSize.min,

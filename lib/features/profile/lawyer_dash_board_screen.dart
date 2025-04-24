@@ -212,6 +212,7 @@ class _BillingSummaryCardState extends State<_BillingSummaryCard> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final localizations = AppLocalizations.of(context)!;
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;

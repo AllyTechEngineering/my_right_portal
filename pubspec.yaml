@@ -95,6 +95,9 @@ flutter:
     - assets/images/google_play_store_badge_en.png
     - assets/images/google_play_store_badge_es.png
     - assets/srv_prov_contact_info.csv
+    - assets/images/mrts_background.png
+    - assets/images/mrts_liberty.png
+    - assets/images/mrts_boat.png
   uses-material-design: true
   generate: true
   # An image asset can refer to one or more resolution-specific "variants", see
