@@ -2073,5 +2073,63 @@
     "cta_subscribe_now": "Suscríbete ahora",
     "@cta_subscribe_now": {
         "description": "Etiqueta para el botón de suscripción"
+    },
+    "login_forgot_password_title": "Restablecer la contraseña",
+    "@login_forgot_password_title": {
+        "description": "Título del cuadro de diálogo para restablecer la contraseña",
+        "type": "text"
+    },
+    "login_password_reset_sent": "¡Enlace para restablecer la contraseña enviado!",
+    "@login_password_reset_sent": {
+        "description": "Mensaje mostrado después de enviar correctamente el correo de restablecimiento de contraseña",
+        "type": "text"
+    },
+    "login_password_reset_error": "No se pudo enviar el enlace. Inténtelo de nuevo.",
+    "@login_password_reset_error": {
+        "description": "Mensaje de error mostrado si no se pudo enviar el correo de restablecimiento de contraseña",
+        "type": "text"
+    },
+    "login_send_reset_link": "Enviar enlace de restablecimiento",
+    "@login_send_reset_link": {
+        "description": "Texto del botón para enviar el correo de restablecimiento de contraseña",
+        "type": "text"
+    },
+    "sign_up_title": "Crear cuenta",
+    "@sign_up_title": {
+        "description": "Título de la pantalla de creación de cuenta"
+    },
+    "sign_up_register": "Registrarse",
+    "@sign_up_register": {
+        "description": "Etiqueta del botón de registro"
+    },
+    "sign_up_email": "Se requiere correo electrónico",
+    "@sign_up_email": {
+        "description": "Etiqueta del campo de correo electrónico"
+    },
+    "sign_up_password": "Contraseña",
+    "@sign_up_password": {
+        "description": "Etiqueta del campo de contraseña"
+    },
+    "sign_up_password_size": "Mínimo 6 caracteres",
+    "@sign_up_password_size": {
+        "description": "Tamaño mínimo de la etiqueta"
+    },
+    "sign_up_password_confirm": "Confirmar contraseña",
+    "@sign_up_password_confirm": {
+        "description": "Etiqueta para el campo de confirmación de contraseña"
+    },
+    "sign_up_password_confirm_two": "Confirma tu contraseña",
+    "@sign_up_password_confirm_two": {
+        "description": "Etiqueta para el campo de confirmación de contraseña"
+    },
+    "sign_up_confirm_email": "Confirmar dirección de correo electrónico",
+    "@sign_up_confirm_email": {
+        "description": "Etiqueta para el campo de confirmación de correo electrónico en la pantalla de registro.",
+        "type": "text"
+    },
+    "sign_up_email_mismatch": "Las direcciones de correo electrónico no coinciden",
+    "@sign_up_email_mismatch": {
+        "description": "Mensaje de error cuando el correo electrónico y su confirmación no coinciden.",
+        "type": "text"
     }
 }

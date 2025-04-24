@@ -2046,7 +2046,7 @@
     "@cta_visible_when_needed": {
         "description": "CTA emphasizing timely visibility and relevance for lawyers"
     },
-    "cta_welcome": "Welcome",   
+    "cta_welcome": "Welcome",
     "@cta_welcome": {
         "description": "Welcome title"
     },
@@ -2062,16 +2062,74 @@
     "@cta_stripe_error_msg": {
         "description": "Error message shown when Stripe url launch fails"
     },
-    "cta_stripe_session_error_msg_one": "Failed to create Stripe session:",    
+    "cta_stripe_session_error_msg_one": "Failed to create Stripe session:",
     "@cta_stripe_session_error_msg_one": {
         "description": "Error message shown when Stripe session creation fails"
     },
-    "cta_stripe_session_error_msg_two": "status code:",   
+    "cta_stripe_session_error_msg_two": "status code:",
     "@cta_stripe_session_error_msg_two": {
         "description": "Success message shown when Stripe session is created successfully"
     },
     "cta_subscribe_now": "Subscribe Now",
     "@cta_subscribe_now": {
         "description": "Label for the subscribe now button"
+    },
+    "login_forgot_password_title": "Reset Password",
+    "@login_forgot_password_title": {
+        "description": "Title for the forgot password dialog",
+        "type": "text"
+    },
+    "login_password_reset_sent": "Password reset link sent!",
+    "@login_password_reset_sent": {
+        "description": "Message shown after successfully sending a password reset email",
+        "type": "text"
+    },
+    "login_password_reset_error": "Unable to send reset link. Please try again.",
+    "@login_password_reset_error": {
+        "description": "Error message shown if password reset email could not be sent",
+        "type": "text"
+    },
+    "login_send_reset_link": "Send Reset Link",
+    "@login_send_reset_link": {
+        "description": "Button text for sending password reset email",
+        "type": "text"
+    },
+    "sign_up_title": "Create Account",
+    "@sign_up_title": {
+        "description": "Title for the create account screen"
+    },
+    "sign_up_register": "Register",
+    "@sign_up_register": {
+        "description": "Label for the register button"
+    },
+    "sign_up_email": "Email is required",
+    "@sign_up_email": {
+        "description": "Label for the email field"
+    },
+    "sign_up_password": "Password",
+    "@sign_up_password": {
+        "description": "Label for the password field"
+    },
+    "sign_up_password_size": "Minimum 6 characters",
+    "@sign_up_password_size": {
+        "description": "Minimum size label."
+    },
+    "sign_up_password_confirm": "Confirm Password",
+    "@sign_up_password_confirm": {
+        "description": "Label for the confirm password field"
+    },
+    "sign_up_password_confirm_two": "Confirm your password",
+    "@sign_up_password_confirm_two": {
+        "description": "Label for the confirm password field"
+    },
+    "sign_up_confirm_email": "Confirm Email Address",
+    "@sign_up_confirm_email": {
+        "description": "Label for the confirm email address field on the sign-up screen.",
+        "type": "text"
+    },
+    "sign_up_email_mismatch": "Email addresses do not match",
+    "@sign_up_email_mismatch": {
+        "description": "Error message when the entered email and confirmed email do not match.",
+        "type": "text"
     }
 }

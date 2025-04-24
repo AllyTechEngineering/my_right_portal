@@ -103,7 +103,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 : deviceType == DeviceType.tablet
                 ? 500.0
                 : double.infinity;
-
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.surface,
           appBar: CustomAppBarWidget(
@@ -182,31 +181,36 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: screenHeight * 0.04),
                 Card(
                   elevation: 6,
-                  margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: cardMaxWidth),
-                    child: Padding(
-                      padding: EdgeInsets.all(horizontalPadding),
-                      child: Form(
-                        key: _formKey,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              localizations.login_title,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.titleLarge?.copyWith(
-                                fontSize:
-                                    deviceType == DeviceType.mobile
-                                        ? 20
-                                        : deviceType == DeviceType.tablet
-                                        ? 24
-                                        : 28,
-                              ),
+                  margin: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+                  child: Padding(
+                    padding: EdgeInsets.all(horizontalPadding),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            localizations.login_title,
+                            style: Theme.of(
+                              context,
+                            ).textTheme.titleLarge?.copyWith(
+                              fontSize:
+                                  deviceType == DeviceType.mobile
+                                      ? 20
+                                      : deviceType == DeviceType.tablet
+                                      ? 24
+                                      : 28,
                             ),
-                            SizedBox(height: screenHeight * 0.02),
-                            TextFormField(
+                          ),
+                          SizedBox(height: screenHeight * 0.02),
+                          FractionallySizedBox(
+                            widthFactor:
+                                deviceType == DeviceType.mobile
+                                    ? 0.8
+                                    : deviceType == DeviceType.tablet
+                                    ? 0.6
+                                    : 0.4,
+                            child: TextFormField(
                               style: Theme.of(context).textTheme.titleLarge,
                               decoration: InputDecoration(
                                 isDense: true,
@@ -222,8 +226,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                           ? localizations.login_email_required
                                           : null,
                             ),
-                            SizedBox(height: screenHeight * 0.02),
-                            TextFormField(
+                          ),
+                          SizedBox(height: screenHeight * 0.02),
+                          FractionallySizedBox(
+                            widthFactor:
+                                deviceType == DeviceType.mobile
+                                    ? 0.8
+                                    : deviceType == DeviceType.tablet
+                                    ? 0.6
+                                    : 0.4,
+                            child: TextFormField(
                               decoration: InputDecoration(
                                 isDense: true,
                                 hintMaxLines: 3,
@@ -247,111 +259,194 @@ class _LoginScreenState extends State<LoginScreen> {
                                               .login_password_required
                                           : null,
                             ),
-                            const SizedBox(height: 20),
-                            if (_errorMessage != null)
-                              Text(
-                                _errorMessage!,
+                          ),
+                          const SizedBox(height: 20),
+                          if (_errorMessage != null)
+                            Text(
+                              _errorMessage!,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleLarge?.copyWith(
+                                color: Theme.of(context).colorScheme.onError,
+                              ),
+                            ),
+                          // 🔽 BEGIN Forgot Password Dialog
+                          FractionallySizedBox(
+                            widthFactor:
+                                deviceType == DeviceType.mobile
+                                    ? 0.9
+                                    : deviceType == DeviceType.tablet
+                                    ? 0.6
+                                    : 0.4,
+                            child: TextButton(
+                              onPressed: () async {
+                                final emailController = TextEditingController();
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title: Text(
+                                        localizations
+                                            .login_forgot_password_title,
+                                      ),
+                                      content: TextFormField(
+                                        controller: emailController,
+                                        decoration: InputDecoration(
+                                          labelText: localizations.login_email,
+                                        ),
+                                      ),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () async {
+                                            try {
+                                              await FirebaseAuth.instance
+                                                  .sendPasswordResetEmail(
+                                                    email:
+                                                        emailController.text
+                                                            .trim(),
+                                                  );
+                                              if (context.mounted) {
+                                                Navigator.pop(context);
+                                              }
+                                              if (context.mounted) {
+                                                ScaffoldMessenger.of(
+                                                  context,
+                                                ).showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      localizations
+                                                          .login_password_reset_sent,
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                            } catch (e) {
+                                              if (context.mounted) {
+                                                Navigator.pop(context);
+                                              }
+                                              if (context.mounted) {
+                                                ScaffoldMessenger.of(
+                                                  context,
+                                                ).showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      localizations
+                                                          .login_password_reset_error,
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                            }
+                                          },
+                                          child: Text(
+                                            localizations.login_send_reset_link,
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              },
+                              child: Text(
+                                localizations.login_forgot_password,
                                 style: Theme.of(
                                   context,
-                                ).textTheme.titleLarge?.copyWith(
-                                  color: Theme.of(context).colorScheme.onError,
+                                ).textTheme.titleSmall!.copyWith(
+                                  decoration: TextDecoration.underline,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                          // 🔼 END Forgot Password Dialog
+                          const SizedBox(height: 10),
+                          _isLoading
+                              ? const CircularProgressIndicator()
+                              : FractionallySizedBox(
+                                widthFactor:
+                                    deviceType == DeviceType.mobile
+                                        ? 0.9
+                                        : deviceType == DeviceType.tablet
+                                        ? 0.6
+                                        : 0.4,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    elevation: 3.0,
+                                    shadowColor:
+                                        Theme.of(context).colorScheme.onPrimary,
+                                    backgroundColor:
+                                        Theme.of(
+                                          context,
+                                        ).colorScheme.onPrimaryFixedVariant,
+                                    padding: EdgeInsets.symmetric(
+                                      vertical: screenHeight * 0.02,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(16.0),
+                                      side: BorderSide.none,
+                                    ),
+                                  ),
+                                  onPressed: _login,
+                                  child: Text(
+                                    localizations.login_title,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleLarge?.copyWith(
+                                      color:
+                                          Theme.of(context).colorScheme.surface,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            const SizedBox(height: 10),
-                            _isLoading
-                                ? const CircularProgressIndicator()
-                                : FractionallySizedBox(
-                                  widthFactor:
-                                      deviceType == DeviceType.mobile
-                                          ? 0.9
-                                          : deviceType == DeviceType.tablet
-                                          ? 0.6
-                                          : 0.4,
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      elevation: 3.0,
-                                      shadowColor:
-                                          Theme.of(
-                                            context,
-                                          ).colorScheme.onPrimary,
-                                      backgroundColor:
-                                          Theme.of(
-                                            context,
-                                          ).colorScheme.onPrimaryFixedVariant,
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: screenHeight * 0.02,
-                                      ),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                          16.0,
-                                        ),
-                                        side: BorderSide.none,
-                                      ),
-                                    ),
-                                    onPressed: _login,
-                                    child: Text(
-                                      localizations.login_title,
-                                      style: Theme.of(
-                                        context,
-                                      ).textTheme.titleLarge?.copyWith(
-                                        color:
-                                            Theme.of(
-                                              context,
-                                            ).colorScheme.surface,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                            const SizedBox(height: 10),
-                            FractionallySizedBox(
-                              widthFactor:
-                                  deviceType == DeviceType.mobile
-                                      ? 0.9
-                                      : deviceType == DeviceType.tablet
-                                      ? 0.6
-                                      : 0.4,
-                              child: TextButton(
-                                style: TextButton.styleFrom(
-                                  backgroundColor:
-                                      Theme.of(
-                                        context,
-                                      ).colorScheme.onPrimaryFixedVariant,
-                                  elevation: 3.0,
-                                  shadowColor:
-                                      Theme.of(context).colorScheme.onPrimary,
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: screenHeight * 0.02,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    side: BorderSide.none,
-                                  ),
-                                ),
-                                onPressed:
-                                    () => Navigator.pushNamedAndRemoveUntil(
+                          const SizedBox(height: 10),
+                          FractionallySizedBox(
+                            widthFactor:
+                                deviceType == DeviceType.mobile
+                                    ? 0.9
+                                    : deviceType == DeviceType.tablet
+                                    ? 0.6
+                                    : 0.4,
+                            child: TextButton(
+                              style: TextButton.styleFrom(
+                                backgroundColor:
+                                    Theme.of(
                                       context,
-                                      '/signup',
-                                      (route) => false,
-                                    ),
-                                child: CustomTextWidget(
-                                  localizations.login_dont_have_account,
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(
+                                    ).colorScheme.onPrimaryFixedVariant,
+                                elevation: 3.0,
+                                shadowColor:
+                                    Theme.of(context).colorScheme.onPrimary,
+                                padding: EdgeInsets.symmetric(
+                                  vertical: screenHeight * 0.02,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  side: BorderSide.none,
+                                ),
+                              ),
+                              onPressed:
+                                  () => Navigator.pushNamedAndRemoveUntil(
                                     context,
-                                  ).textTheme.titleSmall!.copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.surface,
-                                    fontWeight: FontWeight.bold,
-                                    decoration: TextDecoration.underline,
-                                    decorationColor:
-                                        Theme.of(context).colorScheme.surface,
-                                    decorationThickness: 2.0,
+                                    '/signup',
+                                    (route) => false,
                                   ),
+                              child: CustomTextWidget(
+                                localizations.login_dont_have_account,
+                                textAlign: TextAlign.center,
+                                style: Theme.of(
+                                  context,
+                                ).textTheme.titleSmall!.copyWith(
+                                  color: Theme.of(context).colorScheme.surface,
+                                  fontWeight: FontWeight.bold,
+                                  decoration: TextDecoration.underline,
+                                  decorationColor:
+                                      Theme.of(context).colorScheme.surface,
+                                  decorationThickness: 2.0,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
