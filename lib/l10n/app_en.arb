@@ -2131,5 +2131,17 @@
     "@sign_up_email_mismatch": {
         "description": "Error message when the entered email and confirmed email do not match.",
         "type": "text"
+    },
+    "verify_email_title": "Verify Your Email Address",
+    "@verify_email_title": {
+        "description": "Title for the email verification screen"
+    },
+    "verify_email_message": "A verification link has been sent to your email address.",
+    "@verify_email_message": {
+        "description": "Message shown after sending the verification email"
+    },
+    "verify_email_back_to_login": "Go back to login",
+    "@verify_email_back_to_login": {
+        "description": "Label for the back to login button"
     }
 }

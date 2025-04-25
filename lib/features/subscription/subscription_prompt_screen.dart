@@ -48,12 +48,6 @@ class _SubscriptionPromptScreenState extends State<SubscriptionPromptScreen> {
         final screenWidth = constraints.maxWidth;
         final getToolBarHeight = screenHeight * Constants.kToolbarHeight;
         final horizontalPadding = deviceType == DeviceType.mobile ? 16.0 : 32.0;
-        final cardMaxWidth =
-            deviceType == DeviceType.desktop
-                ? 600.0
-                : deviceType == DeviceType.tablet
-                ? 500.0
-                : double.infinity;
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.surface,
           appBar: CustomAppBarWidget(
@@ -167,170 +161,160 @@ class _SubscriptionPromptScreenState extends State<SubscriptionPromptScreen> {
                     ],
                   ),
                 ),
-                CustomTextWidget(
-                  localizations.cta_message,
-                  textAlign: TextAlign.start,
-                  style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
-                    fontSize:
-                        deviceType == DeviceType.mobile
-                            ? 16
-                            : deviceType == DeviceType.tablet
-                            ? 18
-                            : 20,
-                  ),
-                ),
+
                 SizedBox(height: screenHeight * 0.02),
-                Card(
-                  color: Theme.of(context).colorScheme.primaryContainer,
-                  elevation: 6,
-                  margin: EdgeInsets.symmetric(horizontal: horizontalPadding),
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: cardMaxWidth),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        FractionallySizedBox(
-                          widthFactor:
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      CustomTextWidget(
+                        localizations.cta_message,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                          fontSize:
                               deviceType == DeviceType.mobile
-                                  ? 0.9
+                                  ? 16
                                   : deviceType == DeviceType.tablet
-                                  ? 0.6
-                                  : 0.4,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              elevation: 3.0,
-                              shadowColor:
-                                  Theme.of(context).colorScheme.onPrimary,
-                              backgroundColor:
-                                  Theme.of(
-                                    context,
-                                  ).colorScheme.onPrimaryFixedVariant,
-                              padding: EdgeInsets.symmetric(
-                                vertical: screenHeight * 0.02,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.0),
-                                side: BorderSide.none,
-                              ),
+                                  ? 18
+                                  : 20,
+                        ),
+                      ),
+                      SizedBox(height: screenHeight * 0.02),
+                      FractionallySizedBox(
+                        widthFactor:
+                            deviceType == DeviceType.mobile
+                                ? 0.9
+                                : deviceType == DeviceType.tablet
+                                ? 0.6
+                                : 0.4,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            elevation: 3.0,
+                            shadowColor:
+                                Theme.of(context).colorScheme.onPrimary,
+                            backgroundColor:
+                                Theme.of(
+                                  context,
+                                ).colorScheme.onPrimaryFixedVariant,
+                            padding: EdgeInsets.symmetric(
+                              vertical: screenHeight * 0.02,
                             ),
-                            onPressed:
-                                _isProcessing
-                                    ? null
-                                    : () async {
-                                      setState(() {
-                                        _isProcessing = true;
-                                      });
-                                      final currentContext = context;
-                                      final email = user?.email;
-                                      final uid = user?.uid;
-                                      // debugPrint('Email: $email');
-                                      // debugPrint('UID: $uid');
-                                      try {
-                                        final response = await http.post(
-                                          Uri.parse(getStripeCheckoutUrl()),
-                                          headers: {
-                                            "Content-Type": "application/json",
-                                          },
-                                          body: json.encode({
-                                            "email": email,
-                                            "client_reference_id": uid,
-                                          }),
-                                        );
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0),
+                              side: BorderSide.none,
+                            ),
+                          ),
+                          onPressed:
+                              _isProcessing
+                                  ? null
+                                  : () async {
+                                    setState(() {
+                                      _isProcessing = true;
+                                    });
+                                    final currentContext = context;
+                                    final email = user?.email;
+                                    final uid = user?.uid;
+                                    // debugPrint('Email: $email');
+                                    // debugPrint('UID: $uid');
+                                    try {
+                                      final response = await http.post(
+                                        Uri.parse(getStripeCheckoutUrl()),
+                                        headers: {
+                                          "Content-Type": "application/json",
+                                        },
+                                        body: json.encode({
+                                          "email": email,
+                                          "client_reference_id": uid,
+                                        }),
+                                      );
 
-                                        if (!currentContext.mounted) return;
+                                      if (!currentContext.mounted) return;
 
-                                        if (response.statusCode == 200) {
-                                          final data = jsonDecode(
-                                            response.body,
-                                          );
-                                          final checkoutUrl = data['url'];
-                                          UrlLauncherHelper.launchWebAppWebsite(
-                                                checkoutUrl,
-                                                currentContext,
-                                              )
-                                              .then((_) {
-                                                if (currentContext.mounted) {
-                                                  Navigator.pop(currentContext);
-                                                }
-                                              })
-                                              .catchError((error) {
-                                                debugPrint(
-                                                  "❌ Failed to launch checkout URL: $error",
-                                                );
-                                                if (currentContext.mounted) {
-                                                  ScaffoldMessenger.of(
-                                                    currentContext,
-                                                  ).showSnackBar(
-                                                    SnackBar(
-                                                      content: Text(
-                                                        localizations
-                                                            .cta_stripe_error_msg,
-                                                      ),
+                                      if (response.statusCode == 200) {
+                                        final data = jsonDecode(response.body);
+                                        final checkoutUrl = data['url'];
+                                        UrlLauncherHelper.launchWebAppWebsite(
+                                              checkoutUrl,
+                                              currentContext,
+                                            )
+                                            .then((_) {
+                                              if (currentContext.mounted) {
+                                                Navigator.pop(currentContext);
+                                              }
+                                            })
+                                            .catchError((error) {
+                                              debugPrint(
+                                                "❌ Failed to launch checkout URL: $error",
+                                              );
+                                              if (currentContext.mounted) {
+                                                ScaffoldMessenger.of(
+                                                  currentContext,
+                                                ).showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      localizations
+                                                          .cta_stripe_error_msg,
                                                     ),
-                                                  );
-                                                }
-                                              });
-                                        } else {
-                                          ScaffoldMessenger.of(
-                                            currentContext,
-                                          ).showSnackBar(
-                                            SnackBar(
-                                              content: Text(
-                                                '${localizations.cta_stripe_session_error_msg_one} ${response.body}, ${localizations.cta_stripe_session_error_msg_two} ${response.statusCode}',
-                                              ),
-                                            ),
-                                          );
-                                        }
-                                      } catch (e) {
-                                        if (!currentContext.mounted) return;
+                                                  ),
+                                                );
+                                              }
+                                            });
+                                      } else {
                                         ScaffoldMessenger.of(
                                           currentContext,
                                         ).showSnackBar(
                                           SnackBar(
-                                            content: Text('Stripe error: $e'),
+                                            content: Text(
+                                              '${localizations.cta_stripe_session_error_msg_one} ${response.body}, ${localizations.cta_stripe_session_error_msg_two} ${response.statusCode}',
+                                            ),
                                           ),
                                         );
-                                      } finally {
-                                        setState(() {
-                                          _isProcessing = false;
-                                        });
                                       }
-                                    },
-                            child:
-                                _isProcessing
-                                    ? SizedBox(
-                                      width: 24,
-                                      height: 24,
-                                      child: CircularProgressIndicator(
-                                        color:
-                                            Theme.of(
-                                              context,
-                                            ).colorScheme.surface,
-                                        strokeWidth: 2.0,
-                                      ),
-                                    )
-                                    : Text(
-                                      localizations.cta_subscribe_now,
-                                      style: TextStyle(
-                                        fontSize:
-                                            deviceType == DeviceType.mobile
-                                                ? 16
-                                                : deviceType ==
-                                                    DeviceType.tablet
-                                                ? 18
-                                                : 20,
-                                        color:
-                                            Theme.of(
-                                              context,
-                                            ).colorScheme.surface,
-                                      ),
+                                    } catch (e) {
+                                      if (!currentContext.mounted) return;
+                                      ScaffoldMessenger.of(
+                                        currentContext,
+                                      ).showSnackBar(
+                                        SnackBar(
+                                          content: Text('Stripe error: $e'),
+                                        ),
+                                      );
+                                    } finally {
+                                      setState(() {
+                                        _isProcessing = false;
+                                      });
+                                    }
+                                  },
+                          child:
+                              _isProcessing
+                                  ? SizedBox(
+                                    width: 24,
+                                    height: 24,
+                                    child: CircularProgressIndicator(
+                                      color:
+                                          Theme.of(context).colorScheme.surface,
+                                      strokeWidth: 2.0,
                                     ),
-                          ),
+                                  )
+                                  : Text(
+                                    localizations.cta_subscribe_now,
+                                    style: TextStyle(
+                                      fontSize:
+                                          deviceType == DeviceType.mobile
+                                              ? 16
+                                              : deviceType == DeviceType.tablet
+                                              ? 18
+                                              : 20,
+                                      color:
+                                          Theme.of(context).colorScheme.surface,
+                                    ),
+                                  ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ],

@@ -2131,5 +2131,17 @@
     "@sign_up_email_mismatch": {
         "description": "Mensaje de error cuando el correo electrónico y su confirmación no coinciden.",
         "type": "text"
+    },
+    "verify_email_title": "Verifica tu correo electrónico",
+    "@verify_email_title": {
+        "description": "Título de la pantalla de verificación de correo electrónico"
+    },
+    "verify_email_message": "Se ha enviado un enlace de verificación a tu correo electrónico.",
+    "@verify_email_message": {
+        "description": "Mensaje mostrado tras enviar el correo electrónico de verificación"
+    },
+    "verify_email_back_to_login": "Volver al inicio de sesión",
+    "@verify_email_back_to_login": {
+        "description": "Etiqueta del botón para volver al inicio de sesión"
     }
 }
