@@ -2147,5 +2147,49 @@
     "auth_gate_msg": "Comprobando el estado de autenticación...",
     "@auth_gate_msg": {
         "description": "Mensaje mostrado mientras se espera el estado de autenticación"
+    },
+    "dashboard_law_firm": "Despacho de abogados: {lawFirmName}",
+    "@dashboard_law_firm": {
+        "description": "Label showing the user's law firm name on dashboard",
+        "placeholders": {
+            "lawFirmName": {}
+        },
+        "type": "text"
+    },
+    "dashboard_contact_name": "Nombre de contacto: {contactName}",
+    "@dashboard_contact_name": {
+        "description": "Label showing the user's contact name on dashboard",
+        "placeholders": {
+            "contactName": {}
+        },
+        "type": "text"
+    },
+    "dashboard_subscription_active": "Suscripción: Activa",
+    "@dashboard_subscription_active": {
+        "description": "Text showing when the user's subscription is active",
+        "type": "text"
+    },
+    "dashboard_subscription_inactive": "Suscripción: Inactiva",
+    "@dashboard_subscription_inactive": {
+        "description": "Text showing when the user's subscription is inactive",
+        "type": "text"
+    },
+    "dashboard_manage_billing": "Gestionar facturación",
+    "@dashboard_manage_billing": {
+        "description": "Button label for managing Stripe billing portal",
+        "type": "text"
+    },
+    "dashboard_billing_portal_error": "Error al crear la sesión del portal de facturación",
+    "@dashboard_billing_portal_error": {
+        "description": "Snackbar message when there is an error creating billing portal session",
+        "type": "text"
+    },
+    "dashboard_general_error": "Error: {errorMessage}",
+    "@dashboard_general_error": {
+        "description": "Snackbar message showing a general error with a dynamic error message",
+        "placeholders": {
+            "errorMessage": {}
+        },
+        "type": "text"
     }
 }

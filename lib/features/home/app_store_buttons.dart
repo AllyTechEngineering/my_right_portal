@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_right_portal/widgets/custom_text_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:js' as js;
+import 'dart:js_interop';
 
-/*
-'dart:js' is deprecated and shouldn't be used. Use dart:js_interop instead.
-Try replacing the use of the deprecated member with the replacement.
-*/
+@JS('window.open')
+external void openWindow(String url, String target);
+
+void openLink(String url) {
+  openWindow(url, '_blank');
+}
+
 class AppStoreButtons extends StatelessWidget {
   final double screenHeight;
   final double screenWidth;
@@ -104,9 +107,7 @@ class _StoreButton extends StatelessWidget {
           final uri = Uri.parse(url);
           if (kIsWeb) {
             debugPrint('Launching URL: $url');
-            // launchUrl(uri); // Web: opens in new tab
-            // launch(url, isNewTab: true); // Web: opens in new tab
-            js.context.callMethod('open', [url, '_blank']);
+            openLink(url);
           } else {
             debugPrint('Launching URL: $url');
             launchUrl(

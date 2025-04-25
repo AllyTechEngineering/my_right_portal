@@ -5,6 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart' show kDebugMode, kIsWeb;
 import 'package:flutter/material.dart';
+//import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:my_right_portal/bloc/language_cubit/language_cubit.dart';
@@ -48,7 +49,7 @@ void main() async {
       }
     }
   }
- // debugPaintSizeEnabled = true;
+// debugPaintSizeEnabled = true;
   runApp(const MyApp());
 }
 
