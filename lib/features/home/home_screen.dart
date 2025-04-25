@@ -62,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         getToolBarHeight: getToolBarHeight,
       ),
       drawer: const CustomDrawerWidget(),
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: Stack(
           children: [

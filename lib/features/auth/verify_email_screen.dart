@@ -18,6 +18,7 @@ class VerifyEmailScreen extends StatelessWidget {
         title: localizations.my_right_to_stay_title,
         getToolBarHeight: getToolBarHeight,
       ),
+      resizeToAvoidBottomInset: true,
       body: Stack(
         children: [
           Positioned.fill(

@@ -39,289 +39,342 @@ class _SubscriptionPromptScreenState extends State<SubscriptionPromptScreen> {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
-
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final localizations = AppLocalizations.of(context)!;
-        final deviceType = _getDeviceType(constraints.maxWidth);
-        final screenHeight = MediaQuery.of(context).size.height;
-        final screenWidth = constraints.maxWidth;
-        final getToolBarHeight = screenHeight * Constants.kToolbarHeight;
-        final horizontalPadding = deviceType == DeviceType.mobile ? 16.0 : 32.0;
-        return Scaffold(
-          backgroundColor: Theme.of(context).colorScheme.surface,
-          appBar: CustomAppBarWidget(
-            title: localizations.my_right_to_stay_title,
-            getToolBarHeight: getToolBarHeight,
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: horizontalPadding,
-                    vertical: screenHeight * 0.04,
+    final screenHeight = MediaQuery.of(context).size.height;
+    final getToolBarHeight = screenHeight * Constants.kToolbarHeight;
+    final localizations = AppLocalizations.of(context)!;
+    return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      appBar: CustomAppBarWidget(
+        title: localizations.my_right_to_stay_title,
+        getToolBarHeight: getToolBarHeight,
+      ),
+      resizeToAvoidBottomInset: true,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image.asset(
+                'assets/images/mrts_wagons_2.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+            LayoutBuilder(
+              builder: (context, constraints) {
+                final deviceType = _getDeviceType(constraints.maxWidth);
+                final screenWidth = constraints.maxWidth;
+                final horizontalPadding =
+                    deviceType == DeviceType.mobile ? 16.0 : 32.0;
+                final padding = deviceType == DeviceType.mobile ? 16.0 : 32.0;
+                return SingleChildScrollView(
+                  padding: EdgeInsets.only(
+                    left: padding,
+                    right: padding,
+                    bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.primaryContainer.withAlpha(100),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CustomTextWidget(
-                        localizations.cta_title_subscription,
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: Theme.of(context).colorScheme.onSurface,
-                          fontSize:
-                              deviceType == DeviceType.mobile
-                                  ? 20
-                                  : deviceType == DeviceType.tablet
-                                  ? 24
-                                  : 28,
-                        ),
-                      ),
-                      SizedBox(height: screenHeight * 0.01),
                       Container(
-                        padding: EdgeInsets.only(
-                          left: screenWidth * 0.08,
-                          right: screenWidth * 0.05,
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: horizontalPadding,
+                          vertical: screenHeight * 0.04,
                         ),
+                        color: Theme.of(
+                          context,
+                        ).colorScheme.primaryContainer.withAlpha(100),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             CustomTextWidget(
-                              localizations.cta_roi_high_value,
-                              textAlign: TextAlign.start,
+                              localizations.cta_title_subscription,
+                              textAlign: TextAlign.center,
                               style: Theme.of(
                                 context,
-                              ).textTheme.labelLarge?.copyWith(
+                              ).textTheme.titleLarge?.copyWith(
                                 color: Theme.of(context).colorScheme.onSurface,
                                 fontSize:
                                     deviceType == DeviceType.mobile
-                                        ? 16
+                                        ? 20
                                         : deviceType == DeviceType.tablet
-                                        ? 18
-                                        : 20,
+                                        ? 24
+                                        : 28,
                               ),
                             ),
                             SizedBox(height: screenHeight * 0.01),
-                            CustomTextWidget(
-                              localizations.cta_emotional_help_families,
-                              textAlign: TextAlign.start,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.labelLarge?.copyWith(
-                                color: Theme.of(context).colorScheme.onSurface,
-                                fontSize:
-                                    deviceType == DeviceType.mobile
-                                        ? 16
-                                        : deviceType == DeviceType.tablet
-                                        ? 18
-                                        : 20,
+                            Container(
+                              padding: EdgeInsets.only(
+                                left: screenWidth * 0.08,
+                                right: screenWidth * 0.05,
                               ),
-                            ),
-                            SizedBox(height: screenHeight * 0.01),
-                            CustomTextWidget(
-                              localizations.cta_daily_clients_ready,
-                              textAlign: TextAlign.start,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.labelLarge?.copyWith(
-                                color: Theme.of(context).colorScheme.onSurface,
-                                fontSize:
-                                    deviceType == DeviceType.mobile
-                                        ? 16
-                                        : deviceType == DeviceType.tablet
-                                        ? 18
-                                        : 20,
-                              ),
-                            ),
-                            SizedBox(height: screenHeight * 0.01),
-                            CustomTextWidget(
-                              localizations.cta_visible_when_needed,
-                              textAlign: TextAlign.start,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.labelLarge?.copyWith(
-                                color: Theme.of(context).colorScheme.onSurface,
-                                fontSize:
-                                    deviceType == DeviceType.mobile
-                                        ? 16
-                                        : deviceType == DeviceType.tablet
-                                        ? 18
-                                        : 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                SizedBox(height: screenHeight * 0.02),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      CustomTextWidget(
-                        localizations.cta_message,
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                          color: Theme.of(context).colorScheme.onSurface,
-                          fontSize:
-                              deviceType == DeviceType.mobile
-                                  ? 16
-                                  : deviceType == DeviceType.tablet
-                                  ? 18
-                                  : 20,
-                        ),
-                      ),
-                      SizedBox(height: screenHeight * 0.02),
-                      FractionallySizedBox(
-                        widthFactor:
-                            deviceType == DeviceType.mobile
-                                ? 0.9
-                                : deviceType == DeviceType.tablet
-                                ? 0.6
-                                : 0.4,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            elevation: 3.0,
-                            shadowColor:
-                                Theme.of(context).colorScheme.onPrimary,
-                            backgroundColor:
-                                Theme.of(
-                                  context,
-                                ).colorScheme.onPrimaryFixedVariant,
-                            padding: EdgeInsets.symmetric(
-                              vertical: screenHeight * 0.02,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(16.0),
-                              side: BorderSide.none,
-                            ),
-                          ),
-                          onPressed:
-                              _isProcessing
-                                  ? null
-                                  : () async {
-                                    setState(() {
-                                      _isProcessing = true;
-                                    });
-                                    final currentContext = context;
-                                    final email = user?.email;
-                                    final uid = user?.uid;
-                                    // debugPrint('Email: $email');
-                                    // debugPrint('UID: $uid');
-                                    try {
-                                      final response = await http.post(
-                                        Uri.parse(getStripeCheckoutUrl()),
-                                        headers: {
-                                          "Content-Type": "application/json",
-                                        },
-                                        body: json.encode({
-                                          "email": email,
-                                          "client_reference_id": uid,
-                                        }),
-                                      );
-
-                                      if (!currentContext.mounted) return;
-
-                                      if (response.statusCode == 200) {
-                                        final data = jsonDecode(response.body);
-                                        final checkoutUrl = data['url'];
-                                        UrlLauncherHelper.launchWebAppWebsite(
-                                              checkoutUrl,
-                                              currentContext,
-                                            )
-                                            .then((_) {
-                                              if (currentContext.mounted) {
-                                                Navigator.pop(currentContext);
-                                              }
-                                            })
-                                            .catchError((error) {
-                                              debugPrint(
-                                                "❌ Failed to launch checkout URL: $error",
-                                              );
-                                              if (currentContext.mounted) {
-                                                ScaffoldMessenger.of(
-                                                  currentContext,
-                                                ).showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                      localizations
-                                                          .cta_stripe_error_msg,
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                            });
-                                      } else {
-                                        ScaffoldMessenger.of(
-                                          currentContext,
-                                        ).showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              '${localizations.cta_stripe_session_error_msg_one} ${response.body}, ${localizations.cta_stripe_session_error_msg_two} ${response.statusCode}',
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                    } catch (e) {
-                                      if (!currentContext.mounted) return;
-                                      ScaffoldMessenger.of(
-                                        currentContext,
-                                      ).showSnackBar(
-                                        SnackBar(
-                                          content: Text('Stripe error: $e'),
-                                        ),
-                                      );
-                                    } finally {
-                                      setState(() {
-                                        _isProcessing = false;
-                                      });
-                                    }
-                                  },
-                          child:
-                              _isProcessing
-                                  ? SizedBox(
-                                    width: 24,
-                                    height: 24,
-                                    child: CircularProgressIndicator(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  CustomTextWidget(
+                                    localizations.cta_roi_high_value,
+                                    textAlign: TextAlign.start,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.labelLarge?.copyWith(
                                       color:
-                                          Theme.of(context).colorScheme.surface,
-                                      strokeWidth: 2.0,
-                                    ),
-                                  )
-                                  : Text(
-                                    localizations.cta_subscribe_now,
-                                    style: TextStyle(
+                                          Theme.of(
+                                            context,
+                                          ).colorScheme.onSurface,
                                       fontSize:
                                           deviceType == DeviceType.mobile
                                               ? 16
                                               : deviceType == DeviceType.tablet
                                               ? 18
                                               : 20,
-                                      color:
-                                          Theme.of(context).colorScheme.surface,
                                     ),
                                   ),
+                                  SizedBox(height: screenHeight * 0.01),
+                                  CustomTextWidget(
+                                    localizations.cta_emotional_help_families,
+                                    textAlign: TextAlign.start,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.labelLarge?.copyWith(
+                                      color:
+                                          Theme.of(
+                                            context,
+                                          ).colorScheme.onSurface,
+                                      fontSize:
+                                          deviceType == DeviceType.mobile
+                                              ? 16
+                                              : deviceType == DeviceType.tablet
+                                              ? 18
+                                              : 20,
+                                    ),
+                                  ),
+                                  SizedBox(height: screenHeight * 0.01),
+                                  CustomTextWidget(
+                                    localizations.cta_daily_clients_ready,
+                                    textAlign: TextAlign.start,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.labelLarge?.copyWith(
+                                      color:
+                                          Theme.of(
+                                            context,
+                                          ).colorScheme.onSurface,
+                                      fontSize:
+                                          deviceType == DeviceType.mobile
+                                              ? 16
+                                              : deviceType == DeviceType.tablet
+                                              ? 18
+                                              : 20,
+                                    ),
+                                  ),
+                                  SizedBox(height: screenHeight * 0.01),
+                                  CustomTextWidget(
+                                    localizations.cta_visible_when_needed,
+                                    textAlign: TextAlign.start,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.labelLarge?.copyWith(
+                                      color:
+                                          Theme.of(
+                                            context,
+                                          ).colorScheme.onSurface,
+                                      fontSize:
+                                          deviceType == DeviceType.mobile
+                                              ? 16
+                                              : deviceType == DeviceType.tablet
+                                              ? 18
+                                              : 20,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: screenHeight * 0.02),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            CustomTextWidget(
+                              localizations.cta_message,
+                              textAlign: TextAlign.center,
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleLarge?.copyWith(
+                                color: Theme.of(context).colorScheme.onSurface,
+                                fontSize:
+                                    deviceType == DeviceType.mobile
+                                        ? 18
+                                        : deviceType == DeviceType.tablet
+                                        ? 20
+                                        : 26,
+                              ),
+                            ),
+                            SizedBox(height: screenHeight * 0.02),
+                            FractionallySizedBox(
+                              widthFactor:
+                                  deviceType == DeviceType.mobile
+                                      ? 0.9
+                                      : deviceType == DeviceType.tablet
+                                      ? 0.6
+                                      : 0.4,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 3.0,
+                                  shadowColor:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                  backgroundColor:
+                                      Theme.of(
+                                        context,
+                                      ).colorScheme.onPrimaryFixedVariant,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: screenHeight * 0.02,
+                                  ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(16.0),
+                                    side: BorderSide.none,
+                                  ),
+                                ),
+                                onPressed:
+                                    _isProcessing
+                                        ? null
+                                        : () async {
+                                          setState(() {
+                                            _isProcessing = true;
+                                          });
+                                          final currentContext = context;
+                                          final email = user?.email;
+                                          final uid = user?.uid;
+                                          // debugPrint('Email: $email');
+                                          // debugPrint('UID: $uid');
+                                          try {
+                                            final response = await http.post(
+                                              Uri.parse(getStripeCheckoutUrl()),
+                                              headers: {
+                                                "Content-Type":
+                                                    "application/json",
+                                              },
+                                              body: json.encode({
+                                                "email": email,
+                                                "client_reference_id": uid,
+                                              }),
+                                            );
+
+                                            if (!currentContext.mounted) return;
+
+                                            if (response.statusCode == 200) {
+                                              final data = jsonDecode(
+                                                response.body,
+                                              );
+                                              final checkoutUrl = data['url'];
+                                              UrlLauncherHelper.launchWebAppWebsite(
+                                                    checkoutUrl,
+                                                    currentContext,
+                                                  )
+                                                  .then((_) {
+                                                    if (currentContext
+                                                        .mounted) {
+                                                      Navigator.pop(
+                                                        currentContext,
+                                                      );
+                                                    }
+                                                  })
+                                                  .catchError((error) {
+                                                    debugPrint(
+                                                      "❌ Failed to launch checkout URL: $error",
+                                                    );
+                                                    if (currentContext
+                                                        .mounted) {
+                                                      ScaffoldMessenger.of(
+                                                        currentContext,
+                                                      ).showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            localizations
+                                                                .cta_stripe_error_msg,
+                                                          ),
+                                                        ),
+                                                      );
+                                                    }
+                                                  });
+                                            } else {
+                                              ScaffoldMessenger.of(
+                                                currentContext,
+                                              ).showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    '${localizations.cta_stripe_session_error_msg_one} ${response.body}, ${localizations.cta_stripe_session_error_msg_two} ${response.statusCode}',
+                                                  ),
+                                                ),
+                                              );
+                                            }
+                                          } catch (e) {
+                                            if (!currentContext.mounted) return;
+                                            ScaffoldMessenger.of(
+                                              currentContext,
+                                            ).showSnackBar(
+                                              SnackBar(
+                                                content: Text(
+                                                  'Stripe error: $e',
+                                                ),
+                                              ),
+                                            );
+                                          } finally {
+                                            setState(() {
+                                              _isProcessing = false;
+                                            });
+                                          }
+                                        },
+                                child:
+                                    _isProcessing
+                                        ? SizedBox(
+                                          width: 24,
+                                          height: 24,
+                                          child: CircularProgressIndicator(
+                                            color:
+                                                Theme.of(
+                                                  context,
+                                                ).colorScheme.surface,
+                                            strokeWidth: 2.0,
+                                          ),
+                                        )
+                                        : Text(
+                                          localizations.cta_subscribe_now,
+                                          style: TextStyle(
+                                            fontSize:
+                                                deviceType == DeviceType.mobile
+                                                    ? 16
+                                                    : deviceType ==
+                                                        DeviceType.tablet
+                                                    ? 18
+                                                    : 20,
+                                            color:
+                                                Theme.of(
+                                                  context,
+                                                ).colorScheme.surface,
+                                          ),
+                                        ),
+                              ),
+                            ),
+                            Container(
+                              color: Colors.transparent,
+                              height: screenHeight * .50,
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
-                ),
-              ],
+                );
+              },
             ),
-          ),
-        );
-      },
+          ],
+        ),
+      ),
     );
   }
 }
