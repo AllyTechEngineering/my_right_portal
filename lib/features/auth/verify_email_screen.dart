@@ -4,9 +4,24 @@ import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 import 'package:my_right_portal/widgets/custom_text_widget.dart';
 
-class VerifyEmailScreen extends StatelessWidget {
+class VerifyEmailScreen extends StatefulWidget {
   const VerifyEmailScreen({super.key});
 
+  @override
+  State<VerifyEmailScreen> createState() => _VerifyEmailScreenState();
+}
+
+class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
+    @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(
+        const AssetImage('assets/images/mrts_wagons.png'),
+        context,
+      );
+    });
+  }
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;

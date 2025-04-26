@@ -75,7 +75,16 @@ class _SignupScreenState extends State<SignupScreen> {
       setState(() => _isLoading = false);
     }
   }
-
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(
+        const AssetImage('assets/images/mrts_liberty.png'),
+        context,
+      );
+    });
+  }
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;

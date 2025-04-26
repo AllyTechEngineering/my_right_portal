@@ -88,6 +88,17 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(
+        const AssetImage('assets/images/mrts_liberty.png'),
+        context,
+      );
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
     final screenHeight = MediaQuery.of(context).size.height;

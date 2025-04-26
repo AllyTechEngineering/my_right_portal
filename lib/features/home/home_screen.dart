@@ -41,6 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(const AssetImage('assets/images/mrts_boat.png'), context);
+    });
     _getVersion();
   }
 

@@ -35,6 +35,13 @@ class _SubscriptionPromptScreenState extends State<SubscriptionPromptScreen> {
     if (width >= 600) return DeviceType.tablet;
     return DeviceType.mobile;
   }
+    @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      precacheImage(const AssetImage('assets/images/mrts_wagons_2.png'), context);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
