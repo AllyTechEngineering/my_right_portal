@@ -2191,5 +2191,48 @@
             "errorMessage": {}
         },
         "type": "text"
+    },
+    "data_error_failed_to_read_image": "❌ Failed to read selected image.",
+    "@data_error_failed_to_read_image": {
+        "description": "Error message shown when the app cannot read the selected image file.",
+        "type": "text"
+    },
+    "data_error_unsupported_image_format": "❌ Unsupported image format.",
+    "@data_error_unsupported_image_format": {
+        "description": "Error message shown when the uploaded image format is not supported (e.g., not JPG, PNG, WEBP).",
+        "type": "text"
+    },
+    "data_success_image_uploaded": "✅ Image uploaded successfully.",
+    "@data_success_image_uploaded": {
+        "description": "Success message shown when the image is uploaded to Firebase Storage successfully.",
+        "type": "text"
+    },
+    "data_error_failed_to_upload_image": "❌ Failed to upload image.",
+    "@data_error_failed_to_upload_image": {
+        "description": "Error message shown when the image upload to Firebase Storage fails.",
+        "type": "text"
+    },
+    "data_success_data_saved": "Data saved successfully.",
+    "@data_success_data_saved": {
+        "description": "Success message shown when form data is saved to Firestore successfully.",
+        "type": "text"
+    },
+    "data_error_general_with_variable": "Error: {errorMessage}",
+    "@data_error_general_with_variable": {
+        "description": "Generic error message when saving data fails, where {errorMessage} is replaced with the specific error.",
+        "placeholders": {
+            "errorMessage": {}
+        },
+        "type": "text"
+    },
+    "data_error_user_not_logged_in": "User not logged in.",
+    "@data_error_user_not_logged_in": {
+        "description": "Error message shown when there is no authenticated user trying to save form data.",
+        "type": "text"
+    },
+    "data_button_back_to_dashboard": "Back to Dashboard",
+    "@data_button_back_to_dashboard": {
+        "description": "Button label for returning to the Lawyer Dashboard screen.",
+        "type": "text"
     }
 }

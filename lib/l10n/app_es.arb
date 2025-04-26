@@ -2191,5 +2191,48 @@
             "errorMessage": {}
         },
         "type": "text"
+    },
+    "data_error_failed_to_read_image": "❌ No se pudo leer la imagen seleccionada.",
+    "@data_error_failed_to_read_image": {
+        "description": "Mensaje de error que se muestra cuando la aplicación no puede leer el archivo de imagen seleccionado.",
+        "type": "text"
+    },
+    "data_error_unsupported_image_format": "❌ Formato de imagen no compatible.",
+    "@data_error_unsupported_image_format": {
+        "description": "Mensaje de error que se muestra cuando el formato de la imagen subida no es compatible (por ejemplo, no JPG, PNG, WEBP).",
+        "type": "text"
+    },
+    "data_success_image_uploaded": "✅ Imagen cargada exitosamente.",
+    "@data_success_image_uploaded": {
+        "description": "Mensaje de éxito que se muestra cuando la imagen se sube correctamente a Firebase Storage.",
+        "type": "text"
+    },
+    "data_error_failed_to_upload_image": "❌ Error al cargar la imagen.",
+    "@data_error_failed_to_upload_image": {
+        "description": "Mensaje de error que se muestra cuando falla la carga de la imagen en Firebase Storage.",
+        "type": "text"
+    },
+    "data_success_data_saved": "Datos guardados exitosamente.",
+    "@data_success_data_saved": {
+        "description": "Mensaje de éxito que se muestra cuando los datos del formulario se guardan correctamente en Firestore.",
+        "type": "text"
+    },
+    "data_error_general_with_variable": "Error: {errorMessage}",
+    "@data_error_general_with_variable": {
+        "description": "Mensaje de error genérico cuando falla el guardado de datos, donde {errorMessage} se reemplaza por el error específico.",
+        "placeholders": {
+            "errorMessage": {}
+        },
+        "type": "text"
+    },
+    "data_error_user_not_logged_in": "Usuario no ha iniciado sesión.",
+    "@data_error_user_not_logged_in": {
+        "description": "Mensaje de error que se muestra cuando no hay un usuario autenticado tratando de guardar los datos del formulario.",
+        "type": "text"
+    },
+    "data_button_back_to_dashboard": "Volver al Panel",
+    "@data_button_back_to_dashboard": {
+        "description": "Etiqueta del botón para regresar a la pantalla del Panel del Abogado.",
+        "type": "text"
     }
 }

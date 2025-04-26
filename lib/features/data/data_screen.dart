@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_right_portal/utils/button_styles.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 import 'package:my_right_portal/models/form_fields.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:my_right_portal/widgets/custom_text_widget.dart';
 
 class DataScreen extends StatefulWidget {
   const DataScreen({super.key});
@@ -29,7 +31,7 @@ class _DataScreenState extends State<DataScreen> {
 
   Future<void> _loadData() async {
     final user = FirebaseAuth.instance.currentUser;
-    debugPrint("Trying to write to Firestore as UID: ${user?.uid}");
+    // debugPrint("Trying to write to Firestore as UID: ${user?.uid}");
     if (user != null) {
       final doc =
           await FirebaseFirestore.instance
@@ -172,13 +174,14 @@ class _DataScreenState extends State<DataScreen> {
     );
   }
 
-  Future<void> _pickAndUploadImage() async {
-    debugPrint("🧪 Upload button clicked");
+  Future<void> _pickAndUploadImage(BuildContext context) async {
+    final localizations = AppLocalizations.of(context)!;
+    // debugPrint("🧪 Upload button clicked");
     final user = FirebaseAuth.instance.currentUser;
 
-    debugPrint("Trying to upload image as UID: ${user?.uid}");
+    // debugPrint("Trying to upload image as UID: ${user?.uid}");
     if (user == null) return;
-    debugPrint("User is authenticated: ${user.uid}");
+    // debugPrint("User is authenticated: ${user.uid}");
 
     try {
       final result = await FilePicker.platform.pickFiles(
@@ -186,24 +189,26 @@ class _DataScreenState extends State<DataScreen> {
         allowMultiple: false,
       );
 
-      debugPrint("File picker result: $result");
+      // debugPrint("File picker result: $result");
       if (result != null) {
-        debugPrint("File picker result is not null");
+        // debugPrint("File picker result is not null");
         final file = result.files.single;
-        debugPrint("File path: ${file.path}");
-        debugPrint("File size: ${file.size}");
-        debugPrint("File extension: ${file.extension}");
+        // debugPrint("File path: ${file.path}");
+        // debugPrint("File size: ${file.size}");
+        // debugPrint("File extension: ${file.extension}");
         final fileBytes = file.bytes;
-        debugPrint("File bytes: ${file.bytes}");
+        // debugPrint("File bytes: ${file.bytes}");
         final fileName = file.name;
-        debugPrint("File name: ${file.name}");
+        // debugPrint("File name: ${file.name}");
         final extension = file.extension?.toLowerCase();
-        debugPrint("File extension: $extension");
+        // debugPrint("File extension: $extension");
 
         if (fileBytes == null) {
-          debugPrint("❌ File bytes are null");
+          // debugPrint("❌ File bytes are null");
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('❌ Failed to read selected image.')),
+            SnackBar(
+              content: Text(localizations.data_error_failed_to_read_image),
+            ),
           );
           return;
         }
@@ -211,19 +216,21 @@ class _DataScreenState extends State<DataScreen> {
         if (extension == null ||
             !['jpg', 'jpeg', 'png', 'webp'].contains(extension)) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('❌ Unsupported image format')),
+            SnackBar(
+              content: Text(localizations.data_error_unsupported_image_format),
+            ),
           );
           return;
         }
 
         try {
           final ref = _storage.ref('lawyer_images/${user.uid}/$fileName');
-          debugPrint("Uploading image to: ${ref.fullPath}");
+          // debugPrint("Uploading image to: ${ref.fullPath}");
           final uploadTask = await ref.putData(fileBytes);
-          debugPrint("Upload task completed: ${uploadTask.state}");
+          // debugPrint("Upload task completed: ${uploadTask.state}");
           final url = await uploadTask.ref.getDownloadURL();
-          debugPrint("Download URL: $url");
-          debugPrint('✅ Image uploaded to: $url');
+          // debugPrint("Download URL: $url");
+          // debugPrint('✅ Image uploaded to: $url');
 
           setState(() {
             _formData['image'] = url;
@@ -235,12 +242,14 @@ class _DataScreenState extends State<DataScreen> {
               .set({'image': url}, SetOptions(merge: true));
 
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('✅ Image uploaded successfully.')),
+            SnackBar(content: Text(localizations.data_success_image_uploaded)),
           );
         } catch (e) {
           debugPrint('❌ Error uploading image: $e');
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('❌ Failed to upload image.')),
+            SnackBar(
+              content: Text(localizations.data_error_failed_to_upload_image),
+            ),
           );
         }
       }
@@ -267,7 +276,11 @@ class _DataScreenState extends State<DataScreen> {
           _isLoading
               ? const Center(child: CircularProgressIndicator())
               : Padding(
-                padding: EdgeInsets.all(screenWidth * 0.05),
+                padding: EdgeInsets.only(
+                  left: screenWidth * 0.05,
+                  right: screenWidth * 0.05,
+                  bottom: screenWidth * 0.05,
+                ),
                 child: Form(
                   key: _formKey,
                   child: LayoutBuilder(
@@ -275,279 +288,295 @@ class _DataScreenState extends State<DataScreen> {
                       double screenWidth = constraints.maxWidth;
                       bool isLarge = screenWidth >= 1000;
                       bool isTablet = screenWidth >= 600 && screenWidth < 1000;
-
                       return SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.symmetric(vertical: 12.0),
-                              child: Text(
-                                ('${localizations.service_providers_en}\n${localizations.data_screen_save_warning_title}'),
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              CustomTextWidget(
+                                '${localizations.service_providers_en}\n${localizations.data_screen_save_warning_title}',
+                                textAlign: TextAlign.left,
+                                style: Theme.of(context).textTheme.titleMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold),
                               ),
-                            ),
-                            Wrap(
-                              spacing: 16,
-                              runSpacing: 16,
-                              children:
-                                  getLocalizedDataFields(context)
-                                      .where(
-                                        (f) =>
-                                            f.key.endsWith('En') ||
-                                            f.key == 'streetAddress' ||
-                                            f.key == 'city' ||
-                                            f.key == 'state' ||
-                                            f.key == 'zipCode' ||
-                                            f.key == 'websiteUrl' ||
-                                            f.key == 'emailAddress' ||
-                                            f.key == 'mobilePhoneNumber' ||
-                                            f.key == 'officePhoneNumber' ||
-                                            f.key == 'experience' ||
-                                            f.key == 'image',
-                                      )
-                                      .map(
-                                        (field) => SizedBox(
+                              SizedBox(height: screenHeight * 0.01),
+                              Wrap(
+                                spacing: 16,
+                                runSpacing: 16,
+                                children:
+                                    getLocalizedDataFields(context)
+                                        .where(
+                                          (f) =>
+                                              f.key.endsWith('En') ||
+                                              f.key == 'streetAddress' ||
+                                              f.key == 'city' ||
+                                              f.key == 'state' ||
+                                              f.key == 'zipCode' ||
+                                              f.key == 'websiteUrl' ||
+                                              f.key == 'emailAddress' ||
+                                              f.key == 'mobilePhoneNumber' ||
+                                              f.key == 'officePhoneNumber' ||
+                                              f.key == 'experience' ||
+                                              f.key == 'image',
+                                        )
+                                        .map(
+                                          (field) => SizedBox(
+                                            width:
+                                                isLarge
+                                                    ? 300
+                                                    : isTablet
+                                                    ? 250
+                                                    : double.infinity,
+                                            child: _buildTextField(
+                                              context,
+                                              field.key,
+                                              field.label,
+                                              maxLines:
+                                                  field.key.contains('bio')
+                                                      ? 3
+                                                      : 1,
+                                            ),
+                                          ),
+                                        )
+                                        .toList()
+                                      ..add(
+                                        SizedBox(
                                           width:
                                               isLarge
                                                   ? 300
                                                   : isTablet
                                                   ? 250
                                                   : double.infinity,
-                                          child: _buildTextField(
-                                            context,
-                                            field.key,
-                                            field.label,
-                                            maxLines:
-                                                field.key.contains('bio')
-                                                    ? 3
-                                                    : 1,
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              ElevatedButton.icon(
+                                                style:
+                                                    ButtonStyles.primaryElevatedButtonStyle(
+                                                      screenHeight:
+                                                          screenHeight,
+                                                      screenWidth: screenWidth,
+                                                      context: context,
+                                                    ),
+                                                onPressed:
+                                                    () => _pickAndUploadImage(
+                                                      context,
+                                                    ),
+                                                icon: Icon(
+                                                  Icons.image,
+                                                  color:
+                                                      Theme.of(
+                                                        context,
+                                                      ).colorScheme.surface,
+                                                ),
+                                                label: Text(
+                                                  localizations
+                                                      .data_entry_upload_image,
+                                                  style: Theme.of(context)
+                                                      .textTheme
+                                                      .titleMedium
+                                                      ?.copyWith(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            Theme.of(context)
+                                                                .colorScheme
+                                                                .surface,
+                                                      ),
+                                                ),
+                                              ),
+                                              if (_formData['image'] != null)
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                        top: 8.0,
+                                                      ),
+                                                  child: Image.network(
+                                                    _formData['image'],
+                                                    height: 120,
+                                                    fit: BoxFit.contain,
+                                                  ),
+                                                ),
+                                            ],
                                           ),
                                         ),
                                       )
-                                      .toList()
-                                    ..add(
-                                      SizedBox(
-                                        width:
-                                            isLarge
-                                                ? 300
-                                                : isTablet
-                                                ? 250
-                                                : double.infinity,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            ElevatedButton.icon(
-                                              onPressed: _pickAndUploadImage,
-                                              icon: const Icon(Icons.image),
-                                              label: Text(
+                                      ..add(
+                                        SizedBox(
+                                          width:
+                                              isLarge
+                                                  ? 300
+                                                  : isTablet
+                                                  ? 250
+                                                  : double.infinity,
+                                          child: SwitchListTile(
+                                            title: Text(
+                                              localizations
+                                                  .data_entry_video_con,
+                                            ),
+                                            value:
+                                                _formData['videoConsultation'] ??
+                                                false,
+                                            onChanged: (bool value) {
+                                              setState(() {
+                                                _formData['videoConsultation'] =
+                                                    value;
+                                              });
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                              ),
+                              CustomTextWidget(
+                                '${localizations.service_providers_es}\n${localizations.data_screen_save_warning_title}',
+                                textAlign: TextAlign.left,
+                                style: Theme.of(context).textTheme.titleMedium
+                                    ?.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: screenHeight * 0.01),
+                              Wrap(
+                                spacing: 16,
+                                runSpacing: 16,
+                                children:
+                                    getLocalizedDataFields(context)
+                                        .where((f) => f.key.endsWith('Es'))
+                                        .map(
+                                          (field) => SizedBox(
+                                            width:
+                                                isLarge
+                                                    ? 300
+                                                    : isTablet
+                                                    ? 250
+                                                    : double.infinity,
+                                            child: _buildTextField(
+                                              context,
+                                              field.key,
+                                              field.label,
+                                              maxLines:
+                                                  field.key.contains('bio')
+                                                      ? 3
+                                                      : 1,
+                                            ),
+                                          ),
+                                        )
+                                        .toList(),
+                              ),
+                              const SizedBox(height: 24),
+                              Center(
+                                child: ElevatedButton(
+                                  style:
+                                      ButtonStyles.primaryElevatedButtonStyle(
+                                        screenHeight: screenHeight,
+                                        screenWidth: screenWidth,
+                                        context: context,
+                                      ),
+                                  onPressed: () async {
+                                    if (_formKey.currentState!.validate()) {
+                                      _formKey.currentState!.save();
+                                      // debugPrint('Form Data: $_formData');
+                                      final user =
+                                          FirebaseAuth.instance.currentUser;
+                                      if (user != null) {
+                                        final uid = user.uid;
+                                        try {
+                                          await FirebaseFirestore.instance
+                                              .collection('lawyers')
+                                              .doc(uid)
+                                              .set(
+                                                _formData,
+                                                SetOptions(merge: true),
+                                              );
+                                          // debugPrint(
+                                          //   '✅ Form data saved successfully for UID: $uid',
+                                          // );
+                                          if (!mounted) return;
+                                          ScaffoldMessenger.of(
+                                            context,
+                                          ).showSnackBar(
+                                            SnackBar(
+                                              content: Text(
                                                 localizations
-                                                    .data_entry_upload_image,
+                                                    .data_success_data_saved,
                                               ),
                                             ),
-                                            if (_formData['image'] != null)
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                  top: 8.0,
-                                                ),
-                                                child: Image.network(
-                                                  _formData['image'],
-                                                  height: 120,
-                                                  fit: BoxFit.contain,
-                                                ),
-                                              ),
-                                          ],
-                                        ),
-                                      ),
-                                    )
-                                    ..add(
-                                      SizedBox(
-                                        width:
-                                            isLarge
-                                                ? 300
-                                                : isTablet
-                                                ? 250
-                                                : double.infinity,
-                                        child: SwitchListTile(
-                                          title: Text(
-                                            localizations.data_entry_video_con,
-                                          ),
-                                          value:
-                                              _formData['videoConsultation'] ??
-                                              false,
-                                          onChanged: (bool value) {
-                                            setState(() {
-                                              _formData['videoConsultation'] =
-                                                  value;
-                                            });
-                                          },
-                                        ),
-                                      ),
-                                    ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(vertical: 12.0),
-                              child: Text(
-                                ('${localizations.service_providers_es}\n${localizations.data_screen_save_warning_title}'),
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            Wrap(
-                              spacing: 16,
-                              runSpacing: 16,
-                              children:
-                                  getLocalizedDataFields(context)
-                                      .where((f) => f.key.endsWith('Es'))
-                                      .map(
-                                        (field) => SizedBox(
-                                          width:
-                                              isLarge
-                                                  ? 300
-                                                  : isTablet
-                                                  ? 250
-                                                  : double.infinity,
-                                          child: _buildTextField(
+                                          );
+                                        } catch (e) {
+                                          debugPrint(
+                                            '❌ Failed to save data: $e',
+                                          );
+                                          if (!mounted) return;
+                                          ScaffoldMessenger.of(
                                             context,
-                                            field.key,
-                                            field.label,
-                                            maxLines:
-                                                field.key.contains('bio')
-                                                    ? 3
-                                                    : 1,
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                            ),
-                            const SizedBox(height: 24),
-                            Center(
-                              child: ElevatedButton(
-                                onPressed: () async {
-                                  if (_formKey.currentState!.validate()) {
-                                    _formKey.currentState!.save();
-                                    debugPrint('Form Data: $_formData');
-                                    final user =
-                                        FirebaseAuth.instance.currentUser;
-                                    if (user != null) {
-                                      final uid = user.uid;
-                                      try {
-                                        await FirebaseFirestore.instance
-                                            .collection('lawyers')
-                                            .doc(uid)
-                                            .set(
-                                              _formData,
-                                              SetOptions(merge: true),
-                                            );
-                                        debugPrint(
-                                          '✅ Form data saved successfully for UID: $uid',
-                                        );
+                                          ).showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                localizations
+                                                    .data_error_general_with_variable(
+                                                      e.toString(),
+                                                    ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                      } else {
+                                        debugPrint('❌ No authenticated user.');
                                         if (!mounted) return;
                                         ScaffoldMessenger.of(
                                           context,
                                         ).showSnackBar(
-                                          const SnackBar(
+                                          SnackBar(
                                             content: Text(
-                                              'Data saved successfully.',
+                                              localizations
+                                                  .data_error_user_not_logged_in,
                                             ),
                                           ),
-                                        );
-                                      } catch (e) {
-                                        debugPrint('❌ Failed to save data: $e');
-                                        if (!mounted) return;
-                                        ScaffoldMessenger.of(
-                                          context,
-                                        ).showSnackBar(
-                                          SnackBar(content: Text('Error: $e')),
                                         );
                                       }
-                                    } else {
-                                      debugPrint('❌ No authenticated user.');
-                                      if (!mounted) return;
-                                      ScaffoldMessenger.of(
-                                        context,
-                                      ).showSnackBar(
-                                        const SnackBar(
-                                          content: Text('User not logged in.'),
-                                        ),
-                                      );
                                     }
-                                  }
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 3.0,
-                                  shadowColor:
-                                      Theme.of(context).colorScheme.onPrimary,
-                                  backgroundColor:
-                                      Theme.of(
-                                        context,
-                                      ).colorScheme.onPrimaryFixedVariant,
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: screenHeight * 0.02,
-                                    horizontal: screenWidth * 0.1,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    side: BorderSide.none,
-                                  ),
-                                ),
-                                child: Text(
-                                  localizations.edit_emergency_contact_add,
-                                  style: Theme.of(
-                                    context,
-                                  ).textTheme.titleMedium!.copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.surface,
+                                  },
+                                  child: Text(
+                                    localizations.edit_emergency_contact_add,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleMedium!.copyWith(
+                                      color:
+                                          Theme.of(context).colorScheme.surface,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                            SizedBox(height: screenHeight * 0.02),
-                            Center(
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pushNamedAndRemoveUntil(
-                                    context,
-                                    '/lawyer-dashboard',
-                                    (Route<dynamic> route) =>
-                                        false, // removes everything before
-                                  );
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  elevation: 3.0,
-                                  shadowColor:
-                                      Theme.of(context).colorScheme.onPrimary,
-                                  backgroundColor:
-                                      Theme.of(
-                                        context,
-                                      ).colorScheme.onPrimaryFixedVariant,
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: screenHeight * 0.02,
-                                    horizontal: screenWidth * 0.1,
-                                  ),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    side: BorderSide.none,
-                                  ),
-                                ),
-                                child: Text(
-                                  'Back to Dashboard',
-                                  style: Theme.of(
-                                    context,
-                                  ).textTheme.titleMedium!.copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.surface,
+                              SizedBox(height: screenHeight * 0.02),
+                              Center(
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    Navigator.pushNamedAndRemoveUntil(
+                                      context,
+                                      '/lawyer-dashboard',
+                                      (Route<dynamic> route) =>
+                                          false, // removes everything before
+                                    );
+                                  },
+                                  style:
+                                      ButtonStyles.primaryElevatedButtonStyle(
+                                        screenHeight: screenHeight,
+                                        screenWidth: screenWidth,
+                                        context: context,
+                                      ),
+                                  child: Text(
+                                    localizations.data_button_back_to_dashboard,
+                                    style: Theme.of(
+                                      context,
+                                    ).textTheme.titleMedium!.copyWith(
+                                      color:
+                                          Theme.of(context).colorScheme.surface,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       );
                     },
