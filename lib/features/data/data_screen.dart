@@ -9,7 +9,9 @@ import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 import 'package:my_right_portal/models/form_fields.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:my_right_portal/widgets/custom_snack_bar.dart';
 import 'package:my_right_portal/widgets/custom_text_widget.dart';
+import 'package:my_right_portal/widgets/loading_action_button.dart';
 
 class DataScreen extends StatefulWidget {
   const DataScreen({super.key});
@@ -204,21 +206,20 @@ class _DataScreenState extends State<DataScreen> {
         // debugPrint("File extension: $extension");
 
         if (fileBytes == null) {
-          // debugPrint("❌ File bytes are null");
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(localizations.data_error_failed_to_read_image),
-            ),
+          showCustomSnackBar(
+            context,
+            localizations.data_error_failed_to_read_image,
+            isError: true,
           );
           return;
         }
 
         if (extension == null ||
             !['jpg', 'jpeg', 'png', 'webp'].contains(extension)) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(localizations.data_error_unsupported_image_format),
-            ),
+          showCustomSnackBar(
+            context,
+            localizations.data_error_unsupported_image_format,
+            isError: true,
           );
           return;
         }
@@ -279,7 +280,7 @@ class _DataScreenState extends State<DataScreen> {
                 padding: EdgeInsets.only(
                   left: screenWidth * 0.05,
                   right: screenWidth * 0.05,
-                  bottom: screenWidth * 0.05,
+                  bottom: screenHeight * 0.02,
                 ),
                 child: Form(
                   key: _formKey,
@@ -317,8 +318,7 @@ class _DataScreenState extends State<DataScreen> {
                                               f.key == 'emailAddress' ||
                                               f.key == 'mobilePhoneNumber' ||
                                               f.key == 'officePhoneNumber' ||
-                                              f.key == 'experience' ||
-                                              f.key == 'image',
+                                              f.key == 'experience',
                                         )
                                         .map(
                                           (field) => SizedBox(
@@ -352,40 +352,27 @@ class _DataScreenState extends State<DataScreen> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
-                                              ElevatedButton.icon(
-                                                style:
-                                                    ButtonStyles.primaryElevatedButtonStyle(
-                                                      screenHeight:
-                                                          screenHeight,
-                                                      screenWidth: screenWidth,
-                                                      context: context,
-                                                    ),
+                                              LoadingActionButton(
+                                                initialLabel:
+                                                    localizations
+                                                        .data_entry_upload_image,
                                                 onPressed:
-                                                    () => _pickAndUploadImage(
-                                                      context,
-                                                    ),
-                                                icon: Icon(
-                                                  Icons.image,
-                                                  color:
-                                                      Theme.of(
-                                                        context,
-                                                      ).colorScheme.surface,
-                                                ),
-                                                label: Text(
-                                                  localizations
-                                                      .data_entry_upload_image,
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .titleMedium
-                                                      ?.copyWith(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color:
-                                                            Theme.of(context)
-                                                                .colorScheme
-                                                                .surface,
-                                                      ),
-                                                ),
+                                                    () async =>
+                                                        await _pickAndUploadImage(
+                                                          context,
+                                                        ),
+                                                color:
+                                                    Theme.of(context)
+                                                        .colorScheme
+                                                        .primary, // matches your design
+                                                successColor:
+                                                    Colors
+                                                        .green, // shows green on success
+                                                height:
+                                                    50, // optional: match your button height
+                                                width:
+                                                    double
+                                                        .infinity, // optional: stretch nicely
                                               ),
                                               if (_formData['image'] != null)
                                                 Padding(
@@ -488,9 +475,6 @@ class _DataScreenState extends State<DataScreen> {
                                                 _formData,
                                                 SetOptions(merge: true),
                                               );
-                                          // debugPrint(
-                                          //   '✅ Form data saved successfully for UID: $uid',
-                                          // );
                                           if (!mounted) return;
                                           ScaffoldMessenger.of(
                                             context,
@@ -521,17 +505,13 @@ class _DataScreenState extends State<DataScreen> {
                                           );
                                         }
                                       } else {
-                                        debugPrint('❌ No authenticated user.');
+                                        // debugPrint('❌ No authenticated user.');
                                         if (!mounted) return;
-                                        ScaffoldMessenger.of(
+                                        showCustomSnackBar(
                                           context,
-                                        ).showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              localizations
-                                                  .data_error_user_not_logged_in,
-                                            ),
-                                          ),
+                                          localizations
+                                              .data_error_user_not_logged_in,
+                                          isError: true,
                                         );
                                       }
                                     }
