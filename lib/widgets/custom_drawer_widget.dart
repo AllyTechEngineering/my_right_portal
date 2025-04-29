@@ -38,16 +38,6 @@ class CustomDrawerWidget extends StatelessWidget {
         title: localizations.about_title,
         route: '/about-us',
       ),
-      DrawerItemModel(
-        icon: Icons.info_outline,
-        title: localizations.about_title,
-        route: '/cancel-subscription',
-      ),
-      DrawerItemModel(
-        icon: Icons.info_outline,
-        title: localizations.about_title,
-        route: '/success-subscription',
-      ),
     ];
     return Drawer(
       child: Container(

@@ -273,6 +273,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     decoration: InputDecoration(
                                       isDense: true,
                                       labelText: localizations.login_password,
+                                      hintMaxLines: 3,
                                       hintText:
                                           localizations.login_password_hint,
                                       labelStyle:

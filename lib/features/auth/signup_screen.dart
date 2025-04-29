@@ -193,6 +193,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 decoration: InputDecoration(
                                   labelText: localizations.sign_up_password,
                                   hintText: localizations.login_password_hint,
+                                  hintMaxLines: 3,
                                 ),
                                 obscureText: true,
                                 onChanged: (value) => _password = value,
@@ -209,6 +210,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                   labelText:
                                       localizations.sign_up_password_confirm,
                                   hintText: localizations.login_password_hint,
+                                  hintMaxLines: 3,
                                 ),
                                 obscureText: true,
                                 onChanged: (value) => _confirmPassword = value,

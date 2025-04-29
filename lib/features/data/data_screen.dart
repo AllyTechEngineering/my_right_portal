@@ -145,6 +145,15 @@ class _DataScreenState extends State<DataScreen> {
       initialValue: _formData[key]?.toString() ?? '',
       decoration: InputDecoration(
         labelText: label,
+        hintText: () {
+          if (key == 'mobilePhoneNumber') {
+            return '(e.g., 2125551234)';
+          } else if (key == 'officePhoneNumber') {
+            return '(e.g., 3055556789)';
+          } else {
+            return null;
+          }
+        }(),
         floatingLabelStyle: const TextStyle(
           fontSize: 20.0,
           fontWeight: FontWeight.bold,

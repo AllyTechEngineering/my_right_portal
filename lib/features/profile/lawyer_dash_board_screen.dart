@@ -7,6 +7,7 @@ import 'package:http/http.dart' as http;
 import 'package:my_right_portal/utils/button_styles.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
+import 'package:my_right_portal/widgets/loading_action_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 enum DeviceType { mobile, tablet, desktop }
@@ -280,34 +281,16 @@ class _LawyerDashboardScreenState extends State<LawyerDashboardScreen> {
                                       ),
                                     ),
                                     const SizedBox(height: 16),
-                                    ElevatedButton(
-                                      style:
-                                          ButtonStyles.primaryElevatedButtonStyle(
-                                            screenHeight: screenHeight,
-                                            screenWidth: screenWidth,
-                                            context: context,
-                                          ),
+                                    LoadingActionButton(
+                                      initialLabel:
+                                          localizations
+                                              .dashboard_manage_billing,
                                       onPressed:
                                           () => _launchBillingPortal(context),
-                                      child: Text(
-                                        localizations.dashboard_manage_billing,
-                                        style: Theme.of(
-                                          context,
-                                        ).textTheme.titleLarge?.copyWith(
-                                          fontSize:
-                                              deviceType == DeviceType.mobile
-                                                  ? 18
-                                                  : deviceType ==
-                                                      DeviceType.tablet
-                                                  ? 20
-                                                  : 22,
-                                          color:
-                                              Theme.of(
-                                                context,
-                                              ).colorScheme.surface,
-                                        ),
-                                        textAlign: TextAlign.center,
-                                      ),
+                                      color: Theme.of(context).primaryColor,
+                                      successColor: Colors.green,
+                                      height: 50,
+                                      width: screenWidth * 0.8,
                                     ),
                                     const SizedBox(height: 16),
                                     ElevatedButton(

@@ -24,7 +24,8 @@ class LoadingActionButton extends StatefulWidget {
   State<LoadingActionButton> createState() => _LoadingActionButtonState();
 }
 
-class _LoadingActionButtonState extends State<LoadingActionButton> with SingleTickerProviderStateMixin {
+class _LoadingActionButtonState extends State<LoadingActionButton>
+    with SingleTickerProviderStateMixin {
   bool _isLoading = false;
   bool _isSuccess = false;
   late AnimationController _controller;
@@ -39,10 +40,10 @@ class _LoadingActionButtonState extends State<LoadingActionButton> with SingleTi
       lowerBound: 0.8,
       upperBound: 1.2,
     )..addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          _controller.reverse(); // Bounce back to normal size
-        }
-      });
+      if (status == AnimationStatus.completed) {
+        _controller.reverse(); // Bounce back to normal size
+      }
+    });
     _scaleAnimation = _controller.drive(Tween(begin: 1.0, end: 1.2));
   }
 
@@ -77,9 +78,10 @@ class _LoadingActionButtonState extends State<LoadingActionButton> with SingleTi
 
   @override
   Widget build(BuildContext context) {
-    final Color buttonColor = _isSuccess
-        ? (widget.successColor ?? Colors.green)
-        : (widget.color ?? Theme.of(context).primaryColor);
+    final Color buttonColor =
+        _isSuccess
+            ? (widget.successColor ?? Colors.green)
+            : (widget.color ?? Theme.of(context).primaryColor);
 
     return SizedBox(
       width: widget.width ?? double.infinity,
@@ -88,30 +90,37 @@ class _LoadingActionButtonState extends State<LoadingActionButton> with SingleTi
         style: ElevatedButton.styleFrom(
           backgroundColor: buttonColor,
           disabledBackgroundColor: buttonColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(14.0),
+            side: BorderSide.none,
+          ),
         ),
         onPressed: (_isLoading || _isSuccess) ? null : _handlePress,
-        child: _isLoading
-            ? const SizedBox(
-                width: 24,
-                height: 24,
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                  strokeWidth: 2,
-                ),
-              )
-            : _isSuccess
-                ? ScaleTransition(
-                    scale: _scaleAnimation,
-                    child: const Icon(
-                      Icons.check_circle,
-                      color: Colors.white,
-                      size: 28,
-                    ),
-                  )
-                : Text(
-                    widget.initialLabel,
-                    style: const TextStyle(color: Colors.white),
+        child:
+            _isLoading
+                ? const SizedBox(
+                  width: 24,
+                  height: 24,
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                    strokeWidth: 2,
                   ),
+                )
+                : _isSuccess
+                ? ScaleTransition(
+                  scale: _scaleAnimation,
+                  child: Icon(
+                    Icons.check_circle,
+                    color: Theme.of(context).colorScheme.surface,
+                    size: 28,
+                  ),
+                )
+                : Text(
+                  widget.initialLabel,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                ),
       ),
     );
   }
