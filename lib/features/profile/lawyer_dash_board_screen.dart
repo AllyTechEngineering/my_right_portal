@@ -59,14 +59,15 @@ class _LawyerDashboardScreenState extends State<LawyerDashboardScreen> {
         isLoading = false;
       });
     }
-    debugPrint('Law Firm Name: $lawFirmName');
-    debugPrint('Contact Name: $contactName');
-    debugPrint('Subscription Active: $subscriptionActive');
+    // debugPrint('Law Firm Name: $lawFirmName');
+    // debugPrint('Contact Name: $contactName');
+    // debugPrint('Subscription Active: $subscriptionActive');
   }
 
   Future<void> _launchBillingPortal(BuildContext context) async {
     debugPrint('Launching billing portal...');
     final user = FirebaseAuth.instance.currentUser;
+    debugPrint('User: ${user?.uid}');
     if (user == null) return;
     try {
       final response = await http.post(

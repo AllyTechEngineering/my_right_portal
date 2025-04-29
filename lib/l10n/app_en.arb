@@ -1953,7 +1953,7 @@
     "@login_password_hint": {
         "description": "Hint text for the password field"
     },
-    "login_dont_have_account": "Don't have an account? Sign Up Today!",
+    "login_dont_have_account": "Don't have an account?\nSign Up Today!",
     "@login_dont_have_account": {
         "description": "Label for the don't have an account link"
     },
@@ -2234,5 +2234,13 @@
     "@data_button_back_to_dashboard": {
         "description": "Button label for returning to the Lawyer Dashboard screen.",
         "type": "text"
+    },
+    "cancel_screen": "Your subscription transaction has been cancelled",
+    "@cancel_screen": {
+        "description": "Cancel subscription screen title"
+    },
+    "cancel_screen_message": "No charges have been made to your account. You can re-subscribe at any time.",
+    "@cancel_screen_message": {
+        "description": "Message shown when the user has canceled a transaction"
     }
 }

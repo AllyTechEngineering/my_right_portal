@@ -11,11 +11,11 @@ class ButtonStyles {
       shadowColor: Theme.of(context).colorScheme.onPrimary,
       backgroundColor: Theme.of(context).colorScheme.onPrimaryFixedVariant,
       padding: EdgeInsets.symmetric(
-        vertical: 16.0,
-        horizontal: 16.0,
+        vertical: 24.0,
+        horizontal: 24.0,
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16.0),
+        borderRadius: BorderRadius.circular(14.0),
         side: BorderSide.none,
       ),
     );

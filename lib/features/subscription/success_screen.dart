@@ -15,7 +15,6 @@ class SuccessScreen extends StatelessWidget {
     double iconSize = screenWidth * 0.055;
     iconSize = iconSize.clamp(18.0, 26.0);
     final double getToolBarHeight = screenHeight * Constants.kToolbarHeight;
-    debugPrint('In SuccessScreen');
     return Scaffold(
       appBar: CustomAppBarWidget(
         title: localizations.my_right_to_stay_title,
@@ -26,8 +25,6 @@ class SuccessScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('This is the Success Screen'),
-            SizedBox(height: screenHeight * 0.02),
             const Icon(
               Icons.check_circle_outline,
               color: Colors.green,
@@ -45,10 +42,12 @@ class SuccessScreen extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.02),
             ElevatedButton.icon(
-              icon: Icon(Icons.assignment, size: iconSize),
+              icon: Icon(Icons.assignment, size: iconSize, color: Colors.white),
               label: Text(
                 localizations.subscription_data_entry,
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: Theme.of(context).colorScheme.surface,
+                ),
               ),
               onPressed: () {
                 WidgetsBinding.instance.addPostFrameCallback((_) {

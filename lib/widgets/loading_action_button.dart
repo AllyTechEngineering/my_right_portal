@@ -10,7 +10,7 @@ class LoadingActionButton extends StatefulWidget {
   final double? width;
 
   const LoadingActionButton({
-    Key? key,
+    super.key,
     required this.initialLabel,
     required this.onPressed,
     this.successLabel = "Success!",
@@ -18,7 +18,7 @@ class LoadingActionButton extends StatefulWidget {
     this.successColor,
     this.height,
     this.width,
-  }) : super(key: key);
+  });
 
   @override
   State<LoadingActionButton> createState() => _LoadingActionButtonState();

@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_right_portal/utils/button_styles.dart';
 import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
@@ -71,10 +72,12 @@ class _SignupScreenState extends State<SignupScreen> {
       }
     } on FirebaseAuthException catch (e) {
       setState(() => _errorMessage = e.message);
+      debugPrint('Error: ${e.message}');
     } finally {
       setState(() => _isLoading = false);
     }
   }
+
   @override
   void initState() {
     super.initState();
@@ -85,6 +88,7 @@ class _SignupScreenState extends State<SignupScreen> {
       );
     });
   }
+
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context)!;
@@ -222,7 +226,8 @@ class _SignupScreenState extends State<SignupScreen> {
                                   style: Theme.of(
                                     context,
                                   ).textTheme.labelLarge?.copyWith(
-                                    color: Theme.of(context).colorScheme.error,
+                                    color: Theme.of(context).colorScheme.onError,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
@@ -233,20 +238,12 @@ class _SignupScreenState extends State<SignupScreen> {
                                   )
                                   : ElevatedButton(
                                     onPressed: _register,
-                                    style: ElevatedButton.styleFrom(
-                                      padding: EdgeInsets.symmetric(
-                                        vertical: screenHeight * 0.02,
-                                      ),
-                                      backgroundColor:
-                                          Theme.of(
-                                            context,
-                                          ).colorScheme.onPrimaryFixedVariant,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                          16.0,
+                                    style:
+                                        ButtonStyles.primaryElevatedButtonStyle(
+                                          screenHeight: screenHeight,
+                                          screenWidth: screenWidth,
+                                          context: context,
                                         ),
-                                      ),
-                                    ),
                                     child: Text(
                                       localizations.sign_up_register,
                                       style: Theme.of(

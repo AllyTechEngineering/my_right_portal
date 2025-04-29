@@ -141,8 +141,23 @@ firebase functions:config:unset stripe
 - For local development, use `.env` + `dotenv` and check `process.env.FUNCTIONS_EMULATOR === "true"` in your code.
 
 ---
-# How to check secrets!
-## change the STRIPE_PORTAL_SECRET to the secret you are looking for
-- firebase functions:secrets:access STRIPE_PORTAL_SECRET
+## firebase secrets CLI syntax (SECRET_NAME is a placeholder - change to your name(s) used)
+- Set (Create/Update) a secret Change SECRET_NAME to your secret name
+```
+firebase functions:secrets:set SECRET_NAME
+```
+- Access (View) a secret
+```
+firebase functions:secrets:access SECRET_NAME
+```
+- List all secrets
+```
+firebase functions:secrets:list
+```
+- Destroy (Delete) a secret
+```
+firebase functions:secrets:destroy SECRET_NAME
+```
+
 
 Created for: RightToStayNow.com – Firebase Function Operations

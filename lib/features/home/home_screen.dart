@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_right_portal/enums/app_screen.dart';
 import 'package:my_right_portal/features/home/app_store_buttons.dart';
+import 'package:my_right_portal/utils/button_styles.dart';
 import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/cookie_notice_banner.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
@@ -100,18 +101,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          SizedBox(
-                            width: screenWidth * 0.8,
-                            child: CustomTextWidget(
-                              localizations.website,
-                              textAlign: TextAlign.center,
-                              style: Theme.of(
-                                context,
-                              ).textTheme.displayLarge?.copyWith(
-                                color: Theme.of(context).colorScheme.onError,
-                              ),
-                            ),
-                          ),
                           SizedBox(height: screenHeight * 0.02),
                           //mrts_home_screen_title
                           SizedBox(
@@ -154,29 +143,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                   (Route<dynamic> route) =>
                                       false, // removes everything before
                                 ),
-                            style: ElevatedButton.styleFrom(
-                              elevation: 3.0,
-                              shadowColor:
-                                  Theme.of(context).colorScheme.onPrimary,
-                              backgroundColor:
-                                  Theme.of(
-                                    context,
-                                  ).colorScheme.onPrimaryFixedVariant,
-                              padding: EdgeInsets.symmetric(
-                                vertical: screenHeight * 0.02,
-                                horizontal: screenWidth * 0.1,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(16.0),
-                                side: BorderSide.none,
-                              ),
+                            style: ButtonStyles.primaryElevatedButtonStyle(
+                              screenHeight: screenHeight,
+                              screenWidth: screenWidth,
+                              context: context,
                             ),
                             child: CustomTextWidget(
                               localizations.attorney_login_register,
                               textAlign: TextAlign.center,
                               style: Theme.of(
                                 context,
-                              ).textTheme.labelLarge!.copyWith(
+                              ).textTheme.titleLarge!.copyWith(
                                 color: Theme.of(context).colorScheme.surface,
                                 fontWeight: FontWeight.bold,
                               ),

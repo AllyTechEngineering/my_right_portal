@@ -55,7 +55,7 @@ class _CookieNoticeBannerState extends State<CookieNoticeBanner> {
             CustomTextWidget(
               localizations.cookies_message,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
@@ -63,7 +63,7 @@ class _CookieNoticeBannerState extends State<CookieNoticeBanner> {
             CustomTextWidget(
               localizations.cookies_subtitle,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
@@ -73,22 +73,15 @@ class _CookieNoticeBannerState extends State<CookieNoticeBanner> {
               style: ElevatedButton.styleFrom(
                 elevation: 3.0,
                 shadowColor: Theme.of(context).colorScheme.onPrimary,
-                backgroundColor:
-                    Theme.of(context).colorScheme.onPrimaryFixedVariant,
-                padding: EdgeInsets.symmetric(
-                  vertical: screenHeight * 0.02,
-                  horizontal: screenWidth * 0.1,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.0),
-                  side: BorderSide.none,
-                ),
+                backgroundColor: Colors.transparent,
               ),
               child: CustomTextWidget(
                 localizations.cookies_accept,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.surface,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                  // decoration: TextDecoration.underline,
+                  // decorationThickness: 2.0,
                 ),
               ),
             ),

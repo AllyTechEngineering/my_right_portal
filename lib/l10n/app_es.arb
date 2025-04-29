@@ -2234,5 +2234,13 @@
     "@data_button_back_to_dashboard": {
         "description": "Etiqueta del botón para regresar a la pantalla del Panel del Abogado.",
         "type": "text"
+    },
+    "cancel_screen": "Tu suscripción ha sido cancelada",
+    "@cancel_screen": {
+        "description": "Título de la pantalla de cancelación de suscripción"
+    },
+    "cancel_screen_message": "No se han realizado cargos en tu cuenta. Puedes volver a suscribirte en cualquier momento.",
+    "@cancel_screen_message": {
+        "description": "Mensaje que se muestra cuando el usuario cancela una transacción"
     }
 }

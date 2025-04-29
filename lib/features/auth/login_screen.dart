@@ -434,7 +434,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                             context,
                                           ).colorScheme.onPrimaryFixedVariant,
                                       padding: EdgeInsets.symmetric(
-                                        vertical: screenHeight * 0.02,
+                                        vertical: 24,
+                                        horizontal: 24,
                                       ),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(
@@ -447,7 +448,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       textAlign: TextAlign.center,
                                       style: Theme.of(
                                         context,
-                                      ).textTheme.titleSmall!.copyWith(
+                                      ).textTheme.titleMedium!.copyWith(
                                         color:
                                             Theme.of(
                                               context,
