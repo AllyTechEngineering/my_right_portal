@@ -4,6 +4,7 @@ import 'package:my_right_portal/utils/constants.dart';
 import 'package:my_right_portal/widgets/custom_app_bar_widget.dart';
 import 'package:my_right_portal/widgets/custom_drawer_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_right_portal/widgets/custom_text_widget.dart';
 
 enum DeviceType { mobile, tablet, desktop }
 
@@ -27,7 +28,7 @@ class _CancelScreenState extends State<CancelScreen> {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     final deviceType = _getDeviceType(screenWidth);
-    // final padding = deviceType == DeviceType.mobile ? 16.0 : 32.0;
+    final padding = deviceType == DeviceType.mobile ? 16.0 : 32.0;
     // final widthFactor =
     //     deviceType == DeviceType.mobile
     //         ? 0.8
@@ -45,49 +46,70 @@ class _CancelScreenState extends State<CancelScreen> {
       ),
       drawer: const CustomDrawerWidget(),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.cancel_outlined, color: Colors.red, size: 80),
-            SizedBox(height: screenHeight * 0.02),
-            Text(
-              localizations.cancel_screen,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            SizedBox(height: screenHeight * 0.02),
-            Text(
-              localizations.cancel_screen_message,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              style: ButtonStyles.primaryElevatedButtonStyle(
-                screenHeight: screenHeight,
-                screenWidth: screenWidth,
-                context: context,
-              ),
-              onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/home',
-                  (route) => false,
-                );
-              },
-              child: Text(
-                localizations.dashboard_log_out,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: padding, vertical: padding),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.cancel_outlined, color: Colors.red, size: 80),
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.cancel_screen,
+                textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
                   fontSize:
                       deviceType == DeviceType.mobile
-                          ? 18
-                          : deviceType == DeviceType.tablet
                           ? 20
-                          : 22,
-                  color: Theme.of(context).colorScheme.surface,
+                          : deviceType == DeviceType.tablet
+                          ? 24
+                          : 28,
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-          ],
+              SizedBox(height: screenHeight * 0.02),
+              CustomTextWidget(
+                localizations.cancel_screen_message,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                  fontSize:
+                      deviceType == DeviceType.mobile
+                          ? 20
+                          : deviceType == DeviceType.tablet
+                          ? 24
+                          : 28,
+                ),
+              ),
+              SizedBox(height: screenHeight * 0.02),
+              ElevatedButton(
+                style: ButtonStyles.primaryElevatedButtonStyle(
+                  screenHeight: screenHeight,
+                  screenWidth: screenWidth,
+                  context: context,
+                ),
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/home',
+                    (route) => false,
+                  );
+                },
+                child: Text(
+                  localizations.dashboard_log_out,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                    fontSize:
+                        deviceType == DeviceType.mobile
+                            ? 18
+                            : deviceType == DeviceType.tablet
+                            ? 20
+                            : 22,
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
