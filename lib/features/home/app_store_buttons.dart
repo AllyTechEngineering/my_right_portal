@@ -69,52 +69,18 @@ class _StoreButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
     return InkWell(
       onTap: () {
-        if (url.contains('play.google.com')) {
-          showDialog(
-            context: context,
-            builder:
-                (context) => AlertDialog(
-                  backgroundColor: Theme.of(context).colorScheme.surface,
-                  elevation: 3.0,
-                  shadowColor: Theme.of(context).colorScheme.onSurface,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  alignment: Alignment.center,
-                  title: CustomTextWidget(
-                    localizations.app_coming_soon,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  content: CustomTextWidget(
-                    localizations.app_coming_soon_subtitle,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  actions: [
-                    TextButton(
-                      onPressed: () => Navigator.of(context).pop(),
-                      child: CustomTextWidget(
-                        localizations.label_close_dialog,
-                        style: Theme.of(context).textTheme.titleMedium,
-                      ),
-                    ),
-                  ],
-                ),
-          );
+        final uri = Uri.parse(url);
+        if (kIsWeb) {
+          debugPrint('Launching URL: $url');
+          openLink(url);
         } else {
-          final uri = Uri.parse(url);
-          if (kIsWeb) {
-            debugPrint('Launching URL: $url');
-            openLink(url);
-          } else {
-            debugPrint('Launching URL: $url');
-            launchUrl(
-              uri,
-              mode: LaunchMode.externalApplication,
-            ); // Mobile: opens store app
-          }
+          debugPrint('Launching URL: $url');
+          launchUrl(
+            uri,
+            mode: LaunchMode.externalApplication,
+          ); // Mobile: opens store app
         }
       },
       child: Image.asset(imageAsset, height: height),

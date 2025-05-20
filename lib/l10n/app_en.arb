@@ -1673,7 +1673,7 @@
         "description": "Path to the Play Store badge image used for app promotion.",
         "type": "text"
     },
-    "play_store_url": "https://play.google.com/store/apps/details?id=com.example.myrighttostay",
+    "play_store_url": "https://play.google.com/store/apps/details?id=com.allytechllc.right_2_stay&utm_source=na_Med",
     "@play_store_url": {
         "description": "URL to the Play Store page for the app.",
         "type": "text"
